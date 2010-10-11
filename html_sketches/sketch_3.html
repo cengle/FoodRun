@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title> FoodRun </title>
+	</head>
+	
+	<body>
+		<div id = "mainContainer">
+			<div id = "header">
+				<img src ="logo.jpg" id="logo"/>
+				<span id="headerText"> FoodRun </span>
+			</div>
+			
+			<div id = "mainContent">
+				<div id = "recipeFormContainer">
+					<span id = "recipeText">Upload a Recipe!</span>
+					<form id = "recipeForm">
+						<ul>
+							<li>Enter title: <input type = "text" name = "title"/></li>
+							
+							<li>Choose cuisine type:
+								<select>
+									<option value = "American">American</option>
+									<option value = "Mexican">Mexican</option>
+									<option value = "Indian">Indian</option>
+									<option value = "Chinese">Chinese</option>
+									<option value = "Swedish">Swedish</option>
+								</select>
+							</li>
+							
+							<li>Enter tags: <input type = "text" name = "tags"/></li>
+							<li>Enter cooking time: <input type = "text" name = "time"/></li>
+							<li>Enter Ingredient:
+								<input type = "text" name = "ingredient"/>
+								<input type = "button" name = "ingEnter" value = "Enter"/>				
+							</li>
+							<li>Enter Direction:
+								<input type = "text" name = "direction"/>
+								<input type = "button" name = "dirEnter" value = "Enter"/>				
+							</li>
+							<li><input type = "button" name = "addImg" value = "Upload an image"/></li>
+							<li><input type = "submit" name = "submit" value = "Create Recipe"/></li>
+						</ul>
+					</form>
+				</div>
+				
+				<div id = "ingredientListContainer">
+					<span id = "ingredientText">Ingredient List:</span>
+					<ul>
+						<li>2 lbs beef</li>
+						<li> 1 tbpsn soy sauce</li>
+						<li> 2 leafs cilantro</li>
+					</ul>
+				</div>
+				
+				<div id = "directionsListContainer">
+					<span id = "directionsText">Directions:</span>
+					<ul>
+						<li>Heat oven to 350&deg F </li>
+						<li>Cut up beef</li>
+						<li>Put beef in soy sauce</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id = "footer">
+				<img src = "footer.jpg"/>
+			</div>
+		</div>
+	</body>
+</html>

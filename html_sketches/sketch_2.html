@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<title> FoodRun </title>
+	</head>
+	
+	<body>
+		<div id = "mainContainer">
+			<div id = "header">
+				<img src ="logo.jpg" id="logo"/>
+				<span id="headerText"> FoodRun </span>
+				<div id = "loginInfo">
+					<form>
+						<ul>
+							<li><input type = "text" name = "username" value = "Enter username"/></li>
+							<li><input type = "text" name = "password" value = "Password"/></li>
+							<li><input type = "submit" value = "Login"/></li>
+						</ul>
+					</form>
+				</div>
+			</div>
+			
+			<div id = "mainContent">
+				<div id = "welcomeInfo">
+					<p id = "welcomeText">Welcome to FoodRun! Sign up...</p>
+				</div>
+				
+				<div id = "welcomePicture">
+					<img src = "foodPicture"/>
+					<a href = "./upload/" id = "uploadLink">Upload a recipe</a>
+				</div>
+				
+				<div id = "searchRecipeContainer">
+					<span id = "searchText">Enter Keyword</span>
+					<form id = "searchRecipe">
+						<input type = "text" value = "Example searcehs: burrito, fried rice..."/>
+						<input type = "submit" value = "Search"/>
+					</form>
+				</div>
+				
+				<div id = "cuisineSearchContainer">
+					<form id = "cuisineSearch">
+						<ul>
+							<li><input type = "checkbox" name = "American">American</li>
+							<li><input type = "checkbox" name = "Indian">Indian</li>
+							<li><input type = "checkbox" name = "Mexican">Mexican</li>
+							<li><input type = "checkbox" name = "Chinese">Chinese</li>
+							<li><input type = "checkbox" name = "Swedish">Swedish</li>
+						</ul>
+						<input type = "submit" value = "Search"/>
+					</form>
+				</div>
+				
+			</div>
+			
+			<div id = "footer">
+				<img src = "footer.jpg"/>
+			</div>
+		</div>
+	</body>
+</html>
