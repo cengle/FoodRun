@@ -44,3 +44,87 @@
 [0m
   [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
   [4;35;1mSQL (75.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRecipes (20101028231539)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "directions" text, "completion_time" integer, "recipelist_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101028231539')[0m
+Migrating to CreateIngredients (20101028231900)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "ingredients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "number" integer, "unit" varchar(255), "type" varchar(255), "recipe_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101028231900')[0m
+Migrating to CreateReviews (20101028232430)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "review" text, "recipe_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101028232430')[0m
+Migrating to CreateRecipeLists (20101028232509)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "recipe_lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101028232509')[0m
+Migrating to CreateGroceryLists (20101028232528)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "grocery_lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101028232528')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("grocery_lists")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("ingredients")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("recipe_lists")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("recipes")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("reviews")[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-10-28 16:26:50) [GET]
+
+ActionController::RoutingError (No route matches "/recipe" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-10-28 16:26:52) [GET]
+  [4;36;1mRecipe Load (0.5ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+Completed in 78ms (View: 74, DB: 1) | 200 OK [http://localhost/recipes]
+
+
+Processing RecipesController#new (for 127.0.0.1 at 2010-10-28 16:26:54) [GET]
+Rendering template within layouts/recipes
+Rendering recipes/new
+Completed in 21ms (View: 16, DB: 0) | 200 OK [http://localhost/recipes/new]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRecipes (20101028231539)
+Migrating to CreateIngredients (20101028231900)
+Migrating to CreateReviews (20101028232430)
+Migrating to CreateRecipeLists (20101028232509)
+Migrating to CreateGroceryLists (20101028232528)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("grocery_lists")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("ingredients")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("recipe_lists")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("recipes")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("reviews")[0m
