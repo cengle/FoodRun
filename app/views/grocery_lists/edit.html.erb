@@ -1,0 +1,12 @@
+<h1>Editing grocery_list</h1>
+
+<% form_for(@grocery_list) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @grocery_list %> |
+<%= link_to 'Back', grocery_lists_path %>

@@ -1,0 +1,28 @@
+<h1>Editing review</h1>
+
+<% form_for(@review) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :review %><br />
+    <%= f.text_area :review %>
+  </p>
+  <p>
+    <%= f.label :stars %><br />
+    <%= f.text_field :stars %>
+  </p>
+  <p>
+    <%= f.label :recipe_id %><br />
+    <%= f.text_field :recipe_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @review %> |
+<%= link_to 'Back', reviews_path %>

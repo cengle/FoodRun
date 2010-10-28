@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  directions: MyText
+  completion_time: 1
+  recipelist_id: 1
+
+two:
+  title: MyString
+  directions: MyText
+  completion_time: 1
+  recipelist_id: 1

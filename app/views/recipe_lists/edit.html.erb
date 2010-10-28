@@ -1,0 +1,12 @@
+<h1>Editing recipe_list</h1>
+
+<% form_for(@recipe_list) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @recipe_list %> |
+<%= link_to 'Back', recipe_lists_path %>

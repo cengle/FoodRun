@@ -1,0 +1,32 @@
+<h1>Editing ingredient</h1>
+
+<% form_for(@ingredient) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :number %><br />
+    <%= f.text_field :number %>
+  </p>
+  <p>
+    <%= f.label :unit %><br />
+    <%= f.text_field :unit %>
+  </p>
+  <p>
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </p>
+  <p>
+    <%= f.label :recipe_id %><br />
+    <%= f.text_field :recipe_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @ingredient %> |
+<%= link_to 'Back', ingredients_path %>
