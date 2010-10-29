@@ -128,3 +128,54 @@ Migrating to CreateGroceryLists (20101028232528)
   [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("recipe_lists")[0m
   [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("recipes")[0m
   [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("reviews")[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-10-28 16:47:39) [GET]
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+Completed in 6032ms (View: 5926, DB: 1) | 200 OK [http://localhost/recipes]
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-10-28 16:49:42) [GET]
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+Completed in 14ms (View: 3, DB: 0) | 200 OK [http://localhost/recipes/]
+
+
+Processing IngredientsController#index (for 127.0.0.1 at 2010-10-28 16:49:52) [GET]
+  [4;36;1mIngredient Load (1.0ms)[0m   [0;1mSELECT * FROM "ingredients" [0m
+Rendering template within layouts/ingredients
+Rendering ingredients/index
+Completed in 41ms (View: 30, DB: 1) | 200 OK [http://localhost/ingredients]
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-10-28 16:49:57) [GET]
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+Completed in 17ms (View: 5, DB: 1) | 200 OK [http://localhost/recipes]
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2010-10-28 16:51:31) [GET]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 171ms (View: 11, DB: 1) | 200 OK [http://localhost/rails/info/properties]
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-10-28 16:57:10) [GET]
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+Completed in 94ms (View: 26, DB: 1) | 200 OK [http://localhost/recipes]
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-10-28 17:00:37) [GET]
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+Completed in 15ms (View: 3, DB: 1) | 200 OK [http://localhost/]
