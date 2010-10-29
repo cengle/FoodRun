@@ -1,0 +1,11 @@
+<h1> Search results </h1>
+
+<table>
+<% @results.each do |result| %>
+	<tr>
+		<td><%=h result.title %></td>
+		<td><%=h result.directions %></td>
+		<td><%=h result.completion_time %></td>
+	</tr>
+<% end %>
+</table>

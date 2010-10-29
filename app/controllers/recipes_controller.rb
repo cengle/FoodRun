@@ -80,4 +80,12 @@ class RecipesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def search
+	@results = Recipe.find(:title => params[:input])
+	
+	respond_to do |format|
+      format.html # new.html.erb
+    end
+  end
 end
