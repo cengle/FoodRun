@@ -1,0 +1,217 @@
+# Logfile created on Sun Oct 31 15:50:32 -0700 2010  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (111.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (82.0ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+
+
+Processing GroceryListsController#index (for 127.0.0.1 at 2010-10-31 15:51:03) [GET]
+  [4;36;1mGroceryList Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: grocery_lists: SELECT * FROM "grocery_lists" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: grocery_lists: SELECT * FROM "grocery_lists" ):
+  app/controllers/grocery_lists_controller.rb:5:in `index'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (68.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-10-31 15:51:04) [GET]
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSQLite3::SQLException: no such table: recipes: SELECT * FROM "recipes" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: recipes: SELECT * FROM "recipes" ):
+  app/controllers/recipes_controller.rb:5:in `index'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (139.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-10-31 15:51:13) [GET]
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: recipes: SELECT * FROM "recipes" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: recipes: SELECT * FROM "recipes" ):
+  app/controllers/recipes_controller.rb:5:in `index'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (60.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRecipes (20101028231539)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "directions" text, "completion_time" integer, "recipelist_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101028231539')[0m
+Migrating to CreateIngredients (20101028231900)
+  [4;35;1mSQL (3.0ms)[0m   [0mCREATE TABLE "ingredients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "number" integer, "unit" varchar(255), "type" varchar(255), "recipe_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101028231900')[0m
+Migrating to CreateReviews (20101028232430)
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "review" text, "rating" integer, "recipe_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101028232430')[0m
+Migrating to CreateRecipeLists (20101028232509)
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE TABLE "recipe_lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101028232509')[0m
+Migrating to CreateGroceryLists (20101028232528)
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE TABLE "grocery_lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101028232528')[0m
+Migrating to ChangeIngredientsType (20101031213156)
+  [4;35;1mSQL (2.0ms)[0m   [0mALTER TABLE "ingredients" ADD "section" varchar(255)[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_ingredients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "number" integer, "unit" varchar(255), "type" varchar(255), "recipe_id" integer, "created_at" datetime, "updated_at" datetime, "section" varchar(255)) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("ingredients")[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mDROP TABLE "ingredients"[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCREATE TABLE "ingredients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "number" integer, "unit" varchar(255), "recipe_id" integer, "created_at" datetime, "updated_at" datetime, "section" varchar(255)) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("altered_ingredients")[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mDROP TABLE "altered_ingredients"[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101031213156')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("grocery_lists")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("ingredients")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("recipe_lists")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("recipes")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("reviews")[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-10-31 15:51:35) [GET]
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+Completed in 62ms (View: 34, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing RecipesController#search (for 127.0.0.1 at 2010-10-31 15:51:39) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"28OFdrDS4OQfjhNWfSMru1oPlSU8uLcJxf3UKi31yp8=", "input"=>"wef"}
+  [4;36;1mRecipe Load (2.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE ("recipes"."title" = 'wef') [0m
+Rendering template within layouts/recipes
+Rendering recipes/search
+Completed in 122ms (View: 102, DB: 2) | 200 OK [http://localhost/recipes/search]
+
+
+Processing RecipesController#search (for 127.0.0.1 at 2010-10-31 15:52:39) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"28OFdrDS4OQfjhNWfSMru1oPlSU8uLcJxf3UKi31yp8=", "input"=>"wef"}
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."title" = 'wef') [0m
+
+NameError (undefined local variable or method `results' for #<RecipesController:0x8b0c668>):
+  app/controllers/recipes_controller.rb:90:in `search'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (47.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecipesController#search (for 127.0.0.1 at 2010-10-31 15:52:45) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"28OFdrDS4OQfjhNWfSMru1oPlSU8uLcJxf3UKi31yp8=", "input"=>"wef"}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE ("recipes"."title" = 'wef') [0m
+
+NameError (undefined local variable or method `results' for #<RecipesController:0x89c5890>):
+  app/controllers/recipes_controller.rb:90:in `search'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (51.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecipesController#search (for 127.0.0.1 at 2010-10-31 15:54:15) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"28OFdrDS4OQfjhNWfSMru1oPlSU8uLcJxf3UKi31yp8=", "input"=>"wef"}
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."title" = 'wef') [0m
+
+NameError (undefined local variable or method `results' for #<RecipesController:0x88a4c30>):
+  app/controllers/recipes_controller.rb:90:in `search'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (132.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecipesController#search (for 127.0.0.1 at 2010-10-31 15:54:37) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"28OFdrDS4OQfjhNWfSMru1oPlSU8uLcJxf3UKi31yp8=", "input"=>"wef"}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE ("recipes"."title" = 'wef') [0m
+Rendering template within layouts/recipes
+Rendering recipes/search
+Completed in 39ms (View: 20, DB: 1) | 200 OK [http://localhost/recipes/search]
+
+
+Processing RecipesController#search (for 127.0.0.1 at 2010-10-31 15:54:55) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"28OFdrDS4OQfjhNWfSMru1oPlSU8uLcJxf3UKi31yp8=", "input"=>"wef"}
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."title" = 'wef') [0m
+Rendering template within layouts/recipes
+Rendering recipes/search
+Completed in 43ms (View: 15, DB: 1) | 200 OK [http://localhost/recipes/search]
