@@ -6,7 +6,7 @@ describe "/reviews/show.html.erb" do
     assigns[:review] = @review = stub_model(Review,
       :title => "value for title",
       :review => "value for review",
-      :stars => 1,
+      :rating => 1,
       :recipe_id => 1
     )
   end
