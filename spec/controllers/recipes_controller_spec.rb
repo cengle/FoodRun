@@ -134,6 +134,12 @@ describe RecipesController do
 	  get :search
 	  assigns[:results].should == [mock_recipe]
 	end
+	
+	it "should flash results not found when no results are found" do
+	  get :search, :input => "aefjawer"
+	  flash[:notice].should == "No results found."
+	end
+	
   end
   
 end
