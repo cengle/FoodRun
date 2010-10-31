@@ -84,9 +84,11 @@ class RecipesController < ApplicationController
   end
   
   def search
-	#return render :text => "The object is #{params[:input]}"
-
+	
 	@results = Recipe.find(:all, :conditions => {:title => params[:input]})
+	if (@results.empty?)
+	  flash[:notice] = 'No results found.'
+	end
 	respond_to do |format|
       format.html # new.html.erb
     end
