@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20101028232528) do
   create_table "reviews", :force => true do |t|
     t.string   "title"
     t.text     "review"
+    t.integer  "rating"
     t.integer  "recipe_id"
     t.datetime "created_at"
     t.datetime "updated_at"

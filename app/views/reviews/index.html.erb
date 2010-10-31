@@ -4,7 +4,7 @@
   <tr>
     <th>Title</th>
     <th>Review</th>
-    <th>Stars</th>
+    <th>Rating</th>
     <th>Recipe</th>
   </tr>
 
@@ -12,7 +12,7 @@
   <tr>
     <td><%=h review.title %></td>
     <td><%=h review.review %></td>
-    <td><%=h review.stars %></td>
+    <td><%=h review.rating %></td>
     <td><%=h review.recipe_id %></td>
     <td><%= link_to 'Show', review %></td>
     <td><%= link_to 'Edit', edit_review_path(review) %></td>
