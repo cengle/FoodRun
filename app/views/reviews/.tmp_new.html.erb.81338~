@@ -16,9 +16,9 @@
     <%= f.text_field :rating %>
   </p>
   <p>
-    <%= f.hidden_field :recipe_id %>
+    <%= f.label :recipe_id %><br />
+    <%= f.text_field :recipe_id %>
   </p>
-  
   <p>
     <%= f.submit 'Create' %>
   </p>
