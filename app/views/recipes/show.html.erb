@@ -13,11 +13,23 @@
   <%=h @recipe.completion_time %>
 </p>
 
-<p>
-  <b>Recipelist:</b>
-  <%=h @recipe.recipelist_id %>
-</p>
-
+<h3>Ingredients</h3>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Number</th>
+    <th>Unit</th>
+    <th>Section</th>
+  </tr>
+<% for ingredient in @recipe.ingredients %>
+  <tr>
+    <td><%=h ingredient.name %></td>
+    <td><%=h ingredient.number %></td>
+    <td><%=h ingredient.unit %></td>
+    <td><%=h ingredient.section %></td>
+  </tr>
+<% end %>
+</table>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>
