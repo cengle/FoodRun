@@ -85,7 +85,6 @@ class RecipesController < ApplicationController
 	#return render :text => "The object is #{params[:input]}"
 
 	@results = Recipe.find(:all, :conditions => {:title => params[:input]})
-	
 	respond_to do |format|
       format.html # new.html.erb
     end
