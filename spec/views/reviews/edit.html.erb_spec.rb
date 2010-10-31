@@ -8,7 +8,7 @@ describe "/reviews/edit.html.erb" do
       :new_record? => false,
       :title => "value for title",
       :review => "value for review",
-      :stars => 1,
+      :rating => 1,
       :recipe_id => 1
     )
   end
@@ -19,7 +19,7 @@ describe "/reviews/edit.html.erb" do
     response.should have_tag("form[action=#{review_path(@review)}][method=post]") do
       with_tag('input#review_title[name=?]', "review[title]")
       with_tag('textarea#review_review[name=?]', "review[review]")
-      with_tag('input#review_stars[name=?]', "review[stars]")
+      with_tag('input#review_rating[name=?]', "review[rating]")
       with_tag('input#review_recipe_id[name=?]', "review[recipe_id]")
     end
   end

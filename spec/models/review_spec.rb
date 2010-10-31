@@ -5,7 +5,7 @@ describe Review do
     @valid_attributes = {
       :title => "value for title",
       :review => "value for review",
-      :stars => 1,
+      :rating => 1,
       :recipe_id => 1
     }
   end
