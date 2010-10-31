@@ -8,13 +8,13 @@ describe "/reviews/index.html.erb" do
       stub_model(Review,
         :title => "value for title",
         :review => "value for review",
-        :stars => 1,
+        :rating => 1,
         :recipe_id => 1
       ),
       stub_model(Review,
         :title => "value for title",
         :review => "value for review",
-        :stars => 1,
+        :rating => 1,
         :recipe_id => 1
       )
     ]

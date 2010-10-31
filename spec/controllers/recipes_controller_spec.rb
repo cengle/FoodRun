@@ -128,4 +128,12 @@ describe RecipesController do
     end
   end
 
+  describe "search" do
+    it "should assign the correct results to @results" do
+	  Recipe.stub(:find).with(:all).and_return(mock_recipe)
+	  get :search
+	  assigns[:results].should == [mock_recipe]
+	end
+  end
+  
 end
