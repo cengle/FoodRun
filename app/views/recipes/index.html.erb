@@ -1,5 +1,13 @@
 <h1>Listing recipes</h1>
 
+<% form_tag :action => 'search' do %>
+	<p> Search for a recipe:
+	<%= text_field_tag 'input' %></p>
+	
+	<%= submit_tag 'Search' %>
+<% end %>
+
+
 <table>
   <tr>
     <th>Title</th>
