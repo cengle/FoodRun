@@ -25,7 +25,9 @@ class RecipesController < ApplicationController
   # GET /recipes/new.xml
   def new
     @recipe = Recipe.new
-
+    5.times do 
+      @recipe.ingredients.build
+    end
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @recipe }
