@@ -1,0 +1,1646 @@
+Rendering reviews/show.html.erb
+Rendering reviews/new.html.erb
+Rendering reviews/index.html.erb
+Rendering reviews/edit.html.erb
+Rendering recipe_lists/show.html.erb
+Rendering recipe_lists/new.html.erb
+Rendering recipe_lists/index.html.erb
+Rendering recipe_lists/edit.html.erb
+Rendering recipes/show.html.erb
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1011) [0m
+Rendering recipes/new.html.erb
+Rendering recipes/index.html.erb
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".recipe_id = 1013) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".recipe_id = 1014) [0m
+Rendering recipes/edit.html.erb
+Rendering ingredients/show.html.erb
+Rendering ingredients/new.html.erb
+Rendering ingredients/index.html.erb
+Rendering ingredients/edit.html.erb
+Rendering grocery_lists/show.html.erb
+Rendering grocery_lists/new.html.erb
+Rendering grocery_lists/index.html.erb
+Rendering grocery_lists/edit.html.erb
+  [4;35;1mRecipe Create (2.0ms)[0m   [0mINSERT INTO "recipes" ("directions", "created_at", "title", "updated_at", "recipelist_id", "completion_time") VALUES('value for directions', '2010-10-31 22:10:08', 'value for title', '2010-10-31 22:10:08', 1, 1)[0m
+  [4;36;1mRecipeList Create (2.0ms)[0m   [0;1mINSERT INTO "recipe_lists" ("created_at", "updated_at") VALUES('2010-10-31 22:10:08', '2010-10-31 22:10:08')[0m
+WARNING: Can't mass-assign these protected attributes: type
+  [4;35;1mIngredient Create (2.0ms)[0m   [0mINSERT INTO "ingredients" ("name", "number", "created_at", "recipe_id", "updated_at", "unit", "type") VALUES('value for name', 1, '2010-10-31 22:10:08', 1, '2010-10-31 22:10:08', 'value for unit', NULL)[0m
+  [4;36;1mGroceryList Create (2.0ms)[0m   [0;1mINSERT INTO "grocery_lists" ("created_at", "updated_at") VALUES('2010-10-31 22:10:08', '2010-10-31 22:10:08')[0m
+
+
+Processing ReviewsController#destroy (for 0.0.0.0 at 2010-10-31 15:10:08) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/reviews
+Completed in 3ms (DB: 8) | 302 Found [http://test.host/reviews/37]
+
+
+Processing ReviewsController#destroy (for 0.0.0.0 at 2010-10-31 15:10:08) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/reviews
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/reviews/1]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-10-31 15:10:08) [PUT]
+  Parameters: {"review"=>{"these"=>"params"}, "id"=>"37"}
+Rendering template within layouts/reviews
+Rendering reviews/edit
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/reviews/37?review%5Bthese%5D=params]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-10-31 15:10:08) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/reviews
+Rendering reviews/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/reviews/1]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-10-31 15:10:08) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/reviews
+Rendering reviews/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/reviews/1]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"review"=>{"these"=>"params"}, "id"=>"37"}
+Rendering template within layouts/reviews
+Rendering reviews/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/reviews/37?review%5Bthese%5D=params]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/reviews/1032
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/reviews/1]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/reviews/1033
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/reviews/1]
+
+
+Processing ReviewsController#create (for 0.0.0.0 at 2010-10-31 15:10:09) [POST]
+  Parameters: {"review"=>{"these"=>"params"}}
+Rendering template within layouts/reviews
+Rendering reviews/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/reviews?review%5Bthese%5D=params]
+
+
+Processing ReviewsController#create (for 0.0.0.0 at 2010-10-31 15:10:09) [POST]
+  Parameters: {"review"=>{}}
+Rendering template within layouts/reviews
+Rendering reviews/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/reviews?]
+
+
+Processing ReviewsController#create (for 0.0.0.0 at 2010-10-31 15:10:09) [POST]
+  Parameters: {"review"=>{"these"=>"params"}}
+Redirected to http://test.host/reviews/1036
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/reviews?review%5Bthese%5D=params]
+
+
+Processing ReviewsController#create (for 0.0.0.0 at 2010-10-31 15:10:09) [POST]
+  Parameters: {"review"=>{}}
+Redirected to http://test.host/reviews/1037
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/reviews?]
+
+
+Processing ReviewsController#edit (for 0.0.0.0 at 2010-10-31 15:10:09) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/reviews
+Rendering reviews/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/reviews/37/edit]
+
+
+Processing ReviewsController#new (for 0.0.0.0 at 2010-10-31 15:10:09) [GET]
+Rendering template within layouts/reviews
+Rendering reviews/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/reviews/new]
+
+
+Processing ReviewsController#show (for 0.0.0.0 at 2010-10-31 15:10:09) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/reviews
+Rendering reviews/show
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/reviews/37]
+
+
+Processing ReviewsController#index (for 0.0.0.0 at 2010-10-31 15:10:09) [GET]
+Rendering template within layouts/reviews
+Rendering reviews/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/reviews]
+
+
+Processing RecipeListsController#destroy (for 0.0.0.0 at 2010-10-31 15:10:09) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/recipe_lists
+Completed in 3ms (DB: 0) | 302 Found [http://test.host/recipe_lists/37]
+
+
+Processing RecipeListsController#destroy (for 0.0.0.0 at 2010-10-31 15:10:09) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/recipe_lists
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipe_lists/1]
+
+
+Processing RecipeListsController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"37", "recipe_list"=>{"these"=>"params"}}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/recipe_lists/37?recipe_list%5Bthese%5D=params]
+
+
+Processing RecipeListsController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/edit
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://test.host/recipe_lists/1]
+
+
+Processing RecipeListsController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/edit
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/recipe_lists/1]
+
+
+Processing RecipeListsController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"37", "recipe_list"=>{"these"=>"params"}}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/recipe_lists/37?recipe_list%5Bthese%5D=params]
+
+
+Processing RecipeListsController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/recipe_lists/1048
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipe_lists/1]
+
+
+Processing RecipeListsController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/recipe_lists/1049
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/recipe_lists/1]
+
+
+Processing RecipeListsController#create (for 0.0.0.0 at 2010-10-31 15:10:09) [POST]
+  Parameters: {"recipe_list"=>{"these"=>"params"}}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipe_lists?recipe_list%5Bthese%5D=params]
+
+
+Processing RecipeListsController#create (for 0.0.0.0 at 2010-10-31 15:10:09) [POST]
+  Parameters: {"recipe_list"=>{}}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipe_lists?]
+
+
+Processing RecipeListsController#create (for 0.0.0.0 at 2010-10-31 15:10:09) [POST]
+  Parameters: {"recipe_list"=>{"these"=>"params"}}
+Redirected to http://test.host/recipe_lists/1052
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipe_lists?recipe_list%5Bthese%5D=params]
+
+
+Processing RecipeListsController#create (for 0.0.0.0 at 2010-10-31 15:10:09) [POST]
+  Parameters: {"recipe_list"=>{}}
+Redirected to http://test.host/recipe_lists/1053
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipe_lists?]
+
+
+Processing RecipeListsController#edit (for 0.0.0.0 at 2010-10-31 15:10:09) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipe_lists/37/edit]
+
+
+Processing RecipeListsController#new (for 0.0.0.0 at 2010-10-31 15:10:09) [GET]
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/recipe_lists/new]
+
+
+Processing RecipeListsController#show (for 0.0.0.0 at 2010-10-31 15:10:09) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/recipe_lists/37]
+
+
+Processing RecipeListsController#index (for 0.0.0.0 at 2010-10-31 15:10:09) [GET]
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/recipe_lists]
+
+
+Processing RecipesController#destroy (for 0.0.0.0 at 2010-10-31 15:10:09) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/recipes
+Completed in 3ms (DB: 0) | 302 Found [http://test.host/recipes/37]
+
+
+Processing RecipesController#destroy (for 0.0.0.0 at 2010-10-31 15:10:09) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/recipes
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipes/1]
+
+
+Processing RecipesController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"37", "recipe"=>{"these"=>"params"}}
+Rendering template within layouts/recipes
+Rendering recipes/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipes/37?recipe%5Bthese%5D=params]
+
+
+Processing RecipesController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/recipes
+Rendering recipes/edit
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/recipes/1]
+
+
+Processing RecipesController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/recipes
+Rendering recipes/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/recipes/1]
+
+
+Processing RecipesController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"37", "recipe"=>{"these"=>"params"}}
+Rendering template within layouts/recipes
+Rendering recipes/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipes/37?recipe%5Bthese%5D=params]
+
+
+Processing RecipesController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/recipes/1064
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipes/1]
+
+
+Processing RecipesController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/recipes/1065
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/recipes/1]
+
+
+Processing RecipesController#create (for 0.0.0.0 at 2010-10-31 15:10:09) [POST]
+  Parameters: {"recipe"=>{"these"=>"params"}}
+Rendering template within layouts/recipes
+Rendering recipes/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/recipes?recipe%5Bthese%5D=params]
+
+
+Processing RecipesController#create (for 0.0.0.0 at 2010-10-31 15:10:09) [POST]
+  Parameters: {"recipe"=>{}}
+Rendering template within layouts/recipes
+Rendering recipes/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/recipes?]
+
+
+Processing RecipesController#create (for 0.0.0.0 at 2010-10-31 15:10:09) [POST]
+  Parameters: {"recipe"=>{"these"=>"params"}}
+Redirected to http://test.host/recipes/1068
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipes?recipe%5Bthese%5D=params]
+
+
+Processing RecipesController#create (for 0.0.0.0 at 2010-10-31 15:10:09) [POST]
+  Parameters: {"recipe"=>{}}
+Redirected to http://test.host/recipes/1069
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipes?]
+
+
+Processing RecipesController#edit (for 0.0.0.0 at 2010-10-31 15:10:09) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/recipes
+Rendering recipes/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipes/37/edit]
+
+
+Processing RecipesController#new (for 0.0.0.0 at 2010-10-31 15:10:09) [GET]
+Rendering template within layouts/recipes
+Rendering recipes/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/recipes/new]
+
+
+Processing RecipesController#show (for 0.0.0.0 at 2010-10-31 15:10:09) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/recipes
+Rendering recipes/show
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://test.host/recipes/37]
+
+
+Processing RecipesController#index (for 0.0.0.0 at 2010-10-31 15:10:09) [GET]
+Rendering template within layouts/recipes
+Rendering recipes/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://test.host/recipes]
+
+
+Processing IngredientsController#destroy (for 0.0.0.0 at 2010-10-31 15:10:09) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/ingredients
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/ingredients/37]
+
+
+Processing IngredientsController#destroy (for 0.0.0.0 at 2010-10-31 15:10:09) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/ingredients
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/ingredients/1]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"37", "ingredient"=>{"these"=>"params"}}
+Rendering template within layouts/ingredients
+Rendering ingredients/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/ingredients/37?ingredient%5Bthese%5D=params]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/ingredients
+Rendering ingredients/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/ingredients/1]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/ingredients
+Rendering ingredients/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/ingredients/1]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"37", "ingredient"=>{"these"=>"params"}}
+Rendering template within layouts/ingredients
+Rendering ingredients/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/ingredients/37?ingredient%5Bthese%5D=params]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/ingredients/1080
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/ingredients/1]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/ingredients/1081
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/ingredients/1]
+
+
+Processing IngredientsController#create (for 0.0.0.0 at 2010-10-31 15:10:09) [POST]
+  Parameters: {"ingredient"=>{"these"=>"params"}}
+Rendering template within layouts/ingredients
+Rendering ingredients/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/ingredients?ingredient%5Bthese%5D=params]
+
+
+Processing IngredientsController#create (for 0.0.0.0 at 2010-10-31 15:10:09) [POST]
+  Parameters: {"ingredient"=>{}}
+Rendering template within layouts/ingredients
+Rendering ingredients/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/ingredients?]
+
+
+Processing IngredientsController#create (for 0.0.0.0 at 2010-10-31 15:10:09) [POST]
+  Parameters: {"ingredient"=>{"these"=>"params"}}
+Redirected to http://test.host/ingredients/1084
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/ingredients?ingredient%5Bthese%5D=params]
+
+
+Processing IngredientsController#create (for 0.0.0.0 at 2010-10-31 15:10:09) [POST]
+  Parameters: {"ingredient"=>{}}
+Redirected to http://test.host/ingredients/1085
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/ingredients?]
+
+
+Processing IngredientsController#edit (for 0.0.0.0 at 2010-10-31 15:10:09) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/ingredients
+Rendering ingredients/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/ingredients/37/edit]
+
+
+Processing IngredientsController#new (for 0.0.0.0 at 2010-10-31 15:10:09) [GET]
+Rendering template within layouts/ingredients
+Rendering ingredients/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/ingredients/new]
+
+
+Processing IngredientsController#show (for 0.0.0.0 at 2010-10-31 15:10:09) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/ingredients
+Rendering ingredients/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/ingredients/37]
+
+
+Processing IngredientsController#index (for 0.0.0.0 at 2010-10-31 15:10:09) [GET]
+Rendering template within layouts/ingredients
+Rendering ingredients/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/ingredients]
+
+
+Processing GroceryListsController#destroy (for 0.0.0.0 at 2010-10-31 15:10:09) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/grocery_lists
+Completed in 3ms (DB: 0) | 302 Found [http://test.host/grocery_lists/37]
+
+
+Processing GroceryListsController#destroy (for 0.0.0.0 at 2010-10-31 15:10:09) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/grocery_lists
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/grocery_lists/1]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"37", "grocery_list"=>{"these"=>"params"}}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/grocery_lists/37?grocery_list%5Bthese%5D=params]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/grocery_lists/1]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/grocery_lists/1]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"37", "grocery_list"=>{"these"=>"params"}}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/grocery_lists/37?grocery_list%5Bthese%5D=params]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/grocery_lists/1096
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/grocery_lists/1]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-10-31 15:10:09) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/grocery_lists/1097
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/grocery_lists/1]
+
+
+Processing GroceryListsController#create (for 0.0.0.0 at 2010-10-31 15:10:09) [POST]
+  Parameters: {"grocery_list"=>{"these"=>"params"}}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/grocery_lists?grocery_list%5Bthese%5D=params]
+
+
+Processing GroceryListsController#create (for 0.0.0.0 at 2010-10-31 15:10:09) [POST]
+  Parameters: {"grocery_list"=>{}}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/grocery_lists?]
+
+
+Processing GroceryListsController#create (for 0.0.0.0 at 2010-10-31 15:10:09) [POST]
+  Parameters: {"grocery_list"=>{"these"=>"params"}}
+Redirected to http://test.host/grocery_lists/1100
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/grocery_lists?grocery_list%5Bthese%5D=params]
+
+
+Processing GroceryListsController#create (for 0.0.0.0 at 2010-10-31 15:10:09) [POST]
+  Parameters: {"grocery_list"=>{}}
+Redirected to http://test.host/grocery_lists/1101
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/grocery_lists?]
+
+
+Processing GroceryListsController#edit (for 0.0.0.0 at 2010-10-31 15:10:09) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/grocery_lists/37/edit]
+
+
+Processing GroceryListsController#new (for 0.0.0.0 at 2010-10-31 15:10:09) [GET]
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/grocery_lists/new]
+
+
+Processing GroceryListsController#show (for 0.0.0.0 at 2010-10-31 15:10:09) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/show
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/grocery_lists/37]
+
+
+Processing GroceryListsController#index (for 0.0.0.0 at 2010-10-31 15:10:09) [GET]
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/index
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://test.host/grocery_lists]
+Rendering reviews/show.html.erb
+Rendering reviews/new.html.erb
+
+
+Processing IngredientsController#destroy (for 0.0.0.0 at 2010-10-31 15:13:00) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/ingredients
+Completed in 3ms (DB: 0) | 302 Found [http://test.host/ingredients/37]
+
+
+Processing IngredientsController#destroy (for 0.0.0.0 at 2010-10-31 15:13:00) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/ingredients
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/ingredients/1]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-10-31 15:13:00) [PUT]
+  Parameters: {"id"=>"37", "ingredient"=>{"these"=>"params"}}
+Rendering template within layouts/ingredients
+Rendering ingredients/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/ingredients/37?ingredient%5Bthese%5D=params]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-10-31 15:13:00) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/ingredients
+Rendering ingredients/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/ingredients/1]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-10-31 15:13:00) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/ingredients
+Rendering ingredients/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/ingredients/1]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-10-31 15:13:00) [PUT]
+  Parameters: {"id"=>"37", "ingredient"=>{"these"=>"params"}}
+Rendering template within layouts/ingredients
+Rendering ingredients/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/ingredients/37?ingredient%5Bthese%5D=params]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-10-31 15:13:00) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/ingredients/1009
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/ingredients/1]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-10-31 15:13:00) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/ingredients/1010
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/ingredients/1]
+
+
+Processing IngredientsController#create (for 0.0.0.0 at 2010-10-31 15:13:00) [POST]
+  Parameters: {"ingredient"=>{"these"=>"params"}}
+Rendering template within layouts/ingredients
+Rendering ingredients/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/ingredients?ingredient%5Bthese%5D=params]
+
+
+Processing IngredientsController#create (for 0.0.0.0 at 2010-10-31 15:13:00) [POST]
+  Parameters: {"ingredient"=>{}}
+Rendering template within layouts/ingredients
+Rendering ingredients/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/ingredients?]
+
+
+Processing IngredientsController#create (for 0.0.0.0 at 2010-10-31 15:13:00) [POST]
+  Parameters: {"ingredient"=>{"these"=>"params"}}
+Redirected to http://test.host/ingredients/1013
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/ingredients?ingredient%5Bthese%5D=params]
+
+
+Processing IngredientsController#create (for 0.0.0.0 at 2010-10-31 15:13:00) [POST]
+  Parameters: {"ingredient"=>{}}
+Redirected to http://test.host/ingredients/1014
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/ingredients?]
+
+
+Processing IngredientsController#edit (for 0.0.0.0 at 2010-10-31 15:13:00) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/ingredients
+Rendering ingredients/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/ingredients/37/edit]
+
+
+Processing IngredientsController#new (for 0.0.0.0 at 2010-10-31 15:13:00) [GET]
+Rendering template within layouts/ingredients
+Rendering ingredients/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/ingredients/new]
+
+
+Processing IngredientsController#show (for 0.0.0.0 at 2010-10-31 15:13:00) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/ingredients
+Rendering ingredients/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/ingredients/37]
+
+
+Processing IngredientsController#index (for 0.0.0.0 at 2010-10-31 15:13:00) [GET]
+Rendering template within layouts/ingredients
+Rendering ingredients/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/ingredients]
+
+
+Processing RecipesController#destroy (for 0.0.0.0 at 2010-10-31 15:13:00) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/recipes
+Completed in 3ms (DB: 0) | 302 Found [http://test.host/recipes/37]
+
+
+Processing RecipesController#destroy (for 0.0.0.0 at 2010-10-31 15:13:00) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/recipes
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipes/1]
+
+
+Processing RecipesController#update (for 0.0.0.0 at 2010-10-31 15:13:00) [PUT]
+  Parameters: {"id"=>"37", "recipe"=>{"these"=>"params"}}
+Rendering template within layouts/recipes
+Rendering recipes/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipes/37?recipe%5Bthese%5D=params]
+
+
+Processing RecipesController#update (for 0.0.0.0 at 2010-10-31 15:13:00) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/recipes
+Rendering recipes/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/recipes/1]
+
+
+Processing RecipesController#update (for 0.0.0.0 at 2010-10-31 15:13:00) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/recipes
+Rendering recipes/edit
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/recipes/1]
+
+
+Processing RecipesController#update (for 0.0.0.0 at 2010-10-31 15:13:00) [PUT]
+  Parameters: {"id"=>"37", "recipe"=>{"these"=>"params"}}
+Rendering template within layouts/recipes
+Rendering recipes/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipes/37?recipe%5Bthese%5D=params]
+
+
+Processing RecipesController#update (for 0.0.0.0 at 2010-10-31 15:13:00) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/recipes/1025
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipes/1]
+
+
+Processing RecipesController#update (for 0.0.0.0 at 2010-10-31 15:13:00) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/recipes/1026
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipes/1]
+
+
+Processing RecipesController#create (for 0.0.0.0 at 2010-10-31 15:13:00) [POST]
+  Parameters: {"recipe"=>{"these"=>"params"}}
+Rendering template within layouts/recipes
+Rendering recipes/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/recipes?recipe%5Bthese%5D=params]
+
+
+Processing RecipesController#create (for 0.0.0.0 at 2010-10-31 15:13:00) [POST]
+  Parameters: {"recipe"=>{}}
+Rendering template within layouts/recipes
+Rendering recipes/new
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://test.host/recipes?]
+
+
+Processing RecipesController#create (for 0.0.0.0 at 2010-10-31 15:13:00) [POST]
+  Parameters: {"recipe"=>{"these"=>"params"}}
+Redirected to http://test.host/recipes/1029
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipes?recipe%5Bthese%5D=params]
+
+
+Processing RecipesController#create (for 0.0.0.0 at 2010-10-31 15:13:00) [POST]
+  Parameters: {"recipe"=>{}}
+Redirected to http://test.host/recipes/1030
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipes?]
+
+
+Processing RecipesController#edit (for 0.0.0.0 at 2010-10-31 15:13:00) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/recipes
+Rendering recipes/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipes/37/edit]
+
+
+Processing RecipesController#new (for 0.0.0.0 at 2010-10-31 15:13:00) [GET]
+Rendering template within layouts/recipes
+Rendering recipes/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/recipes/new]
+
+
+Processing RecipesController#show (for 0.0.0.0 at 2010-10-31 15:13:00) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/recipes
+Rendering recipes/show
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipes/37]
+
+
+Processing RecipesController#index (for 0.0.0.0 at 2010-10-31 15:13:00) [GET]
+Rendering template within layouts/recipes
+Rendering recipes/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipes]
+Rendering recipe_lists/show.html.erb
+Rendering recipe_lists/new.html.erb
+Rendering recipe_lists/index.html.erb
+Rendering recipe_lists/edit.html.erb
+Rendering recipes/show.html.erb
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1040) [0m
+Rendering recipes/new.html.erb
+Rendering recipes/index.html.erb
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".recipe_id = 1042) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".recipe_id = 1043) [0m
+Rendering recipes/edit.html.erb
+Rendering ingredients/show.html.erb
+Rendering ingredients/new.html.erb
+Rendering ingredients/index.html.erb
+Rendering ingredients/edit.html.erb
+Rendering grocery_lists/show.html.erb
+Rendering grocery_lists/new.html.erb
+Rendering grocery_lists/index.html.erb
+Rendering grocery_lists/edit.html.erb
+
+
+Processing RecipeListsController#destroy (for 0.0.0.0 at 2010-10-31 15:13:00) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/recipe_lists
+Completed in 3ms (DB: 0) | 302 Found [http://test.host/recipe_lists/37]
+
+
+Processing RecipeListsController#destroy (for 0.0.0.0 at 2010-10-31 15:13:00) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/recipe_lists
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipe_lists/1]
+
+
+Processing RecipeListsController#update (for 0.0.0.0 at 2010-10-31 15:13:00) [PUT]
+  Parameters: {"id"=>"37", "recipe_list"=>{"these"=>"params"}}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/recipe_lists/37?recipe_list%5Bthese%5D=params]
+
+
+Processing RecipeListsController#update (for 0.0.0.0 at 2010-10-31 15:13:00) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/edit
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/recipe_lists/1]
+
+
+Processing RecipeListsController#update (for 0.0.0.0 at 2010-10-31 15:13:00) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/edit
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/recipe_lists/1]
+
+
+Processing RecipeListsController#update (for 0.0.0.0 at 2010-10-31 15:13:00) [PUT]
+  Parameters: {"id"=>"37", "recipe_list"=>{"these"=>"params"}}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipe_lists/37?recipe_list%5Bthese%5D=params]
+
+
+Processing RecipeListsController#update (for 0.0.0.0 at 2010-10-31 15:13:00) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/recipe_lists/1061
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipe_lists/1]
+
+
+Processing RecipeListsController#update (for 0.0.0.0 at 2010-10-31 15:13:01) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/recipe_lists/1062
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipe_lists/1]
+
+
+Processing RecipeListsController#create (for 0.0.0.0 at 2010-10-31 15:13:01) [POST]
+  Parameters: {"recipe_list"=>{"these"=>"params"}}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipe_lists?recipe_list%5Bthese%5D=params]
+
+
+Processing RecipeListsController#create (for 0.0.0.0 at 2010-10-31 15:13:01) [POST]
+  Parameters: {"recipe_list"=>{}}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipe_lists?]
+
+
+Processing RecipeListsController#create (for 0.0.0.0 at 2010-10-31 15:13:01) [POST]
+  Parameters: {"recipe_list"=>{"these"=>"params"}}
+Redirected to http://test.host/recipe_lists/1065
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipe_lists?recipe_list%5Bthese%5D=params]
+
+
+Processing RecipeListsController#create (for 0.0.0.0 at 2010-10-31 15:13:01) [POST]
+  Parameters: {"recipe_list"=>{}}
+Redirected to http://test.host/recipe_lists/1066
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipe_lists?]
+
+
+Processing RecipeListsController#edit (for 0.0.0.0 at 2010-10-31 15:13:01) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipe_lists/37/edit]
+
+
+Processing RecipeListsController#new (for 0.0.0.0 at 2010-10-31 15:13:01) [GET]
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipe_lists/new]
+
+
+Processing RecipeListsController#show (for 0.0.0.0 at 2010-10-31 15:13:01) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/show
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/recipe_lists/37]
+
+
+Processing RecipeListsController#index (for 0.0.0.0 at 2010-10-31 15:13:01) [GET]
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipe_lists]
+
+
+Processing GroceryListsController#destroy (for 0.0.0.0 at 2010-10-31 15:13:01) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/grocery_lists
+Completed in 3ms (DB: 0) | 302 Found [http://test.host/grocery_lists/37]
+
+
+Processing GroceryListsController#destroy (for 0.0.0.0 at 2010-10-31 15:13:01) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/grocery_lists
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/grocery_lists/1]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-10-31 15:13:01) [PUT]
+  Parameters: {"id"=>"37", "grocery_list"=>{"these"=>"params"}}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/grocery_lists/37?grocery_list%5Bthese%5D=params]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-10-31 15:13:01) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/grocery_lists/1]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-10-31 15:13:01) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/grocery_lists/1]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-10-31 15:13:01) [PUT]
+  Parameters: {"id"=>"37", "grocery_list"=>{"these"=>"params"}}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/edit
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/grocery_lists/37?grocery_list%5Bthese%5D=params]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-10-31 15:13:01) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/grocery_lists/1077
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/grocery_lists/1]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-10-31 15:13:01) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/grocery_lists/1078
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/grocery_lists/1]
+
+
+Processing GroceryListsController#create (for 0.0.0.0 at 2010-10-31 15:13:01) [POST]
+  Parameters: {"grocery_list"=>{"these"=>"params"}}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/new
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://test.host/grocery_lists?grocery_list%5Bthese%5D=params]
+
+
+Processing GroceryListsController#create (for 0.0.0.0 at 2010-10-31 15:13:01) [POST]
+  Parameters: {"grocery_list"=>{}}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/grocery_lists?]
+
+
+Processing GroceryListsController#create (for 0.0.0.0 at 2010-10-31 15:13:01) [POST]
+  Parameters: {"grocery_list"=>{"these"=>"params"}}
+Redirected to http://test.host/grocery_lists/1081
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/grocery_lists?grocery_list%5Bthese%5D=params]
+
+
+Processing GroceryListsController#create (for 0.0.0.0 at 2010-10-31 15:13:01) [POST]
+  Parameters: {"grocery_list"=>{}}
+Redirected to http://test.host/grocery_lists/1082
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/grocery_lists?]
+
+
+Processing GroceryListsController#edit (for 0.0.0.0 at 2010-10-31 15:13:01) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/grocery_lists/37/edit]
+
+
+Processing GroceryListsController#new (for 0.0.0.0 at 2010-10-31 15:13:01) [GET]
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/grocery_lists/new]
+
+
+Processing GroceryListsController#show (for 0.0.0.0 at 2010-10-31 15:13:01) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/grocery_lists/37]
+
+
+Processing GroceryListsController#index (for 0.0.0.0 at 2010-10-31 15:13:01) [GET]
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/grocery_lists]
+  [4;35;1mRecipe Create (2.0ms)[0m   [0mINSERT INTO "recipes" ("directions", "created_at", "title", "updated_at", "recipelist_id", "completion_time") VALUES('value for directions', '2010-10-31 22:13:01', 'value for title', '2010-10-31 22:13:01', 1, 1)[0m
+  [4;36;1mRecipeList Create (2.0ms)[0m   [0;1mINSERT INTO "recipe_lists" ("created_at", "updated_at") VALUES('2010-10-31 22:13:01', '2010-10-31 22:13:01')[0m
+WARNING: Can't mass-assign these protected attributes: type
+  [4;35;1mIngredient Create (2.0ms)[0m   [0mINSERT INTO "ingredients" ("name", "number", "created_at", "recipe_id", "updated_at", "unit", "type") VALUES('value for name', 1, '2010-10-31 22:13:01', 1, '2010-10-31 22:13:01', 'value for unit', NULL)[0m
+  [4;36;1mGroceryList Create (1.0ms)[0m   [0;1mINSERT INTO "grocery_lists" ("created_at", "updated_at") VALUES('2010-10-31 22:13:01', '2010-10-31 22:13:01')[0m
+
+
+Processing ReviewsController#destroy (for 0.0.0.0 at 2010-10-31 15:13:01) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/reviews
+Completed in 3ms (DB: 7) | 302 Found [http://test.host/reviews/37]
+
+
+Processing ReviewsController#destroy (for 0.0.0.0 at 2010-10-31 15:13:01) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/reviews
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/reviews/1]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-10-31 15:13:01) [PUT]
+  Parameters: {"review"=>{"these"=>"params"}, "id"=>"37"}
+Rendering template within layouts/reviews
+Rendering reviews/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/reviews/37?review%5Bthese%5D=params]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-10-31 15:13:01) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/reviews
+Rendering reviews/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/reviews/1]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-10-31 15:13:01) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/reviews
+Rendering reviews/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/reviews/1]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-10-31 15:13:01) [PUT]
+  Parameters: {"review"=>{"these"=>"params"}, "id"=>"37"}
+Rendering template within layouts/reviews
+Rendering reviews/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/reviews/37?review%5Bthese%5D=params]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-10-31 15:13:01) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/reviews/1093
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/reviews/1]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-10-31 15:13:01) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/reviews/1094
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/reviews/1]
+
+
+Processing ReviewsController#create (for 0.0.0.0 at 2010-10-31 15:13:01) [POST]
+  Parameters: {"review"=>{"these"=>"params"}}
+Rendering template within layouts/reviews
+Rendering reviews/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/reviews?review%5Bthese%5D=params]
+
+
+Processing ReviewsController#create (for 0.0.0.0 at 2010-10-31 15:13:01) [POST]
+  Parameters: {"review"=>{}}
+Rendering template within layouts/reviews
+Rendering reviews/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/reviews?]
+
+
+Processing ReviewsController#create (for 0.0.0.0 at 2010-10-31 15:13:01) [POST]
+  Parameters: {"review"=>{"these"=>"params"}}
+Redirected to http://test.host/reviews/1097
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/reviews?review%5Bthese%5D=params]
+
+
+Processing ReviewsController#create (for 0.0.0.0 at 2010-10-31 15:13:01) [POST]
+  Parameters: {"review"=>{}}
+Redirected to http://test.host/reviews/1098
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/reviews?]
+
+
+Processing ReviewsController#edit (for 0.0.0.0 at 2010-10-31 15:13:01) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/reviews
+Rendering reviews/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/reviews/37/edit]
+
+
+Processing ReviewsController#new (for 0.0.0.0 at 2010-10-31 15:13:01) [GET]
+Rendering template within layouts/reviews
+Rendering reviews/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/reviews/new]
+
+
+Processing ReviewsController#show (for 0.0.0.0 at 2010-10-31 15:13:01) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/reviews
+Rendering reviews/show
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/reviews/37]
+
+
+Processing ReviewsController#index (for 0.0.0.0 at 2010-10-31 15:13:01) [GET]
+Rendering template within layouts/reviews
+Rendering reviews/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/reviews]
+Rendering reviews/index.html.erb
+Rendering reviews/edit.html.erb
+  [4;35;1mReview Create (2.0ms)[0m   [0mINSERT INTO "reviews" ("rating", "created_at", "title", "recipe_id", "updated_at", "review") VALUES(1, '2010-10-31 22:13:01', 'value for title', 1, '2010-10-31 22:13:01', 'value for review')[0m
+Rendering reviews/show.html.erb
+
+
+Processing IngredientsController#destroy (for 0.0.0.0 at 2010-10-31 15:13:42) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/ingredients
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/ingredients/37]
+
+
+Processing IngredientsController#destroy (for 0.0.0.0 at 2010-10-31 15:13:42) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/ingredients
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/ingredients/1]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-10-31 15:13:42) [PUT]
+  Parameters: {"id"=>"37", "ingredient"=>{"these"=>"params"}}
+Rendering template within layouts/ingredients
+Rendering ingredients/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/ingredients/37?ingredient%5Bthese%5D=params]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-10-31 15:13:42) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/ingredients
+Rendering ingredients/edit
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/ingredients/1]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-10-31 15:13:42) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/ingredients
+Rendering ingredients/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/ingredients/1]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-10-31 15:13:42) [PUT]
+  Parameters: {"id"=>"37", "ingredient"=>{"these"=>"params"}}
+Rendering template within layouts/ingredients
+Rendering ingredients/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/ingredients/37?ingredient%5Bthese%5D=params]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-10-31 15:13:42) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/ingredients/1008
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/ingredients/1]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-10-31 15:13:42) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/ingredients/1009
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/ingredients/1]
+
+
+Processing IngredientsController#create (for 0.0.0.0 at 2010-10-31 15:13:42) [POST]
+  Parameters: {"ingredient"=>{"these"=>"params"}}
+Rendering template within layouts/ingredients
+Rendering ingredients/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/ingredients?ingredient%5Bthese%5D=params]
+
+
+Processing IngredientsController#create (for 0.0.0.0 at 2010-10-31 15:13:42) [POST]
+  Parameters: {"ingredient"=>{}}
+Rendering template within layouts/ingredients
+Rendering ingredients/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/ingredients?]
+
+
+Processing IngredientsController#create (for 0.0.0.0 at 2010-10-31 15:13:42) [POST]
+  Parameters: {"ingredient"=>{"these"=>"params"}}
+Redirected to http://test.host/ingredients/1012
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/ingredients?ingredient%5Bthese%5D=params]
+
+
+Processing IngredientsController#create (for 0.0.0.0 at 2010-10-31 15:13:42) [POST]
+  Parameters: {"ingredient"=>{}}
+Redirected to http://test.host/ingredients/1013
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/ingredients?]
+
+
+Processing IngredientsController#edit (for 0.0.0.0 at 2010-10-31 15:13:42) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/ingredients
+Rendering ingredients/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/ingredients/37/edit]
+
+
+Processing IngredientsController#new (for 0.0.0.0 at 2010-10-31 15:13:42) [GET]
+Rendering template within layouts/ingredients
+Rendering ingredients/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/ingredients/new]
+
+
+Processing IngredientsController#show (for 0.0.0.0 at 2010-10-31 15:13:42) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/ingredients
+Rendering ingredients/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/ingredients/37]
+
+
+Processing IngredientsController#index (for 0.0.0.0 at 2010-10-31 15:13:42) [GET]
+Rendering template within layouts/ingredients
+Rendering ingredients/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/ingredients]
+
+
+Processing RecipesController#destroy (for 0.0.0.0 at 2010-10-31 15:13:42) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/recipes
+Completed in 52ms (DB: 0) | 302 Found [http://test.host/recipes/37]
+
+
+Processing RecipesController#destroy (for 0.0.0.0 at 2010-10-31 15:13:42) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/recipes
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipes/1]
+
+
+Processing RecipesController#update (for 0.0.0.0 at 2010-10-31 15:13:42) [PUT]
+  Parameters: {"id"=>"37", "recipe"=>{"these"=>"params"}}
+Rendering template within layouts/recipes
+Rendering recipes/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/recipes/37?recipe%5Bthese%5D=params]
+
+
+Processing RecipesController#update (for 0.0.0.0 at 2010-10-31 15:13:42) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/recipes
+Rendering recipes/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/recipes/1]
+
+
+Processing RecipesController#update (for 0.0.0.0 at 2010-10-31 15:13:42) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/recipes
+Rendering recipes/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/recipes/1]
+
+
+Processing RecipesController#update (for 0.0.0.0 at 2010-10-31 15:13:42) [PUT]
+  Parameters: {"id"=>"37", "recipe"=>{"these"=>"params"}}
+Rendering template within layouts/recipes
+Rendering recipes/edit
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/recipes/37?recipe%5Bthese%5D=params]
+
+
+Processing RecipesController#update (for 0.0.0.0 at 2010-10-31 15:13:42) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/recipes/1024
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/recipes/1]
+
+
+Processing RecipesController#update (for 0.0.0.0 at 2010-10-31 15:13:42) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/recipes/1025
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/recipes/1]
+
+
+Processing RecipesController#create (for 0.0.0.0 at 2010-10-31 15:13:42) [POST]
+  Parameters: {"recipe"=>{"these"=>"params"}}
+Rendering template within layouts/recipes
+Rendering recipes/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/recipes?recipe%5Bthese%5D=params]
+
+
+Processing RecipesController#create (for 0.0.0.0 at 2010-10-31 15:13:42) [POST]
+  Parameters: {"recipe"=>{}}
+Rendering template within layouts/recipes
+Rendering recipes/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipes?]
+
+
+Processing RecipesController#create (for 0.0.0.0 at 2010-10-31 15:13:42) [POST]
+  Parameters: {"recipe"=>{"these"=>"params"}}
+Redirected to http://test.host/recipes/1028
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipes?recipe%5Bthese%5D=params]
+
+
+Processing RecipesController#create (for 0.0.0.0 at 2010-10-31 15:13:42) [POST]
+  Parameters: {"recipe"=>{}}
+Redirected to http://test.host/recipes/1029
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/recipes?]
+
+
+Processing RecipesController#edit (for 0.0.0.0 at 2010-10-31 15:13:42) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/recipes
+Rendering recipes/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipes/37/edit]
+
+
+Processing RecipesController#new (for 0.0.0.0 at 2010-10-31 15:13:42) [GET]
+Rendering template within layouts/recipes
+Rendering recipes/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipes/new]
+
+
+Processing RecipesController#show (for 0.0.0.0 at 2010-10-31 15:13:42) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/recipes
+Rendering recipes/show
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipes/37]
+
+
+Processing RecipesController#index (for 0.0.0.0 at 2010-10-31 15:13:42) [GET]
+Rendering template within layouts/recipes
+Rendering recipes/index
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://test.host/recipes]
+
+
+Processing RecipeListsController#destroy (for 0.0.0.0 at 2010-10-31 15:13:42) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/recipe_lists
+Completed in 3ms (DB: 0) | 302 Found [http://test.host/recipe_lists/37]
+
+
+Processing RecipeListsController#destroy (for 0.0.0.0 at 2010-10-31 15:13:42) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/recipe_lists
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipe_lists/1]
+
+
+Processing RecipeListsController#update (for 0.0.0.0 at 2010-10-31 15:13:42) [PUT]
+  Parameters: {"id"=>"37", "recipe_list"=>{"these"=>"params"}}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipe_lists/37?recipe_list%5Bthese%5D=params]
+
+
+Processing RecipeListsController#update (for 0.0.0.0 at 2010-10-31 15:13:42) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipe_lists/1]
+
+
+Processing RecipeListsController#update (for 0.0.0.0 at 2010-10-31 15:13:42) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipe_lists/1]
+
+
+Processing RecipeListsController#update (for 0.0.0.0 at 2010-10-31 15:13:42) [PUT]
+  Parameters: {"id"=>"37", "recipe_list"=>{"these"=>"params"}}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/recipe_lists/37?recipe_list%5Bthese%5D=params]
+
+
+Processing RecipeListsController#update (for 0.0.0.0 at 2010-10-31 15:13:42) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/recipe_lists/1040
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipe_lists/1]
+
+
+Processing RecipeListsController#update (for 0.0.0.0 at 2010-10-31 15:13:42) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/recipe_lists/1041
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipe_lists/1]
+
+
+Processing RecipeListsController#create (for 0.0.0.0 at 2010-10-31 15:13:42) [POST]
+  Parameters: {"recipe_list"=>{"these"=>"params"}}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/recipe_lists?recipe_list%5Bthese%5D=params]
+
+
+Processing RecipeListsController#create (for 0.0.0.0 at 2010-10-31 15:13:42) [POST]
+  Parameters: {"recipe_list"=>{}}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipe_lists?]
+
+
+Processing RecipeListsController#create (for 0.0.0.0 at 2010-10-31 15:13:42) [POST]
+  Parameters: {"recipe_list"=>{"these"=>"params"}}
+Redirected to http://test.host/recipe_lists/1044
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipe_lists?recipe_list%5Bthese%5D=params]
+
+
+Processing RecipeListsController#create (for 0.0.0.0 at 2010-10-31 15:13:42) [POST]
+  Parameters: {"recipe_list"=>{}}
+Redirected to http://test.host/recipe_lists/1045
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/recipe_lists?]
+
+
+Processing RecipeListsController#edit (for 0.0.0.0 at 2010-10-31 15:13:42) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/edit
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://test.host/recipe_lists/37/edit]
+
+
+Processing RecipeListsController#new (for 0.0.0.0 at 2010-10-31 15:13:42) [GET]
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/recipe_lists/new]
+
+
+Processing RecipeListsController#show (for 0.0.0.0 at 2010-10-31 15:13:42) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/recipe_lists/37]
+
+
+Processing RecipeListsController#index (for 0.0.0.0 at 2010-10-31 15:13:42) [GET]
+Rendering template within layouts/recipe_lists
+Rendering recipe_lists/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/recipe_lists]
+Rendering recipe_lists/show.html.erb
+Rendering recipe_lists/new.html.erb
+Rendering recipe_lists/index.html.erb
+Rendering recipe_lists/edit.html.erb
+Rendering recipes/show.html.erb
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1055) [0m
+Rendering recipes/new.html.erb
+Rendering recipes/index.html.erb
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".recipe_id = 1057) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".recipe_id = 1058) [0m
+Rendering recipes/edit.html.erb
+Rendering ingredients/show.html.erb
+Rendering ingredients/new.html.erb
+Rendering ingredients/index.html.erb
+Rendering ingredients/edit.html.erb
+Rendering grocery_lists/show.html.erb
+Rendering grocery_lists/new.html.erb
+Rendering grocery_lists/index.html.erb
+Rendering grocery_lists/edit.html.erb
+
+
+Processing ReviewsController#destroy (for 0.0.0.0 at 2010-10-31 15:13:43) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/reviews
+Completed in 3ms (DB: 0) | 302 Found [http://test.host/reviews/37]
+
+
+Processing ReviewsController#destroy (for 0.0.0.0 at 2010-10-31 15:13:43) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/reviews
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/reviews/1]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-10-31 15:13:43) [PUT]
+  Parameters: {"review"=>{"these"=>"params"}, "id"=>"37"}
+Rendering template within layouts/reviews
+Rendering reviews/edit
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/reviews/37?review%5Bthese%5D=params]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-10-31 15:13:43) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/reviews
+Rendering reviews/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/reviews/1]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-10-31 15:13:43) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/reviews
+Rendering reviews/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/reviews/1]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-10-31 15:13:43) [PUT]
+  Parameters: {"review"=>{"these"=>"params"}, "id"=>"37"}
+Rendering template within layouts/reviews
+Rendering reviews/edit
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://test.host/reviews/37?review%5Bthese%5D=params]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-10-31 15:13:43) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/reviews/1076
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/reviews/1]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-10-31 15:13:43) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/reviews/1077
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/reviews/1]
+
+
+Processing ReviewsController#create (for 0.0.0.0 at 2010-10-31 15:13:43) [POST]
+  Parameters: {"review"=>{"these"=>"params"}}
+Rendering template within layouts/reviews
+Rendering reviews/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/reviews?review%5Bthese%5D=params]
+
+
+Processing ReviewsController#create (for 0.0.0.0 at 2010-10-31 15:13:43) [POST]
+  Parameters: {"review"=>{}}
+Rendering template within layouts/reviews
+Rendering reviews/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/reviews?]
+
+
+Processing ReviewsController#create (for 0.0.0.0 at 2010-10-31 15:13:43) [POST]
+  Parameters: {"review"=>{"these"=>"params"}}
+Redirected to http://test.host/reviews/1080
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/reviews?review%5Bthese%5D=params]
+
+
+Processing ReviewsController#create (for 0.0.0.0 at 2010-10-31 15:13:43) [POST]
+  Parameters: {"review"=>{}}
+Redirected to http://test.host/reviews/1081
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/reviews?]
+
+
+Processing ReviewsController#edit (for 0.0.0.0 at 2010-10-31 15:13:43) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/reviews
+Rendering reviews/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/reviews/37/edit]
+
+
+Processing ReviewsController#new (for 0.0.0.0 at 2010-10-31 15:13:43) [GET]
+Rendering template within layouts/reviews
+Rendering reviews/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/reviews/new]
+
+
+Processing ReviewsController#show (for 0.0.0.0 at 2010-10-31 15:13:43) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/reviews
+Rendering reviews/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/reviews/37]
+
+
+Processing ReviewsController#index (for 0.0.0.0 at 2010-10-31 15:13:43) [GET]
+Rendering template within layouts/reviews
+Rendering reviews/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/reviews]
+
+
+Processing GroceryListsController#destroy (for 0.0.0.0 at 2010-10-31 15:13:43) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/grocery_lists
+Completed in 3ms (DB: 0) | 302 Found [http://test.host/grocery_lists/37]
+
+
+Processing GroceryListsController#destroy (for 0.0.0.0 at 2010-10-31 15:13:43) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/grocery_lists
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/grocery_lists/1]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-10-31 15:13:43) [PUT]
+  Parameters: {"id"=>"37", "grocery_list"=>{"these"=>"params"}}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/grocery_lists/37?grocery_list%5Bthese%5D=params]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-10-31 15:13:43) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/edit
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/grocery_lists/1]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-10-31 15:13:43) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/grocery_lists/1]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-10-31 15:13:43) [PUT]
+  Parameters: {"id"=>"37", "grocery_list"=>{"these"=>"params"}}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/edit
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/grocery_lists/37?grocery_list%5Bthese%5D=params]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-10-31 15:13:43) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/grocery_lists/1092
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/grocery_lists/1]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-10-31 15:13:43) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/grocery_lists/1093
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/grocery_lists/1]
+
+
+Processing GroceryListsController#create (for 0.0.0.0 at 2010-10-31 15:13:43) [POST]
+  Parameters: {"grocery_list"=>{"these"=>"params"}}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/grocery_lists?grocery_list%5Bthese%5D=params]
+
+
+Processing GroceryListsController#create (for 0.0.0.0 at 2010-10-31 15:13:43) [POST]
+  Parameters: {"grocery_list"=>{}}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/grocery_lists?]
+
+
+Processing GroceryListsController#create (for 0.0.0.0 at 2010-10-31 15:13:43) [POST]
+  Parameters: {"grocery_list"=>{"these"=>"params"}}
+Redirected to http://test.host/grocery_lists/1096
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/grocery_lists?grocery_list%5Bthese%5D=params]
+
+
+Processing GroceryListsController#create (for 0.0.0.0 at 2010-10-31 15:13:43) [POST]
+  Parameters: {"grocery_list"=>{}}
+Redirected to http://test.host/grocery_lists/1097
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/grocery_lists?]
+
+
+Processing GroceryListsController#edit (for 0.0.0.0 at 2010-10-31 15:13:43) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/edit
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/grocery_lists/37/edit]
+
+
+Processing GroceryListsController#new (for 0.0.0.0 at 2010-10-31 15:13:43) [GET]
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/grocery_lists/new]
+
+
+Processing GroceryListsController#show (for 0.0.0.0 at 2010-10-31 15:13:43) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/show
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/grocery_lists/37]
+
+
+Processing GroceryListsController#index (for 0.0.0.0 at 2010-10-31 15:13:43) [GET]
+Rendering template within layouts/grocery_lists
+Rendering grocery_lists/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/grocery_lists]
+  [4;35;1mRecipe Create (2.0ms)[0m   [0mINSERT INTO "recipes" ("directions", "created_at", "title", "updated_at", "recipelist_id", "completion_time") VALUES('value for directions', '2010-10-31 22:13:43', 'value for title', '2010-10-31 22:13:43', 1, 1)[0m
+  [4;36;1mRecipeList Create (2.0ms)[0m   [0;1mINSERT INTO "recipe_lists" ("created_at", "updated_at") VALUES('2010-10-31 22:13:43', '2010-10-31 22:13:43')[0m
+WARNING: Can't mass-assign these protected attributes: type
+  [4;35;1mIngredient Create (2.0ms)[0m   [0mINSERT INTO "ingredients" ("name", "number", "created_at", "recipe_id", "updated_at", "unit", "type") VALUES('value for name', 1, '2010-10-31 22:13:43', 1, '2010-10-31 22:13:43', 'value for unit', NULL)[0m
+  [4;36;1mGroceryList Create (2.0ms)[0m   [0;1mINSERT INTO "grocery_lists" ("created_at", "updated_at") VALUES('2010-10-31 22:13:43', '2010-10-31 22:13:43')[0m
+Rendering reviews/index.html.erb
+Rendering reviews/edit.html.erb
+  [4;35;1mReview Create (2.0ms)[0m   [0mINSERT INTO "reviews" ("rating", "created_at", "title", "recipe_id", "updated_at", "review") VALUES(1, '2010-10-31 22:13:43', 'value for title', 1, '2010-10-31 22:13:43', 'value for review')[0m
+Rendering reviews/new.html.erb

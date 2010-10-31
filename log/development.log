@@ -215,3 +215,129 @@ Processing RecipesController#search (for 127.0.0.1 at 2010-10-31 15:54:55) [POST
 Rendering template within layouts/recipes
 Rendering recipes/search
 Completed in 43ms (View: 15, DB: 1) | 200 OK [http://localhost/recipes/search]
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-10-31 16:02:50) [GET]
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+Completed in 107ms (View: 29, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing RecipesController#new (for 127.0.0.1 at 2010-10-31 16:02:53) [GET]
+Rendering template within layouts/recipes
+Rendering recipes/new
+Completed in 71ms (View: 43, DB: 0) | 200 OK [http://localhost/recipes/new]
+
+
+Processing RecipesController#create (for 127.0.0.1 at 2010-10-31 16:03:37) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"SG7uzoAOh1DSWT36PQ3Fs5hFZ4k2vpR2eu7pQb0ccK0=", "recipe"=>{"directions"=>"Justin", "title"=>"Swaraj", "completion_time"=>"5", "ingredients_attributes"=>{"0"=>{"section"=>"Person", "number"=>"2", "name"=>"Harry", "unit"=>"pounds"}, "1"=>{"section"=>"", "number"=>"", "name"=>"", "unit"=>""}, "2"=>{"section"=>"", "number"=>"", "name"=>"", "unit"=>""}, "3"=>{"section"=>"", "number"=>"", "name"=>"", "unit"=>""}, "4"=>{"section"=>"", "number"=>"", "name"=>"", "unit"=>""}}}}
+  [4;35;1mRecipe Create (2.0ms)[0m   [0mINSERT INTO "recipes" ("directions", "created_at", "title", "updated_at", "recipelist_id", "completion_time") VALUES('Justin', '2010-10-31 23:03:37', 'Swaraj', '2010-10-31 23:03:37', NULL, 5)[0m
+  [4;36;1mIngredient Create (0.0ms)[0m   [0;1mINSERT INTO "ingredients" ("name", "number", "section", "created_at", "recipe_id", "updated_at", "unit") VALUES('Harry', 2, 'Person', '2010-10-31 23:03:37', 1, '2010-10-31 23:03:37', 'pounds')[0m
+Redirected to http://localhost:3000/recipes/1
+Completed in 67ms (DB: 2) | 302 Found [http://localhost/recipes]
+
+
+Processing RecipesController#show (for 127.0.0.1 at 2010-10-31 16:03:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+Rendering template within layouts/recipes
+Rendering recipes/show
+  [4;36;1mIngredient Load (0.0ms)[0m   [0;1mSELECT * FROM "ingredients" WHERE ("ingredients".recipe_id = 1) [0m
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+Completed in 47ms (View: 33, DB: 0) | 200 OK [http://localhost/recipes/1]
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-10-31 16:03:42) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/reviews
+Rendering reviews/new
+Completed in 40ms (View: 27, DB: 0) | 200 OK [http://localhost/reviews/new?id=1]
+
+
+Processing ReviewsController#create (for 127.0.0.1 at 2010-10-31 16:03:53) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"SG7uzoAOh1DSWT36PQ3Fs5hFZ4k2vpR2eu7pQb0ccK0=", "review"=>{"rating"=>"4", "title"=>"Deliciuos", "recipe_id"=>"1", "review"=>"Ohhh lala"}}
+  [4;36;1mReview Create (3.0ms)[0m   [0;1mINSERT INTO "reviews" ("rating", "created_at", "title", "recipe_id", "updated_at", "review") VALUES(4, '2010-10-31 23:03:53', 'Deliciuos', 1, '2010-10-31 23:03:53', 'Ohhh lala')[0m
+Redirected to http://localhost:3000/reviews/1
+Completed in 57ms (DB: 3) | 302 Found [http://localhost/reviews]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-10-31 16:03:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews"."id" = 1) [0m
+Rendering template within layouts/reviews
+Rendering reviews/show
+Completed in 24ms (View: 11, DB: 0) | 200 OK [http://localhost/reviews/1]
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-10-31 16:03:57) [GET]
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+Completed in 34ms (View: 21, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing RecipesController#show (for 127.0.0.1 at 2010-10-31 16:04:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+Rendering template within layouts/recipes
+Rendering recipes/show
+  [4;35;1mIngredient Load (0.0ms)[0m   [0mSELECT * FROM "ingredients" WHERE ("ingredients".recipe_id = 1) [0m
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+Completed in 43ms (View: 28, DB: 1) | 200 OK [http://localhost/recipes/1]
+
+
+Processing RecipesController#show (for 127.0.0.1 at 2010-10-31 16:05:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+Rendering template within layouts/recipes
+Rendering recipes/show
+  [4;36;1mIngredient Load (0.0ms)[0m   [0;1mSELECT * FROM "ingredients" WHERE ("ingredients".recipe_id = 1) [0m
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+Completed in 42ms (View: 27, DB: 1) | 200 OK [http://localhost/recipes/1]
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-10-31 16:05:15) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/reviews
+Rendering reviews/new
+Completed in 27ms (View: 14, DB: 0) | 200 OK [http://localhost/reviews/new?id=1]
+
+
+Processing ReviewsController#create (for 127.0.0.1 at 2010-10-31 16:05:21) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"SG7uzoAOh1DSWT36PQ3Fs5hFZ4k2vpR2eu7pQb0ccK0=", "review"=>{"rating"=>"5", "title"=>"What", "recipe_id"=>"1", "review"=>"happened"}}
+  [4;36;1mReview Create (4.0ms)[0m   [0;1mINSERT INTO "reviews" ("rating", "created_at", "title", "recipe_id", "updated_at", "review") VALUES(5, '2010-10-31 23:05:21', 'What', 1, '2010-10-31 23:05:21', 'happened')[0m
+Redirected to http://localhost:3000/reviews/2
+Completed in 56ms (DB: 4) | 302 Found [http://localhost/reviews]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-10-31 16:05:21) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews"."id" = 2) [0m
+Rendering template within layouts/reviews
+Rendering reviews/show
+Completed in 18ms (View: 5, DB: 0) | 200 OK [http://localhost/reviews/2]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-10-31 16:05:22) [GET]
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM "reviews" [0m
+Rendering template within layouts/reviews
+Rendering reviews/index
+Completed in 28ms (View: 16, DB: 1) | 200 OK [http://localhost/reviews]
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-10-31 16:05:25) [GET]
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+Completed in 32ms (View: 19, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-10-31 16:05:42) [GET]
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+Completed in 108ms (View: 31, DB: 2) | 200 OK [http://localhost/]

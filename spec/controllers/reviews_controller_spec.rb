@@ -128,4 +128,12 @@ describe ReviewsController do
     end
   end
 
+  describe "Adding Review" do
+    it "Adds Review to Current Recipe" do
+      Review.stub(:new).with({:id=>37}).and_return(mock_review(:save=>true))
+      post :create, :id=>37
+      
+      Recipe new_recipe = new Recipe(:)
+    end
+  end
 end
