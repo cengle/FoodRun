@@ -77,7 +77,7 @@ class RecipeListsController < ApplicationController
 	#recipe_lists = recipe.recipe_lists
 	recipes = recipe_list.recipes
 	recipes << Recipe.find_by_id(@recipe_id)
-	flash[:notice] = recipe.title + 'was added to the recipe list.'
+	flash[:notice] = recipe.title + ' was added to the recipe list.'
     respond_to do |format|
         format.html { redirect_to :controller => 'recipes', :action => 'show', :id => @recipe_id }
         format.xml  { head :ok }
