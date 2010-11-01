@@ -7,7 +7,7 @@ describe "/ingredients/show.html.erb" do
       :name => "value for name",
       :number => 1,
       :unit => "value for unit",
-      :type => "value for type",
+      :section => "value for section",
       :recipe_id => 1
     )
   end
@@ -17,7 +17,7 @@ describe "/ingredients/show.html.erb" do
     response.should have_text(/value\ for\ name/)
     response.should have_text(/1/)
     response.should have_text(/value\ for\ unit/)
-    response.should have_text(/value\ for\ type/)
+    response.should have_text(/value\ for\ section/)
     response.should have_text(/1/)
   end
 end

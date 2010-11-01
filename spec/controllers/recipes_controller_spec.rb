@@ -24,9 +24,11 @@ describe RecipesController do
 
   describe "GET new" do
     it "assigns a new recipe as @recipe" do
-      Recipe.stub(:new).and_return(mock_recipe)
+      r = Recipe.new
+      controller.buildIngredients(r)
+      Recipe.stub(:new).and_return(r)
       get :new
-      assigns[:recipe].should equal(mock_recipe)
+      assigns[:recipe].should equal(r)
     end
   end
 

@@ -9,14 +9,14 @@ describe "/ingredients/index.html.erb" do
         :name => "value for name",
         :number => 1,
         :unit => "value for unit",
-        :type => "value for type",
+        :section => "value for section",
         :recipe_id => 1
       ),
       stub_model(Ingredient,
         :name => "value for name",
         :number => 1,
         :unit => "value for unit",
-        :type => "value for type",
+        :section => "value for section",
         :recipe_id => 1
       )
     ]
@@ -27,7 +27,7 @@ describe "/ingredients/index.html.erb" do
     response.should have_tag("tr>td", "value for name".to_s, 2)
     response.should have_tag("tr>td", 1.to_s, 2)
     response.should have_tag("tr>td", "value for unit".to_s, 2)
-    response.should have_tag("tr>td", "value for type".to_s, 2)
+    response.should have_tag("tr>td", "value for section".to_s, 2)
     response.should have_tag("tr>td", 1.to_s, 2)
   end
 end
