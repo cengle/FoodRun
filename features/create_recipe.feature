@@ -5,11 +5,11 @@ Feature: Create and post a recipe
 	directions.
 	
 	Scenario: post recipe
-		Given I am on the new recipe page
-		When I fill in Title with Chicken Burrioto
+		Given I am on the create recipe page
+		When I fill in title with Chicken Burrito
 		And I fill in Directions with make burrito
 		And I fill in ingredient one's name with tortilla
-		And I fill in ingredient one's number with 1
+		And I fill in ingredient one's number with 1		
 		And I fill in ingredient one's section with breads
 		And I fill in ingredient two's name with shredded cheese
 		And I fill in ingredient two's number with 2
@@ -27,6 +27,10 @@ Feature: Create and post a recipe
 		And I fill in ingredient five's unit with ounces
 		And I fill in ingredient five's section with condiments
 		And I fill in Completion time with 10 minutes
-		And I click Create
-		Then the Chicken Burrito recipe should be added to the datab
+		And I press Create
+		Then the Chicken Burrito recipe should be added to the database
+		
+		
+		
+		
 		
