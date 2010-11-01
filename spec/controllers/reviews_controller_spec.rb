@@ -130,10 +130,13 @@ describe ReviewsController do
 
   describe "Adding Review" do
     it "Adds Review to Current Recipe" do
-      Review.stub(:new).with({:id=>37}).and_return(mock_review(:save=>true))
-      post :create, :id=>37
+      new_recipe = Recipe.create(:title=>"Chicken", :directions=>"Cook", :completion_time=>5, :recipe_list=>RecipeList.new())
+      id = new_recipe.id
       
-      Recipe new_recipe = new Recipe(:)
+      post :create, :review=>{:title=>"Cool", :rating=>5, :review=>"Sick", :recipe_id=>new_recipe.id}
+      
+      new_recipe.reviews.size.should == 1 
+      
     end
   end
 end
