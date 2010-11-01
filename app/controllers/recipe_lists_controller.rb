@@ -56,16 +56,30 @@ class RecipeListsController < ApplicationController
   # PUT /recipe_lists/1
   # PUT /recipe_lists/1.xml
   def update
-    @recipe_list = RecipeList.find(params[:id])
-
+    #@recipe_list = RecipeList.find(params[:id])
+	@recipe_id = params[:id]
+	recipe_list = RecipeList.find(1)
+	recipe = Recipe.find_by_id(@recipe_id)
+	recipe_lists = recipe.recipe_lists
+	#recipes = recipe_list.recipes
+	#recipes << Recipe.find_by_id(@recipe_id)
     respond_to do |format|
-      if @recipe_list.update_attributes(params[:recipe_list])
-        format.html { redirect_to(@recipe_list, :notice => 'RecipeList was successfully updated.') }
+        format.html { redirect_to "/recipes/" + @recipe.id }
         format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @recipe_list.errors, :status => :unprocessable_entity }
-      end
+    end
+  end
+	
+  def update2
+    #@recipe_list = RecipeList.find(params[:id])
+	@recipe_id = params[:id]
+	recipe_list = RecipeList.find(1)
+	recipe = Recipe.find_by_id(@recipe_id)
+	recipe_lists = recipe.recipe_lists
+	#recipes = recipe_list.recipes
+	#recipes << Recipe.find_by_id(@recipe_id)
+    respond_to do |format|
+        format.html { redirect_to "/recipes/" + @recipe.id }
+        format.xml  { head :ok }
     end
   end
 

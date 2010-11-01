@@ -3,7 +3,8 @@ class RecipesController < ApplicationController
   # GET /recipes.xml
   def index
     @recipes = Recipe.all
-
+	recipelist = RecipeList.create
+	session[:recipe_list_id] = 1
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @recipes }
@@ -14,7 +15,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1.xml
   def show
     @recipe = Recipe.find(params[:id])
-
+	
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @recipe }
