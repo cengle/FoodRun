@@ -1,3 +1,25 @@
-<p>BLAH</p>
+<p>Recipe list</p>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Directions</th>
+    <th>Completion time</th>
+	<th>Reviews</th>
+  </tr>
+
+<% @recipe_list.recipes.each do |recipe| %>
+  <tr>
+    <td><%=h recipe.title %></td>
+    <td><%=h recipe.directions %></td>
+    <td><%=h recipe.completion_time %></td>
+    <td><%=h recipe.reviews.count %></td>
+    <td><%= link_to 'Show', recipe %></td>
+    <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+    <td><%= link_to 'Destroy', recipe, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
 <%= link_to 'Edit', edit_recipe_list_path(@recipe_list) %> |
-<%= link_to 'Back', recipe_lists_path %>
+<%= link_to 'Back', recipes_path %>

@@ -73,12 +73,12 @@ class RecipeListsController < ApplicationController
     #@recipe_list = RecipeList.find(params[:id])
 	@recipe_id = params[:id]
 	recipe_list = RecipeList.find(1)
-	recipe = Recipe.find_by_id(@recipe_id)
-	recipe_lists = recipe.recipe_lists
-	#recipes = recipe_list.recipes
-	#recipes << Recipe.find_by_id(@recipe_id)
+	#recipe = Recipe.find_by_id(@recipe_id)
+	#recipe_lists = recipe.recipe_lists
+	recipes = recipe_list.recipes
+	recipes << Recipe.find_by_id(@recipe_id)
     respond_to do |format|
-        format.html { redirect_to "/recipes/" + @recipe.id }
+        format.html { redirect_to :controller => 'recipes', :action => 'show', :id => @recipe_id }
         format.xml  { head :ok }
     end
   end
