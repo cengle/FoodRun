@@ -1,5 +1,6 @@
 <p>Recipe list</p>
 
+
 <table>
   <tr>
     <th>Title</th>
@@ -21,5 +22,6 @@
 <% end %>
 </table>
 
+<%= link_to 'Show Grocery List', groceryList_path(@recipe_list)%>
 <%= link_to 'Edit', edit_recipe_list_path(@recipe_list) %> |
 <%= link_to 'Back', recipes_path %>
