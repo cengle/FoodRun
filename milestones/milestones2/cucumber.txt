@@ -1,0 +1,7 @@
+C:\Users\Justin\My Documents\School\CS169\FoodRun>cucumber
+Using the default profile...
+.............................................................
+
+7 scenarios (7 passed)
+61 steps (61 passed)
+0m8.465s
