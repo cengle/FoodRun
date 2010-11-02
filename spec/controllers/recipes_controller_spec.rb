@@ -109,7 +109,7 @@ describe RecipesController do
 
       it "re-renders the 'edit' template" do
         Recipe.stub(:find).and_return(mock_recipe(:update_attributes => false))
-        put :update, :id => "1"
+        put :update, :id => 1
         response.should render_template('edit')
       end
     end

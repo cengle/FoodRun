@@ -6,6 +6,11 @@ describe RecipeListsController do
     @mock_recipe_list ||= mock_model(RecipeList, stubs)
   end
 
+  def mock_recipe(stubs={})
+    @mock_recipe ||= mock_model(Recipe, stubs)
+  end
+
+  
   describe "GET index" do
     it "assigns all recipe_lists as @recipe_lists" do
       RecipeList.stub(:find).with(:all).and_return([mock_recipe_list])
@@ -128,4 +133,14 @@ describe RecipeListsController do
     end
   end
 
+  describe "adding a recipe to a recipe list" do
+    it "adds the current recipe to a recipe list" do
+	  new_recipe = Recipe.create(:title=>"Chicken", :directions=>"Cook", :completion_time=>5, :recipe_list=>RecipeList.new())
+	  Recipe.stub(:find).and_return(new_recipe)
+	  reclist = RecipeList.find_by_id(1)
+	  put :update2, :id => "23"
+	  recipes = reclist.recipes
+	  
+	end
+  end
 end
