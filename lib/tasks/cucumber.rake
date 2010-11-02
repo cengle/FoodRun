@@ -49,5 +49,14 @@ rescue LoadError
     abort 'Cucumber rake task is not available. Be sure to install cucumber as a gem or plugin'
   end
 end
+#lib/tasks/cucumber.rake
+$:.unshift(RAILS_ROOT + '/vendor/plugins/cucumber/lib')
+require 'cucumber/rake/task'
+Cucumber::Rake::Task.new(:features) do |t|
+  t.cucumber_opts = "--format pretty"
+  t.rcov = true
+end
+task :features => 'db:test:prepare'
+
 
 end
