@@ -13,12 +13,7 @@ class RecipeListsController < ApplicationController
   # GET /recipe_lists/1
   # GET /recipe_lists/1.xml
   def show
-<<<<<<< HEAD
     @recipe_list = RecipeList.find(:first)
-
-=======
-    @recipe_list = RecipeList.find(params[:id])
->>>>>>> ca4151ebe6a15b5dc6ffab1e09452b19d6d98886
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @recipe_list }
