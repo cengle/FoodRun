@@ -13,8 +13,7 @@ class RecipeListsController < ApplicationController
   # GET /recipe_lists/1
   # GET /recipe_lists/1.xml
   def show
-    @recipe_list = RecipeList.find(params[:id])
-
+    @recipe_list = RecipeList.find(:first)
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @recipe_list }
@@ -57,27 +56,32 @@ class RecipeListsController < ApplicationController
   # PUT /recipe_lists/1.xml
   def update
     #@recipe_list = RecipeList.find(params[:id])
-	@recipe_id = params[:id]
-	recipe_list = RecipeList.find(1)
-	recipe = Recipe.find_by_id(@recipe_id)
-	recipe_lists = recipe.recipe_lists
-	#recipes = recipe_list.recipes
-	#recipes << Recipe.find_by_id(@recipe_id)
+  	@recipe_id = params[:id]
+  	recipe_list = RecipeList.find(:first)
+  	recipe = Recipe.find_by_id(@recipe_id)
+  	recipe_lists = recipe.recipe_lists
+  	#recipes = recipe_list.recipes
+  	#recipes << Recipe.find_by_id(@recipe_id)
     respond_to do |format|
-        format.html { redirect_to "/recipes/" + @recipe.id }
+      if @recipe_list.update_attributes(params[:recipe_list])
+        format.html { redirect_to(@recipe_list, :notice => 'Recipelist was successfully updated.') }
         format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @recipe_list.errors, :status => :unprocessable_entity }
+      end
     end
   end
 	
   def update2
     #@recipe_list = RecipeList.find(params[:id])
 	@recipe_id = params[:id]
-	recipe_list = RecipeList.find(1)
+	recipe_list = RecipeList.find(:first)
 	recipe = Recipe.find_by_id(@recipe_id)
 	#recipe_lists = recipe.recipe_lists
 	recipes = recipe_list.recipes
 	recipes << Recipe.find_by_id(@recipe_id)
-	flash[:notice] = recipe.title + 'was added to the recipe list.'
+	flash[:notice] = recipe.title + ' was added to the recipe list.'
     respond_to do |format|
         format.html { redirect_to :controller => 'recipes', :action => 'show', :id => @recipe_id }
         format.xml  { head :ok }
