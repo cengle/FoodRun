@@ -90,7 +90,7 @@ class RecipeListsController < ApplicationController
   
   # returns a list of (super-)ingredients
   def groceryList
-  	recipe_list = RecipeList.find(1).recipes # RecipeList.find(:first).recipes
+  	recipe_list = RecipeList.find(:first).recipes
   	@grocery_list = Array.new # list of ingredients
   	
   	recipe_list.each do |recipe| # for each recipe
@@ -111,14 +111,10 @@ class RecipeListsController < ApplicationController
   							:unit => recipe_ingredient.unit, :section => recipe_ingredient.section)
   				
   				@grocery_list << ingredient
-  				puts "\n\n\n\n\n\n\n\n\nAdded ingredient\n\n\n\n\n\n\n\n\n\n"
   			end
   			
   		end
   	end
-  	
-  	puts "\n\n\n\n\n\n\n\n\nHERE\n\n\n\n\n\n\n\n\n\n"
-  	
   	
   	
   	# now return newly created grocery list
