@@ -9,6 +9,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :recipes
 
+  map.delete_from_recipe_list '/recipe_lists/:id/recipes/:recipe_id', :controller => 'recipe_lists', :action => 'destroyRecipe', :conditions => { :method => :delete }
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

@@ -94,4 +94,14 @@ class RecipeListsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  # DELETE /recipe_lists/1/2
+  def destroyRecipe
+    @recipe_list = RecipeList.find(params[:id])
+    @recipe_list.removeRecipe(params[:recipe_id])
+    respond_to do |format|
+      format.html { redirect_to(@recipe_list) }
+      format.xml  { head :ok }
+    end
+  end
 end
