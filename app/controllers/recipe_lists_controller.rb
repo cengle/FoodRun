@@ -83,6 +83,46 @@ class RecipeListsController < ApplicationController
         format.xml  { head :ok }
     end
   end
+  
+  # returns a list of (super-)ingredients
+  def groceryList
+  	recipe_list = RecipeList.find(1).recipes # RecipeList.find(:first).recipes
+  	@grocery_list = Array.new # list of ingredients
+  	
+  	recipe_list.each do |recipe| # for each recipe
+  		recipe_ingredients = recipe.ingredients
+  		
+  		recipe_ingredients.each do |recipe_ingredient| # for each ingredient in that recipe
+  		
+  			ingredientExist = false
+  			@grocery_list.each do |list_ingredient| 	# for each ingredient in the grocery list 
+  				if recipe_ingredient.name == list_ingredient.name and recipe_ingredient.unit == list_ingredient.unit
+  					ingredientExist = 1
+  					list_ingredient.number += recipe_ingredient.number # no need to create new ingredient, just aggregate
+  				end
+  			end
+  			
+  			if not ingredientExist # current recipe_ingredient has not been added to grocery list
+  				ingredient = Ingredient.new(:name => recipe_ingredient.name, :number => recipe_ingredient.number,
+  							:unit => recipe_ingredient.unit, :section => recipe_ingredient.section)
+  				
+  				@grocery_list << ingredient
+  				puts "\n\n\n\n\n\n\n\n\nAdded ingredient\n\n\n\n\n\n\n\n\n\n"
+  			end
+  			
+  		end
+  	end
+  	
+  	puts "\n\n\n\n\n\n\n\n\nHERE\n\n\n\n\n\n\n\n\n\n"
+  	
+  	
+  	
+  	# now return newly created grocery list
+  	respond_to do |format|
+  		format.html # groceryList.html.erb
+  	end
+  	
+  end
 
   # DELETE /recipe_lists/1
   # DELETE /recipe_lists/1.xml
