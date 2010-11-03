@@ -1,7 +1,131 @@
-C:\Users\Justin\My Documents\School\CS169\FoodRun>cucumber
 Using the default profile...
-.............................................................
+Code:
+  * features/support/env.rb
+  * features/support/paths.rb
+  * features/step_definitions/add_to_recipe_list_steps.rb
+  * features/step_definitions/create_recipe_steps.rb
+  * features/step_definitions/grocery_list_view_steps.rb
+  * features/step_definitions/review_recipe_steps.rb
+  * features/step_definitions/search_recipe_steps.rb
+  * features/step_definitions/web_steps.rb
+
+Features:
+  * features/review_recipe.feature
+  * features/create_recipe.feature
+  * features/add_to_recipe_list.feature
+  * features/see_recipes_in_recipe_list.feature
+  * features/search_recipe.feature
+  * features/grocery_list_view.feature
+Parsing feature files took 0m0.166s
+
+Feature: Review a recipe
+  In order for users to let others know what
+  they thought of a recipe, users should be
+  able to add their own rating and review to
+  a given recipe
+
+  Scenario: Go to review page             # features/review_recipe.feature:7
+    Given I have added a recipe           # features/step_definitions/review_recipe_steps.rb:1
+    And I am on the home page             # features/step_definitions/web_steps.rb:15
+    When I click Show                     # features/step_definitions/review_recipe_steps.rb:8
+    And I click Add Review                # features/step_definitions/review_recipe_steps.rb:12
+    Then I should see the new review form # features/step_definitions/review_recipe_steps.rb:16
+
+  Scenario: Add a review                          # features/review_recipe.feature:14
+    Given I am entering a recipe review           # features/step_definitions/review_recipe_steps.rb:25
+    When I fill in Title with Best recipe evar    # features/step_definitions/review_recipe_steps.rb:36
+    And I fill in Review with title says it all   # features/step_definitions/review_recipe_steps.rb:40
+    And I fill in rating with 5                   # features/step_definitions/review_recipe_steps.rb:44
+    And click Create                              # features/step_definitions/review_recipe_steps.rb:48
+    Then I should see Review successfully created # features/step_definitions/review_recipe_steps.rb:52
+
+Feature: Create and post a recipe
+  In order to have a database of recipes, users
+  should be able to create and post their recipes
+  by specifying a name, list of ingredients, and
+  directions.
+
+  Scenario: post recipe                                             # features/create_recipe.feature:7
+    Given I am on the create recipe page                            # features/step_definitions/web_steps.rb:15
+    When I fill in title with Chicken Burrito                       # features/step_definitions/create_recipe_steps.rb:1
+    And I fill in Directions with make burrito                      # features/step_definitions/create_recipe_steps.rb:6
+    And I fill in ingredient one's name with tortilla               # features/step_definitions/create_recipe_steps.rb:10
+    And I fill in ingredient one's number with 1                    # features/step_definitions/create_recipe_steps.rb:14
+    And I fill in ingredient one's section with breads              # features/step_definitions/create_recipe_steps.rb:18
+    And I fill in ingredient two's name with shredded cheese        # features/step_definitions/create_recipe_steps.rb:24
+    And I fill in ingredient two's number with 2                    # features/step_definitions/create_recipe_steps.rb:28
+    And I fill in ingredient two's unit with ounces                 # features/step_definitions/create_recipe_steps.rb:32
+    And I fill in ingredient two's section with dairy               # features/step_definitions/create_recipe_steps.rb:36
+    And I fill in ingredient three's name with tomato               # features/step_definitions/create_recipe_steps.rb:42
+    And I fill in ingredient three's number with 1                  # features/step_definitions/create_recipe_steps.rb:46
+    And I fill in ingredient three's section with produce           # features/step_definitions/create_recipe_steps.rb:50
+    And I fill in ingredient four's name with sour cream            # features/step_definitions/create_recipe_steps.rb:56
+    And I fill in ingredient four's number with 2                   # features/step_definitions/create_recipe_steps.rb:60
+    And I fill in ingredient four's unit with tablespoons           # features/step_definitions/create_recipe_steps.rb:64
+    And I fill in ingredient four's section with dairy              # features/step_definitions/create_recipe_steps.rb:68
+    And I fill in ingredient five's name with salsa                 # features/step_definitions/create_recipe_steps.rb:74
+    And I fill in ingredient five's number with 5                   # features/step_definitions/create_recipe_steps.rb:78
+    And I fill in ingredient five's unit with ounces                # features/step_definitions/create_recipe_steps.rb:82
+    And I fill in ingredient five's section with condiments         # features/step_definitions/create_recipe_steps.rb:86
+    And I fill in Completion time with 10 minutes                   # features/step_definitions/create_recipe_steps.rb:91
+    And I press Create                                              # features/step_definitions/create_recipe_steps.rb:95
+    Then the Chicken Burrito recipe should be added to the database # features/step_definitions/create_recipe_steps.rb:99
+
+Feature: Add recipe to recipe list
+  In order to aggregate recipes into a list
+  As a user
+  I want to be able to add recipes to a global recipe list
+
+  Scenario: Add a recipe                                              # features/add_to_recipe_list.feature:6
+    Given I have added a recipe                                       # features/step_definitions/review_recipe_steps.rb:1
+    And I am on the home page                                         # features/step_definitions/web_steps.rb:15
+    When I follow "Show"                                              # features/step_definitions/web_steps.rb:27
+    And I follow "Add to recipe list"                                 # features/step_definitions/web_steps.rb:27
+    Then I should see "Chicken Burrito was added to the recipe list." # features/step_definitions/web_steps.rb:143
+
+Feature: See recipes in recipe list
+  In order to see all the recipes I added
+  As a user
+  I want to be able to see all the recipes I added to the list on one page
+
+  Scenario: See recipe in recipe list                                    # features/see_recipes_in_recipe_list.feature:6
+    Given I have created a recipe list                                   # features/step_definitions/add_to_recipe_list_steps.rb:1
+    And I have added a recipe to the recipe list named "Chicken Burrito" # features/step_definitions/add_to_recipe_list_steps.rb:6
+    And I have added a recipe to the recipe list named "Cookies"         # features/step_definitions/add_to_recipe_list_steps.rb:6
+    And I am on the home page                                            # features/step_definitions/web_steps.rb:15
+    When I follow "Recipe list"                                          # features/step_definitions/web_steps.rb:27
+    Then I should see "Chicken Burrito"                                  # features/step_definitions/web_steps.rb:143
+    And I should see "Cookies"                                           # features/step_definitions/web_steps.rb:143
+
+Feature: Search for recipe by title
+  In order to find existing recipes on the database
+  As a user, I should be able to enter all or part
+  of a recipe's name, and find the recipe along
+  with all its information
+
+  Scenario: find a recipe                                         # features/search_recipe.feature:7
+    Given I have added a recipe                                   # features/step_definitions/review_recipe_steps.rb:1
+    And I am on the home page                                     # features/step_definitions/web_steps.rb:15
+    When I fill in 'Search for recipe' field with Chicken Burrito # features/step_definitions/search_recipe_steps.rb:1
+    And I click Search                                            # features/step_definitions/search_recipe_steps.rb:5
+    Then I should see the search results list                     # features/step_definitions/search_recipe_steps.rb:9
+    And I should see Chicken Burrito                              # features/step_definitions/search_recipe_steps.rb:17
+
+Feature: View recipe list as a list of ingredients
+  In order to know what ingredients to buy
+  As a user
+  I want to be able to see my list of recipes as a list of ingredients
+
+  Scenario: See recipe in recipe list                                                  # features/grocery_list_view.feature:6
+    Given I have created a recipe list                                                 # features/step_definitions/add_to_recipe_list_steps.rb:1
+    And I have added a cookie recipe to the recipe list named "Sugar Cookies"          # features/step_definitions/grocery_list_view_steps.rb:1
+    And I have added a cookie recipe to the recipe list named "Chocolate Chip Cookies" # features/step_definitions/grocery_list_view_steps.rb:1
+    And I am on the home page                                                          # features/step_definitions/web_steps.rb:15
+    When I follow "Recipe list"                                                        # features/step_definitions/web_steps.rb:27
+    And I follow "Show Grocery List"                                                   # features/step_definitions/web_steps.rb:27
+    Then I should see "cookie dough"                                                   # features/step_definitions/web_steps.rb:143
+    And I should see "10 pounds"                                                       # features/step_definitions/web_steps.rb:143
 
 7 scenarios (7 passed)
 61 steps (61 passed)
-0m8.465s
+0m1.307s

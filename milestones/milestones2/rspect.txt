@@ -1,8 +1,0 @@
-C:\Users\Justin\My Documents\School\CS169\FoodRun>rake spec
-(in C:/Users/Justin/My Documents/School/CS169/FoodRun)
-................................................................................
-....................................................
-
-Finished in 1.593091 seconds
-
-132 examples, 0 failures
