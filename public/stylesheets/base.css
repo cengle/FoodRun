@@ -1,0 +1,7 @@
+h1.page_title {
+	width:100%;
+	height: auto;
+	color: white;
+	background: url('../images/page_title_gradient.jpg') 0% 0% repeat-x;
+	padding:10px;
+}

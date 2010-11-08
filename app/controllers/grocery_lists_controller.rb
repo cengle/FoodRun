@@ -1,6 +1,9 @@
 class GroceryListsController < ApplicationController
   # GET /grocery_lists
   # GET /grocery_lists.xml
+  
+  layout 'recipes'
+  
   def index
     @grocery_lists = GroceryList.all
 

@@ -1,6 +1,9 @@
 class IngredientsController < ApplicationController
   # GET /ingredients
   # GET /ingredients.xml
+  
+  layout 'recipes'
+  
   def index
     @ingredients = Ingredient.all
 
