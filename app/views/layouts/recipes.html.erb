@@ -7,11 +7,89 @@
   <title>Recipes: <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'scaffold' %>
 </head>
+
+<%= stylesheet_link_tag "base" %>
+
 <body>
 
-<p style="color: green"><%= notice %></p>
+<div id="header-wrapper">
+	<div id="header">
+		<div id="menu">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Recipes</a></li>
+				<li><a href="#">Search</a></li>
+				<li><a href="#">Groceries</a></li>
+			</ul>
+		</div>
+		<!-- end #menu -->
+		<div id="search">
+			<% form_tag :controller=>'recipes', :action => 'search' do %>
+				<fieldset>
+					<input type="text" name="input" id="search-text" size="15" />
+					<input type="submit" id="search-submit" value="GO" />
+				</fieldset>
+				<% end %>
+		</div>
+		<!-- end #search -->
+	</div>
+</div>
+<!-- end #header -->
+<!-- end #header-wrapper -->
+<div id="logo">
+	<h1><a href="#"> FoodRun  </a></h1>
+	<p><em> Planning groceries has never been so easy </a></em></p>
+</div>
+<hr />
+<!-- end #logo -->
+<div id="page">
+	<p style="color: green"><%= notice %></p>
+	<div id="page-bgtop">
+		<div id="content">
+			<%= yield %>
+		</div>
+		<div id="sidebar">
+			<ul>
+				<li>
+					<h2>Week's Top Recipe</h2>
+					<p>Mauris vitae nisl nec metus placerat perdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, volutpat.</p>
+				</li>
+				<li>
+					<h2>Recipe Ethnicities </h2>
+					<ul>
+						<li><a href="#">Nec metus sed donec</a></li>
+						<li><a href="#">Magna lacus bibendum mauris</a></li>
+						<li><a href="#">Velit semper nisi molestie</a></li>
+						<li><a href="#">Eget tempor eget nonummy</a></li>
+						<li><a href="#">Nec metus sed donec</a></li>
+						<li><a href="#">Velit semper nisi molestie</a></li>
+						<li><a href="#">Eget tempor eget nonummy</a></li>
+						<li><a href="#">Nec metus sed donec</a></li>
+					</ul>
+				</li>
+				<li>
+					<h2>Types of recipes</h2>
+					<ul>
+						<li><a href="#">Nec metus sed donec</a></li>
+						<li><a href="#">Magna lacus bibendum mauris</a></li>
+						<li><a href="#">Velit semper nisi molestie</a></li>
+						<li><a href="#">Eget tempor eget nonummy</a></li>
+						<li><a href="#">Nec metus sed donec</a></li>
+						<li><a href="#">Nec metus sed donec</a></li>
+						<li><a href="#">Magna lacus bibendum mauris</a></li>
+						<li><a href="#">Velit semper nisi molestie</a></li>
+						<li><a href="#">Eget tempor eget nonummy</a></li>
+						<li><a href="#">Nec metus sed donec</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	</div>
+</div>
 
-<%= yield %>
-
+<div id="footer"> FoodRun © 2010 · Swaraj Banerjee · Justin Chu · Cliff Engle · Harry Jiang </div>
 </body>
 </html>
