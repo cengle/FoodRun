@@ -1,6 +1,9 @@
 class ReviewsController < ApplicationController
   # GET /reviews
   # GET /reviews.xml
+  
+  layout 'recipes'
+  
   def index
     @reviews = Review.all
 

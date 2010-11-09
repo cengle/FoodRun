@@ -84,6 +84,7 @@ class RecipesController < ApplicationController
   def search
 	
 	@results = Recipe.find(:all, :conditions => {:title => params[:input]})
+
 	if (@results.empty?)
 	  flash[:notice] = 'No results found.'
 	end

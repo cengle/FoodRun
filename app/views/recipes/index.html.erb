@@ -1,37 +1,11 @@
-<h1>Listing recipes</h1>
-
-<% form_tag :action => 'search' do %>
-	<p> Search for a recipe:
-	<%= text_field_tag 'input' %></p>
-	
-	<%= submit_tag 'Search' %>
-<% end %>
-
-
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Directions</th>
-    <th>Completion time</th>
-	<th>Reviews</th>
-  </tr>
+<h1>Welcome @name!</h1>
 
 <% @recipes.each do |recipe| %>
-  <tr>
-    <td><%=h recipe.title %></td>
-    <td><%=h recipe.directions %></td>
-    <td><%=h recipe.completion_time %></td>
-    <td><%=h recipe.reviews.count %></td>
-    <td><%= link_to 'Show', recipe %></td>
-    <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-    <td><%= link_to 'Destroy', recipe, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<div class="post">
+	<p class="meta"><span class="date">Sunday, April 26, 2009</span> 7:27 AM Posted by <a href="#">Someone</a></p>
+	<h2 class="title"><%= link_to recipe.title, recipe %></td></h2>
+	<div class="entry">
+		<%=recipe.directions%>
+	</div>
+</div>
 <% end %>
-</table>
-
-
-<br />
-
-<%= link_to 'New recipe', new_recipe_path %>
-<%= link_to 'Recipe list', :controller => 'recipe_lists', :action => 'show'%>
