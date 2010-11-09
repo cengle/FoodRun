@@ -97,23 +97,25 @@ class RecipeListsController < ApplicationController
   	@grocery_list = Array.new # list of ingredients
   	
   	recipe_list.each do |recipe| # for each recipe
-  		recipe_ingredients = recipe.ingredients
+  		recipe_ingredient_amounts = recipe.ingredient_amounts
   		
-  		recipe_ingredients.each do |recipe_ingredient| # for each ingredient in that recipe
-  		
+  		recipe_ingredient_amounts.each do |recipe_ingredient_amount| # for each ingredient in that recipe
+                        recipe_ingredient = recipe_ingredient_amount.ingredient
   			ingredientExist = false
-  			@grocery_list.each do |list_ingredient| 	# for each ingredient in the grocery list 
-  				if recipe_ingredient.name == list_ingredient.name and recipe_ingredient.unit == list_ingredient.unit
-  					ingredientExist = 1
-  					list_ingredient.number += recipe_ingredient.number # no need to create new ingredient, just aggregate
+  			@grocery_list.each do |list_ingredient_amount| 	# for each ingredient in the grocery list 
+                                list_ingredient = list_ingredient_amount.ingredient
+                                if recipe_ingredient.name == list_ingredient.name and recipe_ingredient_amount.unit == list_ingredient_amount.unit
+  					ingredientExist = true
+  					list_ingredient_amount.number += recipe_ingredient_amount.number # no need to create new ingredient, just aggregate
   				end
   			end
   			
   			if not ingredientExist # current recipe_ingredient has not been added to grocery list
-  				ingredient = Ingredient.new(:name => recipe_ingredient.name, :number => recipe_ingredient.number,
-  							:unit => recipe_ingredient.unit, :section => recipe_ingredient.section)
+                                ingredient_amount = recipe_ingredient.ingredient_amounts.build
+                                ingredient_amount.number = recipe_ingredient_amount.number
+                                ingredient_amount.unit = recipe_ingredient_amount.unit
   				
-  				@grocery_list << ingredient
+  				@grocery_list << ingredient_amount
   			end
   			
   		end
