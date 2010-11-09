@@ -9,17 +9,15 @@
 </head>
 
 <%= stylesheet_link_tag "base" %>
-
 <body>
-
 <div id="header-wrapper">
 	<div id="header">
 		<div id="menu">
 			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Recipes</a></li>
+				<li><%= link_to 'Home', recipes_path %></li>
+				<li><%= link_to 'Upload Recipe', new_recipe_path %></li>
 				<li><a href="#">Search</a></li>
-				<li><a href="#">Groceries</a></li>
+				<li><%= link_to 'Recipe list', :controller => 'recipe_lists', :action => 'show'%></li>
 			</ul>
 		</div>
 		<!-- end #menu -->
@@ -43,8 +41,8 @@
 <hr />
 <!-- end #logo -->
 <div id="page">
-	<p style="color: green"><%= notice %></p>
 	<div id="page-bgtop">
+		<p style="color: green"><%= notice %></p>
 		<div id="content">
 			<%= yield %>
 		</div>
@@ -52,34 +50,28 @@
 			<ul>
 				<li>
 					<h2>Week's Top Recipe</h2>
-					<p>Mauris vitae nisl nec metus placerat perdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, volutpat.</p>
+					<p>Apple Pie: This amazing American classic is sure to please the family and friends during the holiday season.<p>
 				</li>
 				<li>
-					<h2>Recipe Ethnicities </h2>
+					<h2>Featured Recipes </h2>
 					<ul>
-						<li><a href="#">Nec metus sed donec</a></li>
-						<li><a href="#">Magna lacus bibendum mauris</a></li>
-						<li><a href="#">Velit semper nisi molestie</a></li>
-						<li><a href="#">Eget tempor eget nonummy</a></li>
-						<li><a href="#">Nec metus sed donec</a></li>
-						<li><a href="#">Velit semper nisi molestie</a></li>
-						<li><a href="#">Eget tempor eget nonummy</a></li>
-						<li><a href="#">Nec metus sed donec</a></li>
+						<li><a href="#">Beef Lasagna</a></li>
+						<li><a href="#">Goat Cheese Ravioli</a></li>
+						<li><a href="#">Beef Noodle Soup</a></li>
+						<li><a href="#">Honeymustard chicken</a></li>
+						<li><a href="#">Meatloaf</a></li>
+						<li><a href="#">Pepperoni Pizza</a></li>
+						<li><a href="#">Grilled Cheese</a></li>
+						<li><a href="#">Tuna Melt</a></li>
 					</ul>
 				</li>
 				<li>
-					<h2>Types of recipes</h2>
+					<h2>Top Recipes</h2>
 					<ul>
-						<li><a href="#">Nec metus sed donec</a></li>
-						<li><a href="#">Magna lacus bibendum mauris</a></li>
-						<li><a href="#">Velit semper nisi molestie</a></li>
-						<li><a href="#">Eget tempor eget nonummy</a></li>
-						<li><a href="#">Nec metus sed donec</a></li>
-						<li><a href="#">Nec metus sed donec</a></li>
-						<li><a href="#">Magna lacus bibendum mauris</a></li>
-						<li><a href="#">Velit semper nisi molestie</a></li>
-						<li><a href="#">Eget tempor eget nonummy</a></li>
-						<li><a href="#">Nec metus sed donec</a></li>
+						<li><a href="#">Baby crab cakes</a></li>
+						<li><a href="#">Chicken cutlet submarines</a></li>
+						<li><a href="#">Manhattan Clam Chower</a></li>
+						<li><a href="#">Eggrolls</a></li>
 					</ul>
 				</li>
 			</ul>
