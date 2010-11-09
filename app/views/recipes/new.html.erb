@@ -1,4 +1,4 @@
-<h1>New recipe</h1>
+ <h1>New recipe</h1>
 
 <% form_for(@recipe) do |f| %>
   <%= f.error_messages %>
@@ -20,8 +20,8 @@
   <% f.fields_for :ingredient_amounts do |i| %>
     <h3>Ingredient</h3>
     <p>
-      <%= i.label :ingredient_name %>
-      <%= i.text_field :ingredient_name %>
+      <%= label_tag :ingredient_name %>
+      <%= text_field_tag :ingredient_name %>
     </p>
     <p>
       <%= i.label :number %>

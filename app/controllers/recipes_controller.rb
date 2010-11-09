@@ -26,6 +26,7 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     @recipe.ingredient_amounts.build
+    @ingredient_name
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @recipe }
@@ -35,15 +36,17 @@ class RecipesController < ApplicationController
   # GET /recipes/1/edit
   def edit
     @recipe = Recipe.find(params[:id])
+    @ingredient_name = @recipe.ingredients[0].name
   end
 
   # POST /recipes
   # POST /recipes.xml
   def create
     @recipe = Recipe.new(params[:recipe])
-
+    @ingredient = Ingredient.find_or_create_by_name(params[:ingredient_name])
+    @ingredient.ingredient_amounts << @recipe.ingredient_amounts
     respond_to do |format|
-      if @recipe.save
+      if @recipe.save and @ingredient.save
         format.html { redirect_to(@recipe, :notice => 'Recipe was successfully created.') }
         format.xml  { render :xml => @recipe, :status => :created, :location => @recipe }
       else
@@ -57,7 +60,8 @@ class RecipesController < ApplicationController
   # PUT /recipes/1.xml
   def update
     @recipe = Recipe.find(params[:id])
-
+    @ingredient = Ingredient.find_or_create_by_name(params[:ingredient_name])
+    @ingredient.ingredient_amounts << @recipe.ingredient_amounts
     respond_to do |format|
       if @recipe.update_attributes(params[:recipe])
         format.html { redirect_to(@recipe, :notice => 'Recipe was successfully updated.') }
