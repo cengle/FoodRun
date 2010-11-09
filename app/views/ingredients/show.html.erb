@@ -4,25 +4,9 @@
 </p>
 
 <p>
-  <b>Number:</b>
-  <%=h @ingredient.number %>
-</p>
-
-<p>
-  <b>Unit:</b>
-  <%=h @ingredient.unit %>
-</p>
-
-<p>
   <b>Section:</b>
   <%=h @ingredient.section %>
 </p>
-
-<p>
-  <b>Recipe:</b>
-  <%=h @ingredient.recipe_id %>
-</p>
-
 
 <%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
 <%= link_to 'Back', ingredients_path %>

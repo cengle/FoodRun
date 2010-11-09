@@ -3,19 +3,13 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Number</th>
-    <th>Unit</th>
     <th>Section</th>
-    <th>Recipe</th>
   </tr>
 
 <% @ingredients.each do |ingredient| %>
   <tr>
     <td><%=h ingredient.name %></td>
-    <td><%=h ingredient.number %></td>
-    <td><%=h ingredient.unit %></td>
     <td><%=h ingredient.section %></td>
-    <td><%=h ingredient.recipe_id %></td>
     <td><%= link_to 'Show', ingredient %></td>
     <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
     <td><%= link_to 'Destroy', ingredient, :confirm => 'Are you sure?', :method => :delete %></td>

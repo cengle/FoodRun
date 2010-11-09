@@ -21,12 +21,12 @@
     <th>Unit</th>
     <th>Section</th>
   </tr>
-<% for ingredient in @recipe.ingredients %>
+<% for ingred_amount in @recipe.ingredient_amounts %>
   <tr>
-    <td><%=h ingredient.name %></td>
-    <td><%=h ingredient.number %></td>
-    <td><%=h ingredient.unit %></td>
-    <td><%=h ingredient.section %></td>
+    <td><%=h ingred_amount.ingredient.name %></td>
+    <td><%=h ingred_amount.number %></td>
+    <td><%=h ingred_amount.unit %></td>
+    <td><%=h ingred_amount.ingredient.section %></td>
   </tr>
 <% end %>
 </table>

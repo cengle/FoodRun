@@ -17,24 +17,21 @@
   </p>
   
   <h2>Ingredients</h2>
-  <% f.fields_for :ingredients do |ingredient_form| %>
+  <% f.fields_for :ingredient_amounts do |i| %>
     <h3>Ingredient</h3>
     <p>
-      <%= ingredient_form.label :name %>
-      <%= ingredient_form.text_field :name %>
+      <%= i.label :ingredient_name %>
+      <%= i.text_field :ingredient_name %>
     </p>
     <p>
-      <%= ingredient_form.label :number %>
-      <%= ingredient_form.text_field :number %>
+      <%= i.label :number %>
+      <%= i.text_field :number %>
     </p>
     <p>
-      <%= ingredient_form.label :unit %>
-      <%= ingredient_form.text_field :unit %>
+      <%= i.label :unit %>
+      <%= i.text_field :unit %>
     </p>
-    <p>
-      <%= ingredient_form.label :section %>
-      <%= ingredient_form.text_field :section %>
-    </p>
+    
   <% end %>
   <p>
     <%= f.submit 'Create' %>

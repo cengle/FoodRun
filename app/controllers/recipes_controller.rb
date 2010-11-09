@@ -25,7 +25,7 @@ class RecipesController < ApplicationController
   # GET /recipes/new.xml
   def new
     @recipe = Recipe.new
-    buildIngredients(@recipe)
+    @recipe.ingredient_amounts.build
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @recipe }
@@ -89,12 +89,6 @@ class RecipesController < ApplicationController
 	end
 	respond_to do |format|
       format.html # new.html.erb
-    end
-  end
-
-  def buildIngredients(r)
-    5.times do 
-      r.ingredients.build
     end
   end
 end

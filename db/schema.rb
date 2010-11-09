@@ -9,17 +9,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101101223241) do
+ActiveRecord::Schema.define(:version => 20101108012518) do
 
   create_table "grocery_lists", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "ingredient_amounts", :force => true do |t|
+    t.integer  "recipe_id"
+    t.integer  "ingredient_id"
+    t.float    "number"
+    t.string   "unit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "ingredients", :force => true do |t|
     t.string   "name"
-    t.integer  "number"
-    t.string   "unit"
     t.integer  "recipe_id"
     t.datetime "created_at"
     t.datetime "updated_at"
