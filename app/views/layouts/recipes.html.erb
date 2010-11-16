@@ -17,7 +17,14 @@
 				<li><%= link_to 'Home', recipes_path %></li>
 				<li><%= link_to 'Upload Recipe', new_recipe_path %></li>
 				<li><a href="#">Search</a></li>
-				<li><%= link_to 'Recipe list', :controller => 'recipe_lists', :action => 'show'%></li>
+				<li>
+				<% if current_user %>
+					<%= link_to 'Recipe list', :controller => 'recipe_lists', :action => 'show', :user => current_user%>
+				<% else %>
+					<%= link_to 'Recipe list', login_path %>
+				<% end %>
+								
+				</li>
 			</ul>
 		</div>
 		<!-- end #menu -->

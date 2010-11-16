@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
   # GET /recipes.xml
   def index
     @recipes = Recipe.all
-	first_recipelist = RecipeList.create
+	#first_recipelist = RecipeList.create
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @recipes }

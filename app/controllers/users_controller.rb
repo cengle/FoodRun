@@ -41,7 +41,8 @@ class UsersController < ApplicationController
   # POST /users.xml
   def create
     @user = User.new(params[:user])
-
+	recipe_list = RecipeList.create
+	@user.recipe_list = recipe_list
     respond_to do |format|
       if @user.save
         format.html { redirect_to(root_url, :notice => 'Registration successful') }
