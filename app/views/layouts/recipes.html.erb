@@ -16,14 +16,26 @@
 			<ul>
 				<li><%= link_to 'Home', recipes_path %></li>
 				<li><%= link_to 'Upload Recipe', new_recipe_path %></li>
-				<li><a href="#">Search</a></li>
 				<li>
 				<% if current_user %>
 					<%= link_to 'Recipe list', :controller => 'recipe_lists', :action => 'show', :user => current_user%>
 				<% else %>
 					<%= link_to 'Recipe list', login_path %>
-				<% end %>
-								
+				<% end %>		
+				</li>
+				<li>
+					<% if current_user %>
+						<%= link_to "Edit Profile", edit_user_path(:current) %>
+					<% else %>
+		   				<%= link_to "Register", new_user_path %>
+	 				<% end %>	
+				</li>
+				<li>
+					<% if current_user %>
+		   				<%= link_to "Logout", logout_path %>
+					<% else %>
+		   				<%= link_to "Login", login_path %>
+	 				<% end %>	
 				</li>
 			</ul>
 		</div>
@@ -34,7 +46,7 @@
 					<input type="text" name="input" id="search-text" size="15" />
 					<input type="submit" id="search-submit" value="GO" />
 				</fieldset>
-				<% end %>
+			<% end %>
 		</div>
 		<!-- end #search -->
 	</div>
@@ -42,15 +54,15 @@
 <!-- end #header -->
 <!-- end #header-wrapper -->
 <div id="logo">
-	<h1><%= link_to 'Foodrun', recipes_path  </a></h1>
+	<h1><%= link_to 'Foodrun', recipes_path %> </h1>
 	<p><em> Planning groceries has never been so easy </a></em></p>
 </div>
 <hr />
 <!-- end #logo -->
 <div id="page">
 	<div id="page-bgtop">
-		<p style="color: green"><%= notice %></p>
 		<div id="content">
+			<p style="color: green"><%= notice %></p>
 			<%= yield %>
 		</div>
 		<div id="sidebar">

@@ -1,15 +1,11 @@
-<h1>Welcome @name!</h1>
+<h1>Welcome 
+<% if(current_user) %> 
+<%= current_user.username %> 
+<% else %>
+New User
+<% end %>
+</h1>
 
-
-<div id="user_nav">
- <% if current_user %>
-   <%= link_to "Edit Profile", edit_user_path(:current) %>
-   <%= link_to "Logout", logout_path %>
- <% else %>
-   <%= link_to "Register", new_user_path %>
-   <%= link_to "Login", login_path %>
- <% end %>
-</div>
 <% @recipes.each do |recipe| %>
 <div class="post">
 	<p class="meta"><span class="date"> <%= recipe.created_at.asctime %> Posted by <a href="#">Someone</a></p>

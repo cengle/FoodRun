@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.xml
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.find(:all, :order=>'created_at DESC')
 	#first_recipelist = RecipeList.create
     respond_to do |format|
       format.html # index.html.erb
