@@ -20,8 +20,8 @@
   <% f.fields_for :ingredient_amounts do |i| %>
     <h3>Ingredient</h3>
     <p>
-      <%= label_tag :ingredient_name %>
-      <%= text_field_tag :ingredient_name %>
+      <label for="recipe_ingredient_name">Ingredient name</label>
+      <%= text_field_with_auto_complete :ingredient_amount, :ingredient_name, {}, {:url => formatted_ingredient_amounts_path(:js), :method => :get, :with => "'search=' + element.value"} %>
     </p>
     <p>
       <%= i.label :number %>

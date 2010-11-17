@@ -28,7 +28,7 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     @recipe.ingredient_amounts.build
-    @ingredient_name
+    #@ingredient_name
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @recipe }
@@ -45,7 +45,8 @@ class RecipesController < ApplicationController
   # POST /recipes.xml
   def create
     @recipe = Recipe.new(params[:recipe])
-    @ingredient = Ingredient.find_or_create_by_name(params[:ingredient_name])
+    @ingredient = Ingredient.find_or_create_by_name(params[:ingredient_amount][:ingredient_name])
+    #@ingredient = Ingredient.find_or_create_by_name(params[:ingredient_name])
     @ingredient.ingredient_amounts << @recipe.ingredient_amounts
     respond_to do |format|
       if @recipe.save and @ingredient.save
@@ -85,6 +86,10 @@ class RecipesController < ApplicationController
       format.html { redirect_to(recipes_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def auto_complete_for_ingredient_amount_ingredient_name
+  	params[:ingredient].name if params[:ingredient]
   end
   
   def search

@@ -17,6 +17,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :recipes
 
+  map.resources :ingredient_amounts
+
   map.delete_from_recipe_list '/recipe_lists/:id/recipes/:recipe_id', :controller => 'recipe_lists', :action => 'destroyRecipe', :conditions => { :method => :delete }
 
   map.groceryList '/recipe_lists/:id/groceryList', :controller => 'recipe_lists', :action => 'groceryList' 
