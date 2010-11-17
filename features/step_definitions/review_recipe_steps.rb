@@ -28,7 +28,7 @@ Given /^I am entering a recipe review$/ do
 	click_button('Create')
 	click_link('Back')
 	visit path_to('the home page')
-	click_link('Show')
+	click_link('Chicken Burrito')
 	click_link('Add Review')
 end
 

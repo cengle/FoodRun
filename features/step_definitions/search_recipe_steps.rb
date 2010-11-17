@@ -3,7 +3,7 @@ When /^I fill in 'Search for recipe' field with Chicken Burrito$/ do
 end
 
 When /^I click Search$/ do
-  	click_button('Search')
+  	click_button('search-submit')
 end
 
 Then /^I should see the search results list$/ do

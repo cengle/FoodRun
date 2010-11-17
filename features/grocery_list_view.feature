@@ -11,4 +11,4 @@ Feature: View recipe list as a list of ingredients
 		When I follow "Recipe list"
 		And I follow "Show Grocery List"
 		Then I should see "cookie dough"
-		And I should see "10 pounds"
+		And I should see "10.0 pounds"

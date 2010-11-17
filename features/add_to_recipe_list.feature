@@ -6,6 +6,6 @@ Feature: Add recipe to recipe list
 	Scenario: Add a recipe
 		Given I have added a recipe
 		And I am on the home page
-		When I follow "Show"
+		When I follow "Chicken Burrito"
 		And I follow "Add to recipe list"
 		Then I should see "Chicken Burrito was added to the recipe list."

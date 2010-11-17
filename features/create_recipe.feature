@@ -10,22 +10,6 @@ Feature: Create and post a recipe
 		And I fill in Directions with make burrito
 		And I fill in ingredient one's name with tortilla
 		And I fill in ingredient one's number with 1		
-		And I fill in ingredient one's section with breads
-		And I fill in ingredient two's name with shredded cheese
-		And I fill in ingredient two's number with 2
-		And I fill in ingredient two's unit with ounces
-		And I fill in ingredient two's section with dairy
-		And I fill in ingredient three's name with tomato
-		And I fill in ingredient three's number with 1
-		And I fill in ingredient three's section with produce
-		And I fill in ingredient four's name with sour cream
-		And I fill in ingredient four's number with 2
-		And I fill in ingredient four's unit with tablespoons
-		And I fill in ingredient four's section with dairy
-		And I fill in ingredient five's name with salsa
-		And I fill in ingredient five's number with 5
-		And I fill in ingredient five's unit with ounces
-		And I fill in ingredient five's section with condiments
 		And I fill in Completion time with 10 minutes
 		And I press Create
 		Then the Chicken Burrito recipe should be added to the database
