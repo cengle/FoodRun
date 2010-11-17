@@ -12,7 +12,7 @@
 </div>
 <% @recipes.each do |recipe| %>
 <div class="post">
-	<p class="meta"><span class="date">Sunday, April 26, 2009</span> 7:27 AM Posted by <a href="#">Someone</a></p>
+	<p class="meta"><span class="date"> <%= recipe.created_at.asctime %> Posted by <a href="#">Someone</a></p>
 	<h2 class="title"><%= link_to recipe.title, recipe %></td></h2>
 	<div class="entry">
 		<%=recipe.directions%>

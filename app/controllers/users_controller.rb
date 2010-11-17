@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.xml
+  
+  layout 'recipes'
+  
   def index
     @users = User.all
 

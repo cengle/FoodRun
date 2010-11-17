@@ -1,6 +1,9 @@
 class UserSessionsController < ApplicationController
   # GET /user_sessions
   # GET /user_sessions.xml
+  
+  layout 'recipes'
+  
   def index
     @user_sessions = UserSession.all
 
