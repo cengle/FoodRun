@@ -38,7 +38,9 @@ class RecipesController < ApplicationController
   # GET /recipes/1/edit
   def edit
     @recipe = Recipe.find(params[:id])
-    @ingredient_name = @recipe.ingredients[0].name
+    if(@recipe.ingredients.size > 0)
+      @ingredient_name = @recipe.ingredients[0].name
+    end
   end
 
   # POST /recipes

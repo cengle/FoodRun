@@ -18,22 +18,24 @@
   <h2>Ingredients</h2>
   <% f.fields_for :ingredient_amounts do |i| %>
   <h3>Ingredient</h3>
-  <p>
-    <%= label_tag :ingredient_name %>
-    <%= text_field_tag :ingredient_name, @ingredient_name %>
-  </p>
-  <p>
-    <%= i.label :number %>
-    <%= i.text_field :number %>
-  </p>
-  <p>
-    <%= i.label :unit %>
-    <%= i.text_field :unit %>
-  </p>
+  <% if @ingredient_name%>
+	  <p>
+		<%= label_tag :ingredient_name %>
+	    <%= text_field_tag :ingredient_name, @ingredient_name %>
+	  </p>
+	  <p>
+	    <%= i.label :number %>
+	    <%= i.text_field :number %>
+	  </p>
+	  <p>
+	    <%= i.label :unit %>
+	    <%= i.text_field :unit %>
+	  </p>
+	  <% end %>
+	  <p>
+	    <%= f.submit 'Update' %>
+	  </p>
   <% end %>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
  <% end %>
 
 <%= link_to 'Show', @recipe %> |
