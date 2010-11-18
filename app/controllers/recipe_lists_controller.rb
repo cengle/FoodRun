@@ -119,7 +119,7 @@ class RecipeListsController < ApplicationController
   				
   				@grocery_list << ingredient_amount
   			end
-  			
+  		
   		end
   	end
   	
@@ -127,8 +127,8 @@ class RecipeListsController < ApplicationController
   	# now return newly created grocery list
   	respond_to do |format|
   		format.html # groceryList.html.erb
-  	end
-  	
+      #format.xml  { render :layout => @recipes }
+    end
   end
 
   # DELETE /recipe_lists/1
