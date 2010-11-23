@@ -1,0 +1,14 @@
+Group: Roommate App
+Site: electric-leaf.heroku.com
+
+I examined electric-leaf's web roommate application for this assignment. Their application
+	is designed to make it easier for roommates to be able to easily manage bills and chores
+	online. Each user creates an account, and is then able to search for his roommates' accounts
+	via email to begin sharing chores and bills. I decided to inspect the feature that allowed
+	users to split bills arbitrarily. I originally assumed that functionality that dealt with 
+	calculations on differnet bills would be located in the bills model, but after examining
+	the code, the members of electric-leaf had placed the core calculation functionality in
+	the controller. Each time the index function in the bills controller is called, the amount
+	of money each roommate owes for each bill is calculated, along with how much money is owed
+	to him by other roommates. The function clearly works properly, but in a later revision should
+	probably be refactored to follow SOFA guidelines.
