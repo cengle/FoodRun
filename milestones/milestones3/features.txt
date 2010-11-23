@@ -1,0 +1,15 @@
+Features
+
+- Ingredients re-usable between recipes
+
+- CSS styling on every page
+
+- Autocomplete ingredient names
+
+- Column layout on each page contains featured and top-rated recipes
+
+- Improved recipe search (part of recipe name, ignore case, etc.)
+
+- Add pagination to index view
+
+- Show average review for each recipe
