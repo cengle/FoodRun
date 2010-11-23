@@ -1,0 +1,3 @@
+BeatMap
+
+I looked at beatmap.heroku.com. They had an integration with Yelp's API to display restaurants, nightlife, and other attractions near certain areas. I thought that by using much of Yelp's UI, the website was clean and intuitive. I liked how I could save and share maps, and while the implementation wasn't too complicated, the use cases are huge. Overall, I enjoyed the site, though there were too many dead-end links, which obviously shouldn't be too much of an issue now.
