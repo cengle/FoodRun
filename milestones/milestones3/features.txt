@@ -1,15 +1,13 @@
 Features
 
-- Ingredients re-usable between recipes
-
 - CSS styling on every page
 
-- Autocomplete ingredient names
+- Autocomplete ingredient names - all uses javascript, so no cucumber feature
 
-- Column layout on each page contains featured and top-rated recipes
+- Column layout on each page contains featured and top-rated recipes - dynamic_sidebar.feature
 
-- Improved recipe search (part of recipe name, ignore case, etc.)
+- Improved recipe search (part of recipe name, ignore case, etc.) - improve_recipe_search.feature
 
 - Add pagination to index view
 
-- Show average review for each recipe
+- Show average review for each recipe - recipe_average_review.feature
