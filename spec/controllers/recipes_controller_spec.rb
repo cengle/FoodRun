@@ -2,8 +2,13 @@ require 'spec_helper'
 
 describe RecipesController do
 
+
   def mock_recipe(stubs={})
     @mock_recipe ||= mock_model(Recipe, stubs)
+  end
+
+  before(:each) do
+    controller.stub!(:load_sidebar)
   end
 
   describe "GET show" do

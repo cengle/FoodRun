@@ -4,10 +4,7 @@ describe Ingredient do
   before(:each) do
     @valid_attributes = {
       :name => "value for name",
-      :number => 1,
-      :unit => "value for unit",
       :type => "value for type",
-      :recipe_id => 1
     }
   end
 

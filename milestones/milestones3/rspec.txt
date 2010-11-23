@@ -1,0 +1,259 @@
+(in /home/cliff/FoodRun)
+RecipesController
+  routing
+    recognizes and generates #index
+    recognizes and generates #new
+    recognizes and generates #show
+    recognizes and generates #edit
+    recognizes and generates #create
+    recognizes and generates #update
+    recognizes and generates #destroy
+RecipesHelper
+  is included in the helper object
+Recipe
+  should create a new instance given valid attributes
+IngredientsController
+  routing
+    recognizes and generates #index
+    recognizes and generates #new
+    recognizes and generates #show
+    recognizes and generates #edit
+    recognizes and generates #create
+    recognizes and generates #update
+    recognizes and generates #destroy
+  DELETE destroy
+    destroys the requested ingredient
+    redirects to the ingredients list
+  PUT update
+    with invalid params
+      updates the requested ingredient
+      assigns the ingredient as @ingredient
+      re-renders the 'edit' template
+    with valid params
+      updates the requested ingredient
+      assigns the requested ingredient as @ingredient
+      redirects to the ingredient
+  POST create
+    with invalid params
+      assigns a newly created but unsaved ingredient as @ingredient
+      re-renders the 'new' template
+    with valid params
+      assigns a newly created ingredient as @ingredient
+      redirects to the created ingredient
+  GET edit
+    assigns the requested ingredient as @ingredient
+  GET new
+    assigns a new ingredient as @ingredient
+  GET show
+    assigns the requested ingredient as @ingredient
+  GET index
+    assigns all ingredients as @ingredients
+IngredientsHelper
+  is included in the helper object
+ReviewsController
+  routing
+    recognizes and generates #index
+    recognizes and generates #new
+    recognizes and generates #show
+    recognizes and generates #edit
+    recognizes and generates #create
+    recognizes and generates #update
+    recognizes and generates #destroy
+ReviewsHelper
+  is included in the helper object
+RecipeListsController
+  routing
+    recognizes and generates #index
+    recognizes and generates #new
+    recognizes and generates #show
+    recognizes and generates #edit
+    recognizes and generates #create
+    recognizes and generates #update
+    recognizes and generates #destroy
+RecipeListsHelper
+  is included in the helper object
+/recipe_lists/edit.html.erb
+  renders the edit recipe_list form
+RecipeList
+  should create a new instance given valid attributes
+/recipe_lists/index.html.erb
+  renders a list of recipe_lists
+/recipe_lists/new.html.erb
+  renders new recipe_list form
+GroceryListsController
+  routing
+    recognizes and generates #index
+    recognizes and generates #new
+    recognizes and generates #show
+    recognizes and generates #edit
+    recognizes and generates #create
+    recognizes and generates #update
+    recognizes and generates #destroy
+  DELETE destroy
+    destroys the requested grocery_list
+    redirects to the grocery_lists list
+  PUT update
+    with invalid params
+      updates the requested grocery_list
+      assigns the grocery_list as @grocery_list
+      re-renders the 'edit' template
+    with valid params
+      updates the requested grocery_list
+      assigns the requested grocery_list as @grocery_list
+      redirects to the grocery_list
+  POST create
+    with invalid params
+      assigns a newly created but unsaved grocery_list as @grocery_list
+      re-renders the 'new' template
+    with valid params
+      assigns a newly created grocery_list as @grocery_list
+      redirects to the created grocery_list
+  GET edit
+    assigns the requested grocery_list as @grocery_list
+  GET new
+    assigns a new grocery_list as @grocery_list
+  GET show
+    assigns the requested grocery_list as @grocery_list
+  GET index
+    assigns all grocery_lists as @grocery_lists
+GroceryListsHelper
+  is included in the helper object
+/grocery_lists/edit.html.erb
+  renders the edit grocery_list form
+GroceryList
+  should create a new instance given valid attributes
+/grocery_lists/show.html.erb
+  renders attributes in <p>
+/grocery_lists/new.html.erb
+  renders new grocery_list form
+/grocery_lists/index.html.erb
+  renders a list of grocery_lists
+/reviews/show.html.erb
+  renders attributes in <p>
+/reviews/new.html.erb
+  renders new review form
+/reviews/index.html.erb
+  renders a list of reviews
+Review
+  should create a new instance given valid attributes
+/reviews/edit.html.erb
+  renders the edit review form
+/recipes/edit.html.erb
+  renders the edit recipe form
+/recipes/new.html.erb
+  renders new recipe form
+ReviewsController
+  Adding Review
+    Adds Review to Current Recipe
+  DELETE destroy
+    destroys the requested review
+    redirects to the reviews list
+  PUT update
+    with invalid params
+      updates the requested review
+      assigns the review as @review
+      re-renders the 'edit' template
+    with valid params
+      updates the requested review
+      assigns the requested review as @review
+      redirects to the review
+  POST create
+    with invalid params
+      assigns a newly created but unsaved review as @review
+      re-renders the 'new' template
+    with valid params
+      assigns a newly created review as @review
+      redirects to the created review
+  GET edit
+    assigns the requested review as @review
+  GET new
+    assigns a new review as @review
+  GET show
+    assigns the requested review as @review
+  GET index
+    assigns all reviews as @reviews
+UserSessionsHelper
+  is included in the helper object
+UsersHelper
+  is included in the helper object
+/users/edit.html.erb
+  renders the edit user form
+/users/new.html.erb
+  renders new user form
+/users/index.html.erb
+  renders a list of users
+/users/show.html.erb
+  renders attributes in <p>
+UserSessionsController
+  routing
+    recognizes and generates #index
+    recognizes and generates #new
+    recognizes and generates #show
+    recognizes and generates #edit
+    recognizes and generates #create
+    recognizes and generates #update
+    recognizes and generates #destroy
+UsersController
+  routing
+    recognizes and generates #index
+    recognizes and generates #new
+    recognizes and generates #show
+    recognizes and generates #edit
+    recognizes and generates #create
+    recognizes and generates #update
+    recognizes and generates #destroy
+UserSessionsController
+  PUT update
+    with invalid params
+      updates the requested user_session
+      assigns the user_session as @user_session
+      re-renders the 'edit' template
+    with valid params
+      updates the requested user_session
+      assigns the requested user_session as @user_session
+      redirects to the user_session
+  POST create
+    with valid params
+      assigns a newly created user_session as @user_session
+  GET edit
+    assigns the requested user_session as @user_session
+  GET new
+    assigns a new user_session as @user_session
+  GET show
+    assigns the requested user_session as @user_session
+UsersController
+  DELETE destroy
+    destroys the requested user
+    redirects to the users list
+  GET new
+    assigns a new user as @user
+  GET show
+    assigns the requested user as @user
+  GET index
+    assigns all users as @users
+RecipesController
+  search
+    should assign the correct results to @results
+    should flash results not found when no results are found
+  DELETE destroy
+    destroys the requested recipe
+    redirects to the recipes list
+  GET show
+    assigns the requested recipe as @recipe
+RecipeListsController
+  adding a recipe to a recipe list
+    adds the current recipe to a recipe list
+/ingredients/edit.html.erb
+  renders the edit ingredient form
+/ingredients/new.html.erb
+  renders new ingredient form
+/ingredients/show.html.erb
+  renders attributes in <p>
+/ingredients/index.html.erb
+  renders a list of ingredients
+Ingredient
+  should create a new instance given valid attributes
+
+Finished in 0.981842211 seconds
+
+152 examples, 0 failures
