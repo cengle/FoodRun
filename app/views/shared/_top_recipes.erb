@@ -1,3 +1,6 @@
 <% @top_recipes.each do |recipe| %>
-   <li><%= link_to recipe.title, recipe %></li>
+   <li><%= link_to recipe.title, recipe %>   
+       <br>Rating: <%= recipe.average_rating %>
+   </li>  
+
 <% end %>
