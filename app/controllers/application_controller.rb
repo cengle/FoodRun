@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   def load_sidebar
     @featured_recipes = Recipe.find :all, :order => :title, :limit => 8
-    @top_recipes = Recipe.find(:all, :limit => 4).sort!{|r1,r2|r2.average_rating <=> r1.average_rating}
+    @top_recipes = Recipe.find(:all).sort!{|r1,r2|r2.average_rating <=> r1.average_rating}[0..3]
   end
   private
   helper_method :current_user
