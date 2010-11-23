@@ -2,9 +2,14 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+  before_filter :load_sidebar
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   helper_method :current_user
+  def load_sidebar
+    @featured_recipes = Recipe.find :all, :order => :title, :limit => 8
+    @top_recipes = Recipe.find :all, :limit => 4
+  end
   private
   helper_method :current_user
 
