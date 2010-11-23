@@ -4,7 +4,8 @@ Feature: Add recipe to recipe list
 	I want to be able to add recipes to a global recipe list
 	
 	Scenario: Add a recipe
-		Given I have added a recipe
+		Given I have logged in 
+		And I have added a recipe
 		And I am on the home page
 		When I follow "Chicken Burrito"
 		And I follow "Add to recipe list"

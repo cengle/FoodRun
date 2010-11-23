@@ -4,7 +4,7 @@ Feature: View recipe list as a list of ingredients
 	I want to be able to see my list of recipes as a list of ingredients
 
 	Scenario: See recipe in recipe list
-		Given I have created a recipe list
+		Given I have logged in
 		And I have added a cookie recipe to the recipe list named "Sugar Cookies"
 		And I have added a cookie recipe to the recipe list named "Chocolate Chip Cookies"
 		And I am on the home page

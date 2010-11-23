@@ -10,3 +10,12 @@ Given /^I have added a recipe to the recipe list named (.+)$/ do |recipe_name|
   click_link('Add to recipe list')
   click_link('Back')
 end
+
+Given /^I have logged in$/ do
+  visit 'users/new'
+  fill_in(:user_username, :with => 'user')
+  fill_in(:user_email, :with => 'user@user.com')
+  fill_in(:user_password, :with => 'password')
+  fill_in(:user_password_confirmation, :with => 'password')
+  click_button('Create')
+end

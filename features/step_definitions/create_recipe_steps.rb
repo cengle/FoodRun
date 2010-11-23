@@ -8,7 +8,7 @@ When /^I fill in Directions with make burrito$/ do
 end
 
 When /^I fill in ingredient one's name with (.+)$/ do |arg|
-	fill_in(:ingredient_name, :with => arg)
+	fill_in(:ingredient_amount_ingredient_name, :with => arg)
 end
 
 When /^I fill in ingredient one's number with (\d+)$/ do |arg1|
