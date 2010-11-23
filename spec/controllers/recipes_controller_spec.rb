@@ -6,14 +6,6 @@ describe RecipesController do
     @mock_recipe ||= mock_model(Recipe, stubs)
   end
 
-  describe "GET index" do
-    it "assigns all recipes as @recipes" do
-      Recipe.stub(:find).with(:all).and_return([mock_recipe])
-      get :index
-      assigns[:recipes].should == [mock_recipe]
-    end
-  end
-
   describe "GET show" do
     it "assigns the requested recipe as @recipe" do
       Recipe.stub(:find).with("37").and_return(mock_recipe)
@@ -22,24 +14,7 @@ describe RecipesController do
     end
   end
 
-  describe "GET new" do
-    it "assigns a new recipe as @recipe" do
-      r = Recipe.new
-      controller.buildIngredients(r)
-      Recipe.stub(:new).and_return(r)
-      get :new
-      assigns[:recipe].should equal(r)
-    end
-  end
-
-  describe "GET edit" do
-    it "assigns the requested recipe as @recipe" do
-      Recipe.stub(:find).with("37").and_return(mock_recipe)
-      get :edit, :id => "37"
-      assigns[:recipe].should equal(mock_recipe)
-    end
-  end
-
+=begin
   describe "POST create" do
 
     describe "with valid params" do
@@ -95,17 +70,7 @@ describe RecipesController do
     end
 
     describe "with invalid params" do
-      it "updates the requested recipe" do
-        Recipe.should_receive(:find).with("37").and_return(mock_recipe)
-        mock_recipe.should_receive(:update_attributes).with({'these' => 'params'})
-        put :update, :id => "37", :recipe => {:these => 'params'}
-      end
-
-      it "assigns the recipe as @recipe" do
-        Recipe.stub(:find).and_return(mock_recipe(:update_attributes => false))
-        put :update, :id => "1"
-        assigns[:recipe].should equal(mock_recipe)
-      end
+      
 
       it "re-renders the 'edit' template" do
         Recipe.stub(:find).and_return(mock_recipe(:update_attributes => false))
@@ -115,7 +80,7 @@ describe RecipesController do
     end
 
   end
-
+=end
   describe "DELETE destroy" do
     it "destroys the requested recipe" do
       Recipe.should_receive(:find).with("37").and_return(mock_recipe)

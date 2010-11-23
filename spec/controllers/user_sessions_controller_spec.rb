@@ -6,13 +6,6 @@ describe UserSessionsController do
     @mock_user_session ||= mock_model(UserSession, stubs)
   end
 
-  describe "GET index" do
-    it "assigns all user_sessions as @user_sessions" do
-      UserSession.stub(:find).with(:all).and_return([mock_user_session])
-      get :index
-      assigns[:user_sessions].should == [mock_user_session]
-    end
-  end
 
   describe "GET show" do
     it "assigns the requested user_session as @user_session" do
@@ -47,25 +40,6 @@ describe UserSessionsController do
         assigns[:user_session].should equal(mock_user_session)
       end
 
-      it "redirects to the created user_session" do
-        UserSession.stub(:new).and_return(mock_user_session(:save => true))
-        post :create, :user_session => {}
-        response.should redirect_to(user_session_url(mock_user_session))
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns a newly created but unsaved user_session as @user_session" do
-        UserSession.stub(:new).with({'these' => 'params'}).and_return(mock_user_session(:save => false))
-        post :create, :user_session => {:these => 'params'}
-        assigns[:user_session].should equal(mock_user_session)
-      end
-
-      it "re-renders the 'new' template" do
-        UserSession.stub(:new).and_return(mock_user_session(:save => false))
-        post :create, :user_session => {}
-        response.should render_template('new')
-      end
     end
 
   end
@@ -114,18 +88,5 @@ describe UserSessionsController do
 
   end
 
-  describe "DELETE destroy" do
-    it "destroys the requested user_session" do
-      UserSession.should_receive(:find).with("37").and_return(mock_user_session)
-      mock_user_session.should_receive(:destroy)
-      delete :destroy, :id => "37"
-    end
-
-    it "redirects to the user_sessions list" do
-      UserSession.stub(:find).and_return(mock_user_session(:destroy => true))
-      delete :destroy, :id => "1"
-      response.should redirect_to(user_sessions_url)
-    end
-  end
 
 end
