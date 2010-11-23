@@ -1,0 +1,1 @@
+I looked at the Whiteboard app. I was impressed with all of the javascript functionality they have for creating images. I didn't realize how many canvas capabilities are provided by those javascript libraries.
