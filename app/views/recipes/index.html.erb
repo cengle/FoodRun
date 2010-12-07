@@ -9,7 +9,7 @@ New User
 <% @recipes.each do |recipe| %>
 <div class="post">
 	<p class="meta"><span class="date"> <%= recipe.created_at.asctime %> Posted by <a href="#">Someone</a></p>
-	<h2 class="title"><%= link_to recipe.title, recipe %></td></h2>
+	<h2 class="title"><%= link_to recipe.title, recipe %></h2>
 	<div class="entry">
 		<%=recipe.directions%>
 	</div>
