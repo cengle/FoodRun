@@ -5,6 +5,8 @@ ActionController::Routing::Routes.draw do |map|
   map.logout"logout", :controller => "user_sessions", :action => "destroy"
   map.resources :users
 
+  map.resources :urecipes
+  
   map.resources :ingredients_recipes
 
   map.resources :grocery_lists
@@ -22,6 +24,8 @@ ActionController::Routing::Routes.draw do |map|
   map.delete_from_recipe_list '/recipe_lists/:id/recipes/:recipe_id', :controller => 'recipe_lists', :action => 'destroyRecipe', :conditions => { :method => :delete }
 
   map.groceryList '/recipe_lists/:id/groceryList', :controller => 'recipe_lists', :action => 'groceryList' 
+  
+  map.showMyRecipes '/recipes/:id/showMyRecipes/', :controller => 'recipes', :action => 'showMyRecipes'
 
   # The priority is based upon order of creation: first created -> highest priority.
 

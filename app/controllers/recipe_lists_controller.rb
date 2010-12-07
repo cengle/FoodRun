@@ -95,10 +95,12 @@ class RecipeListsController < ApplicationController
   
   # returns a list of (super-)ingredients
   def groceryList
-  	recipe_list = RecipeList.find(:first).recipes
+	user = User.find_by_id(params[:user])
+	recipe_list = user.recipe_list
+	recipes = recipe_list.recipes
   	@grocery_list = Array.new # list of ingredients
   	
-  	recipe_list.each do |recipe| # for each recipe
+  	recipes.each do |recipe| # for each recipe
   		recipe_ingredient_amounts = recipe.ingredient_amounts
   		
   		recipe_ingredient_amounts.each do |recipe_ingredient_amount| # for each ingredient in that recipe

@@ -14418,3 +14418,615 @@ Processing RecipesController#show (for 0.0.0.0 at 2010-11-22 20:00:09) [GET]
 Rendering template within layouts/recipes
 Rendering recipes/show
 Completed in 4ms (View: 3, DB: 0) | 200 OK [http://test.host/recipes/37]
+
+
+Processing GroceryListsController#destroy (for 0.0.0.0 at 2010-12-06 16:43:09) [DELETE]
+  Parameters: {"id"=>"37"}
+  [4;36;1mRecipe Load (4.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/grocery_lists
+Completed in 32ms (DB: 5) | 302 Found [http://test.host/grocery_lists/37]
+
+
+Processing GroceryListsController#destroy (for 0.0.0.0 at 2010-12-06 16:43:09) [DELETE]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (2.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/grocery_lists
+Completed in 17ms (DB: 3) | 302 Found [http://test.host/grocery_lists/1]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-12-06 16:43:09) [PUT]
+  Parameters: {"id"=>"37", "grocery_list"=>{"these"=>"params"}}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering grocery_lists/edit
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://test.host/grocery_lists/37?grocery_list%5Bthese%5D=params]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-12-06 16:43:10) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering grocery_lists/edit
+Completed in 15ms (View: 3, DB: 2) | 200 OK [http://test.host/grocery_lists/1]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-12-06 16:43:10) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (3.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering grocery_lists/edit
+Completed in 16ms (View: 5, DB: 4) | 200 OK [http://test.host/grocery_lists/1]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-12-06 16:43:10) [PUT]
+  Parameters: {"id"=>"37", "grocery_list"=>{"these"=>"params"}}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering grocery_lists/edit
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://test.host/grocery_lists/37?grocery_list%5Bthese%5D=params]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-12-06 16:43:10) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (2.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/grocery_lists/1007
+Completed in 11ms (DB: 3) | 302 Found [http://test.host/grocery_lists/1]
+
+
+Processing GroceryListsController#update (for 0.0.0.0 at 2010-12-06 16:43:10) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/grocery_lists/1008
+Completed in 10ms (DB: 1) | 302 Found [http://test.host/grocery_lists/1]
+
+
+Processing GroceryListsController#create (for 0.0.0.0 at 2010-12-06 16:43:10) [POST]
+  Parameters: {"grocery_list"=>{"these"=>"params"}}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering grocery_lists/new
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://test.host/grocery_lists?grocery_list%5Bthese%5D=params]
+
+
+Processing GroceryListsController#create (for 0.0.0.0 at 2010-12-06 16:43:10) [POST]
+  Parameters: {"grocery_list"=>{}}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering grocery_lists/new
+Completed in 11ms (View: 3, DB: 2) | 200 OK [http://test.host/grocery_lists?]
+
+
+Processing GroceryListsController#create (for 0.0.0.0 at 2010-12-06 16:43:10) [POST]
+  Parameters: {"grocery_list"=>{"these"=>"params"}}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/grocery_lists/1011
+Completed in 10ms (DB: 1) | 302 Found [http://test.host/grocery_lists?grocery_list%5Bthese%5D=params]
+
+
+Processing GroceryListsController#create (for 0.0.0.0 at 2010-12-06 16:43:10) [POST]
+  Parameters: {"grocery_list"=>{}}
+  [4;36;1mRecipe Load (2.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/grocery_lists/1012
+Completed in 15ms (DB: 3) | 302 Found [http://test.host/grocery_lists?]
+
+
+Processing GroceryListsController#edit (for 0.0.0.0 at 2010-12-06 16:43:10) [GET]
+  Parameters: {"id"=>"37"}
+  [4;36;1mRecipe Load (2.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering grocery_lists/edit
+Completed in 18ms (View: 2, DB: 3) | 200 OK [http://test.host/grocery_lists/37/edit]
+
+
+Processing GroceryListsController#new (for 0.0.0.0 at 2010-12-06 16:43:10) [GET]
+  [4;36;1mRecipe Load (2.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering grocery_lists/new
+Completed in 29ms (View: 3, DB: 3) | 200 OK [http://test.host/grocery_lists/new]
+
+
+Processing GroceryListsController#show (for 0.0.0.0 at 2010-12-06 16:43:10) [GET]
+  Parameters: {"id"=>"37"}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering grocery_lists/show
+Completed in 33ms (View: 3, DB: 1) | 200 OK [http://test.host/grocery_lists/37]
+
+
+Processing GroceryListsController#index (for 0.0.0.0 at 2010-12-06 16:43:10) [GET]
+  [4;36;1mRecipe Load (2.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering grocery_lists/index
+Completed in 10ms (View: 2, DB: 3) | 200 OK [http://test.host/grocery_lists]
+
+
+Processing IngredientsController#destroy (for 0.0.0.0 at 2010-12-06 16:43:10) [DELETE]
+  Parameters: {"id"=>"37"}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/ingredients
+Completed in 22ms (DB: 1) | 302 Found [http://test.host/ingredients/37]
+
+
+Processing IngredientsController#destroy (for 0.0.0.0 at 2010-12-06 16:43:10) [DELETE]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (2.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/ingredients
+Completed in 12ms (DB: 3) | 302 Found [http://test.host/ingredients/1]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-12-06 16:43:10) [PUT]
+  Parameters: {"id"=>"37", "ingredient"=>{"these"=>"params"}}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering ingredients/edit
+Completed in 13ms (View: 3, DB: 1) | 200 OK [http://test.host/ingredients/37?ingredient%5Bthese%5D=params]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-12-06 16:43:11) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering ingredients/edit
+Completed in 12ms (View: 3, DB: 2) | 200 OK [http://test.host/ingredients/1]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-12-06 16:43:11) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering ingredients/edit
+Completed in 36ms (View: 2, DB: 2) | 200 OK [http://test.host/ingredients/1]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-12-06 16:43:11) [PUT]
+  Parameters: {"id"=>"37", "ingredient"=>{"these"=>"params"}}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering ingredients/edit
+Completed in 11ms (View: 2, DB: 2) | 200 OK [http://test.host/ingredients/37?ingredient%5Bthese%5D=params]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-12-06 16:43:11) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (2.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/ingredients/1023
+Completed in 15ms (DB: 2) | 302 Found [http://test.host/ingredients/1]
+
+
+Processing IngredientsController#update (for 0.0.0.0 at 2010-12-06 16:43:11) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (2.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/ingredients/1024
+Completed in 17ms (DB: 3) | 302 Found [http://test.host/ingredients/1]
+
+
+Processing IngredientsController#create (for 0.0.0.0 at 2010-12-06 16:43:11) [POST]
+  Parameters: {"ingredient"=>{"these"=>"params"}}
+  [4;36;1mRecipe Load (2.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering ingredients/new
+Completed in 16ms (View: 3, DB: 2) | 200 OK [http://test.host/ingredients?ingredient%5Bthese%5D=params]
+
+
+Processing IngredientsController#create (for 0.0.0.0 at 2010-12-06 16:43:11) [POST]
+  Parameters: {"ingredient"=>{}}
+  [4;36;1mRecipe Load (2.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering ingredients/new
+Completed in 14ms (View: 2, DB: 3) | 200 OK [http://test.host/ingredients?]
+
+
+Processing IngredientsController#create (for 0.0.0.0 at 2010-12-06 16:43:11) [POST]
+  Parameters: {"ingredient"=>{"these"=>"params"}}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/ingredients/1027
+Completed in 19ms (DB: 2) | 302 Found [http://test.host/ingredients?ingredient%5Bthese%5D=params]
+
+
+Processing IngredientsController#create (for 0.0.0.0 at 2010-12-06 16:43:11) [POST]
+  Parameters: {"ingredient"=>{}}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/ingredients/1028
+Completed in 19ms (DB: 1) | 302 Found [http://test.host/ingredients?]
+
+
+Processing IngredientsController#edit (for 0.0.0.0 at 2010-12-06 16:43:11) [GET]
+  Parameters: {"id"=>"37"}
+  [4;36;1mRecipe Load (2.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering ingredients/edit
+Completed in 11ms (View: 2, DB: 2) | 200 OK [http://test.host/ingredients/37/edit]
+
+
+Processing IngredientsController#new (for 0.0.0.0 at 2010-12-06 16:43:12) [GET]
+  [4;36;1mRecipe Load (8.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (4.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering ingredients/new
+Completed in 32ms (View: 3, DB: 12) | 200 OK [http://test.host/ingredients/new]
+
+
+Processing IngredientsController#show (for 0.0.0.0 at 2010-12-06 16:43:12) [GET]
+  Parameters: {"id"=>"37"}
+  [4;36;1mRecipe Load (7.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering ingredients/show
+Completed in 23ms (View: 7, DB: 8) | 200 OK [http://test.host/ingredients/37]
+
+
+Processing IngredientsController#index (for 0.0.0.0 at 2010-12-06 16:43:12) [GET]
+  [4;36;1mRecipe Load (2.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering ingredients/index
+Completed in 10ms (View: 3, DB: 2) | 200 OK [http://test.host/ingredients]
+  [4;36;1mRecipeList Create (6.0ms)[0m   [0;1mINSERT INTO "recipe_lists" ("created_at", "updated_at", "user_id") VALUES('2010-12-07 00:43:12', '2010-12-07 00:43:12', NULL)[0m
+  [4;35;1mRecipe Create (1.0ms)[0m   [0mINSERT INTO "recipes" ("directions", "created_at", "title", "updated_at", "recipelist_id", "completion_time") VALUES('Cook', '2010-12-07 00:43:12', 'Chicken', '2010-12-07 00:43:12', NULL, 5)[0m
+
+
+Processing ReviewsController#create (for 0.0.0.0 at 2010-12-06 16:43:12) [POST]
+  Parameters: {"review"=>{"rating"=>5, "title"=>"Cool", "recipe_id"=>1, "review"=>"Sick"}}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mReview Create (7.0ms)[0m   [0;1mINSERT INTO "reviews" ("rating", "created_at", "title", "recipe_id", "updated_at", "review") VALUES(5, '2010-12-07 00:43:12', 'Cool', 1, '2010-12-07 00:43:12', 'Sick')[0m
+Redirected to http://test.host/reviews/1
+Completed in 71ms (DB: 16) | 302 Found [http://test.host/reviews?review%5Brating%5D=5&review%5Brecipe_id%5D=1&review%5Breview%5D=Sick&review%5Btitle%5D=Cool]
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+
+
+Processing ReviewsController#destroy (for 0.0.0.0 at 2010-12-06 16:43:12) [DELETE]
+  Parameters: {"id"=>"37"}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/reviews
+Completed in 9ms (DB: 3) | 302 Found [http://test.host/reviews/37]
+
+
+Processing ReviewsController#destroy (for 0.0.0.0 at 2010-12-06 16:43:12) [DELETE]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (2.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/reviews
+Completed in 9ms (DB: 2) | 302 Found [http://test.host/reviews/1]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-12-06 16:43:12) [PUT]
+  Parameters: {"review"=>{"these"=>"params"}, "id"=>"37"}
+  [4;36;1mRecipe Load (2.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering reviews/edit
+Completed in 19ms (View: 3, DB: 2) | 200 OK [http://test.host/reviews/37?review%5Bthese%5D=params]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-12-06 16:43:12) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering reviews/edit
+Completed in 13ms (View: 4, DB: 1) | 200 OK [http://test.host/reviews/1]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-12-06 16:43:12) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering reviews/edit
+Completed in 14ms (View: 4, DB: 1) | 200 OK [http://test.host/reviews/1]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-12-06 16:43:12) [PUT]
+  Parameters: {"review"=>{"these"=>"params"}, "id"=>"37"}
+  [4;36;1mRecipe Load (2.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering reviews/edit
+Completed in 19ms (View: 5, DB: 3) | 200 OK [http://test.host/reviews/37?review%5Bthese%5D=params]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-12-06 16:43:13) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (2.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/reviews/1039
+Completed in 10ms (DB: 3) | 302 Found [http://test.host/reviews/1]
+
+
+Processing ReviewsController#update (for 0.0.0.0 at 2010-12-06 16:43:13) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/reviews/1040
+Completed in 11ms (DB: 1) | 302 Found [http://test.host/reviews/1]
+
+
+Processing ReviewsController#create (for 0.0.0.0 at 2010-12-06 16:43:13) [POST]
+  Parameters: {"review"=>{"these"=>"params"}}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering reviews/new
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://test.host/reviews?review%5Bthese%5D=params]
+
+
+Processing ReviewsController#create (for 0.0.0.0 at 2010-12-06 16:43:13) [POST]
+  Parameters: {"review"=>{}}
+  [4;36;1mRecipe Load (2.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering reviews/new
+Completed in 20ms (View: 6, DB: 3) | 200 OK [http://test.host/reviews?]
+
+
+Processing ReviewsController#create (for 0.0.0.0 at 2010-12-06 16:43:13) [POST]
+  Parameters: {"review"=>{"these"=>"params"}}
+  [4;36;1mRecipe Load (3.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/reviews/1043
+Completed in 360ms (DB: 4) | 302 Found [http://test.host/reviews?review%5Bthese%5D=params]
+
+
+Processing ReviewsController#create (for 0.0.0.0 at 2010-12-06 16:43:13) [POST]
+  Parameters: {"review"=>{}}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/reviews/1044
+Completed in 10ms (DB: 2) | 302 Found [http://test.host/reviews?]
+
+
+Processing ReviewsController#edit (for 0.0.0.0 at 2010-12-06 16:43:14) [GET]
+  Parameters: {"id"=>"37"}
+  [4;36;1mRecipe Load (3.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering reviews/edit
+Completed in 18ms (View: 3, DB: 4) | 200 OK [http://test.host/reviews/37/edit]
+
+
+Processing ReviewsController#new (for 0.0.0.0 at 2010-12-06 16:43:14) [GET]
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering reviews/new
+Completed in 13ms (View: 2, DB: 2) | 200 OK [http://test.host/reviews/new]
+
+
+Processing ReviewsController#show (for 0.0.0.0 at 2010-12-06 16:43:14) [GET]
+  Parameters: {"id"=>"37"}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering reviews/show
+Completed in 28ms (View: 12, DB: 1) | 200 OK [http://test.host/reviews/37]
+
+
+Processing ReviewsController#index (for 0.0.0.0 at 2010-12-06 16:43:14) [GET]
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering reviews/index
+Completed in 11ms (View: 2, DB: 1) | 200 OK [http://test.host/reviews]
+Rendering reviews/show.html.erb
+Rendering reviews/new.html.erb
+Rendering reviews/index.html.erb
+Rendering reviews/edit.html.erb
+Rendering recipe_lists/new.html.erb
+Rendering recipe_lists/index.html.erb
+Rendering recipe_lists/edit.html.erb
+Rendering recipes/new.html.erb
+Rendering recipes/edit.html.erb
+  [4;36;1mIngredientAmount Load (1.0ms)[0m   [0;1mSELECT * FROM "ingredient_amounts" WHERE ("ingredient_amounts".recipe_id = 1059) [0m
+Rendering grocery_lists/show.html.erb
+Rendering grocery_lists/new.html.erb
+Rendering grocery_lists/index.html.erb
+Rendering grocery_lists/edit.html.erb
+  [4;35;1mRecipeList Create (4.0ms)[0m   [0mINSERT INTO "recipe_lists" ("created_at", "updated_at", "user_id") VALUES('2010-12-07 00:43:16', '2010-12-07 00:43:16', NULL)[0m
+  [4;36;1mGroceryList Create (8.0ms)[0m   [0;1mINSERT INTO "grocery_lists" ("created_at", "updated_at") VALUES('2010-12-07 00:43:16', '2010-12-07 00:43:16')[0m
+  [4;35;1mReview Create (3.0ms)[0m   [0mINSERT INTO "reviews" ("rating", "created_at", "title", "recipe_id", "updated_at", "review") VALUES(1, '2010-12-07 00:43:17', 'value for title', 1, '2010-12-07 00:43:17', 'value for review')[0m
+  [4;36;1mRecipe Create (3.0ms)[0m   [0;1mINSERT INTO "recipes" ("directions", "created_at", "title", "updated_at", "recipelist_id", "completion_time") VALUES('value for directions', '2010-12-07 00:43:17', 'value for title', '2010-12-07 00:43:17', 1, 1)[0m
+Rendering users/index.html.erb
+Rendering users/new.html.erb
+Rendering users/show.html.erb
+Rendering users/edit.html.erb
+
+
+Processing UsersController#destroy (for 0.0.0.0 at 2010-12-06 16:43:17) [DELETE]
+  Parameters: {"id"=>"37"}
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/users
+Completed in 23ms (DB: 2) | 302 Found [http://test.host/users/37]
+
+
+Processing UsersController#destroy (for 0.0.0.0 at 2010-12-06 16:43:17) [DELETE]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRecipe Load (2.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/users
+Completed in 14ms (DB: 2) | 302 Found [http://test.host/users/1]
+
+
+Processing UsersController#new (for 0.0.0.0 at 2010-12-06 16:43:17) [GET]
+  [4;35;1mRecipe Load (2.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering users/new
+Completed in 13ms (View: 2, DB: 3) | 200 OK [http://test.host/users/new]
+
+
+Processing UsersController#show (for 0.0.0.0 at 2010-12-06 16:43:17) [GET]
+  Parameters: {"id"=>"37"}
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;36;1mRecipe Load (2.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering users/show
+Completed in 11ms (View: 2, DB: 3) | 200 OK [http://test.host/users/37]
+
+
+Processing UsersController#index (for 0.0.0.0 at 2010-12-06 16:43:18) [GET]
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering users/index
+Completed in 36ms (View: 2, DB: 2) | 200 OK [http://test.host/users]
+
+
+Processing UserSessionsController#update (for 0.0.0.0 at 2010-12-06 16:43:18) [PUT]
+  Parameters: {"user_session"=>{"these"=>"params"}, "id"=>"37"}
+  [4;35;1mRecipe Load (2.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering user_sessions/edit
+Completed in 18ms (View: 3, DB: 2) | 200 OK [http://test.host/user_sessions/37?user_session%5Bthese%5D=params]
+
+
+Processing UserSessionsController#update (for 0.0.0.0 at 2010-12-06 16:43:18) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering user_sessions/edit
+Completed in 9ms (View: 2, DB: 1) | 200 OK [http://test.host/user_sessions/1]
+
+
+Processing UserSessionsController#update (for 0.0.0.0 at 2010-12-06 16:43:18) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRecipe Load (2.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering user_sessions/edit
+Completed in 13ms (View: 6, DB: 3) | 200 OK [http://test.host/user_sessions/1]
+
+
+Processing UserSessionsController#update (for 0.0.0.0 at 2010-12-06 16:43:18) [PUT]
+  Parameters: {"user_session"=>{"these"=>"params"}, "id"=>"37"}
+  [4;35;1mRecipe Load (2.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering user_sessions/edit
+Completed in 17ms (View: 4, DB: 3) | 200 OK [http://test.host/user_sessions/37?user_session%5Bthese%5D=params]
+
+
+Processing UserSessionsController#update (for 0.0.0.0 at 2010-12-06 16:43:18) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/user_sessions/1079
+Completed in 13ms (DB: 2) | 302 Found [http://test.host/user_sessions/1]
+
+
+Processing UserSessionsController#update (for 0.0.0.0 at 2010-12-06 16:43:18) [PUT]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/user_sessions/1080
+Completed in 11ms (DB: 2) | 302 Found [http://test.host/user_sessions/1]
+
+
+Processing UserSessionsController#create (for 0.0.0.0 at 2010-12-06 16:43:18) [POST]
+  Parameters: {"user_session"=>{"these"=>"params"}}
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Redirected to http://test.host/
+Completed in 10ms (DB: 2) | 302 Found [http://test.host/user_sessions?user_session%5Bthese%5D=params]
+
+
+Processing UserSessionsController#edit (for 0.0.0.0 at 2010-12-06 16:43:18) [GET]
+  Parameters: {"id"=>"37"}
+  [4;35;1mRecipe Load (2.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering user_sessions/edit
+Completed in 11ms (View: 2, DB: 2) | 200 OK [http://test.host/user_sessions/37/edit]
+
+
+Processing UserSessionsController#new (for 0.0.0.0 at 2010-12-06 16:43:18) [GET]
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering user_sessions/new
+Completed in 15ms (View: 3, DB: 1) | 200 OK [http://test.host/user_sessions/new]
+
+
+Processing UserSessionsController#show (for 0.0.0.0 at 2010-12-06 16:43:18) [GET]
+  Parameters: {"id"=>"37"}
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY title LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering user_sessions/show
+Completed in 11ms (View: 2, DB: 1) | 200 OK [http://test.host/user_sessions/37]
+WARNING: Can't mass-assign these protected attributes: type
+  [4;35;1mIngredient Create (3.0ms)[0m   [0mINSERT INTO "ingredients" ("name", "section", "created_at", "recipe_id", "updated_at") VALUES('value for name', NULL, '2010-12-07 00:43:18', NULL, '2010-12-07 00:43:18')[0m
+  [4;36;1mRecipeList Create (3.0ms)[0m   [0;1mINSERT INTO "recipe_lists" ("created_at", "updated_at", "user_id") VALUES('2010-12-07 00:43:18', '2010-12-07 00:43:18', NULL)[0m
+  [4;35;1mRecipe Create (1.0ms)[0m   [0mINSERT INTO "recipes" ("directions", "created_at", "title", "updated_at", "recipelist_id", "completion_time") VALUES('Cook', '2010-12-07 00:43:18', 'Chicken', '2010-12-07 00:43:18', NULL, 5)[0m
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" INNER JOIN "recipe_lists_recipes" ON "recipes".id = "recipe_lists_recipes".recipe_id WHERE ("recipe_lists_recipes".recipe_list_id = 1 ) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "recipe_lists_recipes" ("recipe_list_id", "recipe_id") VALUES (1, 1)[0m
+
+
+Processing RecipesController#search (for 0.0.0.0 at 2010-12-06 16:43:19) [GET]
+Rendering template within layouts/recipes
+Rendering recipes/search
+Completed in 18ms (View: 3, DB: 9) | 200 OK [http://test.host/recipes/search]
+
+
+Processing RecipesController#search (for 0.0.0.0 at 2010-12-06 16:43:19) [GET]
+  Parameters: {"input"=>"aefjawer"}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (title LIKE '%aefjawer%') [0m
+Rendering template within layouts/recipes
+Rendering recipes/search
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://test.host/recipes/search?input=aefjawer]
+
+
+Processing RecipesController#destroy (for 0.0.0.0 at 2010-12-06 16:43:19) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/recipes
+Completed in 4ms (DB: 0) | 302 Found [http://test.host/recipes/37]
+
+
+Processing RecipesController#destroy (for 0.0.0.0 at 2010-12-06 16:43:19) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/recipes
+Completed in 4ms (DB: 0) | 302 Found [http://test.host/recipes/1]
+
+
+Processing RecipesController#show (for 0.0.0.0 at 2010-12-06 16:43:19) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/recipes
+Rendering recipes/show
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://test.host/recipes/37]
+Rendering ingredients/edit.html.erb
+Rendering ingredients/index.html.erb
+Rendering ingredients/new.html.erb
+Rendering ingredients/show.html.erb
