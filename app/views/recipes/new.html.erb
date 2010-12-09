@@ -1,12 +1,18 @@
  <h1>New recipe</h1>
 
-<% form_for(@recipe) do |f| %>
+<% form_for @recipe, :html => {:multipart => true} do |f| %>
   <%= f.error_messages %>
 
   <p>
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </p>
+  
+  <p>
+  	<%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  
   <p>
     <%= f.label :directions %><br />
     <%= f.text_area :directions %>
@@ -14,6 +20,11 @@
   <p>
     <%= f.label :completion_time %><br />
     <%= f.text_field :completion_time %>
+  </p>
+  
+  <p>
+  	<%= f.label :photo %> <br />
+  	<div class="resize"> <%= f.file_field :photo  %> </div>
   </p>
   
   <h2>Ingredients</h2>

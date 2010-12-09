@@ -8,10 +8,22 @@ New User
 
 <% @recipes.each do |recipe| %>
 <div class="post">
-	<p class="meta"><span class="date"> <%= recipe.created_at.asctime %> Posted by <a href="#">recipe.user</a></p>
-	<h2 class="title"><%= link_to recipe.title, recipe %></td></h2>
-	<div class="entry">
-		<%=recipe.directions%>
+
+	<p class="meta"><span class="date"> <%= recipe.created_at.asctime %> Posted by <a href="#">Someone</a></p>
+	<h2 class="title"><%= link_to recipe.title, recipe %> </h2>
+	<div class="entry_and_photos">
+		<div class="recipe_entry">
+			<% if recipe.description%>
+				<%=recipe.description%>
+			<%else %>
+				No Description
+			<%end%>
+		</div>
+		<div class="resize2">
+			<% if recipe.photo.url != "/photos/original/missing.png"%>
+					<%= image_tag recipe.photo.url %>
+			<%end%>
+		</div>
 	</div>
 </div>
 <% end %>

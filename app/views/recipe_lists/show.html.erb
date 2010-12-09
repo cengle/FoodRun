@@ -1,26 +1,12 @@
-<p>Recipe list</p>
-
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Directions</th>
-    <th>Completion time</th>
-	<th>Reviews</th>
-  </tr>
+<h1>Recipe list</h1>
 
 <% @recipe_list.recipes.each do |recipe| %>
-  <tr>
-    <td><%=h recipe.title %></td>
-    <td><%=h recipe.directions %></td>
-    <td><%=h recipe.completion_time %></td>
-    <td><%=h recipe.reviews.count %></td>
-    <td><%= link_to 'Show', recipe %></td>
-    <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-    <td><%= link_to 'Destroy', delete_from_recipe_list_path(@recipe_list, recipe), :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <div class="recipe_in_list">
+    <%=h recipe.title %>
+    <%= link_to 'Show', recipe %>
+    <%= link_to 'Remove from list', delete_from_recipe_list_path(@recipe_list, recipe), :confirm => 'Are you sure?', :method => :delete%>
+  </div>
 <% end %>
-</table>
 
 <%= link_to 'Show Grocery List', :controller => "recipe_lists", :action => "groceryList", :id => @recipe_list.id, :user => current_user %>
 <%= link_to 'Edit', edit_recipe_list_path(@recipe_list) %> |

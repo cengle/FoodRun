@@ -17,7 +17,7 @@ class RecipeListsController < ApplicationController
   # GET /recipe_lists/1.xml
   def show
     user = User.find_by_id(params[:user])
-	@recipe_list = user.recipe_list
+	  @recipe_list = current_user.recipe_list
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @recipe_list }
@@ -150,7 +150,7 @@ class RecipeListsController < ApplicationController
     @recipe_list = RecipeList.find(params[:id])
     @recipe_list.removeRecipe(params[:recipe_id])
     respond_to do |format|
-      format.html { redirect_to(@recipe_list) }
+      format.html { redirect_to @recipe_list}
       format.xml  { head :ok }
     end
   end
