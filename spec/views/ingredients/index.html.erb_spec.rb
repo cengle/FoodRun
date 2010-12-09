@@ -7,11 +7,11 @@ describe "/ingredients/index.html.erb" do
     assigns[:ingredients] = [
       stub_model(Ingredient,
         :name => "value for name",
-        :section => "value for section",
+        :section => "value for section"
       ),
       stub_model(Ingredient,
         :name => "value for name",
-        :section => "value for section",
+        :section => "value for section"
       )
     ]
   end

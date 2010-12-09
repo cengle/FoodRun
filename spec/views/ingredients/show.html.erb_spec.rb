@@ -5,7 +5,7 @@ describe "/ingredients/show.html.erb" do
   before(:each) do
     assigns[:ingredient] = @ingredient = stub_model(Ingredient,
       :name => "value for name",
-      :section => "value for section",
+      :section => "value for section"
     )
   end
 

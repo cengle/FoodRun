@@ -25,6 +25,11 @@
 				<% end %>		
 				</li>
 				<li>
+				<% if current_user %>
+					<%= link_to 'View my recipes', :controller => 'urecipes', :action => "showMyRecipes", :user => current_user %>
+				<% end %>
+				</li>
+				<li>
 					<% if current_user %>
 						<%= link_to "Edit Profile", edit_user_path(:current) %>
 					<% else %>

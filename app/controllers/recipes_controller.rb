@@ -12,6 +12,16 @@ class RecipesController < ApplicationController
     end
   end
 
+  def showMyRecipes
+	user = User.find_by_id(params[:user])
+	recipe_list = user.recipe_list
+	@recipes = recipe_list.recipes
+	respond_to do |format|
+		format.html
+		format.xml {render :xml => @recipes }
+	end
+  end
+  
   # GET /recipes/1
   # GET /recipes/1.xml
   def show

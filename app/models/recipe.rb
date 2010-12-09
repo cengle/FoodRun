@@ -6,6 +6,8 @@ class Recipe < ActiveRecord::Base
   belongs_to :recipe_list
   accepts_nested_attributes_for :ingredient_amounts, :allow_destroy => true, :reject_if => :all_blank
   
+  has_attached_file :photo
+  
   def average_rating
     revs = self.reviews
     sum = 0.0

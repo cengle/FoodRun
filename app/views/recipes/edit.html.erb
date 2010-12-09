@@ -1,6 +1,6 @@
 <h1>Editing recipe</h1>
 
-<% form_for(@recipe) do |f| %>
+<% form_for @recipe, :html => {:multipart => true} do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -15,6 +15,12 @@
     <%= f.label :completion_time %><br />
     <%= f.text_field :completion_time %>
   </p>
+  
+   <p>
+  	<%= f.file_field :photo  %>
+  </p>
+  
+  
   <h2>Ingredients</h2>
   <% f.fields_for :ingredient_amounts do |i| %>
   <h3>Ingredient</h3>
