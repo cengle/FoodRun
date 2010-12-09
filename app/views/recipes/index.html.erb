@@ -9,9 +9,18 @@ New User
 <% @recipes.each do |recipe| %>
 <div class="post">
 	<p class="meta"><span class="date"> <%= recipe.created_at.asctime %> Posted by <a href="#">Someone</a></p>
-	<h2 class="title"><%= link_to recipe.title, recipe %></h2>
-	<div class="entry">
-		<%=recipe.directions%>
+	<h2 class="title"><%= link_to recipe.title, recipe %> </h2>
+	<div class="entry_and_photos">
+		<div class="recipe_entry">
+			<% if(recipe.directions).size>1 %>
+				<%=recipe.directions%>
+			<%else %>
+				No Description
+			<%end%>
+		</div>
+		<div class="resize2">
+			<%= image_tag recipe.photo.url %>
+		</div>
 	</div>
 </div>
 <% end %>

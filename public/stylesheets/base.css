@@ -83,7 +83,7 @@ hr { display: none; }
 }
 
 #header {
-	width: 920px;
+	width: 1000px;
 	margin: 0 auto;
 }
 
@@ -91,7 +91,7 @@ hr { display: none; }
 
 #menu {
 	float: left;
-	width: 500px;
+	width: 550px;
 }
 
 #menu ul {
@@ -241,7 +241,7 @@ hr { display: none; }
 
 .post {
 	margin-bottom: 45px;
-	padding-bottom: 30px;
+	padding-bottom: 50px;
 	border-bottom: 1px solid #E0E0E0;
 }
 
@@ -280,6 +280,24 @@ hr { display: none; }
 	padding: 10px 0px 0px 0px;
 }
 
+.post .entry_and_photos{
+	width:700px;
+	height:auto;
+	padding-bottom:100px;
+}
+
+.post .recipe_entry {
+	padding: 0px 10px 0px 0px;
+	float: left;
+	width: 350px;
+}
+
+.post .resize2 img{
+	float: left;
+	height: 12em;
+	width:auto;
+}
+
 .post .comments {
 	display: block;
 	width: 120px;
@@ -294,6 +312,19 @@ hr { display: none; }
 	text-decoration: none;
 	font-weight: bold;
 	color: #FFFFFF;
+}
+
+/* Review posts */
+.reviewtitle a{
+	text-decoration: none;
+	text-transform: capitalize;
+	font-size: 15px;
+	color: #64BC31;
+}
+
+.reviewtitle {
+	font-size: 15px;
+	color: #64BC31;
 }
 
 /* Sidebar */
@@ -449,5 +480,42 @@ hr { display: none; }
 #footer a {
 }
 
-/* New Recipe */
+/* Show Recipe */
+#show_recipe_wrap{
+	width:500px;
+	margin:0 auto;
+}
 
+#show_recipe_footer{
+	clear:both;
+	border-top: 1px solid;
+	padding-top:5px;
+}
+
+#ingredients_column {
+	width: 249px;
+	float:left;
+	padding-bottom:25px;
+}
+
+#directions_column {
+	width: 249px;
+	float:right;
+	padding-bottom:25px;
+}
+
+.directions{
+	padding-top:5px;
+}
+
+.ingredient{
+	padding-top:5px;
+}
+
+/* Photos */
+.resize img{
+	height: 12em;
+	margin: .2em 1em 1em 0;
+	overflow: hidden;
+	width: auto;
+}
