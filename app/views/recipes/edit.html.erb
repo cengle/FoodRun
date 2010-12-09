@@ -7,6 +7,12 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </p>
+  
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  
   <p>
     <%= f.label :directions %><br />
     <%= f.text_area :directions %>
@@ -37,12 +43,14 @@
 	    <%= i.label :unit %>
 	    <%= i.text_field :unit %>
 	  </p>
-	  <% end %>
-	  <p>
-	    <%= f.submit 'Update' %>
-	  </p>
+	<% end %>
   <% end %>
- <% end %>
+
+ 
+	<p>
+		<%= f.submit 'Update' %>
+	</p>
+<% end %>
 
 <%= link_to 'Show', @recipe %> |
 <%= link_to 'Back', recipes_path %>

@@ -281,7 +281,7 @@ hr { display: none; }
 }
 
 .post .entry_and_photos{
-	width:700px;
+	width:650px;
 	height:auto;
 	padding-bottom:100px;
 }
@@ -295,7 +295,9 @@ hr { display: none; }
 .post .resize2 img{
 	float: left;
 	height: 12em;
-	width:auto;
+	width:20em;
+	margin-left:auto;
+	margin-right:auto;
 }
 
 .post .comments {

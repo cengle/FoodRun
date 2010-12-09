@@ -12,14 +12,16 @@ New User
 	<h2 class="title"><%= link_to recipe.title, recipe %> </h2>
 	<div class="entry_and_photos">
 		<div class="recipe_entry">
-			<% if(recipe.directions).size>1 %>
-				<%=recipe.directions%>
+			<% if recipe.description%>
+				<%=recipe.description%>
 			<%else %>
 				No Description
 			<%end%>
 		</div>
 		<div class="resize2">
-			<%= image_tag recipe.photo.url %>
+			<% if recipe.photo.url != "/photos/original/missing.png"%>
+					<%= image_tag recipe.photo.url %>
+			<%end%>
 		</div>
 	</div>
 </div>
