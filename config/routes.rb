@@ -1,10 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :user_sessions
 
+  map.resources :recipes, :member => { :roll => :get }
+  
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout"logout", :controller => "user_sessions", :action => "destroy"
   map.resources :users
-
+  
   map.resources :urecipes
   
   map.resources :ingredients_recipes
@@ -17,6 +19,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :ingredients
 
+  
+  
   map.resources :recipes
 
   map.resources :ingredient_amounts
