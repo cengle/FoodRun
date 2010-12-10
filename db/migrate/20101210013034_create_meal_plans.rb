@@ -2,7 +2,7 @@ class CreateMealPlans < ActiveRecord::Migration
   def self.up
     create_table :meal_plans do |t|
       t.string :name
-      t.int :number
+      t.integer :number
 
       t.timestamps
     end
