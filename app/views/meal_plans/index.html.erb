@@ -1,0 +1,22 @@
+<h1>Listing meal_plans</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Number</th>
+  </tr>
+
+<% @meal_plans.each do |meal_plan| %>
+  <tr>
+    <td><%=h meal_plan.name %></td>
+    <td><%=h meal_plan.number %></td>
+    <td><%= link_to 'Show', meal_plan %></td>
+    <td><%= link_to 'Edit', edit_meal_plan_path(meal_plan) %></td>
+    <td><%= link_to 'Destroy', meal_plan, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New meal_plan', new_meal_plan_path %>

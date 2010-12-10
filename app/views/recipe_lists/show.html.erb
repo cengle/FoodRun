@@ -2,12 +2,15 @@
 
 <% @recipe_list.recipes.each do |recipe| %>
   <div class="recipe_in_list">
-    <%=h recipe.title %>
-    <%= link_to 'Show', recipe %>
-    <%= link_to 'Remove from list', delete_from_recipe_list_path(@recipe_list, recipe), :confirm => 'Are you sure?', :method => :delete%>
+    <div class="recipe_in_list_title"> <%= link_to recipe.title, recipe %> </div> 
+    <div class="recipe_in_list_buttons"> 
+		<%= link_to 'Remove from list', delete_from_recipe_list_path(@recipe_list, recipe), :confirm => 'Are you sure?', :method => :delete%>\
+	</div>
   </div>
 <% end %>
 
-<%= link_to 'Show Grocery List', :controller => "recipe_lists", :action => "groceryList", :id => @recipe_list.id, :user => current_user %>
-<%= link_to 'Edit', edit_recipe_list_path(@recipe_list) %> |
-<%= link_to 'Back', recipes_path %>
+<div class="recipe_list_footer" >
+	<%= link_to 'Show Grocery List', :controller => "recipe_lists", :action => "groceryList", :id => @recipe_list.id, :user => current_user %>
+	<%= link_to 'Edit', edit_recipe_list_path(@recipe_list) %> |
+	<%= link_to 'Back', recipes_path %>
+</div>

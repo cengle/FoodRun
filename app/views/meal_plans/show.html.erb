@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @meal_plan.name %>
+</p>
+
+<p>
+  <b>Number:</b>
+  <%=h @meal_plan.number %>
+</p>
+
+
+<%= link_to 'Edit', edit_meal_plan_path(@meal_plan) %> |
+<%= link_to 'Back', meal_plans_path %>

@@ -76,9 +76,7 @@
 			<ul>
 				<li>
 					<h2>Week's Top Recipe</h2>
-					<div class="week_recipe">
-						<%= render "shared/week_recipe" %> 
-					</div>
+					<p>Apple Pie: This amazing American classic is sure to please the family and friends during the holiday season.<p>
 				</li>
 				<li>
 					<h2>Featured Recipes </h2>
