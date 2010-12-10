@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :meal_plans
+
   map.resources :user_sessions
 
   map.login "login", :controller => "user_sessions", :action => "new"
