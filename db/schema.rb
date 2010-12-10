@@ -51,12 +51,12 @@ ActiveRecord::Schema.define(:version => 20101209195212) do
     t.integer  "recipelist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.text     "description"
+    t.integer  "user_id"
   end
 
   create_table "reviews", :force => true do |t|
