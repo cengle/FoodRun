@@ -7,13 +7,21 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
-  <p>
-    <%= f.label :number %><br />
-    <%= f.text_field :number %>
-  </p>
+
   <p>
     <%= f.submit 'Create' %>
   </p>
 <% end %>
 
+<table>
+	<tr>
+		<th>Recipe Title</th>
+	</tr>
+	<% for recipe in @my_recipes %>
+		<tr>
+			<td><%=h recipe.title %></td>
+		</tr>
+	<% end %>
+</table>
+	
 <%= link_to 'Back', meal_plans_path %>

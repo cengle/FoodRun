@@ -7,4 +7,6 @@
 
 <div class="grocery_list_div">
 <%= link_to '<span> Show Grocery List </span>', {:controller => "recipe_lists", :action => "groceryList", :id => @recipe_list.id, :user => current_user}, :class=>'squarebutton' %>
+<%= link_to '<span> Make Meal Plan! </span>', {:controller => "meal_plans", :action => "new", :id => @recipe_list.id, :user => current_user}, :class=>'squarebutton' %>
 </div>
+

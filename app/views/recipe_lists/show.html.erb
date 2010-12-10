@@ -1,38 +1,14 @@
 <h1>Recipe list</h1>
-<% recipe_date_html_id = 0 %>
+
 <% @recipe_list.recipes.each do |recipe| %>
   <div class="recipe_in_list">
     <%=h recipe.title %>
     <%= link_to 'Show', recipe %>
-	
-    
-	<!--
-	<%= link_to 'Remove from list', delete_from_recipe_list_path(@recipe_list, recipe), :confirm => 'Are you sure?', :method => :delete%>
-	-->
-	<span class="hidden" id="recipe_date_<%= recipe_date_html_id %>">		
-	<% form_for :event, :url => { :action => "add_recipe" } do |f| %>
-		
-		<p>
-			<b>Select date </b><br />
-			<%= f.date_select :start_at %>
-		</p>
-		<p>
-			<%= f.submit "Submit" %>
-		</p>
-	<% end %>
-	</span>
-	
-	<span id="calendar_button_<%= recipe_date_html_id %>">
-		<%= button_to_function "Add to calendar", 
-		"$('recipe_date_#{recipe_date_html_id}').toggle(); $('calendar_button_#{recipe_date_html_id}').toggle()" %>
-	</span>
-	
-	<% recipe_date_html_id = recipe_date_html_id + 1 %>
+    <%= link_to 'Remove from list', delete_from_recipe_list_path(@recipe_list, recipe), :confirm => 'Are you sure?', :method => :delete%>
   </div>
 <% end %>
 
-<div class="recipe_list_footer" >
-	<%= link_to 'Show Grocery List', :controller => "recipe_lists", :action => "groceryList", :id => @recipe_list.id, :user => current_user %>
-	<%= link_to 'Edit', edit_recipe_list_path(@recipe_list) %> |
-	<%= link_to 'Back', recipes_path %>
-</div>
+<%= link_to 'Show Grocery List', :controller => "recipe_lists", :action => "groceryList", :id => @recipe_list.id, :user => current_user %>
+<%= link_to 'Make Meal Plan!', :controller => "meal_plans", :action => "new", :id => @recipe_list.id, :user => current_user %>
+<%= link_to 'Edit', edit_recipe_list_path(@recipe_list) %> |
+<%= link_to 'Back', recipes_path %>

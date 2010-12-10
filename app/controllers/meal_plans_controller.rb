@@ -25,7 +25,10 @@ class MealPlansController < ApplicationController
   # GET /meal_plans/new.xml
   def new
     @meal_plan = MealPlan.new
-
+    
+    user = User.find_by_id(params[:user])
+    recipe_list = user.recipe_list
+    @my_recipes = recipe_list.recipes
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @meal_plan }
@@ -39,8 +42,13 @@ class MealPlansController < ApplicationController
 
   # POST /meal_plans
   # POST /meal_plans.xml
-  def create
+  def create    
     @meal_plan = MealPlan.new(params[:meal_plan])
+    @meal_plan.user_id = current_user
+    for recipe in @meal_plan.user.recipe_list.recipes
+    	@meal_plan.recipes << recipe
+    end
+    @meal_plan.number = @meal_plan.recipes.size
 
     respond_to do |format|
       if @meal_plan.save
@@ -80,4 +88,6 @@ class MealPlansController < ApplicationController
       format.xml  { head :ok }
     end
   end
+    
+  
 end
