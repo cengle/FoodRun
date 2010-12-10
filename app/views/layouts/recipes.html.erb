@@ -26,7 +26,8 @@
 				</li>
 				<li>
 				<% if current_user %>
-					<%= link_to 'View my recipes', :controller => 'urecipes', :action => "showMyRecipes", :user => current_user %>
+					<%= link_to 'Uploaded recipes', :controller => 'recipes' , :action => 'showMyRecipes', :user => current_user, :id => '2' %>
+					
 				<% end %>
 				</li>
 				<li>

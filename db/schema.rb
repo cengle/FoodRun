@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20101209195212) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.text     "description"
+    t.integer  "user_id"
   end
 
   create_table "reviews", :force => true do |t|
