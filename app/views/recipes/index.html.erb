@@ -9,7 +9,9 @@ New User
 <% @recipes.each do |recipe| %>
 <div class="post">
 
-	<p class="meta"><span class="date"> <%= recipe.created_at.asctime %> Posted by <a href="#">Someone</a></p>
+	<p class="meta"><span class="date"> <%= recipe.created_at.asctime %> Posted by
+	<%= link_to recipe.user.username, :controller => 'recipes' , :action => 'showMyRecipes', :user => recipe.user, :id => '2' %></p>
+					
 	<h2 class="title"><%= link_to recipe.title, recipe %> </h2>
 	<div class="entry_and_photos">
 		<div class="recipe_entry">
