@@ -401,6 +401,28 @@ hr { display: none; }
 	color: #64BC31;
 }
 
+.week_recipe_title a{
+	font-weight:bold;
+	color: #666666;
+	font-size:1.5em;
+}
+
+.week_recipe_description {
+	padding-top: 15px;
+	color: #666666;
+}
+
+.week_recipe {
+	border-left: 10px solid #E0E0E0;
+	padding-left: 14px;
+}
+
+.resize_week_recipe img{
+	padding-top:15px;
+	width:10em;
+	height:auto;
+}
+
 /* Calendar */
 
 #calendar {
@@ -520,4 +542,17 @@ hr { display: none; }
 	margin: .2em 1em 1em 0;
 	overflow: hidden;
 	width: auto;
+}
+
+/* Recipe Lists */
+.recipe_in_list_title a{
+	text-decoration:none;
+	font-size:20px;
+	width:300px;
+	float:left;
+	border-top: 1px solid #24130F;
+}
+
+.recipe_in_list_footer {
+	width:100%;
 }
