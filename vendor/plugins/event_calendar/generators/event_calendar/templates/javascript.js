@@ -1,5 +1,3 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
 /*
  * Smart event highlighting
  * Handles for when events span rows, or don't have a background color

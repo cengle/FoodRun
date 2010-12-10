@@ -1,5 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+
   map.resources :meal_plans
+
+  map.calendar '/calendar/:year/:month', :controller => 'calendar', :action => 'index', :requirements => {:year => /d{4}/, :month => /d{1,2}/}, :year => nil, :month => nil
 
   map.resources :user_sessions
 
