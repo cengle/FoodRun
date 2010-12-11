@@ -83,7 +83,7 @@ hr { display: none; }
 }
 
 #header {
-	width: 920px;
+	width: 1000px;
 	margin: 0 auto;
 }
 
@@ -91,7 +91,7 @@ hr { display: none; }
 
 #menu {
 	float: left;
-	width: 500px;
+	width: 550px;
 }
 
 #menu ul {
@@ -241,7 +241,7 @@ hr { display: none; }
 
 .post {
 	margin-bottom: 45px;
-	padding-bottom: 30px;
+	padding-bottom: 50px;
 	border-bottom: 1px solid #E0E0E0;
 }
 
@@ -280,6 +280,26 @@ hr { display: none; }
 	padding: 10px 0px 0px 0px;
 }
 
+.post .entry_and_photos{
+	width:650px;
+	height:auto;
+	padding-bottom:100px;
+}
+
+.post .recipe_entry {
+	padding: 0px 10px 0px 0px;
+	float: left;
+	width: 350px;
+}
+
+.post .resize2 img{
+	float: left;
+	height: 12em;
+	width:20em;
+	margin-left:auto;
+	margin-right:auto;
+}
+
 .post .comments {
 	display: block;
 	width: 120px;
@@ -294,6 +314,19 @@ hr { display: none; }
 	text-decoration: none;
 	font-weight: bold;
 	color: #FFFFFF;
+}
+
+/* Review posts */
+.reviewtitle a{
+	text-decoration: none;
+	text-transform: capitalize;
+	font-size: 15px;
+	color: #64BC31;
+}
+
+.reviewtitle {
+	font-size: 15px;
+	color: #64BC31;
 }
 
 /* Sidebar */
@@ -368,61 +401,26 @@ hr { display: none; }
 	color: #64BC31;
 }
 
-/* Calendar */
-
-#calendar {
+.week_recipe_title a{
+	font-weight:bold;
+	color: #666666;
+	font-size:1.5em;
 }
 
-#calendar caption {
-	padding-bottom: 5px;
-	font-weight: bold;
+.week_recipe_description {
+	padding-top: 15px;
+	color: #666666;
 }
 
-#calendar table {
-	width: 100%;
-	border-collapse: collapse;
-	border-bottom: 1px solid #24130F;
-	border-left: 1px solid #24130F;
-	border-right: 1px solid #24130F;
+.week_recipe {
+	border-left: 10px solid #E0E0E0;
+	padding-left: 14px;
 }
 
-#calendar thead th {
-	padding: 5px 0;
-	text-align: center;
-	border-top: 1px solid #24130F;
-	border-left: 1px solid #24130F;
-	background: #24130F;
-}
-
-#calendar tbody td {
-	padding: 5px 0;
-	text-align: center;
-	border-top: 1px solid #24130F;
-	border-left: 1px solid #24130F;
-	border-bottom: 1px solid #24130F;
-}
-
-#calendar tfoot td {
-	padding: 5px;
-	border-left: 1px solid #24130F;
-	border-bottom: 1px solid #24130F;
-}
-
-#calendar tfoot #next {
-	border-top: 1px solid #24130F;
-	text-align: right;
-}
-
-#calendar tfoot #prev {
-	border-top: 1px solid #24130F;
-}
-
-#calendar .pad {
-	border-bottom: 1px solid #24130F;
-}
-
-#calendar #today {
-	background: #24130F;
+.resize_week_recipe img{
+	padding-top:15px;
+	width:10em;
+	height:auto;
 }
 
 /* Footer */
@@ -449,5 +447,360 @@ hr { display: none; }
 #footer a {
 }
 
-/* New Recipe */
+/* Show Recipe */
+#show_recipe_wrap{
+	width:500px;
+	margin:0 auto;
+}
 
+#show_recipe_footer{
+	clear:both;
+	border-top: 1px solid;
+	padding-top:5px;
+}
+
+#ingredients_column {
+	width: 249px;
+	float:left;
+	padding-bottom:25px;
+}
+
+#directions_column {
+	width: 249px;
+	float:right;
+	padding-bottom:25px;
+}
+
+.directions{
+	padding-top:5px;
+}
+
+.ingredient{
+	padding-top:5px;
+}
+
+/* Photos */
+.resize img{
+	height: 12em;
+	margin: .2em 1em 1em 0;
+	overflow: hidden;
+	width: auto;
+}
+/* For event calendar css */
+
+/* 
+  Event Calendar stylesheet
+  
+  Colors:
+  #d5d5d5 - border (gray)
+  #303030 - day names bg (gray)
+  #444 - number (gray)
+  #ecede2 - day header bg (light tan)
+  ##d7d7ba - today header bg (tan)
+  #ffffdd - today bg light (yellow)
+  #777 - other month number (gray)
+  #efefef - other month day header (gray)
+  #2eac6a - hover (green)
+*/
+
+/* Outer most container */
+.ec-calendar {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 11px;
+  line-height: 14px;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #d5d5d5;
+}
+
+/* Month name header & links */
+.ec-calendar-header {
+  padding: 5px 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.ec-month-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.ec-month-nav {
+
+}
+
+/* Containers */
+.ec-body {
+  position: relative;
+  border-right: 1px solid #303030;
+  white-space: nowrap;
+}
+
+/* Day names */
+.ec-day-names {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  table-layout: fixed;
+  padding: 2px 0;
+  background: #303030;
+  color: white;
+}
+
+.ec-day-name {
+  font-weight: normal;
+}
+
+/* Rows container and Row */
+.ec-rows {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  overflow: hidden;
+  border-right: 1px solid #d5d5d5;
+}
+
+.ec-row {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Background */
+.ec-row-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.ec-day-bg {
+  border-left: 1px solid #d5d5d5;
+}
+
+.ec-today-bg {
+  background-color: #ffffdd;
+}
+
+.ec-row-table {
+  position: relative;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Day header */
+.ec-day-header {
+  color: #444;
+  text-align: right;
+  padding: 0 5px;
+  line-height: 16px;
+  border-top: 1px solid #d5d5d5;
+  border-left: 1px solid #d5d5d5;
+  border-bottom: 1px dotted #bbbbbb;
+  background-color: #ecede2;
+  overflow: hidden;
+}
+
+a.ec-day-link {
+  color: #444;
+}
+
+.ec-today-header {
+  background-color: #d7d7ba;
+}
+
+.ec-weekend-day-header {
+  
+}
+
+.ec-other-month-header {
+  background-color: #efefef;
+  color: #777;
+}
+
+
+/* Event cell and container */
+.ec-event-cell {
+  cursor: pointer;
+  vertical-align: top;
+  padding-right: 1px;
+  padding-left: 2px;
+}
+
+.ec-event-cell a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ec-no-event-cell {
+  cursor: default;
+}
+
+.ec-event {
+  color: white;
+  padding-right: 1px;
+  padding-left: 11px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -moz-border-radius: 3px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ec-event :hover {
+  /* doesn't look as good as js highlighting */
+  /* background-color: #2eac6a; */
+}
+
+.ec-event-bg a {
+  color: white;
+}
+
+/* used to distinguish non-all_day events */
+.ec-event-no-bg {
+  position: relative;
+  /* padding-left: 5px; */
+}
+
+.ec-event-no-bg a {
+  /* isn't implemented in all browsers */
+  color: inherit;
+}
+
+.ec-event-time {
+  font-size: 85%;
+  font-weight: bold;
+  padding-right: 3px;
+}
+
+
+/* Left and right arrows */
+/* Doesn't work in IE6, use bg images instead */
+.ec-left-arrow, .ec-right-arrow {
+  position: relative;
+  top: 3px;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  margin-bottom: -8px;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+.ec-left-arrow {
+  margin-left: -7px;
+  margin-right: auto;
+  border-right: 4px solid white;
+}
+
+.ec-right-arrow {
+  margin-left: auto;
+  margin-right: 3px;
+  border-left: 4px solid white;
+}
+
+/* remove this to not have a bullet */
+/* don't look as good in ie */
+.ec-bullet {
+  position: absolute;
+  top: 7px;
+  width: 4px;
+  height: 4px;
+  margin-left: -7px;
+  margin-right: auto;
+  -webkit-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  -moz-border-radius: 2px;
+}
+
+/* Sidebar for calendar */
+#recipe_list_sidebar {
+	float: right;
+	width: 240px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+/* Recipe Lists In Calendar*/
+.recipe_in_list {
+	padding-top:10px;
+	/*border-top: 1px solid #666666;*/
+}
+
+.recipe_in_list_header{
+	padding-top:20px;
+	font-size:30px;
+	padding-bottom:10px;
+	border-bottom:1px solid #666666;
+}
+
+.recipe_in_list_title{
+	padding-bottom:5px;
+}
+
+.recipe_in_list_title a{
+	text-decoration:none;
+	font-size:20px;
+	width:100px;
+	color: #64BC31;
+}
+
+.recipe_in_list.buttons{
+	padding-bottom:5px;
+}
+
+/*Credits: Dynamic Drive CSS Library */
+/*URL: http://www.dynamicdrive.com/style/ */
+
+a.squarebutton{
+background: transparent url('../images/square-green-left.gif') no-repeat top left;
+display: block;
+float: left;
+font: normal 12px Arial; /* Change 12px as desired */
+line-height: 15px; /* This value + 4px + 4px (top and bottom padding of SPAN) must equal height of button background (default is 23px) */
+height: 23px; /* Height of button background height */
+padding-left: 9px; /* Width of left menu image */
+text-decoration: none;
+}
+
+a:link.squarebutton, a:visited.squarebutton, a:active.squarebutton{
+color: #494949; /*button text color*/
+}
+
+a.squarebutton span{
+background: transparent url('../images/square-green-right.gif') no-repeat top right;
+display: block;
+padding: 4px 9px 4px 0; /*Set 9px below to match value of 'padding-left' value above*/
+}
+
+a.squarebutton:hover{ /* Hover state CSS */
+background-position: bottom left;
+}
+
+a.squarebutton:hover span{ /* Hover state CSS */
+background-position: bottom right;
+color: black;
+}
+
+.buttonwrapper{ /* Container you can use to surround a CSS button to clear float */
+overflow: hidden; /*See: http://www.quirksmode.org/css/clearing.html */
+width: 100%;
+}
+
+/* Calendar page */
+.grocery_list_div{
+	padding-top:20px;
+}
+
+#calendar_title{
+	padding-bottom:10px;
+}

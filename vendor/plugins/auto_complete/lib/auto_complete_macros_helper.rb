@@ -50,6 +50,8 @@ module AutoCompleteMacrosHelper
   #                                  The expression should take two variables: element and value.
   #                                  Element is a DOM element for the field, value
   #                                  is the value selected by the user.
+  # <tt>:parameters</tt>:: 	     To send additional parameters to the server, 
+  #				     add them here in the format: 'field=value&another=value'.
   # <tt>:select</tt>::               Pick the class of the element from which the value for 
   #                                  insertion should be extracted. If this is not specified,
   #                                  the entire element is used.
@@ -69,6 +71,7 @@ module AutoCompleteMacrosHelper
     js_options[:paramName]  = "'#{options[:param_name]}'" if options[:param_name]
     js_options[:frequency]  = "#{options[:frequency]}" if options[:frequency]
     js_options[:method]     = "'#{options[:method].to_s}'" if options[:method]
+    js_options[:parameters]  = "'#{options[:parameters]}'" if options[:parameters]
 
     { :after_update_element => :afterUpdateElement, 
       :on_show => :onShow, :on_hide => :onHide, :min_chars => :minChars }.each do |k,v|
@@ -93,10 +96,10 @@ module AutoCompleteMacrosHelper
   #
   # The auto_complete_result can of course also be called from a view belonging to the 
   # auto_complete action if you need to decorate it further.
-  def auto_complete_result(entries, field, phrase = nil)
+  def auto_complete_result(entries, method, phrase = nil)
     return unless entries
-    items = entries.map { |entry| content_tag("li", phrase ? highlight(entry[field], phrase) : h(entry[field])) }
-    content_tag("ul", items.uniq)
+    items = entries.map { |entry| content_tag("li", phrase ? highlight(entry.send(method), phrase) : h(entry.send(method))) }
+    content_tag("ul", items.uniq.join)
   end
   
   # Wrapper for text_field with added AJAX autocompletion functionality.
@@ -105,8 +108,14 @@ module AutoCompleteMacrosHelper
   # auto_complete_for to respond the AJAX calls,
   # 
   def text_field_with_auto_complete(object, method, tag_options = {}, completion_options = {})
+    auto_complete_field_with_style_and_script(object, method, tag_options, completion_options) do
+      text_field(object, method, tag_options)
+    end
+  end
+
+  def auto_complete_field_with_style_and_script(object, method, tag_options = {}, completion_options = {})
     (completion_options[:skip_style] ? "" : auto_complete_stylesheet) +
-    text_field(object, method, tag_options) +
+    yield +
     content_tag("div", "", :id => "#{object}_#{method}_auto_complete", :class => "auto_complete") +
     auto_complete_field("#{object}_#{method}", { :url => { :action => "auto_complete_for_#{object}_#{method}" } }.update(completion_options))
   end

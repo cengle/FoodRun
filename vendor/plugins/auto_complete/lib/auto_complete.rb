@@ -32,12 +32,14 @@ module AutoComplete
   module ClassMethods
     def auto_complete_for(object, method, options = {})
       define_method("auto_complete_for_#{object}_#{method}") do
+        model = object.to_s.camelize.constantize
         find_options = { 
-          :conditions => [ "LOWER(#{method}) LIKE ?", '%' + params[object][method].downcase + '%' ], 
-          :order => "#{method} ASC",
+          :conditions => [ "LOWER(#{model.quoted_table_name}.#{method}) LIKE ?", '%' + params[object][method].downcase + '%' ],
+          :order => "#{model.quoted_table_name}.#{method} ASC",
           :limit => 10 }.merge!(options)
         
-        @items = object.to_s.camelize.constantize.find(:all, find_options)
+        @items = model.scoped(find_options)
+        @items = yield(@items, params) if block_given?
 
         render :inline => "<%= auto_complete_result @items, '#{method}' %>"
       end

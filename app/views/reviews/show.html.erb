@@ -1,22 +1,10 @@
-<p>
-  <b>Title:</b>
-  <%=h @review.title %>
-</p>
-
-<p>
-  <b>Review:</b>
-  <%=h @review.review %>
-</p>
-
-<p>
-  <b>Rating:</b>
-  <%=h @review.rating %>
-</p>
-
-<p>
-  <b>Recipe:</b>
-  <%=h @review.recipe_id %>
-</p>
+<div class="post">
+	<div class="reviewtitle"> <%= @review.rating %> stars. <%= link_to @review.title, @review %></div>
+	<p class="meta"><span class="date"> <%= @review.created_at.asctime %> Posted by <a href="#">Someone</a></p>
+	<div class="entry">
+	<%=@review.review%>
+	</div>
+</div>
 
 
 <%= link_to 'Edit', edit_review_path(@review) %> |

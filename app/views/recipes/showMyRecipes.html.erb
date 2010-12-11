@@ -1,0 +1,29 @@
+<h1> <%=current_user.username%>'s recipes </h1>
+
+<% @recipes.each do |recipe| %>
+<div class="post">
+
+	<p class="meta"><span class="date"> <%= recipe.created_at.asctime %> 
+	<% if recipe.user%>
+		Posted by <%= link_to recipe.user.username, :controller => 'recipes' , :action => 'showMyRecipes', :user => recipe.user, :id => '2' %></p>
+	<%end%>
+					
+	<h2 class="title"><%= link_to recipe.title, recipe %> </h2>
+	<div class="entry_and_photos">
+		<div class="recipe_entry">
+			<% if recipe.description%>
+				<%=recipe.description%>
+			<%else %>
+				No Description
+			<%end%>
+		</div>
+		<div class="resize2">
+			<% if recipe.photo.url != "/photos/original/missing.png"%>
+					<%= image_tag recipe.photo.url %>
+			<%end%>
+		</div>
+	</div>
+</div>
+<% end %>
+
+<%= link_to 'Back', recipes_path %>

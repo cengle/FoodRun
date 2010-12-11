@@ -9,7 +9,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101116154146) do
+ActiveRecord::Schema.define(:version => 20101210032141) do
+
+  create_table "calendar_recipes", :force => true do |t|
+    t.integer "user_id"
+    t.integer "recipe_id"
+  end
+
+  create_table "events", :force => true do |t|
+    t.string   "name"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "grocery_lists", :force => true do |t|
     t.datetime "created_at"
@@ -33,6 +46,19 @@ ActiveRecord::Schema.define(:version => 20101116154146) do
     t.string   "section"
   end
 
+  create_table "meal_plans", :force => true do |t|
+    t.string   "name"
+    t.integer  "number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  create_table "meal_plans_recipes", :id => false, :force => true do |t|
+    t.integer "recipe_id",     :null => false
+    t.integer "meal_plans_id", :null => false
+  end
+
   create_table "recipe_lists", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -51,6 +77,12 @@ ActiveRecord::Schema.define(:version => 20101116154146) do
     t.integer  "recipelist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.text     "description"
   end
 
   create_table "reviews", :force => true do |t|

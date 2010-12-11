@@ -10,7 +10,9 @@
 </head>
 
 <%= stylesheet_link_tag "base" %>
+
 <body onload="$$('.hidden').invoke('hide')">
+
 <div id="header-wrapper">
 	<div id="header">
 		<div id="menu">
@@ -19,10 +21,16 @@
 				<li><%= link_to 'Upload Recipe', new_recipe_path %></li>
 				<li>
 				<% if current_user %>
-					<%= link_to 'Recipe list', :controller => 'recipe_lists', :action => 'show', :user => current_user%>
+					<%= link_to 'Recipe list', :controller => 'calendar'%>
 				<% else %>
 					<%= link_to 'Recipe list', login_path %>
 				<% end %>		
+				</li>
+				<li>
+				<% if current_user %>
+					<%= link_to 'Uploaded recipes', :controller => 'recipes' , :action => 'showMyRecipes', :user => current_user, :id => '2' %>
+					
+				<% end %>
 				</li>
 				<li>
 					<% if current_user %>
@@ -70,7 +78,9 @@
 			<ul>
 				<li>
 					<h2>Week's Top Recipe</h2>
-					<p>Apple Pie: This amazing American classic is sure to please the family and friends during the holiday season.<p>
+					<div class="week_recipe">
+						<%= render "shared/week_recipe" %> 
+					</div>
 				</li>
 				<li>
 					<h2>Featured Recipes </h2>

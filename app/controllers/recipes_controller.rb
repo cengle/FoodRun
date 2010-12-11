@@ -12,6 +12,16 @@ class RecipesController < ApplicationController
     end
   end
 
+  def showMyRecipes
+	user = User.find_by_id(params[:user])
+	@recipes = user.recipes
+	
+	respond_to do |format|
+		format.html
+		format.xml {render :xml => @recipes }
+	end
+  end
+  
   # GET /recipes/1
   # GET /recipes/1.xml
   def show
@@ -49,7 +59,6 @@ class RecipesController < ApplicationController
   # POST /recipes.xml
   def create
     @recipe = Recipe.new(params[:recipe])
-    #@ingredient = Ingredient.find_or_create_by_name(params[:ingredient_amount][:ingredient_name])
     #@ingredient = Ingredient.find_or_create_by_name(params[:ingredient_name])
     #@ingredient.ingredient_amounts << @recipe.ingredient_amounts
     respond_to do |format|

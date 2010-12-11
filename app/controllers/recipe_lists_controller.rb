@@ -4,6 +4,7 @@ class RecipeListsController < ApplicationController
   
   layout 'recipes'
   
+  
   def index
     @recipe_lists = RecipeList.all
 
@@ -17,7 +18,7 @@ class RecipeListsController < ApplicationController
   # GET /recipe_lists/1.xml
   def show
     user = User.find_by_id(params[:user])
-	@recipe_list = user.recipe_list
+	  @recipe_list = current_user.recipe_list
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @recipe_list }
@@ -95,10 +96,12 @@ class RecipeListsController < ApplicationController
   
   # returns a list of (super-)ingredients
   def groceryList
-  	recipe_list = RecipeList.find(:first).recipes
+	user = User.find_by_id(params[:user])
+	recipe_list = user.recipe_list
+	recipes = recipe_list.recipes
   	@grocery_list = Array.new # list of ingredients
   	
-  	recipe_list.each do |recipe| # for each recipe
+  	recipes.each do |recipe| # for each recipe
   		recipe_ingredient_amounts = recipe.ingredient_amounts
   		
   		recipe_ingredient_amounts.each do |recipe_ingredient_amount| # for each ingredient in that recipe
@@ -148,7 +151,7 @@ class RecipeListsController < ApplicationController
     @recipe_list = RecipeList.find(params[:id])
     @recipe_list.removeRecipe(params[:recipe_id])
     respond_to do |format|
-      format.html { redirect_to(@recipe_list) }
+      format.html { redirect_to @recipe_list}
       format.xml  { head :ok }
     end
   end

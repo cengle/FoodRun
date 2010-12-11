@@ -1,0 +1,62 @@
+<div id="show_recipe_wrap">
+	
+	<div id="show_recipe_header">
+		<h1 class="title"> <%=h @recipe.title %> </h1>
+		<p class="meta"><span class="date"> <%= @recipe.created_at.asctime %> 
+		<% if @recipe.user%>
+			Posted by <%= link_to @recipe.user.username, :controller => 'recipes' , :action => 'showMyRecipes', :user => recipe.user, :id => '2' %></p>
+		<%end%>
+		<p>
+			<div class="resize"> <%= image_tag @recipe.photo.url%> </div>
+		</p>
+		<p>
+			<%= @recipe.description %>
+		</p>
+	</div>
+	
+	<div id="directions_column">
+		<h2>Directions</h2>
+		<div class="directions">
+			<%=h @recipe.directions %>
+		</div>
+	</div>
+		
+	<div id="ingredients_column">
+		<h2>Ingredients</h2>
+		<% for ingred_amount in @recipe.ingredient_amounts %>
+			<div class="ingredient">
+				<%=h ingred_amount.number %>
+			    <%=h ingred_amount.unit %>
+			    <%=h ingred_amount.ingredient.name %>
+			</div>
+		<% end %>
+	</div>
+	
+	<div id="show_recipe_footer">
+		<h2>Reviews</h2>
+		
+		<p>
+			<b> Average Review:</b>
+			<%=h @recipe.average_rating %> stars
+		</p>
+		
+		<% @recipe.reviews.each do |review| %>
+			<div class="post">
+				<div class="reviewtitle"> <%= review.rating %> stars. <%= link_to review.title, review %></div>
+				<p class="meta"><span class="date"> <%= review.created_at.asctime %> Posted by <a href="#">Someone</a></p>
+				<div class="entry">
+				<%=review.review%>
+				</div>
+			</div>
+		<% end %>
+		 
+		<%= link_to 'Edit Recipe', edit_recipe_path(@recipe) %> |
+		<%= link_to 'Back to Recipes', recipes_path %> |
+		<%= link_to 'Add Review', new_review_path(:id=>@recipe.id)%> |
+		<% if current_user %>
+			<%= link_to 'Add to recipe list', :controller => "recipe_lists", :action => "update2", :id => @recipe.id, :user => current_user %>
+		<% else %>
+			<%= link_to 'Add to recipe list', login_path %>
+		<% end %>
+	</div>
+</div>

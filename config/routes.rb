@@ -1,10 +1,19 @@
 ActionController::Routing::Routes.draw do |map|
+
+  map.resources :meal_plans
+
+  map.calendar '/calendar/:year/:month', :controller => 'calendar', :action => 'index', :requirements => {:year => /d{4}/, :month => /d{1,2}/}, :year => nil, :month => nil
+
   map.resources :user_sessions
 
+  map.resources :recipes, :member => { :roll => :get }
+  
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout"logout", :controller => "user_sessions", :action => "destroy"
   map.resources :users
-
+  
+  map.resources :urecipes
+  
   map.resources :ingredients_recipes
 
   map.resources :grocery_lists
@@ -15,6 +24,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :ingredients
 
+  
+  
   map.resources :recipes
 
   map.resources :ingredient_amounts
@@ -22,6 +33,8 @@ ActionController::Routing::Routes.draw do |map|
   map.delete_from_recipe_list '/recipe_lists/:id/recipes/:recipe_id', :controller => 'recipe_lists', :action => 'destroyRecipe', :conditions => { :method => :delete }
 
   map.groceryList '/recipe_lists/:id/groceryList', :controller => 'recipe_lists', :action => 'groceryList' 
+  
+  map.showMyRecipes '/recipes/:id/showMyRecipes/', :controller => 'recipes', :action => 'showMyRecipes'
 
   # The priority is based upon order of creation: first created -> highest priority.
 

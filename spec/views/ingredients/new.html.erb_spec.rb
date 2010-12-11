@@ -7,7 +7,7 @@ describe "/ingredients/new.html.erb" do
     assigns[:ingredient] = stub_model(Ingredient,
       :new_record? => true,
       :name => "value for name",
-      :section => "value for section",
+      :section => "value for section"
     )
   end
 
