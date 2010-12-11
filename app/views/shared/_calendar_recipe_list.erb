@@ -1,0 +1,10 @@
+<h2 class="recipe_in_list_header"> Recipe List </h2>
+<% @recipes.each do |recipe| %>
+   <div class="recipe_in_list">
+    <div class="recipe_in_list_title"> <%= link_to recipe.title, recipe %> </div> 
+    <div class="recipe_in_list_buttons"> 
+		<%= link_to ('<span> Remove from list </span>', {}, :class => 'squarebutton')%>
+		<%= link_to ('<span> Add to Calendar </span>', {}, :class => 'squarebutton')%>
+	</div>
+  </div>
+<% end %>

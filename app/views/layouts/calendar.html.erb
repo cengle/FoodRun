@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Recipes: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+   <%= javascript_include_tag :defaults %>
+</head>
+
+<%= stylesheet_link_tag "base" %>
+<body>
+<div id="header-wrapper">
+	<div id="header">
+		<div id="menu">
+			<ul>
+				<li><%= link_to 'Home', recipes_path %></li>
+				<li><%= link_to 'Upload Recipe', new_recipe_path %></li>
+				<li>
+				<% if current_user %>
+					<%= link_to 'Recipe list', :controller => 'recipe_lists', :action => 'show', :user => current_user%>
+				<% else %>
+					<%= link_to 'Recipe list', login_path %>
+				<% end %>		
+				</li>
+				<li>
+				<% if current_user %>
+					<%= link_to 'Uploaded recipes', :controller => 'recipes' , :action => 'showMyRecipes', :user => current_user, :id => '2' %>
+					
+				<% end %>
+				</li>
+				<li>
+					<% if current_user %>
+						<%= link_to "Edit Profile", edit_user_path(:current) %>
+					<% else %>
+		   				<%= link_to "Register", new_user_path %>
+	 				<% end %>	
+				</li>
+				<li>
+					<% if current_user %>
+		   				<%= link_to "Logout", logout_path %>
+					<% else %>
+		   				<%= link_to "Login", login_path %>
+	 				<% end %>	
+				</li>
+			</ul>
+		</div>
+		<!-- end #menu -->
+		<div id="search">
+			<% form_tag :controller=>'recipes', :action => 'search' do %>
+				<fieldset>
+					<input type="text" name="input" id="search-text" size="15" />
+					<input type="submit" id="search-submit" value="GO" />
+				</fieldset>
+			<% end %>
+		</div>
+		<!-- end #search -->
+	</div>
+</div>
+<!-- end #header -->
+<!-- end #header-wrapper -->
+<div id="logo">
+	<h1><%= link_to 'Foodrun', recipes_path %> </h1>
+	<p><em> Planning groceries has never been so easy </a></em></p>
+</div>
+<hr />
+<!-- end #logo -->
+<div id="page">
+	<div id="page-bgtop">
+		<div id="content">
+			<p style="color: green"><%= notice %></p>
+			<%= yield %>
+		</div>
+		<div id="recipe_list_sidebar">
+			<%= render "shared/calendar_recipe_list" %>
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	</div>
+</div>
+
+<div id="footer"> FoodRun © 2010 · Swaraj Banerjee · Justin Chu · Cliff Engle · Harry Jiang </div>
+</body>
+</html>
