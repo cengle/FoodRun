@@ -27,7 +27,9 @@ class RecipesController < ApplicationController
   # GET /recipes/new.xml
   def new
     @recipe = Recipe.new
-    @recipe.ingredient_amounts.build
+	25.times do 
+		@recipe.ingredient_amounts.build
+	end
     #@ingredient_name
     respond_to do |format|
       format.html # new.html.erb
@@ -38,20 +40,20 @@ class RecipesController < ApplicationController
   # GET /recipes/1/edit
   def edit
     @recipe = Recipe.find(params[:id])
-    if(@recipe.ingredients.size > 0)
-      @ingredient_name = @recipe.ingredients[0].name
-    end
+	10.times do 
+		@recipe.ingredient_amounts.build
+	end
   end
 
   # POST /recipes
   # POST /recipes.xml
   def create
     @recipe = Recipe.new(params[:recipe])
-    @ingredient = Ingredient.find_or_create_by_name(params[:ingredient_amount][:ingredient_name])
+    #@ingredient = Ingredient.find_or_create_by_name(params[:ingredient_amount][:ingredient_name])
     #@ingredient = Ingredient.find_or_create_by_name(params[:ingredient_name])
-    @ingredient.ingredient_amounts << @recipe.ingredient_amounts
+    #@ingredient.ingredient_amounts << @recipe.ingredient_amounts
     respond_to do |format|
-      if @recipe.save and @ingredient.save
+      if @recipe.save
         format.html { redirect_to(@recipe, :notice => 'Recipe was successfully created.') }
         format.xml  { render :xml => @recipe, :status => :created, :location => @recipe }
       else
@@ -65,10 +67,10 @@ class RecipesController < ApplicationController
   # PUT /recipes/1.xml
   def update
     @recipe = Recipe.find(params[:id])
-    @ingredient = Ingredient.find_or_create_by_name(params[:ingredient_name])
-    @ingredient.ingredient_amounts << @recipe.ingredient_amounts
+    #@ingredient = Ingredient.find_or_create_by_name(params[:ingredient_name])
+    #@ingredient.ingredient_amounts << @recipe.ingredient_amounts
     respond_to do |format|
-      if @recipe.update_attributes(params[:recipe])
+      if @recipe.update_attributes(params[:recipe]) and @recipe.save
         format.html { redirect_to(@recipe, :notice => 'Recipe was successfully updated.') }
         format.xml  { head :ok }
       else

@@ -17,11 +17,17 @@
   </p>
   
   <h2>Ingredients</h2>
+  <% ingredient_amount_html_id = 0 %>
   <% f.fields_for :ingredient_amounts do |i| %>
+	<%if ingredient_amount_html_id < 5%>
+	<span class="ingredient_amount" id="ingredient_amount_<%= ingredient_amount_html_id %>">
+	<%else%>
+	<span class="ingredient_amount hidden" id="ingredient_amount_<%= ingredient_amount_html_id %>">
+	<%end%>
     <h3>Ingredient</h3>
     <p>
-      <label for="recipe_ingredient_name">Ingredient name</label>
-      <%= text_field_with_auto_complete :ingredient_amount, :ingredient_name, {}, {:url => formatted_ingredient_amounts_path(:js), :method => :get, :with => "'search=' + element.value"} %>
+	  <%= i.label :ingredient_name %>
+      <%= i.text_field_with_auto_complete :ingredient_name, {}, {:url => ingredient_amounts_path(:js), :method => :get, :with => "'search=' + element.value"} %>
     </p>
     <p>
       <%= i.label :number %>
@@ -31,11 +37,14 @@
       <%= i.label :unit %>
       <%= i.text_field :unit %>
     </p>
-    
+    <%= button_to_function "Delete", "$('ingredient_amount_#{ingredient_amount_html_id}').remove()" %>
+	</span>
+	<% ingredient_amount_html_id += 1 %>
   <% end %>
+  <br>
+  <%= button_to_function "Add Ingredient", "$$('.hidden')[0].removeClassName('hidden').show()" %>
   <p>
     <%= f.submit 'Create' %>
   </p>
 <% end %>
-
 <%= link_to 'Back', recipes_path %>
