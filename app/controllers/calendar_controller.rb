@@ -25,4 +25,7 @@ class CalendarController < ApplicationController
 
   end
   
+  def add_recipe
+    
+  end
 end

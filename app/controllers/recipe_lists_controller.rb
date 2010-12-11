@@ -4,6 +4,7 @@ class RecipeListsController < ApplicationController
   
   layout 'recipes'
   
+  
   def index
     @recipe_lists = RecipeList.all
 
