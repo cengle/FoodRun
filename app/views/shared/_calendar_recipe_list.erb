@@ -14,10 +14,11 @@
 		
 		<p>
 			<b>Select date </b><br />
-			<%= f.date_select :start_at %>
+			<%= f.date_select :recipe_date %>
 		</p>
 		<p>
 			<%= f.submit "Submit" %>
+			<%= f.hidden_field :recipe_id, :value => @recipes[recipe_date_html_id].id %>
 		</p>
 	<% end %>
 	</span>
