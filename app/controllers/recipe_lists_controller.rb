@@ -151,7 +151,7 @@ class RecipeListsController < ApplicationController
     @recipe_list = RecipeList.find(params[:id])
     @recipe_list.removeRecipe(params[:recipe_id])
     respond_to do |format|
-      format.html { redirect_to @recipe_list}
+      format.html { redirect_to (calendar_url)}
       format.xml  { head :ok }
     end
   end
