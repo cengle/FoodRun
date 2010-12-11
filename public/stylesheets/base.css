@@ -543,19 +543,6 @@ hr { display: none; }
 	overflow: hidden;
 	width: auto;
 }
-
-/* Recipe Lists */
-.recipe_in_list_title a{
-	text-decoration:none;
-	font-size:20px;
-	width:300px;
-	float:left;
-	border-top: 1px solid #24130F;
-}
-
-.recipe_in_list_footer {
-	width:100%;
-}
 /* For event calendar css */
 
 /* 
@@ -791,3 +778,45 @@ a.ec-day-link {
   -khtml-border-radius: 2px;
   -moz-border-radius: 2px;
 }
+
+/* Sidebar for calendar */
+#recipe_list_sidebar {
+	float: right;
+	width: 240px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+/* Recipe Lists In Calendar*/
+.recipe_in_list {
+	padding-top:10px;
+	/*border-top: 1px solid #666666;*/
+}
+
+.recipe_in_list_header{
+	padding-top:20px;
+	font-size:30px;
+	padding-bottom:10px;
+	border-bottom:1px solid #666666;
+}
+
+.recipe_in_list_title{
+	padding-bottom:5px;
+}
+
+.recipe_in_list_title a{
+	text-decoration:none;
+	font-size:20px;
+	width:100px;
+	color: #64BC31;
+}
+
+
+.recipe_in_list .button {
+	float:left;
+}
+
+.recipe_in_list.buttons{
+	padding-bottom:5px;
+}
+

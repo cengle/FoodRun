@@ -19,7 +19,7 @@
 				<li><%= link_to 'Upload Recipe', new_recipe_path %></li>
 				<li>
 				<% if current_user %>
-					<%= link_to 'Recipe list', :controller => 'recipe_lists', :action => 'show', :user => current_user%>
+					<%= link_to 'Recipe list', :controller => 'calendar'%>
 				<% else %>
 					<%= link_to 'Recipe list', login_path %>
 				<% end %>		
