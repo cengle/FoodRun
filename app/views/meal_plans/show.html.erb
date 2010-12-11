@@ -9,5 +9,17 @@
 </p>
 
 
+<table>
+	<tr>
+		<th>Recipe Title</th>
+	</tr>
+	<% for recipe in @meal_plan.recipes %>
+		<tr>
+			<td><%=h recipe.title %></td>
+		</tr>
+	<% end %>
+</table>
+
+
 <%= link_to 'Edit', edit_meal_plan_path(@meal_plan) %> |
 <%= link_to 'Back', meal_plans_path %>

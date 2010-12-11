@@ -423,63 +423,6 @@ hr { display: none; }
 	height:auto;
 }
 
-/* Calendar */
-
-#calendar {
-}
-
-#calendar caption {
-	padding-bottom: 5px;
-	font-weight: bold;
-}
-
-#calendar table {
-	width: 100%;
-	border-collapse: collapse;
-	border-bottom: 1px solid #24130F;
-	border-left: 1px solid #24130F;
-	border-right: 1px solid #24130F;
-}
-
-#calendar thead th {
-	padding: 5px 0;
-	text-align: center;
-	border-top: 1px solid #24130F;
-	border-left: 1px solid #24130F;
-	background: #24130F;
-}
-
-#calendar tbody td {
-	padding: 5px 0;
-	text-align: center;
-	border-top: 1px solid #24130F;
-	border-left: 1px solid #24130F;
-	border-bottom: 1px solid #24130F;
-}
-
-#calendar tfoot td {
-	padding: 5px;
-	border-left: 1px solid #24130F;
-	border-bottom: 1px solid #24130F;
-}
-
-#calendar tfoot #next {
-	border-top: 1px solid #24130F;
-	text-align: right;
-}
-
-#calendar tfoot #prev {
-	border-top: 1px solid #24130F;
-}
-
-#calendar .pad {
-	border-bottom: 1px solid #24130F;
-}
-
-#calendar #today {
-	background: #24130F;
-}
-
 /* Footer */
 
 #footer {
@@ -811,12 +754,97 @@ a.ec-day-link {
 	color: #64BC31;
 }
 
-
-.recipe_in_list .button {
-	float:left;
-}
-
 .recipe_in_list.buttons{
 	padding-bottom:5px;
 }
 
+/*Credits: Dynamic Drive CSS Library */
+/*URL: http://www.dynamicdrive.com/style/ */
+
+a.squarebutton{
+background: transparent url('../images/square-green-left.gif') no-repeat top left;
+display: block;
+float: left;
+font: normal 12px Arial; /* Change 12px as desired */
+line-height: 15px; /* This value + 4px + 4px (top and bottom padding of SPAN) must equal height of button background (default is 23px) */
+height: 23px; /* Height of button background height */
+padding-left: 9px; /* Width of left menu image */
+text-decoration: none;
+}
+
+a:link.squarebutton, a:visited.squarebutton, a:active.squarebutton{
+color: #494949; /*button text color*/
+}
+
+a.squarebutton span{
+background: transparent url('../images/square-green-right.gif') no-repeat top right;
+display: block;
+padding: 4px 9px 4px 0; /*Set 9px below to match value of 'padding-left' value above*/
+}
+
+a.squarebutton:hover{ /* Hover state CSS */
+background-position: bottom left;
+}
+
+a.squarebutton:hover span{ /* Hover state CSS */
+background-position: bottom right;
+color: black;
+}
+
+.buttonwrapper{ /* Container you can use to surround a CSS button to clear float */
+overflow: hidden; /*See: http://www.quirksmode.org/css/clearing.html */
+width: 100%;
+padding-bottom:10px;
+}
+
+/* Calendar page */
+.grocery_list_div{
+	padding-top:20px;
+}
+
+#calendar_title{
+	padding-bottom:10px;
+}
+
+/*Uploaded recipes*/
+.uploaded_recipes_titlephoto {
+	float:left;
+	width:150px;
+}
+
+.uploaded_recipe {
+	height:150px;
+	width:500px;
+	border-bottom: 1px solid #E0E0E0;
+	padding-top:20px;
+}
+
+.uploaded_recipe_resize img{
+	width:12em;
+	height:8em;
+}
+
+.uploaded_recipes_recipetitle{
+	padding-bottom:10px;
+}
+
+.uploaded_recipes_recipetitle a {
+	text-decoration: none;
+	text-transform: capitalize;
+	font-size: 30px;
+	color: #64BC31;
+}
+
+.uploaded_recipes_title{
+	padding-bottom:10px;
+}
+
+.uploaded_recipes_options {
+	float:right;
+	width:150px;
+}
+
+.uploaded_recipes_titlephoto {
+	float:left;
+	width:150px;
+}
