@@ -30,7 +30,7 @@
   <h2>Ingredients</h2>
   <% ingredient_amount_html_id = 0 %>
   <% f.fields_for :ingredient_amounts do |i| %>
-	<%if ingredient_amount_html_id < 5%>
+	<%if ingredient_amount_html_id < 1%>
 	<span class="ingredient_amount" id="ingredient_amount_<%= ingredient_amount_html_id %>">
 	<%else%>
 	<span class="ingredient_amount hidden" id="ingredient_amount_<%= ingredient_amount_html_id %>">
