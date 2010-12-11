@@ -7,8 +7,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   helper_method :current_user
   def load_sidebar
-    @featured_recipes = Recipe.find :all, :order => :title, :limit => 8
+    @featured_recipes = Recipe.find :all, :order => "RANDOM()", :limit => 8
     @top_recipes = Recipe.find(:all).sort!{|r1,r2|r2.average_rating <=> r1.average_rating}[0..3]
+    @week_recipe = Recipe.find(:all, :conditions => ["created_at > ?",Time.now - 7*24*60*60]).sort!{|r1,r2|r2.average_rating <=> r1.average_rating}[0]
   end
   private
   helper_method :current_user

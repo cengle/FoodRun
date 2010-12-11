@@ -31,6 +31,8 @@
   </div>
 <% end %>
 
-<%= link_to 'Show Grocery List', :controller => "recipe_lists", :action => "groceryList", :id => @recipe_list.id, :user => current_user %>
-<%= link_to 'Edit', edit_recipe_list_path(@recipe_list) %> |
-<%= link_to 'Back', recipes_path %>
+<div class="recipe_list_footer" >
+	<%= link_to 'Show Grocery List', :controller => "recipe_lists", :action => "groceryList", :id => @recipe_list.id, :user => current_user %>
+	<%= link_to 'Edit', edit_recipe_list_path(@recipe_list) %> |
+	<%= link_to 'Back', recipes_path %>
+</div>

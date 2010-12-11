@@ -1,26 +1,29 @@
-<h1> My uploaded recipes </h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Directions</th>
-    <th>Completion time</th>
-    <th>Recipelist</th>
-	<th>Reviews</th>
-  </tr>
+<h1> <%=current_user.username%>'s recipes </h1>
 
 <% @recipes.each do |recipe| %>
-  <tr>
-    <td><%=h recipe.title %></td>
-    <td><%=h recipe.directions %></td>
-    <td><%=h recipe.completion_time %></td>
-    <td><%=h recipe.recipelist_id %></td>
-	<td><%=h recipe.reviews.count %></td>
-    <td><%= link_to 'Show', recipe %></td>
-    <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-    <td><%= link_to 'Destroy', recipe, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<div class="post">
+
+	<p class="meta"><span class="date"> <%= recipe.created_at.asctime %> 
+	<% if recipe.user%>
+		Posted by <%= link_to recipe.user.username, :controller => 'recipes' , :action => 'showMyRecipes', :user => recipe.user, :id => '2' %></p>
+	<%end%>
+					
+	<h2 class="title"><%= link_to recipe.title, recipe %> </h2>
+	<div class="entry_and_photos">
+		<div class="recipe_entry">
+			<% if recipe.description%>
+				<%=recipe.description%>
+			<%else %>
+				No Description
+			<%end%>
+		</div>
+		<div class="resize2">
+			<% if recipe.photo.url != "/photos/original/missing.png"%>
+					<%= image_tag recipe.photo.url %>
+			<%end%>
+		</div>
+	</div>
+</div>
 <% end %>
-</table>
 
 <%= link_to 'Back', recipes_path %>

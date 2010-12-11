@@ -1,4 +1,11 @@
 class CalendarController < ApplicationController
+  before_filter :load_sidebar
+  def load_sidebar
+    @recipes = current_user.recipe_list.recipes
+    @recipe_list = current_user.recipe_list
+  end
+  
+  layout 'calendar'
   
   def index
     @month = (params[:month] || (Time.zone || Time).now.month).to_i

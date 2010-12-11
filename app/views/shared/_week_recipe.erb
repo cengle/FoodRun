@@ -1,0 +1,11 @@
+<div class="week_recipe_title" >
+	<%= link_to @week_recipe.title, @week_recipe%>
+</div>
+<div class="week_recipe_description" >
+	<%= @week_recipe.description %>
+</div>
+<div class="resize_week_recipe">
+	<% if @week_recipe.photo.url != "/photos/original/missing.png"%>
+			<%= image_tag @week_recipe.photo.url %>
+	<%end%>
+</div>

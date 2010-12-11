@@ -1,0 +1,52 @@
+ <h1>New recipe</h1>
+
+<% form_for @recipe, :html => {:multipart => true} do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  
+  <p>
+  	<%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  
+  <p>
+    <%= f.label :directions %><br />
+    <%= f.text_area :directions %>
+  </p>
+  <p>
+    <%= f.label :completion_time %><br />
+    <%= f.text_field :completion_time %>
+  </p>
+  
+  <p>
+  	<%= f.label :photo %> <br />
+  	<div class="resize"> <%= f.file_field :photo  %> </div>
+  </p>
+  
+  <h2>Ingredients</h2>
+  <% f.fields_for :ingredient_amounts do |i| %>
+    <h3>Ingredient</h3>
+    <p>
+      <label for="recipe_ingredient_name">Ingredient name</label>
+      <%= text_field_with_auto_complete :ingredient_amount, :ingredient_name, {}, {:url => formatted_ingredient_amounts_path(:js), :method => :get, :with => "'search=' + element.value"} %>
+    </p>
+    <p>
+      <%= i.label :number %>
+      <%= i.text_field :number %>
+    </p>
+    <p>
+      <%= i.label :unit %>
+      <%= i.text_field :unit %>
+    </p>
+    
+  <% end %>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', recipes_path %>

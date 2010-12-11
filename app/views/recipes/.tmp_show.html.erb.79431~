@@ -2,15 +2,9 @@
 	
 	<div id="show_recipe_header">
 		<h1 class="title"> <%=h @recipe.title %> </h1>
-		<p class="meta"><span class="date"> <%= @recipe.created_at.asctime %> 
-		<% if @recipe.user%>
-			Posted by <%= link_to @recipe.user.username, :controller => 'recipes' , :action => 'showMyRecipes', :user => @recipe.user, :id => '2' %></p>
-		<%end%>
+		<p class="meta"> <span class="posted_by"> Posted by <a href="#">Someone</a> </span> | <b><%=h @recipe.completion_time %> minutes </b> completion time</p>
 		<p>
-			<div class="resize"> <%= image_tag @recipe.photo.url%> </div>
-		</p>
-		<p>
-			<%= @recipe.description %>
+			<%= image_tag @recipe.photo.url%>
 		</p>
 	</div>
 	
