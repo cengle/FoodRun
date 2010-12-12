@@ -1,5 +1,5 @@
 class Recipe < ActiveRecord::Base
-  has_many :reviews, :dependent => :destroy
+  has_many :reviews, :dependent => :destroy, :order => "created_at DESC", :limit => 5
   has_many :ingredient_amounts, :dependent => :destroy
   has_many :ingredients, :through => :ingredient_amounts
   has_and_belongs_to_many :recipe_lists
@@ -17,6 +17,11 @@ class Recipe < ActiveRecord::Base
   validates_length_of :description, :minimum => 10
   validates_length_of :description, :maximum => 100
   
+  def build_ingredient_amounts
+	20.times do
+		self.ingredient_amounts.build
+	end
+  end
   def average_rating
     revs = self.reviews
     sum = 0.0

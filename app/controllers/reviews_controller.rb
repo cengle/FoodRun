@@ -47,11 +47,7 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-        format.html { redirect_to(@review, :notice => 'Review was successfully created.') }
-        format.xml  { render :xml => @review, :status => :created, :location => @review }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @review.errors, :status => :unprocessable_entity }
+        format.html { render :partial => 'review', :object => @review}
       end
     end
   end
