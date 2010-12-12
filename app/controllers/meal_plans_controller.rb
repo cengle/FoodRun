@@ -23,6 +23,15 @@ class MealPlansController < ApplicationController
       format.xml  { render :xml => @meal_plan }
     end
   end
+  
+  def showMyMealPlans
+  	@meal_plans = current_user.meal_plans
+  		
+	respond_to do |format|
+		format.html
+		format.xml {render :xml => @meal_plans }
+	end
+  end
 
   # GET /meal_plans/new
   # GET /meal_plans/new.xml

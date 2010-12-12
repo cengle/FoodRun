@@ -59,6 +59,7 @@ class RecipesController < ApplicationController
   # POST /recipes.xml
   def create
     @recipe = Recipe.new(params[:recipe])
+    @recipe.user_id = current_user.id
     #@ingredient = Ingredient.find_or_create_by_name(params[:ingredient_name])
     #@ingredient.ingredient_amounts << @recipe.ingredient_amounts
     respond_to do |format|
