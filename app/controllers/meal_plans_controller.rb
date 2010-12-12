@@ -93,7 +93,7 @@ class MealPlansController < ApplicationController
 	@results = MealPlan.find(:all, :conditions => ['name LIKE ?', "%#{params[:input]}%"])
 	@input = params[:input]
 	if (@results.empty?)
-	  flash[:notice] = 'No results found.'
+	  flash.now[:notice] = 'No results found.'
 	end
 	respond_to do |format|
       format.html # new.html.erb

@@ -1,5 +1,5 @@
 <h1 style="padding-bottom:5px;"> <%=h @meal_plan.name %> </h1>
-  
+<h3>Meal Plan Description: <%=h @meal_plan.description %></h3>  
 <h3> Number of recipes: <%=h @meal_plan.number %> </h3>
 
 
@@ -25,5 +25,5 @@
 <% end %>
 
 
-<%= link_to 'Edit Name', edit_meal_plan_path(@meal_plan) %> |
+<%= link_to 'Edit', edit_meal_plan_path(@meal_plan) %> |
 <%= link_to 'Back', meal_plans_path %>
