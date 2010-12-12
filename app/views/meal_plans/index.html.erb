@@ -1,23 +1,16 @@
-<h1>Listing meal_plans</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Number</th>
-  </tr>
+<h1 style="padding-bottom:10px"><%=current_user.username%>'s plans</h1>
 
 <% @meal_plans.each do |meal_plan| %>
-  <tr>
-    <td><%=h meal_plan.name %></td>
-    <td><%=h meal_plan.number %></td>
-    <td><%= link_to 'Show', meal_plan %></td>
-    <td><%= link_to 'Edit', edit_meal_plan_path(meal_plan) %></td>
-    <td><%= link_to 'Destroy', meal_plan, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+
+	<div class="post">
+
+		<p class="meta"><span class="date"> <%= meal_plan.created_at.asctime %> 
+		
+		<div class="new_mealplan_wrapper">				
+			<h2 class="mealplan_index_title"><%= link_to meal_plan.name, meal_plan %> </h2>
+			<%= link_to '<span> Destroy </span>', meal_plan, :confirm => 'Are you sure?', :method => :delete, :class=>'squarebutton' %>
+		</div>
+	</div>   
+	
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New meal_plan', new_meal_plan_path %>
 <%= link_to 'Home', recipes_path%>

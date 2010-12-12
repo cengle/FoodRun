@@ -813,7 +813,7 @@ padding-bottom:10px;
 }
 
 .uploaded_recipe {
-	height:150px;
+	height:175px;
 	width:500px;
 	border-bottom: 1px solid #E0E0E0;
 	padding-top:20px;
@@ -826,6 +826,7 @@ padding-bottom:10px;
 
 .uploaded_recipes_recipetitle{
 	padding-bottom:10px;
+	line-height:150%;
 }
 
 .uploaded_recipes_recipetitle a {
@@ -847,4 +848,56 @@ padding-bottom:10px;
 .uploaded_recipes_titlephoto {
 	float:left;
 	width:150px;
+}
+
+/* Meal plans */
+.new_mealplan_title {
+	padding-bottom:30px;
+}
+
+.new_mealplan_form {
+	float:left;
+	width:350px;
+}
+
+.new_mealplan_form h2{
+	padding-bottom:5px;
+}
+
+.new_mealplan_recipes{
+	float:right;
+	width:250px;
+}
+
+.new_mealplan_recipes h2{
+	padding-top:15px;
+	padding-bottom:10px;
+}
+
+.new_mealplan_wrapper{
+	overflow:hidden;
+}
+
+.new_mealplan_footer {
+	width:100%;
+}
+
+.new_mealplan_recipe a{
+	text-decoration:none;
+	font-size:1.25em;
+}
+
+.new_mealplan_recipe {
+	padding-bottom:5px;
+}
+
+.new_mealplan_delete{
+	float:right;
+}
+
+.mealplan_index_title a{
+	text-decoration: none;
+	text-transform: capitalize;
+	font-size: 30px;
+	color: #64BC31;
 }
