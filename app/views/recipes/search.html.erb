@@ -1,4 +1,4 @@
-<h1> Search results </h1>
+<h1> Recipe Search Results for "<%=@input%>"</h1>
 
 <table>
   <tr>
@@ -24,3 +24,5 @@
 </table>
 
 <%= link_to 'Back', recipes_path %>
+
+<%= link_to 'Search Meal Plans', :controller => 'meal_plans', :id => 0, :action => 'search', :input => @input%>

@@ -28,7 +28,7 @@ class MealPlansController < ApplicationController
   # GET /meal_plans/new.xml
   def new
     @meal_plan = MealPlan.new
-    @my_recipes = current_user.recipep_list.recipes
+    @my_recipes = current_user.recipe_list.recipes
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @meal_plan }
@@ -86,6 +86,17 @@ class MealPlansController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(meal_plans_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+  def search
+	@results = MealPlan.find(:all, :conditions => ['name LIKE ?', "%#{params[:input]}%"])
+	@input = params[:input]
+	if (@results.empty?)
+	  flash[:notice] = 'No results found.'
+	end
+	respond_to do |format|
+      format.html # new.html.erb
     end
   end
     
