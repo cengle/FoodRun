@@ -895,6 +895,11 @@ padding-bottom:10px;
 	float:right;
 }
 
+.new_mealplan_delete img{
+	height:0.75em;
+	width:0.75em;
+}
+
 .mealplan_index_title a{
 	text-decoration: none;
 	text-transform: capitalize;
@@ -916,4 +921,25 @@ padding-bottom:10px;
 	float:right;
 }
 
+/* Ingredients */
+.ingredients_wrapper{
+	width:600px;
+	height:120px;
+	border:1px solid #64BC31;;
+	padding:10px;
+	margin:10px;
+}
 
+.ingredients_form{
+	float:left;
+	width:500px;
+}
+
+.ingredients_options{
+	float:right;
+	width:100px;
+}
+
+.ingredients_form{
+	overflow:hidden;
+}
