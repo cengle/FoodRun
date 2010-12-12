@@ -7,7 +7,7 @@
 	</div>
 	<div class="resize_week_recipe">
 		<% if @week_recipe.photo.url != "/photos/original/missing.png"%>
-				<%= image_tag @week_recipe.photo.url %>
+				<%= link_to image_tag (@week_recipe.photo.url), @week_recipe %>
 		<%end%>
 	</div>
 <%end%>

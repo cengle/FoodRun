@@ -25,7 +25,7 @@ New User
 		</div>
 		<div class="resize2">
 			<% if recipe.photo.url != "/photos/original/missing.png"%>
-					<%= image_tag recipe.photo.url %>
+					<%= link_to image_tag (recipe.photo.url), recipe %>
 			<%end%>
 		</div>
 	</div>
