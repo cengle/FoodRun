@@ -37,9 +37,7 @@ class RecipesController < ApplicationController
   # GET /recipes/new.xml
   def new
     @recipe = Recipe.new
-	25.times do 
-		@recipe.ingredient_amounts.build
-	end
+	@recipe.build_ingredient_amounts
     #@ingredient_name
     respond_to do |format|
       format.html # new.html.erb
@@ -50,9 +48,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1/edit
   def edit
     @recipe = Recipe.find(params[:id])
-	10.times do 
-		@recipe.ingredient_amounts.build
-	end
+	@recipe.build_ingredient_amounts
   end
 
   # POST /recipes
@@ -66,6 +62,7 @@ class RecipesController < ApplicationController
         format.html { redirect_to(@recipe, :notice => 'Recipe was successfully created.') }
         format.xml  { render :xml => @recipe, :status => :created, :location => @recipe }
       else
+	  	@recipe.build_ingredient_amounts
         format.html { render :action => "new" }
         format.xml  { render :xml => @recipe.errors, :status => :unprocessable_entity }
       end
@@ -83,6 +80,7 @@ class RecipesController < ApplicationController
         format.html { redirect_to(@recipe, :notice => 'Recipe was successfully updated.') }
         format.xml  { head :ok }
       else
+	  	@recipe.build_ingredient_amounts
         format.html { render :action => "edit" }
         format.xml  { render :xml => @recipe.errors, :status => :unprocessable_entity }
       end

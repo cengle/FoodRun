@@ -2,12 +2,12 @@ class IngredientAmount < ActiveRecord::Base
   belongs_to :ingredient
   belongs_to :recipe
   def ingredient_name= name	
-    i = Ingredient.find_by_name(name)
+    i = Ingredient.find_by_name(name.downcase())
 	if i
 		self.ingredient_id = i.id
 	else
 		i = Ingredient.create
-		i.name = name
+		i.name = name.downcase()
 		i.save
 		self.ingredient_id = i.id
 	end
