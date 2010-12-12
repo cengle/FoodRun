@@ -95,4 +95,12 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def delete_from_calendar
+    year = params[:year]
+	date = params[:date]
+	month = params[:month]
+	Calendar_recipe.delete_all(:month => month, :date => date, :year => year, :user_id => current_user.id, :recipe_id => params[:recipe_id])
+	redirect_to :controller => 'calendar'
+  end
 end

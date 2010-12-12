@@ -1,27 +1,39 @@
-<h1>New meal_plan</h1>
+<h1 class="new_mealplan_title">Make a new meal plan!</h1>
 
-<% form_for(@meal_plan) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
-
-<table>
-	<tr>
-		<th>Recipe Title</th>
-	</tr>
-	<% for recipe in @my_recipes %>
-		<tr>
-			<td><%=h recipe.title %></td>
-		</tr>
-	<% end %>
-</table>
+<div class="new_mealplan_wrapper">
+	<div class="new_mealplan_form">
+		<% form_for(@meal_plan) do |f| %>
+		  <%= f.error_messages %>
+		
+		  <p>
+		    <h2> New meal plan name </h2>
+		    <%= f.text_field :name %>
+		  </p>
+		  
+		  <p>
+		  	<h2> Meal Plan Description </h2>
+		  	<%= f.label :description %>
+		  	<%= f.text_field :description %>
+		  </p>
+		  <p>
+		    <%= f.submit 'Create' %>
+		  </p>
+		<% end %>
+	</div>
 	
-<%= link_to 'Back', meal_plans_path %>
+	<div class ="new_mealplan_recipes">
+		<h2> Current Recipes in Meal Plan </h2>
+		<% @my_recipes.each do |recipe| %>
+  			<div class="new_mealplan_recipe">
+   				<%= link_to recipe.title, recipe %>
+				<span class="new_mealplan_delete">
+					<%= link_to image_tag("../images/delete.png", :width=>"12em", :height=>"12em", :position=>"absolute", :left=>"0px"), recipe%>
+				</span>
+			</div>
+		<% end %>
+	</div>
+</div>
+		
+<div class="new_mealplan_footer">
+	<%= link_to 'Back to recipe list', calendar_path %>
+</div>

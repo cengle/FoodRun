@@ -36,6 +36,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.showMyRecipes '/recipes/:id/showMyRecipes/', :controller => 'recipes', :action => 'showMyRecipes'
 
+  map.delete_from_calendar '/users/:id/recipe/:recipe_id/:year/:month/:date', :controller => 'users', :action => 'delete_from_calendar'
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

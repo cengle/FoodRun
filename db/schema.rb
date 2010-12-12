@@ -9,11 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101210032141) do
+ActiveRecord::Schema.define(:version => 20101211032017) do
 
   create_table "calendar_recipes", :force => true do |t|
     t.integer "user_id"
     t.integer "recipe_id"
+    t.integer "year"
+    t.integer "month"
+    t.integer "date"
   end
 
   create_table "events", :force => true do |t|
@@ -55,8 +58,8 @@ ActiveRecord::Schema.define(:version => 20101210032141) do
   end
 
   create_table "meal_plans_recipes", :id => false, :force => true do |t|
-    t.integer "recipe_id",     :null => false
-    t.integer "meal_plans_id", :null => false
+    t.integer "recipe_id",    :null => false
+    t.integer "meal_plan_id", :null => false
   end
 
   create_table "recipe_lists", :force => true do |t|

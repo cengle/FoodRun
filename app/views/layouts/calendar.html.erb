@@ -11,7 +11,6 @@
 
 <%= stylesheet_link_tag "base" %>
 <body onload="$$('.hidden').invoke('hide')">
-
 <div id="header-wrapper">
 	<div id="header">
 		<div id="menu">
@@ -27,10 +26,16 @@
 				</li>
 				<li>
 				<% if current_user %>
-					<%= link_to 'Uploaded recipes', :controller => 'recipes' , :action => 'showMyRecipes', :user => current_user, :id => '2' %>
+					<%= link_to 'My uploaded recipes', :controller => 'recipes' , :action => 'showMyRecipes', :user => current_user, :id => '2' %>
 					
 				<% end %>
 				</li>
+				<li>
+				<% if current_user %>
+					<%= link_to 'My meal plans', :controller => 'meal_plans' %>
+				<% end %>
+				</li>
+				
 				<li>
 					<% if current_user %>
 						<%= link_to "Edit Profile", edit_user_path(:current) %>
@@ -58,8 +63,7 @@
 		</div>
 		<!-- end #search -->
 	</div>
-</div>
-<!-- end #header -->
+</div><!-- end #header -->
 <!-- end #header-wrapper -->
 <div id="logo">
 	<h1><%= link_to 'Foodrun', recipes_path %> </h1>

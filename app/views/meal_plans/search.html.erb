@@ -1,0 +1,22 @@
+<h1> Meal Plan Search Results for "<%=@input%>"</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Number</th>
+  </tr>
+
+<% @results.each do |meal_plan| %>
+  <tr>
+    <td><%=h meal_plan.name %></td>
+    <td><%=h meal_plan.number %></td>
+    <td><%= link_to 'Show', meal_plan %></td>
+    <td><%= link_to 'Edit', edit_meal_plan_path(meal_plan) %></td>
+    <td><%= link_to 'Destroy', meal_plan, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Back', meal_plans_path%>
+
+<%= link_to 'Search Recipes', :controller => "recipes", :id => 0, :action => "search", :input => @input%>

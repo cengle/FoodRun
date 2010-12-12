@@ -28,10 +28,16 @@
 				</li>
 				<li>
 				<% if current_user %>
-					<%= link_to 'Uploaded recipes', :controller => 'recipes' , :action => 'showMyRecipes', :user => current_user, :id => '2' %>
+					<%= link_to 'My uploaded recipes', :controller => 'recipes' , :action => 'showMyRecipes', :user => current_user, :id => '2' %>
 					
 				<% end %>
 				</li>
+				<li>
+				<% if current_user %>
+					<%= link_to 'My meal plans', :controller => 'meal_plans' , :action => 'showMyMealPlans', :user => current_user, :id => '2' %>
+				<% end %>
+				</li>
+				
 				<li>
 					<% if current_user %>
 						<%= link_to "Edit Profile", edit_user_path(:current) %>

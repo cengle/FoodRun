@@ -3,8 +3,6 @@ class CreateCalendarRecipes < ActiveRecord::Migration
     create_table :calendar_recipes do |t|
 	  t.integer :user_id
 	  t.integer :recipe_id
-	  t.integer :month
-	  t.integer :date
 	end
   end
 

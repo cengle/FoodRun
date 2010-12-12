@@ -65,7 +65,7 @@ module EventCalendar
         :height => 500, 
         :day_names_height => 18,
         :day_nums_height => 18,
-        :event_height => 18,
+        :event_height => 60,
         :event_margin => 1,
         :event_padding_top => 2,
         
@@ -214,10 +214,11 @@ module EventCalendar
                   cal << %(style="background-color: #{event.color}; )
                 end
                 cal << %(padding-top: #{options[:event_padding_top]}px; )
-                cal << %(height: #{options[:event_height] - options[:event_padding_top]}px;" )
+                #cal << %(height: #{options[:event_height] - options[:event_padding_top]}px;" )
+				cal << %(height:auto;")
                 if options[:use_javascript]
                   # custom attributes needed for javascript event highlighting
-                  cal << %(data-event-id="#{event.id}" data-color="#{event.color}" )
+				  cal << %(data-event-id="#{event.id}" data-color="#{event.color}" )
                 end
                 cal << %(>)
                 
