@@ -18,7 +18,11 @@
 		<div id="menu">
 			<ul>
 				<li><%= link_to 'Home', recipes_path %></li>
-				<li><%= link_to 'Upload Recipe', new_recipe_path %></li>
+				<li>
+				<% if current_user %>
+					<%= link_to 'Upload Recipe', new_recipe_path %>
+				<% end %>	
+				</li>
 				<li>
 				<% if current_user %>
 					<%= link_to 'Recipe list', :controller => 'calendar'%>

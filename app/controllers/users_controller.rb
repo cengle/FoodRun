@@ -100,7 +100,8 @@ class UsersController < ApplicationController
     year = params[:year]
 	date = params[:date]
 	month = params[:month]
-	Calendar_recipe.delete_all(:month => month, :date => date, :year => year, :user_id => current_user.id, :recipe_id => params[:recipe_id])
+	to_delete = Calendar_recipe.find(:first, :conditions => {:month => month, :date => date, :year => year, :user_id => current_user.id, :recipe_id => params[:recipe_id]})
+	to_delete.delete
 	redirect_to :controller => 'calendar'
   end
 end

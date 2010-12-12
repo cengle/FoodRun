@@ -34,21 +34,39 @@
 	
 	<div id="show_recipe_footer">
 		<h2>Reviews</h2>
-		
+		<% form_remote_tag(:url => {:controller => '/reviews', :action => 'create'}, :update => 'reviews_list', :position => :top) do %>
+		  <p>
+			<%= hidden_field :review, :title, :value => "" %>
+		  </p>
+		  <p>
+			<%= label_tag :review %><br />
+			<%= text_area :review, :review, :rows => 3 %>
+		  </p>
+		  <p>
+			<%= label_tag :rating %><br />
+			<%= radio_button :review, :rating, 1, :checked => true %>
+			<%= radio_button :review, :rating, 2 %>
+			<%= radio_button :review, :rating, 3 %>
+			<%= radio_button :review, :rating, 4 %>
+			<%= radio_button :review, :rating, 5 %>
+		  </p>
+		  <p>
+			<%= hidden_field :review, :recipe_id, :value => @recipe.id %>
+		  </p>
+		  
+		  <p>
+			<%= submit_tag 'Save Review' %>
+		  </p>
+		<% end %>
 		<p>
 			<b> Average Review:</b>
 			<%=h @recipe.average_rating %> stars
 		</p>
-		
+		<span id="reviews_list">
 		<% @recipe.reviews.each do |review| %>
-			<div class="post">
-				<div class="reviewtitle"> <%= review.rating %> stars. <%= link_to review.title, review %></div>
-				<p class="meta"><span class="date"> <%= review.created_at.asctime %> Posted by <a href="#">Someone</a></p>
-				<div class="entry">
-				<%=review.review%>
-				</div>
-			</div>
+			<%= render :partial => 'reviews/review', :object => review %>
 		<% end %>
+		</span>
 		 
 		<%= link_to 'Edit Recipe', edit_recipe_path(@recipe) %> |
 		<%= link_to 'Back to Recipes', recipes_path %> |
