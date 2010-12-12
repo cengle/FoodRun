@@ -13,14 +13,22 @@
 		</p>
 		<p>
 			<%= f.submit "Submit" %>
-			<%= f.hidden_field :recipe_id, :value => @recipes[recipe_date_html_id].id %>
+			<%= f.hidden_field :recipe_id, :value => recipe.id %>
 		</p>
 	<% end %>
 	</span>
 	
 	<span id="calendar_button_<%= recipe_date_html_id %>">
 		<%= link_to_function "Add to calendar",
-		"$('recipe_date_#{recipe_date_html_id}').toggle(); $('calendar_button_#{recipe_date_html_id}').toggle()" %>
+		"$('recipe_date_#{recipe_date_html_id}').toggle(); $('calendar_button_#{recipe_date_html_id}').toggle();
+		$('hide_button_#{recipe_date_html_id}').toggle()" %>
+	</span>
+	
+	<span class="hidden" id="hide_button_<%= recipe_date_html_id %>">
+		<%= link_to_function "Hide",
+		"$('recipe_date_#{recipe_date_html_id}').toggle(); 
+		$('calendar_button_#{recipe_date_html_id}').toggle();
+		$('hide_button_#{recipe_date_html_id}').toggle()" %>
 	</span>
 	
 	<%= link_to ('Remove from list', delete_from_recipe_list_path(@recipe_list, recipe), :confirm => 'Are you sure?', :method => :delete)%>
@@ -28,3 +36,4 @@
 	<% recipe_date_html_id = recipe_date_html_id + 1 %>
   </div>
 <% end %>
+<br />

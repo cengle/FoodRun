@@ -647,7 +647,8 @@ a.ec-day-link {
 .ec-event {
   color: white;
   padding-right: 1px;
-  padding-left: 11px;
+  padding-left: 2px;
+  padding-bottom: 2px;
   -webkit-border-radius: 3px;
   -khtml-border-radius: 3px;
   -moz-border-radius: 3px;
