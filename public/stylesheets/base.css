@@ -83,7 +83,7 @@ hr { display: none; }
 }
 
 #header {
-	width: 1000px;
+	width: 1090px;
 	margin: 0 auto;
 }
 
@@ -91,7 +91,7 @@ hr { display: none; }
 
 #menu {
 	float: left;
-	width: 550px;
+	width: 750px;
 }
 
 #menu ul {
@@ -842,12 +842,12 @@ padding-bottom:10px;
 
 .uploaded_recipes_options {
 	float:right;
-	width:150px;
+	width:100px;
 }
 
 .uploaded_recipes_titlephoto {
 	float:left;
-	width:150px;
+	width:300px;
 }
 
 /* Meal plans */
@@ -901,3 +901,19 @@ padding-bottom:10px;
 	font-size: 30px;
 	color: #64BC31;
 }
+
+.mealplan_index_wrapper {
+	width:600px;
+}
+
+.mealplan_index_titledescrip{
+	width:300px;
+	float:left;
+}
+
+.mealplan_index_options{
+	width:200px;
+	float:right;
+}
+
+
