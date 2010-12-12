@@ -18,44 +18,57 @@
     <%= f.text_area :directions %>
   </p>
   <p>
-    <%= f.label :completion_time %><br />
+    <%= "Completion time (in minutes)" %><br />
     <%= f.text_field :completion_time %>
   </p>
   
   <p>
   	<%= f.label :photo %> <br />
-  	<div class="resize"> <%= f.file_field :photo  %> </div>
+	<%= f.file_field :photo  %>
   </p>
   
-  <h2>Ingredients</h2>
-  <% ingredient_amount_html_id = 0 %>
-  <% f.fields_for :ingredient_amounts do |i| %>
-	<%if ingredient_amount_html_id < 1%>
-	<span class="ingredient_amount" id="ingredient_amount_<%= ingredient_amount_html_id %>">
-	<%else%>
-	<span class="ingredient_amount hidden" id="ingredient_amount_<%= ingredient_amount_html_id %>">
-	<%end%>
-    <h3>Ingredient</h3>
-    <p>
-	  <%= i.label :ingredient_name %>
-      <%= i.text_field_with_auto_complete :ingredient_name, {}, {:url => ingredient_amounts_path(:js), :method => :get, :with => "'search=' + element.value"} %>
-    </p>
-    <p>
-      <%= i.label :number %>
-      <%= i.text_field :number %>
-    </p>
-    <p>
-      <%= i.label :unit %>
-      <%= i.text_field :unit %>
-    </p>
-    <%= button_to_function "Delete", "$('ingredient_amount_#{ingredient_amount_html_id}').remove()" %>
-	</span>
-	<% ingredient_amount_html_id += 1 %>
-  <% end %>
-  <br>
-  <%= button_to_function "Add Ingredient", "$$('.hidden')[0].removeClassName('hidden').show()" %>
+  <h2 style="padding-bottom:10px;">Ingredients</h2>
+	  <% ingredient_amount_html_id = 0 %>
+	  <% f.fields_for :ingredient_amounts do |i| %>
+		  <%if ingredient_amount_html_id < 1%>
+			<span class="ingredient_amount" id="ingredient_amount_<%= ingredient_amount_html_id %>">
+		  <%else%>
+			<span class="ingredient_amount hidden" id="ingredient_amount_<%= ingredient_amount_html_id %>">
+		  <%end%>
+		  <div class="ingredients_wrapper">
+			  <div class="ingredients_form">
+				  <p>
+					<%= i.label :ingredient_name %>
+					<%= i.text_field_with_auto_complete :ingredient_name, {}, {:url => ingredient_amounts_path(:js), :method => :get, :with => "'search=' + element.value"} %>
+				  </p>
+				  <p>
+				    <%= i.label :number %>
+				    <%= i.text_field :number %>
+				  </p>
+				  <p>
+				    <%= i.label :unit %>
+				    <%= i.text_field :unit %>
+				  </p>
+			  </div>
+			
+			  <div class="ingredients_options">
+				<%= i.hidden_field :_destroy %>
+				<%= link_to_function "<span> Delete </span>", 
+					"$('recipe_ingredient_amounts_attributes_#{ingredient_amount_html_id}__destroy').setValue('1');
+					$('ingredient_amount_#{ingredient_amount_html_id}').hide();", :class=>'squarebutton' %>
+		     </div>
+		  </div>
+		  </span>
+		  <% ingredient_amount_html_id += 1 %>
+		  <% end %>
+		  <br>
+		
+  <%= link_to_function "<span> Add Ingredient </span>", "$$('.hidden')[0].removeClassName('hidden').show();",:class=>'squarebutton' %>
   <p>
-    <%= f.submit 'Create' %>
+  	<div style="padding-top:10px; text-align:center;">
+    <%= f.submit 'Upload Recipe' %>
+	</div>
   </p>
 <% end %>
+
 <%= link_to 'Back', recipes_path %>

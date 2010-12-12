@@ -18,7 +18,7 @@
     <%= f.text_area :directions %>
   </p>
   <p>
-    <%= f.label :completion_time %><br />
+    <%= "Complete time (in minutes)" %><br />
     <%= f.text_field :completion_time %>
   </p>
   
@@ -35,7 +35,8 @@
   <%else%>
 	<span class="ingredient_amount hidden" id="ingredient_amount_<%= ingredient_amount_html_id %>">
   <%end%>
-  <h3>Ingredient</h3>
+  <div class="ingredients_wrapper">
+	 <div class="ingredients_form">
 	  <p>
 		<%= i.label :ingredient_name %>
 		<%= i.text_field_with_auto_complete :ingredient_name, {}, {:url => ingredient_amounts_path(:js), :method => :get, :with => "'search=' + element.value"} %>
@@ -48,12 +49,19 @@
 	    <%= i.label :unit %>
 	    <%= i.text_field :unit %>
 	  </p>
+	   </div>
+			
+	<div class="ingredients_options">
 
 	  <%= i.hidden_field :_destroy %>
 	  <%= button_to_function "Delete", 
 		"$('recipe_ingredient_amounts_attributes_#{ingredient_amount_html_id}__destroy').setValue('1');
 		$('ingredient_amount_#{ingredient_amount_html_id}').hide();" %>
-	  </span>
+   </div>
+   		</div>
+   </span>
+	  
+	  
 	  <% ingredient_amount_html_id += 1 %>
 	  <% end %>
 	  <br>

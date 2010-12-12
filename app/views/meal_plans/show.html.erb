@@ -1,24 +1,28 @@
-<p>
-  <b>Name:</b>
-  <%=h @meal_plan.name %>
-</p>
-
-<p>
-  <b>Number:</b>
-  <%=h @meal_plan.number %>
-</p>
+<h1 style="padding-bottom:5px;"> <%=h @meal_plan.name %> </h1>
+<h3>Meal Plan Description: <%=h @meal_plan.description %></h3>  
+<h3> Number of recipes: <%=h @meal_plan.number %> </h3>
 
 
-<table>
-	<tr>
-		<th>Recipe Title</th>
-	</tr>
-	<% for recipe in @meal_plan.recipes %>
-		<tr>
-			<td><%=h recipe.title %></td>
-		</tr>
-	<% end %>
-</table>
+<% @meal_plan.recipes.each do |recipe| %>
+<div class="uploaded_recipe">
+	<div class="uploaded_recipes_titlephoto">
+		<h2 class="uploaded_recipes_recipetitle"><%= link_to recipe.title, recipe %> </h2>
+		<div class="uploaded_recipe_resize">
+				<% if recipe.photo.url != "/photos/original/missing.png"%>
+						<%= image_tag recipe.photo.url %>
+				<%end%>
+		</div>
+	</div>
+	<div class="uploaded_recipes_options">
+		<div class="buttonwrapper">
+			<%= link_to '<span> Delete </span>', recipe, :confirm => 'Are you sure?', :method => :delete, :class => 'squarebutton' %>
+		</div>
+		<div class="buttonwrapper">
+			<%= link_to '<span> Edit Recipe </span>', edit_recipe_path(recipe), :class => 'squarebutton' %>
+		</div>
+	</div>
+</div>
+<% end %>
 
 
 <%= link_to 'Edit', edit_meal_plan_path(@meal_plan) %> |

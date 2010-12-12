@@ -59,6 +59,7 @@ class RecipesController < ApplicationController
   # POST /recipes.xml
   def create
     @recipe = Recipe.new(params[:recipe])
+    @recipe.user_id = current_user.id
     #@ingredient = Ingredient.find_or_create_by_name(params[:ingredient_name])
     #@ingredient.ingredient_amounts << @recipe.ingredient_amounts
     respond_to do |format|
@@ -106,11 +107,11 @@ class RecipesController < ApplicationController
   end
   
   def search
-	#@results = Recipe.find(:all, :conditions => {:title => params[:input]}) <== OLD SEARCH
+  	flash.discard(:notice)
 	@results = Recipe.find(:all, :conditions => ['title LIKE ?', "%#{params[:input]}%"])
-
+	@input = params[:input]
 	if (@results.empty?)
-	  flash[:notice] = 'No results found.'
+	  flash.now[:notice] = 'No results found.'
 	end
 	respond_to do |format|
       format.html # new.html.erb

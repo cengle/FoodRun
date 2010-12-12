@@ -1,4 +1,4 @@
-<h1>Editing meal_plan</h1>
+<h1>Editing <%= @meal_plan.name %></h1>
 
 <% form_for(@meal_plan) do |f| %>
   <%= f.error_messages %>
@@ -7,10 +7,13 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
+  
   <p>
-    <%= f.label :number %><br />
-    <%= f.text_field :number %>
+  	<h2> Meal Plan Description </h2>
+  	<%= f.label :description %>
+   	<%= f.text_field :description %>
   </p>
+  
   <p>
     <%= f.submit 'Update' %>
   </p>
