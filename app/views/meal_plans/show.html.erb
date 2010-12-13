@@ -15,7 +15,7 @@
 	</div>
 	<div class="uploaded_recipes_options">
 		<div class="buttonwrapper">
-			<%= link_to '<span> Delete </span>', recipe, :confirm => 'Are you sure?', :method => :delete, :class => 'squarebutton' %>
+			<%= link_to '<span> Delete </span>', {:confirm => 'Are you sure?', :id => @meal_plan.id, :recipe_id => recipe.id, :controller => "meal_plans", :action => "removeRecipeFromExisting"}, :class => 'squarebutton' %>
 		</div>
 		<div class="buttonwrapper">
 			<%= link_to '<span> Edit Recipe </span>', edit_recipe_path(recipe), :class => 'squarebutton' %>

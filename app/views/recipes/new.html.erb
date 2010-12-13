@@ -39,7 +39,7 @@
 			  <div class="ingredients_form">
 				  <p>
 					<%= i.label :ingredient_name %>
-					<%= i.text_field_with_auto_complete :ingredient_name, {}, {:url => ingredient_amounts_path(:js), :method => :get, :with => "'search=' + element.value"} %>
+					<%= i.text_field_with_auto_complete :ingredient_name, {}, {:url => ingredient_amounts_path(:js), :frequency => 1, :min_chars => 2, :method => :get, :with => "'search=' + element.value"} %>
 				  </p>
 				  <p>
 				    <%= i.label :number %>
