@@ -1,14 +1,14 @@
 development:
-  bucket: myappdevelopment
+  bucket: foodrundev
   access_key_id:  141FZ8BYA4AK5PBXBWR2
   secret_access_key:  0X0JaZqtAILLvUCduD4StoyxEQOIUgV1Lbm5qjHN
 
 test:
-  bucket: myapptest
+  bucket: foodruntest
   access_key_id:  141FZ8BYA4AK5PBXBWR2
   secret_access_key:  0X0JaZqtAILLvUCduD4StoyxEQOIUgV1Lbm5qjHN
 
 production:
-  bucket: myapp
+  bucket: foodrunprod
   access_key_id:  141FZ8BYA4AK5PBXBWR2
   secret_access_key:  0X0JaZqtAILLvUCduD4StoyxEQOIUgV1Lbm5qjHN
