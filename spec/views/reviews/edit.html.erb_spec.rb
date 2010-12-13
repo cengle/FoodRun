@@ -13,14 +13,4 @@ describe "/reviews/edit.html.erb" do
     )
   end
 
-  it "renders the edit review form" do
-    render
-
-    response.should have_tag("form[action=#{review_path(@review)}][method=post]") do
-      with_tag('input#review_title[name=?]', "review[title]")
-      with_tag('textarea#review_review[name=?]', "review[review]")
-      with_tag('input#review_rating[name=?]', "review[rating]")
-      with_tag('input#review_recipe_id[name=?]', "review[recipe_id]")
-    end
-  end
 end

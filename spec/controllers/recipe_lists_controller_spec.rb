@@ -13,7 +13,7 @@ describe RecipeListsController do
   describe "adding a recipe to a recipe list" do
     it "adds the current recipe to a recipe list" do
 	  reclist = RecipeList.create
-	  new_recipe = Recipe.create(:title=>"Chicken", :directions=>"Cook", :completion_time=>5)
+	  new_recipe = Recipe.create(:description => "chicken is yummy", :title=>"Chicken", :directions=>"Cook", :completion_time=>5)
 	  #reclist = mock_recipe_list
 	  #new_recipe = mock_recipe
 	  reclist.recipes = [new_recipe]

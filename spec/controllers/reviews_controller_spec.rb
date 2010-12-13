@@ -38,38 +38,6 @@ describe ReviewsController do
     end
   end
 
-  describe "POST create" do
-
-    describe "with valid params" do
-      it "assigns a newly created review as @review" do
-        Review.stub(:new).with({'these' => 'params'}).and_return(mock_review(:save => true))
-        post :create, :review => {:these => 'params'}
-        assigns[:review].should equal(mock_review)
-      end
-
-      it "redirects to the created review" do
-        Review.stub(:new).and_return(mock_review(:save => true))
-        post :create, :review => {}
-        response.should redirect_to(review_url(mock_review))
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns a newly created but unsaved review as @review" do
-        Review.stub(:new).with({'these' => 'params'}).and_return(mock_review(:save => false))
-        post :create, :review => {:these => 'params'}
-        assigns[:review].should equal(mock_review)
-      end
-
-      it "re-renders the 'new' template" do
-        Review.stub(:new).and_return(mock_review(:save => false))
-        post :create, :review => {}
-        response.should render_template('new')
-      end
-    end
-
-  end
-
   describe "PUT update" do
 
     describe "with valid params" do
@@ -130,7 +98,7 @@ describe ReviewsController do
 
   describe "Adding Review" do
     it "Adds Review to Current Recipe" do
-      new_recipe = Recipe.create(:title=>"Chicken", :directions=>"Cook", :completion_time=>5, :recipe_list=>RecipeList.new())
+      new_recipe = Recipe.create(:title=>"Chicken", :directions=>"Cook", :completion_time=>5, :recipe_list=>RecipeList.new(), :description => "chicken is yummy")
       id = new_recipe.id
       
       post :create, :review=>{:title=>"Cool", :rating=>5, :review=>"Sick", :recipe_id=>new_recipe.id}
