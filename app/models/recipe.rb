@@ -8,10 +8,10 @@ class Recipe < ActiveRecord::Base
   belongs_to :user
   accepts_nested_attributes_for :ingredient_amounts, :allow_destroy => true, :reject_if => :all_blank
   
-  has_attached_file :photo#,
-  #:storage => :s3, 
-      #:s3_credentials => "#{RAILS_ROOT}/config/amazon_s3.yml", 
-      #:path => "/:style/:filename"
+  has_attached_file :photo,
+  :storage => :s3, 
+      :s3_credentials => "#{RAILS_ROOT}/config/amazon_s3.yml", 
+      :path => "/:style/:filename"
   
   validates_length_of :title, :minimum => 2
   validates_length_of :description, :minimum => 10
