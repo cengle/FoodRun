@@ -6,7 +6,8 @@ describe Recipe do
       :title => "value for title",
       :directions => "value for directions",
       :completion_time => 1,
-      :recipelist_id => 1
+      :recipelist_id => 1,
+	  :description => "this is a valid description"
     }
   end
 

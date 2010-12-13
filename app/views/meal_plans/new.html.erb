@@ -23,11 +23,11 @@
 	
 	<div class ="new_mealplan_recipes">
 		<h2> Current Recipes in Meal Plan </h2>
-		<% @my_recipes.each do |recipe| %>
+		<% @meal_plan.recipes.each do |recipe| %>
   			<div class="new_mealplan_recipe">
    				<%= link_to recipe.title, recipe %>
 				<span class="new_mealplan_delete">
-					<%= link_to image_tag("../images/delete.png", :width=>"12em", :height=>"12em", :position=>"absolute", :left=>"0px"), recipe%>
+					<%= link_to image_tag("../images/delete.png", :width=>"12em", :height=>"12em", :position=>"absolute", :left=>"0px"), :controller => "meal_plans", :id => @meal_plan.id, :action => "removeRecipe", :recipe_id => recipe.id%>
 				</span>
 			</div>
 		<% end %>
