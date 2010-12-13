@@ -71,7 +71,6 @@
 			<%= link_to 'Edit Recipe', edit_recipe_path(@recipe) %> |
 		<% end %>
 		<%= link_to 'Back to Recipes', recipes_path %> |
-		<%= link_to 'Add Review', new_review_path(:id=>@recipe.id)%> |
 		<% if current_user %>
 			<%= link_to 'Add to recipe list', :controller => "recipe_lists", :action => "update2", :id => @recipe.id, :user => current_user %>
 		<% else %>
