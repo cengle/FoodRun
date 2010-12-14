@@ -2,13 +2,10 @@
 Given /^I have added a cookie recipe to the recipe list named "([^"]*)"$/ do |recipe_name|
   visit '/recipes/new'
   fill_in(:title, :with => recipe_name)
-  fill_in(:ingredient_amount_ingredient_name, :with => 'cookie dough')
-  fill_in(:recipe_ingredient_amounts_attributes_0_number, :with => 5)
-  fill_in(:recipe_ingredient_amounts_attributes_0 _unit, :with => 'pounds')
-  click_button('Create')
-  click_link('Add to recipe list')
-  click_link('Back')
+  fill_in(:description, :with => 'blah blah blah description')
+  click_link('Upload Recipe')
 end
+
 =end
 Given /^I have added two recipes that have (\d+) and (\d+) units of ingredient test$/ do |arg1, arg2|
 	r1 = Recipe.new(:title => 'Test Recipe 1', 
@@ -24,3 +21,4 @@ Given /^I have added two recipes that have (\d+) and (\d+) units of ingredient t
 end
 
 
+>>>>>>> 20ff8e86300f0cc0f10035c8afe95c22bea2f2d5

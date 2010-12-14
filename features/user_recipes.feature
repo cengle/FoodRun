@@ -8,7 +8,7 @@ Feature: View recipes that a user uploaded
 		And I have uploaded a recipe named "Pad thai"
 		And I have uploaded a recipe named "Spaghetti"
 		And I am on the home page
-		When I follow "Uploaded recipes"
+		When I follow "my uploaded recipes"
 		Then I should see "Pad thai"
 		Then I should see "Spaghetti"
 		
