@@ -13,18 +13,21 @@
 			
 			<div class="mealplan_index_pictures">
 				<% random_recipes = meal_plan.recipes.sort_by{rand}%>
-				<% for index in 0...5%>
+				<% for index in 0...3%>
 					<% if random_recipes[index]%>
 						<%= link_to image_tag (random_recipes[index].photo.url), random_recipes[index] %>
 					<%end%>
 				<%end%>
 			</div>
+			
+			<div class="mealplan_index_options">
+				<%= link_to '<span> Destroy </span>', meal_plan, :confirm => 'Are you sure?', :method => :delete, :class=>'squarebutton' %>
+			</div>
 		</div>
-	</div>   
 	
-	<div class="mealplan_index_options">
-		<%= link_to '<span> Destroy </span>', meal_plan, :confirm => 'Are you sure?', :method => :delete, :class=>'squarebutton' %>
-	</div>
+	
+
+</div>   
 <% end %>
 
 <%= link_to 'Home', recipes_path%>

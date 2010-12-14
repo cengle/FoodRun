@@ -19,12 +19,14 @@
 					<%end%>
 				<%end%>
 			</div>
+			
+			<div class="mealplan_index_options">
+				<%= link_to '<span> Destroy </span>', meal_plan, :confirm => 'Are you sure?', :method => :delete, :class=>'squarebutton' %>
+			</div>
 		</div>
 	
 	
-	<div class="mealplan_index_options">
-		<%= link_to '<span> Destroy </span>', meal_plan, :confirm => 'Are you sure?', :method => :delete, :class=>'squarebutton' %>
-	</div>
+
 </div>   
 <% end %>
 

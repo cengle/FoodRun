@@ -1,4 +1,7 @@
 <h1> Meal Plan Search Results for "<%=@input%>"</h1>
+<div class="search_options">
+<%= link_to '<span> Search Recipes </span>', :controller => "recipes", :id => 0, :action => "search", :input => @input, :class=>'squarebutton'%>
+</div>
 
 
 <% @results.each do |meal_plan| %>
@@ -26,5 +29,3 @@
 <% end %>
 
 <%= link_to 'Back', meal_plans_path%>
-
-<%= link_to 'Search Recipes', :controller => "recipes", :id => 0, :action => "search", :input => @input%>

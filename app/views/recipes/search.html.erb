@@ -1,5 +1,7 @@
 <h1> Recipe Search Results for "<%=@input%>"</h1>
-<%= link_to '<span> Search Meal Plans </span>', :controller => 'meal_plans', :id => 0, :action => 'search', :input => @input%>
+<div class="search_options">
+<%= link_to "<span> Search Meal Plans </span>", :controller => 'meal_plans', :id => 0, :action => 'search', :input => @input, :class=>'squarebutton'%>
+</div>
 
 <% @results.each do |recipe| %>
 <div class="post">

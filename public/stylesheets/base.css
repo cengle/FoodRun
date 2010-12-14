@@ -446,6 +446,21 @@ hr { display: none; }
 }
 
 /* Show Recipe */
+#show_recipe_header{
+	width:600px;
+}
+
+.show_recipe_left_header{
+	width:400px;
+	float:left;
+}
+
+.show_recipe_right_header{
+	width:150px;
+	float:right;
+	padding-top:20px;
+}
+
 #show_recipe_wrap{
 	width:500px;
 	margin:0 auto;
@@ -999,4 +1014,8 @@ a.upload_recipe_button :active span {
 	height:5em;
 	width:5em;
 	padding-right:2px;
+}
+
+.search_options {
+	text-align:right;
 }
