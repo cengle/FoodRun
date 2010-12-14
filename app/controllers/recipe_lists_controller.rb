@@ -89,11 +89,26 @@ class RecipeListsController < ApplicationController
 	flash[:notice] = recipe.title + ' was added to the recipe list.'
 	
     respond_to do |format|
-        format.html { redirect_to :controller => 'recipes', :action => 'show', :id => @recipe_id }
-        format.xml  { head :ok }
+      format.html { redirect_to :controller => 'recipes', :action => 'show', :id => @recipe_id }
+      format.xml  { head :ok }
     end
   end
   
+  def addMealPlan
+    user = User.find_by_id(params[:user])
+    recipe_list = user.recipe_list
+    recipes = recipe_list.recipes
+    meal_plan = MealPlan.find_by_id(params[:id])
+    meal_plan.recipes.each do |recipe|
+      recipes << recipe
+    end
+    flash[:notice] = meal_plan.name + ' was added to the recipe list.'
+    respond_to do |format|
+      format.html { redirect_to meal_plan }
+      format.xml  { head :ok }
+    end
+  end
+
   def groceryList
   	@recipe_list = RecipeList.find(params[:id])
   	@grocery_list = Array.new
@@ -150,48 +165,6 @@ class RecipeListsController < ApplicationController
   		format.html # groceryList.html.erb
 	end	
   end
-
-=begin
-  # returns a list of (super-)ingredients
-  def groceryList
-	user = User.find_by_id(params[:user])
-	recipe_list = user.recipe_list
-	recipes = recipe_list.recipes
-  	@grocery_list = Array.new # list of ingredients
-  	
-  	recipes.each do |recipe| # for each recipe
-  		recipe_ingredient_amounts = recipe.ingredient_amounts
-  		
-  		recipe_ingredient_amounts.each do |recipe_ingredient_amount| # for each ingredient in that recipe
-                        recipe_ingredient = recipe_ingredient_amount.ingredient
-  			ingredientExist = false
-  			@grocery_list.each do |list_ingredient_amount| 	# for each ingredient in the grocery list 
-                                list_ingredient = list_ingredient_amount.ingredient
-                                if recipe_ingredient.name == list_ingredient.name and recipe_ingredient_amount.unit == list_ingredient_amount.unit
-  					ingredientExist = true
-  					list_ingredient_amount.number += recipe_ingredient_amount.number # no need to create new ingredient, just aggregate
-  				end
-  			end
-  			
-  			if not ingredientExist # current recipe_ingredient has not been added to grocery list
-                                ingredient_amount = recipe_ingredient.ingredient_amounts.build
-                                ingredient_amount.number = recipe_ingredient_amount.number
-                                ingredient_amount.unit = recipe_ingredient_amount.unit
-  				
-  				@grocery_list << ingredient_amount
-  			end
-  		
-  		end
-  	end
-  	
-  	
-  	# now return newly created grocery list
-  	respond_to do |format|
-  		format.html # groceryList.html.erb
-      #format.xml  { render :layout => @recipes }
-    end
-  end
-=end
 
   # DELETE /recipe_lists/1
   # DELETE /recipe_lists/1.xml
