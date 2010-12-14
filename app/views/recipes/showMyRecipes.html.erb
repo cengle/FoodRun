@@ -1,4 +1,4 @@
-<h1 class="uploaded_recipes_title"> <%=current_user.username%>'s recipes </h1>
+<h1 class="uploaded_recipes_title"> <%=@user.username%>'s recipes </h1>
 
 <% @recipes.each do |recipe| %>
 <div class="uploaded_recipe">
@@ -11,12 +11,14 @@
 		</div>
 	</div>
 	<div class="uploaded_recipes_options">
-		<div class="buttonwrapper">
-			<%= link_to '<span> Delete </span>', recipe, :confirm => 'Are you sure?', :method => :delete, :class => 'squarebutton' %>
-		</div>
-		<div class="buttonwrapper">
-			<%= link_to '<span> Edit Recipe </span>', edit_recipe_path(recipe), :class => 'squarebutton' %>
-		</div>
+		<% if current_user == recipe.user %>
+			<div class="buttonwrapper">
+				<%= link_to '<span> Delete </span>', recipe, :confirm => 'Are you sure?', :method => :delete, :class => 'squarebutton' %>
+			</div>
+			<div class="buttonwrapper">
+				<%= link_to '<span> Edit Recipe </span>', edit_recipe_path(recipe), :class => 'squarebutton' %>
+			</div>
+		<% end %>
 	</div>
 </div>
 <% end %>

@@ -30,24 +30,29 @@
 				<% if current_user %>
 					<%= link_to 'My recipe list', :controller => 'calendar'%>
 				<% else %>
-					<%= link_to 'Recipe list', login_path %>
+					<%= link_to 'My Recipe list', login_path %>
 				<% end %>		
 				</li>
 				<li>
 				<% if current_user %>
 					<%= link_to 'My uploaded recipes', :controller => 'recipes' , :action => 'showMyRecipes', :user => current_user, :id => '2' %>
-					
-				<% end %>
+					<% else %>
+					<%= link_to 'My uploaded recipes', login_path %>
+				<% end %>	
 				</li>
 				<li>
 				<% if current_user %>
 					<%= link_to 'My meal plans', :controller => 'meal_plans' , :action => 'showMyMealPlans', :user => current_user, :id => '2' %>
-				<% end %>
+				<% else %>
+					<%= link_to 'My meal plans', login_path %>
+				<% end %>	
 				</li>
 				<li>
 				<% if current_user %>
 					<%= link_to 'Upload Recipe', new_recipe_path %>
-				<% end %>	
+				<% else %>
+					<%= link_to 'Upload Recipe', login_path %>
+				<% end %>		
 				</li>
 				<li>
 					<% if current_user %>

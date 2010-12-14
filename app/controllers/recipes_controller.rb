@@ -13,8 +13,8 @@ class RecipesController < ApplicationController
   end
 
   def showMyRecipes
-	user = User.find_by_id(params[:user])
-	@recipes = Recipe.paginate :page =>params[:page], :per_page => 5, :order => 'created_at DESC', :conditions => {:user_id => current_user.id}
+	@user = User.find_by_id(params[:user])
+	@recipes = Recipe.paginate :page =>params[:page], :per_page => 5, :order => 'created_at DESC', :conditions => {:user_id => @user.id}
 	respond_to do |format|
 		format.html
 		format.xml {render :xml => @recipes }
