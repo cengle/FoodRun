@@ -12,7 +12,9 @@
 			  <%=h @recipe.average_rating %> stars
 			</p>
 			<p>
-				<div class="resize"> <%= image_tag @recipe.photo.url%> </div>
+				<div class="resize"> <% if @recipe.photo.url != "/photos/original/missing.png"%>
+					<%= image_tag @recipe.photo.url %>
+			<%end%> </div>
 			</p>
 			<p>
 				<%= @recipe.description %>
