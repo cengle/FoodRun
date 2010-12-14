@@ -5,9 +5,9 @@ Feature: See recipes in recipe list
 
 	Scenario: See recipe in recipe list
 		Given I have logged in
-		And I have added a recipe to the recipe list named "Chicken Burrito"
-		And I have added a recipe to the recipe list named "Cookies"
+		And I have added a recipe
 		And I am on the home page
-		When I follow "Recipe list"
-		Then I should see "Chicken Burrito"
-		And I should see "Cookies"
+		When I follow "Test Recipe"
+		And I follow "<span> Add to recipe list </span>"
+		And I follow "my recipe list"
+		Then I should see "Test Recipe"
