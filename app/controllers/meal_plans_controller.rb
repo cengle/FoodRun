@@ -109,7 +109,7 @@ class MealPlansController < ApplicationController
   end
   
   def search
-	@results = MealPlan.find(:all, :conditions => ['name LIKE ?', "%#{params[:input]}%"])
+	@results = MealPlan.find(:all, :conditions => ['lower(name) LIKE ?', "%#{params[:input].downcase()}%"])
 	@input = params[:input]
 	if (@results.empty?)
 	  flash.now[:notice] = 'No results found.'
