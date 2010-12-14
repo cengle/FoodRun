@@ -1126,3 +1126,31 @@ border-top: 1px solid #fff; /*Remove this to remove border between bar and tabs*
 h1.welcome_title{
 	padding-bottom:10px;
 }
+
+/*Grocery Lists */
+.grocery_list_label{
+	background:#549900;
+	color:white;
+	padding:5px 5px 5px 5px;
+	margin-bottom:10px;
+}
+
+.grocery_list_ingredient{
+	float:left;
+	width:400px;
+	margin-left:10px;
+}
+
+.grocery_list_picture{
+	float:left;
+}
+
+.grocery_list_picture img{
+	height:10em;
+	width:auto;
+}
+
+.grocery_list_wrapper{
+	width:600px;
+	min-height:12em;
+}

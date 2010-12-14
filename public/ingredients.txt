@@ -1,0 +1,454 @@
+~01001~^~Butter, salted~
+~01002~^~Butter, whipped, with salt~
+~01003~^~Butter oil, anhydrous~
+~01009~^~Cheese, cheddar~
+~01011~^~Cheese, colby~
+~01016~^~Cheese, cottage, lowfat, 1% milkfat~
+~01017~^~Cheese, cream~
+~01025~^~Cheese, monterey~
+~01028~^~Cheese, mozzarella, part skim milk~
+~01029~^~Cheese, mozzarella, part skim milk, low moisture~
+~01032~^~Cheese, parmesan, grated~
+~01035~^~Cheese, provolone~
+~01036~^~Cheese, ricotta, whole milk~
+~01040~^~Cheese, swiss~
+~01042~^~Cheese, pasteurized process, american, with di sodium phosphate~
+~01043~^~Cheese, pasteurized process, pimento~
+~01046~^~Cheese food, pasteurized process, american, without di sodium phosphate~
+~01048~^~Cheese spread, pasteurized process, american, without di sodium phosphate~
+~01049~^~Cream, fluid, half and half~
+~01050~^~Cream, fluid, light (coffee cream or table cream)~
+~01053~^~Cream, fluid, heavy whipping~
+~01056~^~Cream, sour, cultured~
+~01069~^~Cream substitute, powdered~
+~01077~^~Milk, whole, 3.25% milkfat~
+~01079~^~Milk, reduced fat, fluid, 2% milkfat, with added vitamin A~
+~01082~^~Milk, lowfat, fluid, 1% milkfat, with added vitamin A~
+~01085~^~Milk, nonfat, fluid, with added vitamin A (fat free or skim)~
+~01091~^~Milk, dry, nonfat, regular, without added vitamin A~
+~01102~^~Milk, chocolate, fluid, commercial, whole~
+~01103~^~Milk, chocolate, fluid, commercial, reduced fat~
+~01104~^~Milk, chocolate, fluid, commercial, lowfat~
+~01117~^~Yogurt, plain, low fat, 12 grams protein per 8 ounce~
+~01118~^~Yogurt, plain, skim milk, 13 grams protein per 8 ounce~
+~01119~^~Yogurt, vanilla, low fat, 11 grams protein per 8 ounce~
+~01121~^~Yogurt, fruit, low fat, 10 grams protein per 8 ounce~
+~01123~^~Egg, whole, raw, fresh~
+~01125~^~Egg, yolk, raw, fresh~
+~01128~^~Egg, whole, cooked, fried~
+~01129~^~Egg, whole, cooked, hard-boiled~
+~01132~^~Egg, whole, cooked, scrambled~
+~01145~^~Butter, without salt~
+~02046~^~Mustard, prepared, yellow~
+~02047~^~Salt, table~
+~03189~^~Babyfood, cereal, oatmeal, dry~
+~03194~^~Babyfood, cereal, rice, dry~
+~03805~^~Infant formula, MEAD JOHNSON, ENFAMIL, with iron, powder~
+~03853~^~Infant formula, ROSS, SIMILAC, with iron, powder, not reconstituted~
+~04002~^~Lard~
+~04017~^~Salad dressing, thousand island, commercial, regular~
+~04018~^~Salad dressing, mayonnaise type, regular, with salt~
+~04025~^~Salad dressing, mayonnaise, soybean oil, with salt~
+~04042~^~Oil, peanut, salad or cooking~
+~04044~^~Oil, soybean, salad or cooking~
+~04053~^~Oil, olive, salad or cooking~
+~04114~^~Salad dressing, italian dressing, commercial, regular~
+~04120~^~Salad dressing, french dressing, commercial, regular~
+~04518~^~Oil, vegetable, corn, industrial and retail, all purpose salad or cooking~
+~04539~^~Salad dressing, blue or roquefort cheese dressing, commercial, regular~
+~04582~^~Vegetable oil, canola~
+~04610~^~Margarine, regular, stick, composite, 80% fat, with salt~
+~04611~^~Margarine, regular, tub, composite, 80% fat, with salt~
+~04613~^~Margarine, vegetable oil spread, 60% fat, tub/bottle~
+~04615~^~Shortening, household, composite~
+~04616~^~Shortening, institutional, composite~
+~04651~^~Oil, vegetable, industrial, soy (partially hydrogenated), multiuse for non-dairy butter flavor~
+~04654~^~Oil, industrial, soy (partially hydrogenated)  and cottonseed, principal use as a tortilla shortening~
+~04659~^~Oil, vegetable, industrial, coconut, confection fat, typical basis for ice cream coatings~
+~05006~^~Chicken, broilers or fryers, meat and skin, raw~
+~05007~^~Chicken, broilers or fryers, meat and skin, cooked, fried, batter~
+~05009~^~Chicken, broilers or fryers, meat and skin, cooked, roasted~
+~05011~^~Chicken, broilers or fryers, meat only, raw~
+~05013~^~Chicken, broilers or fryers, meat only, roasted~
+~05014~^~Chicken, broilers or fryers, meat only, stewed~
+~05057~^~Chicken, broilers or fryers, breast, meat and skin, raw~
+~05060~^~Chicken, broilers or fryers, breast, meat and skin, cooked, roasted~
+~05062~^~Chicken, broilers or fryers, breast, meat only, raw~
+~05064~^~Chicken, broilers or fryers, breast, meat only, cooked, roasted~
+~05066~^~Chicken, broilers or fryers, drumstick, meat and skin, raw~
+~05100~^~Chicken, broilers or fryers, wing, meat and skin, raw~
+~05103~^~Chicken, broilers or fryers, wing, meat and skin, cooked, roasted~
+~05186~^~Turkey, all classes, light meat, cooked, roasted~
+~06019~^~Soup, chicken noodle, canned, condensed, commercial~
+~06053~^~Soup, cream of potato, canned, condensed~
+~06103~^~Sauce, cheese, dehydrated, dry~
+~06116~^~Gravy, beef, canned~
+~06150~^~Sauce, barbecue sauce~
+~06164~^~Sauce, ready-to-serve, salsa~
+~06170~^~Soup, stock, beef, home-prepared~
+~06413~^~Soup, chicken broth, canned, prepared with equal volume water, commercial~
+~06583~^~Soup, ramen noodle, any flavor, dehydrated, dry~
+~06931~^~Sauce, pasta, spaghetti/marinara, ready-to-serve~
+~07008~^~Bologna, beef and pork~
+~07013~^~Bratwurst, pork, cooked~
+~07014~^~Braunschweiger (a liver sausage), pork~
+~07017~^~Chicken roll, light meat~
+~07022~^~Frankfurter, beef~
+~07023~^~Frankfurter, beef and pork~
+~07024~^~Frankfurter, chicken~
+~07037~^~Kielbasa, kolbassy, pork, beef, nonfat dry milk added~
+~07043~^~Luncheon meat, beef, thin sliced~
+~07057~^~Pepperoni, pork, beef~
+~07064~^~Pork Sausage, Fresh, Cooked~
+~07065~^~Pork and beef sausage, fresh, cooked~
+~07069~^~Salami, cooked, beef and pork~
+~07079~^~Turkey breast meat~
+~07082~^~Turkey roll, light and dark meat~
+~07089~^~Sausage, Italian, pork, cooked~
+~08003~^~Cereals ready-to-eat, KELLOGG, KELLOGG'S APPLE JACKS~
+~08010~^~Cereals ready-to-eat, QUAKER, CAP'N CRUNCH~
+~08011~^~Cereals ready-to-eat, QUAKER, CAP'N CRUNCH with CRUNCHBERRIES~
+~08012~^~Cereals ready-to-eat, QUAKER, CAP'N CRUNCH'S PEANUT BUTTER CRUNCH~
+~08013~^~Cereals ready-to-eat, GENERAL MILLS, CHEERIOS~
+~08014~^~Cereals ready-to-eat, KELLOGG, KELLOGG'S COCOA KRISPIES~
+~08017~^~Cereals ready-to-eat, GENERAL MILLS, COOKIE CRISP~
+~08019~^~Cereals ready-to-eat, GENERAL MILLS, Corn CHEX~
+~08020~^~Cereals ready-to-eat, KELLOGG, KELLOGG'S Corn Flakes~
+~08028~^~Cereals ready-to-eat, KELLOGG, KELLOGG'S Complete Wheat Bran Flakes~
+~08029~^~Cereals ready-to-eat, bran flakes, single brand~
+~08030~^~Cereals ready-to-eat, KELLOGG, KELLOGG'S FROOT LOOPS~
+~08031~^~Cereals ready-to-eat, KELLOGG'S FROSTED MINI-WHEATS, original~
+~08034~^~Cereals ready-to-eat, rice, puffed, presweetened, fruit flavored, single brand~
+~08038~^~Cereals ready-to-eat, wheat and malt barley granules, plain, single brand~
+~08045~^~Cereals ready-to-eat, GENERAL MILLS, HONEY NUT CHEERIOS~
+~08046~^~Cereals ready-to-eat, corn and oat flours, puffed presweetened, single brand~
+~08048~^~Cereals ready-to-eat, GENERAL MILLS, KIX~
+~08049~^~Cereals ready-to-eat, QUAKER, QUAKER OAT LIFE, plain~
+~08050~^~Cereals ready-to-eat, GENERAL MILLS, LUCKY CHARMS~
+~08057~^~Cereals ready-to-eat, GENERAL MILLS, Honey Nut CHEX~
+~08060~^~Cereals ready-to-eat, KELLOGG, KELLOGG'S RAISIN BRAN~
+~08061~^~Cereals ready-to-eat, KRAFT, POST Raisin Bran Cereal~
+~08064~^~Cereals ready-to-eat, GENERAL MILLS, Rice CHEX~
+~08065~^~Cereals ready-to-eat, KELLOGG, KELLOGG'S RICE KRISPIES~
+~08067~^~Cereals ready-to-eat, KELLOGG, KELLOGG'S SPECIAL K~
+~08068~^~Cereals ready-to-eat, KELLOGG, KELLOGG'S CORN POPS~
+~08069~^~Cereals ready-to-eat, KELLOGG, KELLOGG'S FROSTED FLAKES~
+~08077~^~Cereals ready-to-eat, GENERAL MILLS, Whole Grain TOTAL~
+~08078~^~Cereals ready-to-eat, GENERAL MILLS, TRIX~
+~08082~^~Cereals ready-to-eat, GENERAL MILLS, Wheat CHEX~
+~08087~^~Cereals ready-to-eat, GENERAL MILLS, Multi-Grain Cheerios~
+~08089~^~Cereals ready-to-eat, GENERAL MILLS, WHEATIES~
+~08092~^~Cereals, QUAKER, corn grits, instant, plain, dry~
+~08120~^~Cereals, oats, regular and quick and instant, not fortified, dry~
+~08122~^~Cereals, oats, instant, fortified, plain, dry~
+~08128~^~Cereals, oats, instant, fortified, with cinnamon and spice, dry~
+~08132~^~Cereals, oats, instant, fortified, with raisins and spice, dry~
+~08194~^~Cereals ready-to-eat, GENERAL MILLS, REESE'S PUFFS~
+~08214~^~Cereals ready-to-eat, QUAKER, QUAKER OATMEAL SQUARES~
+~08216~^~Cereals ready-to-eat, QUAKER, QUAKER Oat Bran Cereal~
+~08247~^~Cereals ready-to-eat, GENERAL MILLS, TOTAL Raisin Bran~
+~08263~^~Cereals ready-to-eat, GENERAL MILLS, APPLE CINNAMON CHEERIOS~
+~08271~^~Cereals ready-to-eat, GENERAL MILLS, COCOA PUFFS~
+~08272~^~Cereals ready-to-eat, GENERAL MILLS, CINNAMON TOAST CRUNCH~
+~08284~^~Cereals ready-to-eat, KELLOGG, KELLOGG'S Low Fat Granola with Raisins~
+~08318~^~Cereals ready-to-eat, KELLOGG, KELLOGG'S SMART START Cereal~
+~09003~^~Apples, raw, with skin~
+~09016~^~Apple juice, canned or bottled, unsweetened, without added ascorbic acid~
+~09020~^~Applesauce, canned, sweetened, without salt~
+~09037~^~Avocados, raw, all commercial varieties~
+~09040~^~Bananas, raw~
+~09111~^~Grapefruit, raw, pink and red and white, all areas~
+~09123~^~Grapefruit juice, white, canned, unsweetened~
+~09132~^~Grapes, red or green (european type varieties, such as, Thompson seedless), raw~
+~09135~^~Grape juice, canned or bottled, unsweetened, without added vitamin C~
+~09176~^~Mangos, raw~
+~09181~^~Melons, cantaloupe, raw~
+~09200~^~Oranges, raw, all commercial varieties~
+~09206~^~Orange juice, raw~
+~09207~^~Orange juice, canned, unsweetened~
+~09214~^~Orange juice, frozen concentrate, unsweetened, undiluted~
+~09236~^~Peaches, raw~
+~09252~^~Pears, raw~
+~09266~^~Pineapple, raw, all varieties~
+~09298~^~Raisins, seedless~
+~09316~^~Strawberries, raw~
+~09320~^~Strawberries, frozen, sweetened, sliced~
+~09326~^~Watermelon, raw~
+~09400~^~Apple juice, canned or bottled, unsweetened, with added ascorbic acid~
+~10026~^~Pork, fresh, loin, whole, separable lean only, cooked, broiled~
+~10027~^~Pork, fresh, loin, whole, separable lean only, cooked, roasted~
+~10089~^~Pork, fresh, spareribs, separable lean and fat, cooked, braised~
+~10124~^~Pork, cured, bacon, cooked, broiled, pan-fried or roasted~
+~10136~^~Pork, cured, ham, boneless, regular (approximately 11% fat), roasted~
+~10153~^~Pork, cured, ham, whole, separable lean only, roasted~
+~10182~^~Pork, cured, ham, boneless, extra lean and regular, unheated~
+~10183~^~Pork, cured, ham, boneless, extra lean and regular, roasted~
+~10220~^~Pork, fresh, ground, cooked~
+~11012~^~Asparagus, cooked, boiled, drained~
+~11053~^~Beans, snap, green, cooked, boiled, drained, without salt~
+~11056~^~Beans, snap, green, canned, regular pack, drained solids~
+~11061~^~Beans, snap, green, frozen, cooked, boiled, drained without salt~
+~11090~^~Broccoli, raw~
+~11091~^~Broccoli, cooked, boiled, drained, without salt~
+~11093~^~Broccoli, frozen, chopped, cooked, boiled, drained, without salt~
+~11109~^~Cabbage, raw~
+~11110~^~Cabbage, cooked, boiled, drained, without salt~
+~11124~^~Carrots, raw~
+~11125~^~Carrots, cooked, boiled, drained, without salt~
+~11131~^~Carrots, frozen, cooked, boiled, drained, without salt~
+~11143~^~Celery, raw~
+~11152~^~Chicory greens, raw~
+~11162~^~Collards, cooked, boiled, drained, without salt~
+~11164~^~Collards, frozen, chopped, cooked, boiled, drained, without salt~
+~11168~^~Corn, sweet, yellow, cooked, boiled, drained, without salt~
+~11172~^~Corn, sweet, yellow, canned, whole kernel, drained solids~
+~11179~^~Corn, sweet, yellow, frozen, kernels cut off cob, boiled, drained, without salt~
+~11206~^~Cucumber, peeled, raw~
+~11213~^~Endive, raw~
+~11234~^~Kale, cooked, boiled, drained, without salt~
+~11251~^~Lettuce, cos or romaine, raw~
+~11252~^~Lettuce, iceberg (includes crisphead types), raw~
+~11253~^~Lettuce, green leaf, raw~
+~11282~^~Onions, raw~
+~11313~^~Peas, green, frozen, cooked, boiled, drained, without salt~
+~11333~^~Peppers, sweet, green, raw~
+~11334~^~Peppers, sweet, green, cooked, boiled, drained, without salt~
+~11352~^~Potato, flesh and skin, raw~
+~11363~^~Potatoes, baked, flesh, without salt~
+~11365~^~Potatoes, boiled, cooked in skin, flesh, without salt~
+~11367~^~Potatoes, boiled, cooked without skin, flesh, without salt~
+~11370~^~Potatoes, hashed brown, home-prepared~
+~11378~^~Potatoes, mashed, dehydrated, flakes without milk, dry form~
+~11391~^~Potatoes, hashed brown, frozen, plain, prepared~
+~11403~^~Potatoes, french fried, all types, salt added in processing, frozen, home-prepared, oven heated~
+~11457~^~Spinach, raw~
+~11458~^~Spinach, cooked, boiled, drained, without salt~
+~11461~^~Spinach, canned, drained solids~
+~11464~^~Spinach, frozen, chopped or leaf, cooked, boiled, drained, without salt~
+~11508~^~Sweet potato, cooked, baked in skin, without salt~
+~11510~^~Sweet potato, cooked, boiled, without skin~
+~11529~^~Tomatoes, red, ripe, raw, year round average~
+~11530~^~Tomatoes, red, ripe, cooked~
+~11531~^~Tomatoes, red, ripe, canned, whole, regular pack~
+~11533~^~Tomatoes, red, ripe, canned, stewed~
+~11540~^~Tomato juice, canned, with salt added~
+~11547~^~Tomato products, canned, puree, without salt added~
+~11549~^~Tomato products, canned, sauce~
+~11584~^~Vegetables, mixed, frozen, cooked, boiled, drained, without salt~
+~11642~^~Squash, summer, all varieties, cooked, boiled, drained, without salt~
+~11645~^~Sweet potato, canned, syrup pack, solids and liquids~
+~11655~^~Carrot juice, canned~
+~11670~^~Peppers, hot chili, green, raw~
+~11674~^~Potato, baked, flesh and skin, without salt~
+~11819~^~Peppers, hot chili, red, raw~
+~11821~^~Peppers, sweet, red, raw~
+~11887~^~Tomato products, canned, paste, with salt added~
+~11935~^~Catsup~
+~11937~^~Pickles, cucumber, dill~
+~11945~^~Pickle relish, sweet~
+~12036~^~Seeds, sunflower seed kernels, dried~
+~12037~^~Seeds, sunflower seed kernels, dry roasted, without salt~
+~12061~^~Nuts, almonds~
+~12063~^~Nuts, almonds, dry roasted, without salt added~
+~12155~^~Nuts, walnuts, english~
+~12538~^~Seeds, sunflower seed kernels, oil roasted, with salt added~
+~12563~^~Nuts, almonds, dry roasted, with salt added~
+~12585~^~Nuts, cashew nuts, dry roasted, with salt added~
+~12586~^~Nuts, cashew nuts, oil roasted, with salt added~
+~12635~^~Nuts, mixed nuts, dry roasted, with peanuts, with salt added~
+~12637~^~Nuts, mixed nuts, oil roasted, with peanuts, with salt added~
+~13088~^~Beef, rib, whole (ribs 6-12), separable lean only, trimmed to 1/4" fat, choice, cooked, roasted~
+~13143~^~Beef, rib, small end (ribs 10-12), separable lean only, trimmed to 1/4" fat, select, cooked, roasted~
+~13156~^~Beef, round, full cut, separable lean only, trimmed to 1/4" fat, choice, cooked, broiled~
+~13220~^~Beef, round, top round, separable lean only, trimmed to 1/4" fat, choice, cooked, pan-fried~
+~13290~^~Beef, top sirloin, separable lean only, trimmed to 1/4" fat, choice, cooked, pan-fried~
+~13327~^~Beef, variety meats and by-products, liver, cooked, pan-fried~
+~13342~^~Beef, sandwich steaks, flaked, chopped, formed and thinly sliced, raw~
+~14003~^~Alcoholic beverage, beer, regular, all~
+~14006~^~Alcoholic beverage, beer, light~
+~14037~^~Alcoholic beverage, distilled, all (gin, rum, vodka, whiskey) 80 proof~
+~14084~^~Alcoholic beverage, wine, table, all~
+~14119~^~Mixed vegetable and fruit juice drink, with added nutrients~
+~14136~^~Carbonated beverage, ginger ale~
+~14144~^~Carbonated beverage, lemon-lime soda, contains caffeine~
+~14145~^~Carbonated beverage, SPRITE, lemon-lime, without caffeine~
+~14147~^~Carbonated beverage, cola, without caffeine~
+~14154~^~Energy drink, RED BULL, with added caffeine, niacin, pantothenic acid, vitamins B6 and B12~
+~14155~^~Carbonated beverage, tonic water~
+~14157~^~Carbonated beverage, root beer~
+~14181~^~Chocolate syrup~
+~14192~^~Cocoa mix, powder~
+~14201~^~Coffee, brewed from grounds, prepared with tap water, decaffeinated~
+~14209~^~Coffee, brewed from grounds, prepared with tap water~
+~14210~^~Coffee, brewed, espresso, restaurant-prepared~
+~14214~^~Coffee, instant, regular, powder~
+~14238~^~Cranberry-apple juice drink, bottled~
+~14242~^~Cranberry juice cocktail, bottled~
+~14243~^~Cranberry juice cocktail, bottled, low calorie, with calcium, saccharin and corn sweetener~
+~14262~^~Citrus fruit juice drink, frozen concentrate~
+~14264~^~Fruit punch drink, without added nutrients, canned~
+~14267~^~Fruit punch drink, with added nutrients, canned~
+~14287~^~Lemonade, powder~
+~14292~^~Lemonade, frozen concentrate, white~
+~14315~^~Malted drink mix, chocolate, with added nutrients, powder~
+~14323~^~Orange drink, canned, with added vitamin C~
+~14352~^~Tea, brewed, prepared with tap water, decaffeinated~
+~14355~^~Tea, brewed, prepared with tap water~
+~14400~^~Carbonated beverage, cola, contains caffeine~
+~14407~^~Orange-flavor drink, breakfast type, powder~
+~14416~^~Carbonated beverage, low calorie, cola or pepper-type, with aspartame, contains caffeine~
+~14429~^~Water, municipal~
+~14435~^~Orange breakfast drink, ready-to-drink~
+~14462~^~QUAKER OATS, PROPEL Fitness Water, fruit-flavored, non-carbonated~
+~14540~^~Fruit punch-flavor drink, powder, without added sodium~
+~14550~^~Alcoholic beverage, distilled, all (gin, rum, vodka, whiskey) 86 proof~
+~14603~^~THIRST QUENCHER,FRUIT-FLAVORED DRK,RTD,W/ NO ADDED B VIT~
+~15028~^~Fish, flatfish (flounder and sole species), raw~
+~15083~^~Fish, salmon, pink, raw~
+~15121~^~Fish, tuna, light, canned in water, drained solids~
+~15140~^~Crustaceans, crab, blue, cooked, moist heat~
+~15149~^~Crustaceans, shrimp, mixed species, raw~
+~15152~^~Crustaceans, shrimp, mixed species, canned~
+~15157~^~Mollusks, clam, mixed species, raw~
+~15160~^~Mollusks, clam, mixed species, canned, drained solids~
+~15164~^~Mollusks, mussel, blue, raw~
+~15167~^~Mollusks, oyster, eastern, wild, raw~
+~15234~^~Fish, catfish, channel, farmed, raw~
+~16006~^~Beans, baked, canned, plain or vegetarian~
+~16011~^~Beans, baked, canned, with pork and tomato sauce~
+~16014~^~Beans, black, mature seeds, raw~
+~16033~^~Beans, kidney, red, mature seeds, cooked, boiled, without salt~
+~16034~^~Beans, kidney, red, mature seeds, canned~
+~16042~^~Beans, pinto, mature seeds, raw~
+~16043~^~Beans, pinto, mature seeds, cooked, boiled, without salt~
+~16050~^~Beans, white, mature seeds, cooked, boiled, without salt~
+~16089~^~Peanuts, all types, oil-roasted, with salt~
+~16090~^~Peanuts, all types, dry-roasted, with salt~
+~16098~^~Peanut butter, smooth style, with salt~
+~16103~^~Refried beans, canned (includes USDA commodity)~
+~16123~^~Soy sauce made from soy and wheat (shoyu)~
+~16150~^~Peanut butter, smooth, reduced fat~
+~16389~^~Peanuts, all types, oil-roasted, without salt~
+~18001~^~Bagels, plain, enriched, with calcium propionate (includes onion, poppy, sesame)~
+~18009~^~Biscuits, plain or buttermilk, commercially baked~
+~18015~^~Biscuits, plain or buttermilk, refrigerated dough, higher fat, baked~
+~18029~^~Bread, french or vienna (includes sourdough)~
+~18033~^~Bread, italian~
+~18060~^~Bread, rye~
+~18064~^~Bread, wheat (includes wheat berry)~
+~18065~^~Bread, wheat, toasted (includes wheat berry)~
+~18069~^~Bread, white, commercially prepared (includes soft bread crumbs)~
+~18070~^~Bread, white, commercially prepared, toasted~
+~18079~^~Bread crumbs, dry, grated, plain~
+~18127~^~Cake, snack cakes, creme-filled, chocolate with frosting~
+~18128~^~Cake, snack cakes, creme-filled, sponge~
+~18159~^~Cookies, chocolate chip, commercially prepared, reg, higher fat, enriched~
+~18166~^~Cookies, chocolate sandwich, with creme filling, regular~
+~18173~^~Cookies, graham crackers, plain or honey (includes cinnamon)~
+~18214~^~Crackers, cheese, regular~
+~18228~^~Crackers, saltines (includes oyster, soda, soup)~
+~18229~^~Crackers, standard snack-type, regular~
+~18239~^~Croissants, butter~
+~18248~^~Doughnuts, cake-type, plain (includes unsugared, old-fashioned)~
+~18255~^~Doughnuts, yeast-leavened, glazed, enriched (includes honey buns)~
+~18258~^~English muffins, plain, enriched, with ca prop (includes sourdough)~
+~18274~^~Muffins, blueberry, commercially prepared~
+~18288~^~Pancakes plain, frozen, ready-to-heat (includes buttermilk)~
+~18301~^~Pie, apple, commercially prepared, enriched flour~
+~18326~^~Pie, pumpkin, commercially prepared~
+~18347~^~Rolls, dinner, wheat~
+~18350~^~Rolls, hamburger or hotdog, plain~
+~18353~^~Rolls, hard (includes kaiser)~
+~18356~^~Sweet rolls, cinnamon, commercially prepared with raisins~
+~18360~^~Taco shells, baked~
+~18362~^~Toaster pastries, fruit (includes apple, blueberry, cherry, strawberry)~
+~18363~^~Tortillas, ready-to-bake or -fry, corn~
+~18364~^~Tortillas, ready-to-bake or -fry, flour~
+~18369~^~Leavening agents, baking powder, double-acting, sodium aluminum sulfate~
+~18375~^~Leavening agents, yeast, baker's, active dry~
+~18403~^~Waffles, plain, frozen, ready -to-heat, toasted~
+~18933~^~Waffle, buttermilk, frozen, ready-to-heat, toasted~
+~19003~^~Snacks, corn-based, extruded, chips, plain~
+~19008~^~Snacks, corn-based, extruded, puffs or twists, cheese-flavor~
+~19014~^~Snacks, fruit leather, rolls~
+~19035~^~Snacks, popcorn, oil-popped, microwaved~
+~19047~^~Snacks, pretzels, hard, plain, salted~
+~19056~^~Snacks, tortilla chips, plain, white corn~
+~19078~^~Baking chocolate, unsweetened, squares~
+~19080~^~Candies, semisweet chocolate~
+~19088~^~Ice creams, vanilla, light~
+~19089~^~Ice creams, vanilla, rich~
+~19095~^~Ice creams, vanilla~
+~19097~^~Sherbet, orange~
+~19106~^~Candies, gumdrops, starch jelly pieces~
+~19107~^~Candies, hard~
+~19120~^~Candies, milk chocolate~
+~19132~^~Candies, milk chocolate, with almonds~
+~19141~^~Candies, M&M MARS, "M&M's" Milk Chocolate Candies~
+~19150~^~Candies, REESE'S Peanut Butter Cups~
+~19155~^~Candies, M&M MARS, SNICKERS Bar~
+~19166~^~Cocoa, dry powder, unsweetened, processed with alkali~
+~19270~^~Ice creams, chocolate~
+~19280~^~Frozen novelties, ice type, lime~
+~19296~^~Honey~
+~19300~^~Jellies~
+~19334~^~Sugars, brown~
+~19335~^~Sugars, granulated~
+~19336~^~Sugars, powdered~
+~19351~^~Syrups, corn, high-fructose~
+~19353~^~Syrups, maple~
+~19360~^~Syrups, table blends, pancake, with 2% maple~
+~19411~^~Snacks, potato chips, plain, salted~
+~20022~^~Cornmeal, degermed, enriched, yellow~
+~20037~^~Rice, brown, long-grain, cooked~
+~20044~^~Rice, white, long-grain, regular, raw, enriched~
+~20045~^~Rice, white, long-grain, regular, cooked~
+~20049~^~Rice, white, long-grain, precooked or instant, enriched, prepared~
+~20080~^~Wheat flour, whole-grain~
+~20081~^~Wheat flour, white, all-purpose, enriched, bleached~
+~20083~^~Wheat flour, white, bread, enriched~
+~20084~^~Wheat flour, white, cake, enriched~
+~20100~^~Macaroni, cooked, enriched~
+~20110~^~Noodles, egg, cooked, enriched~
+~20121~^~Spaghetti, cooked, enriched, without added salt~
+~21138~^~Fast foods, potato, french fried in vegetable oil~
+~21229~^~Fast foods, chicken, breaded and fried, boneless pieces, plain~
+~21299~^~Fast Food, Pizza Chain, 14" Pizza, cheese topping, regular crust~
+~21300~^~Fast Food, Pizza Chain, 14" Pizza, cheese topping, thick crust~
+~21301~^~Fast Food, Pizza Chain, 14" Pizza, cheese topping, thin crust~
+~22907~^~Pasta with meatballs in tomato sauce, canned entree~
+~23567~^~Beef, ground, 85% lean meat / 15% fat, raw~
+~23568~^~Beef, ground, 85% lean meat / 15% fat, patty, cooked, broiled~
+~23572~^~Beef, ground, 80% lean meat / 20% fat, raw~
+~23573~^~Beef, ground, 80% lean meat / 20% fat, patty, cooked, broiled~
+~23577~^~Beef, ground, 75% lean meat / 25% fat, raw~
+~23578~^~Beef, ground, 75% lean meat / 25% fat, patty, cooked, broiled~
+~23580~^~Beef, ground, 75% lean meat / 25% fat, crumbles, cooked, pan-browned~
+~23606~^~Beef, short loin, top loin , separable lean only, trimmed to 1/8" fat, all grades, cooked, broiled~
+~23608~^~Beef, round, top round, separable lean only, trimmed to 1/8" fat, all grades, cooked, broiled~
+~23612~^~Beef, chuck, arm pot roast, separable lean only, trimmed to 1/8" fat, choice, raw~
+~23638~^~Beef, rib, small end (ribs 10-12), separable lean only, trimmed to 1/8" fat, all grades, cooked, broiled~
+~42042~^~ADDED VIT C~
+~42062~^~CALCIUM~
+~42102~^~MEAL REPLACEMENT BAR~
+~42240~^~Cereals ready-to-eat, corn, whole wheat, rolled oats, presweetened, with almonds, single brand~
+~42258~^~Cheese product, pasteurized process, cheddar or american, reduced fat~
+~42271~^~Snacks, popcorn, oil-popped, low fat~
+~42295~^~POWER BAR,FORT HI ENERGY BAR~
+~42297~^~Cereals ready-to-eat, whole wheat, rolled oats, presweetened, with walnuts and fruit, single brand~
+~43015~^~Salad dressing, caesar dressing, regular~
+~43100~^~Breakfast bars, oats, sugar, raisins, coconut (include granola bar)~
+~43109~^~Pretzels, soft~
+~43116~^~PROTEIN SUPP~
+~43120~^~PROT SUPP,HI PROT BAR,CANDY-LIKE,W/SOY&MILK~
+~43121~^~MEAL REPLCMNT/SUPP,LIQ,HI PROT~
+~43207~^~MEAL REPLCMNT,PROT TYPE,MILK BSD,PDR~
+~43262~^~BEVERAGE,CHOC,DIET,LIQ,CND~
+~43265~^~NUTRIENT SUPP,MILK BSD,HI PROT,LIQ~
+~43266~^~PROT SUPP,MILK BSD,PDR~
+~43275~^~Cheese, pasteurized process, american, low fat~
+~43404~^~Cranberry-apple juice drink, low calorie, with vitamin C added~
+~43570~^~Cereals ready-to-eat, corn, whole wheat, rolled oats, presweetened, single brand~
+~43595~^~Breakfast bar, corn flake crust with fruit~
+~99991~^~BEEF, GROUND, PATTY, FRZ~
+~99992~^~FAT USED IN PIZZA RECIPE~
