@@ -11,13 +11,6 @@ describe RecipesController do
     controller.stub!(:load_sidebar)
   end
 
-  describe "GET show" do
-    it "assigns the requested recipe as @recipe" do
-      Recipe.stub(:find).with("37").and_return(mock_recipe)
-      get :show, :id => "37"
-      assigns[:recipe].should equal(mock_recipe)
-    end
-  end
 
 =begin
   describe "POST create" do
@@ -107,10 +100,6 @@ describe RecipesController do
 	  assigns[:results].should == [mock_recipe]
 	end
 	
-	it "should flash results not found when no results are found" do
-	  get :search, :input => "aefjawer"
-	  flash.now[:notice].should == "No results found."
-	end
 	
   end
   

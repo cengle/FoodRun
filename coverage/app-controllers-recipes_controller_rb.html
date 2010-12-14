@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-controllers-recipes_controller_rb.html">app/controllers/recipes_controller.rb</a></td>
-            <td class='right_align'><tt>100</tt></td>
-            <td class='right_align'><tt>74</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>63.00%</tt></div>
+            <td class='right_align'><tt>124</tt></td>
+            <td class='right_align'><tt>91</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>40.32%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:63px"></div>
-            <div class="uncovered" style="width:37px"></div>
+            <div class="covered" style="width:40px"></div>
+            <div class="uncovered" style="width:60px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>54.05%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>26.37%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:54px"></div>
-            <div class="uncovered" style="width:46px"></div>
+            <div class="covered" style="width:26px"></div>
+            <div class="uncovered" style="width:74px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -74,248 +74,248 @@
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line4">4</a>   def index</pre></td>
+          <tr class="inferred">
+            <td><pre><a name="line4">4</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line5">5</a>     @recipes = Recipe.all</pre></td>
+            <td><pre><a name="line5">5</a>   def index</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line6">6</a> 	first_recipelist = RecipeList.create</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line7">7</a>     respond_to do |format|</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line8">8</a>       format.html # index.html.erb</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line9">9</a>       format.xml  { render :xml =&gt; @recipes }</pre></td>
+            <td><pre><a name="line6">6</a>     @recipes = Recipe.paginate :page =&gt;params[:page], :per_page =&gt; 5, :order =&gt; 'created_at DESC'</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line10">10</a>     end</pre></td>
+            <td><pre><a name="line7">7</a>     #@recipes = Recipe.find(:all, :order=&gt;'created_at DESC')</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line11">11</a>   end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line12">12</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line13">13</a>   # GET /recipes/1</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line14">14</a>   # GET /recipes/1.xml</pre></td>
+            <td><pre><a name="line8">8</a> 	#first_recipelist = RecipeList.create</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line15">15</a>   def show</pre></td>
+            <td><pre><a name="line9">9</a>     respond_to do |format|</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line16">16</a>     @recipe = Recipe.find(params[:id])</pre></td>
+            <td><pre><a name="line10">10</a>       format.html # index.html.erb</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line11">11</a>       format.xml  { render :xml =&gt; @recipes }</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line17">17</a> 	</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line18">18</a>     respond_to do |format|</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line19">19</a>       format.html # show.html.erb</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line20">20</a>       format.xml  { render :xml =&gt; @recipe }</pre></td>
+            <td><pre><a name="line12">12</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line21">21</a>     end</pre></td>
+            <td><pre><a name="line13">13</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
+            <td><pre><a name="line14">14</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line15">15</a>   def showMyRecipes</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line16">16</a> 	user = User.find_by_id(params[:user])</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line17">17</a> 	@recipes = Recipe.paginate :page =&gt;params[:page], :per_page =&gt; 5, :order =&gt; 'created_at DESC', :conditions =&gt; {:user_id =&gt; current_user.id}</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line18">18</a> 	respond_to do |format|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line19">19</a> 		format.html</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line20">20</a> 		format.xml {render :xml =&gt; @recipes }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line21">21</a> 	end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
             <td><pre><a name="line22">22</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line23">23</a> </pre></td>
+            <td><pre><a name="line23">23</a>   </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line24">24</a>   # GET /recipes/new</pre></td>
+            <td><pre><a name="line24">24</a>   # GET /recipes/1</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line25">25</a>   # GET /recipes/new.xml</pre></td>
+            <td><pre><a name="line25">25</a>   # GET /recipes/1.xml</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line26">26</a>   def new</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line27">27</a>     @recipe = Recipe.new</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line28">28</a>     buildIngredients(@recipe)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line29">29</a>     respond_to do |format|</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line30">30</a>       format.html # new.html.erb</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line31">31</a>       format.xml  { render :xml =&gt; @recipe }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line32">32</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line33">33</a>   end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line34">34</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line35">35</a>   # GET /recipes/1/edit</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line36">36</a>   def edit</pre></td>
+            <td><pre><a name="line26">26</a>   def show</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line37">37</a>     @recipe = Recipe.find(params[:id])</pre></td>
+            <td><pre><a name="line27">27</a>     @recipe = Recipe.find(params[:id])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line38">38</a>   end</pre></td>
+            <td><pre><a name="line28">28</a> 	</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line29">29</a> 	current_page = params[:page]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line30">30</a> 	per_page = params[:per_page]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line31">31</a>     reviews = @recipe.reviews</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line32">32</a> 	@reviews = Review.paginate :page =&gt;params[:page], :per_page =&gt; 5, :order =&gt; 'created_at DESC', :conditions =&gt; {:recipe_id =&gt; @recipe.id}</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line33">33</a> 	respond_to do |format|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line34">34</a>       format.html # show.html.erb</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line35">35</a>       format.xml  { render :xml =&gt; @recipe }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line36">36</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line37">37</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line39">39</a> </pre></td>
+            <td><pre><a name="line38">38</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line40">40</a>   # POST /recipes</pre></td>
+            <td><pre><a name="line39">39</a>   # GET /recipes/new</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line41">41</a>   # POST /recipes.xml</pre></td>
+            <td><pre><a name="line40">40</a>   # GET /recipes/new.xml</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line42">42</a>   def create</pre></td>
+            <td><pre><a name="line41">41</a>   def new</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line43">43</a>     @recipe = Recipe.new(params[:recipe])</pre></td>
+            <td><pre><a name="line42">42</a>     @recipe = Recipe.new</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line43">43</a> 	@recipe.build_ingredient_amounts</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line44">44</a> </pre></td>
+            <td><pre><a name="line44">44</a>     #@ingredient_name</pre></td>
           </tr>
         
           
@@ -327,337 +327,481 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line46">46</a>       if @recipe.save</pre></td>
+            <td><pre><a name="line46">46</a>       format.html # new.html.erb</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line47">47</a>         format.html { redirect_to(@recipe, :notice =&gt; 'Recipe was successfully created.') }</pre></td>
+            <td><pre><a name="line47">47</a>       format.xml  { render :xml =&gt; @recipe }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line48">48</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line49">49</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line50">50</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line51">51</a>   # GET /recipes/1/edit</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line48">48</a>         format.xml  { render :xml =&gt; @recipe, :status =&gt; :created, :location =&gt; @recipe }</pre></td>
+            <td><pre><a name="line52">52</a>   def edit</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line49">49</a>       else</pre></td>
+            <td><pre><a name="line53">53</a>     @recipe = Recipe.find(params[:id])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line50">50</a>         format.html { render :action =&gt; &quot;new&quot; }</pre></td>
+            <td><pre><a name="line54">54</a> 	@recipe.build_ingredient_amounts</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line51">51</a>         format.xml  { render :xml =&gt; @recipe.errors, :status =&gt; :unprocessable_entity }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line52">52</a>       end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line53">53</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line54">54</a>   end</pre></td>
+            <td><pre><a name="line55">55</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line55">55</a> </pre></td>
+            <td><pre><a name="line56">56</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line56">56</a>   # PUT /recipes/1</pre></td>
+            <td><pre><a name="line57">57</a>   # POST /recipes</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line57">57</a>   # PUT /recipes/1.xml</pre></td>
+            <td><pre><a name="line58">58</a>   # POST /recipes.xml</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line58">58</a>   def update</pre></td>
+            <td><pre><a name="line59">59</a>   def create</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line59">59</a>     @recipe = Recipe.find(params[:id])</pre></td>
+            <td><pre><a name="line60">60</a>     @recipe = Recipe.new(params[:recipe])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line60">60</a> </pre></td>
+            <td><pre><a name="line61">61</a>     @recipe.user_id = current_user.id</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line61">61</a>     respond_to do |format|</pre></td>
+            <td><pre><a name="line62">62</a>     #@ingredient = Ingredient.find_or_create_by_name(params[:ingredient_name])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line62">62</a>       if @recipe.update_attributes(params[:recipe])</pre></td>
+            <td><pre><a name="line63">63</a>     #@ingredient.ingredient_amounts &lt;&lt; @recipe.ingredient_amounts</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line63">63</a>         format.html { redirect_to(@recipe, :notice =&gt; 'Recipe was successfully updated.') }</pre></td>
+            <td><pre><a name="line64">64</a>     respond_to do |format|</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line64">64</a>         format.xml  { head :ok }</pre></td>
+            <td><pre><a name="line65">65</a>       if @recipe.save</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line65">65</a>       else</pre></td>
+            <td><pre><a name="line66">66</a>         format.html { redirect_to(@recipe, :notice =&gt; 'Recipe was successfully created.') }</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line66">66</a>         format.html { render :action =&gt; &quot;edit&quot; }</pre></td>
+            <td><pre><a name="line67">67</a>         format.xml  { render :xml =&gt; @recipe, :status =&gt; :created, :location =&gt; @recipe }</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line67">67</a>         format.xml  { render :xml =&gt; @recipe.errors, :status =&gt; :unprocessable_entity }</pre></td>
+            <td><pre><a name="line68">68</a>       else</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line68">68</a>       end</pre></td>
+            <td><pre><a name="line69">69</a> 	  	@recipe.build_ingredient_amounts</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line69">69</a>     end</pre></td>
+            <td><pre><a name="line70">70</a>         format.html { render :action =&gt; &quot;new&quot; }</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line70">70</a>   end</pre></td>
+            <td><pre><a name="line71">71</a>         format.xml  { render :xml =&gt; @recipe.errors, :status =&gt; :unprocessable_entity }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line72">72</a>       end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line73">73</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line74">74</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line71">71</a> </pre></td>
+            <td><pre><a name="line75">75</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line72">72</a>   # DELETE /recipes/1</pre></td>
+            <td><pre><a name="line76">76</a>   # PUT /recipes/1</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line73">73</a>   # DELETE /recipes/1.xml</pre></td>
+            <td><pre><a name="line77">77</a>   # PUT /recipes/1.xml</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line74">74</a>   def destroy</pre></td>
+            <td><pre><a name="line78">78</a>   def update</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line75">75</a>     @recipe = Recipe.find(params[:id])</pre></td>
+            <td><pre><a name="line79">79</a>     @recipe = Recipe.find(params[:id])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line76">76</a>     @recipe.destroy</pre></td>
+            <td><pre><a name="line80">80</a>     #@ingredient = Ingredient.find_or_create_by_name(params[:ingredient_name])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line77">77</a> </pre></td>
+            <td><pre><a name="line81">81</a>     #@ingredient.ingredient_amounts &lt;&lt; @recipe.ingredient_amounts</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line78">78</a>     respond_to do |format|</pre></td>
+            <td><pre><a name="line82">82</a>     respond_to do |format|</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line79">79</a>       format.html { redirect_to(recipes_url) }</pre></td>
+            <td><pre><a name="line83">83</a>       if @recipe.update_attributes(params[:recipe]) and @recipe.save</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line80">80</a>       format.xml  { head :ok }</pre></td>
+            <td><pre><a name="line84">84</a>         format.html { redirect_to(@recipe, :notice =&gt; 'Recipe was successfully updated.') }</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line81">81</a>     end</pre></td>
+            <td><pre><a name="line85">85</a>         format.xml  { head :ok }</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line82">82</a>   end</pre></td>
+            <td><pre><a name="line86">86</a>       else</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line87">87</a> 	  	@recipe.build_ingredient_amounts</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line88">88</a>         format.html { render :action =&gt; &quot;edit&quot; }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line89">89</a>         format.xml  { render :xml =&gt; @recipe.errors, :status =&gt; :unprocessable_entity }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line90">90</a>       end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line91">91</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line92">92</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line83">83</a>   </pre></td>
+            <td><pre><a name="line93">93</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line94">94</a>   # DELETE /recipes/1</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line95">95</a>   # DELETE /recipes/1.xml</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line84">84</a>   def search</pre></td>
+            <td><pre><a name="line96">96</a>   def destroy</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line85">85</a> 	</pre></td>
+            <td><pre><a name="line97">97</a>     @recipe = Recipe.find(params[:id])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line86">86</a> 	@results = Recipe.find(:all, :conditions =&gt; {:title =&gt; params[:input]})</pre></td>
+            <td><pre><a name="line98">98</a> 	recipe_id = @recipe.id</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line87">87</a> 	if (@results.empty?)</pre></td>
+            <td><pre><a name="line99">99</a> 	Calendar_recipe.delete_all(:recipe_id =&gt; recipe_id)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line88">88</a> 	  flash[:notice] = 'No results found.'</pre></td>
+            <td><pre><a name="line100">100</a>     @recipe.destroy</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line89">89</a> 	end</pre></td>
+            <td><pre><a name="line101">101</a> </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line90">90</a> 	respond_to do |format|</pre></td>
+            <td><pre><a name="line102">102</a>     respond_to do |format|</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line91">91</a>       format.html # new.html.erb</pre></td>
+            <td><pre><a name="line103">103</a>       format.html { redirect_to(recipes_url) }</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line92">92</a>     end</pre></td>
+            <td><pre><a name="line104">104</a>       format.xml  { head :ok }</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line93">93</a>   end</pre></td>
+            <td><pre><a name="line105">105</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line106">106</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line94">94</a> </pre></td>
+            <td><pre><a name="line107">107</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line95">95</a>   def buildIngredients(r)</pre></td>
+            <td><pre><a name="line108">108</a>   def auto_complete_for_ingredient_amount_ingredient_name</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line109">109</a>   	params[:ingredient].name if params[:ingredient]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line110">110</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line111">111</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line96">96</a>     5.times do </pre></td>
+            <td><pre><a name="line112">112</a>   def search</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line97">97</a>       r.ingredients.build</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line113">113</a>   	flash.discard(:notice)</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line98">98</a>     end</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line114">114</a> 	@results = Recipe.find(:all, :conditions =&gt; ['title LIKE ?', &quot;%#{params[:input]}%&quot;])</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line99">99</a>   end</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line115">115</a> 	</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line100">100</a> end</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line116">116</a> 	@input = params[:input]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line117">117</a> 	if (@results.empty?)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line118">118</a> 	  flash.now[:notice] = 'No results found.'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line119">119</a> 	end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line120">120</a> 	respond_to do |format|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line121">121</a>       format.html # new.html.erb</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line122">122</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line123">123</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line124">124</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Tue Nov 02 15:50:53 -0700 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Mon Dec 13 18:06:11 -0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

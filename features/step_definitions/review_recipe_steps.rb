@@ -1,7 +1,8 @@
 Given /^I have added a recipe$/ do
 	visit '/recipes/new'
 	fill_in(:title, :with => 'Chicken Burrito')
-	click_button('Create')
+	fill_in(:description, :with => 'yummy chicken')
+	click_button('Upload Recipe')
 	click_link('Back')
 end
 
