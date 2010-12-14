@@ -1,8 +1,21 @@
-<h1>Welcome 
+<h1 class="welcome_title">Welcome 
 <% if(current_user) %> 
 <%= current_user.username %> 
 <% end %>
 </h1>
+
+<div class="ubercolortabs">
+<ul>
+<%if @recipes%>
+<li><%= link_to "<span> Browse Recipes </span>", {:controller=>'recipes', :action=>'index'}, :class=>"selected"%></li>
+<%else%>
+<li><%= link_to "<span> Browse Recipes </span>", {:controller=>'recipes', :action=>'index'}%></li>
+<%end%>
+<li><%= link_to "<span> Browse Meal Plans </span>", :controller=>'meal_plans', :action=>'index'%></li>
+</ul>
+</div>
+
+<div class="ubercolordivider"> </div>
 
 <% @recipes.each do |recipe| %>
 <div class="post">

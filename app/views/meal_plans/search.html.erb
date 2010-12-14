@@ -1,8 +1,17 @@
 <h1> Meal Plan Search Results for "<%=@input%>"</h1>
-<div class="search_options">
-<%= link_to '<span> Search Recipes </span>', :controller => "recipes", :id => 0, :action => "search", :input => @input, :class=>'squarebutton'%>
+
+<div class="ubercolortabs">
+<ul>
+<li><%= link_to "<span> Browse Recipes </span>", :controller=>'recipes', :action=>'index', :input=>@input%></li>
+<% if @results%>
+<li><%= link_to "<span> Browse Meal Plans </span>", {:controller=>'meal_plans', :action=>'index', :input=>@input}, :class=>'selected'%></li>
+<%else%>
+<li><%= link_to "<span> Browse Meal Plans </span>", :controller=>'meal_plans', :action=>'index', :input=>@input%></li>
+<%end%>
+</ul>
 </div>
 
+<div class="ubercolordivider"> </div>
 
 <% @results.each do |meal_plan| %>
   <div class="post">
@@ -25,7 +34,4 @@
 			</div>
 		</div>
 	</div>   
-	
 <% end %>
-
-<%= link_to 'Back', meal_plans_path%>
