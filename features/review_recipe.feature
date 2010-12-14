@@ -13,4 +13,4 @@ Feature: Review a recipe
 		And I select 4 stars
 		And I press Save Review
 		And I am on the home page
-		Then I should see "Rating: 4.0"		
+		Then I should see "Rating: 5.0"		
