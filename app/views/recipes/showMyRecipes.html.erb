@@ -6,7 +6,7 @@
 		<h2 class="uploaded_recipes_recipetitle"><%= link_to recipe.title, recipe %> </h2>
 		<div class="uploaded_recipe_resize">
 				<% if recipe.photo.url != "/photos/original/missing.png"%>
-						<%= image_tag recipe.photo.url %>
+						<%= link_to image_tag (recipe.photo.url), recipe %>
 				<%end%>
 		</div>
 	</div>
@@ -20,5 +20,6 @@
 	</div>
 </div>
 <% end %>
+<%= will_paginate @recipes %>
 
 <%= link_to 'Back', recipes_path %>

@@ -39,7 +39,7 @@
 	 <div class="ingredients_form">
 	  <p>
 		<%= i.label :ingredient_name %>
-		<%= i.text_field_with_auto_complete :ingredient_name, {}, {:url => ingredient_amounts_path(:js), :method => :get, :with => "'search=' + element.value"} %>
+		<%= i.text_field_with_auto_complete :ingredient_name, {}, {:url => ingredient_amounts_path(:js), :frequency => 0.1, :min_chars => 2, :method => :get, :with => "'search=' + element.value"} %>
 	  </p>
 	  <p>
 	    <%= i.label :number %>
@@ -54,9 +54,9 @@
 	<div class="ingredients_options">
 
 	  <%= i.hidden_field :_destroy %>
-	  <%= button_to_function "Delete", 
+	  <%= link_to_function "<span> Delete </span>", 
 		"$('recipe_ingredient_amounts_attributes_#{ingredient_amount_html_id}__destroy').setValue('1');
-		$('ingredient_amount_#{ingredient_amount_html_id}').hide();" %>
+		$('ingredient_amount_#{ingredient_amount_html_id}').hide();", :class=>'squarebutton' %>
    </div>
    		</div>
    </span>
@@ -65,13 +65,13 @@
 	  <% ingredient_amount_html_id += 1 %>
 	  <% end %>
 	  <br>
-	  <%= button_to_function "Add Ingredient", "$$('.hidden')[0].removeClassName('hidden').show()" %>
-	  <p>
-	    	<div style="padding-top:10px; text-align:center;">
-    			<%= f.submit 'Upload Recipe' %>
-		</div>
-	  </p>
- <% end %>
+	  <%= link_to_function "<span> Add Ingredient </span>", "$$('.hidden')[0].removeClassName('hidden').show()", :class=>'squarebutton' %>
+  <p>
+  	<div class="upload_recipe">
+    <%= link_to_function "<span> Upload Recipe </span>", "$('edit_recipe_#{@recipe.id}').submit();", :class=>'upload_recipe_button'%>
+	</div>
+  </p>
+<% end %>
 
 <%= link_to 'Show', @recipe %> |
 <%= link_to 'Back', recipes_path %>

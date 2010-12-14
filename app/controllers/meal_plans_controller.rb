@@ -6,7 +6,7 @@ class MealPlansController < ApplicationController
   
   def index
     @meal_plans = MealPlan.all
-
+	
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @meal_plans }
@@ -25,8 +25,8 @@ class MealPlansController < ApplicationController
   end
   
   def showMyMealPlans
-  	@meal_plans = current_user.meal_plans
-  		
+  	#@meal_plans = current_user.meal_plans
+  	@meal_plans = MealPlan.paginate :page =>params[:page], :per_page => 5, :order => 'created_at DESC'	, :conditions => {:user_id => current_user.id}	
 	respond_to do |format|
 		format.html
 		format.xml {render :xml => @meal_plans }
@@ -109,7 +109,7 @@ class MealPlansController < ApplicationController
   end
   
   def search
-	@results = MealPlan.find(:all, :conditions => ['name LIKE ?', "%#{params[:input]}%"])
+	@results = MealPlan.find(:all, :conditions => ['lower(name) LIKE ?', "%#{params[:input].downcase()}%"])
 	@input = params[:input]
 	if (@results.empty?)
 	  flash.now[:notice] = 'No results found.'

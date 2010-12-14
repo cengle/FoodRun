@@ -1,24 +1,138 @@
 <h1>Grocery list</h1>
 
+<%if not @bakery.empty? %>
+<p>Bakery, Grains, and Pastas</p>
 <table>
 	<tr>
 		<th>Name</th>
 		<th>Number</th>
 		<th>Unit</th>
-		<th>Section</th>
 	</tr>
 	
-<% @grocery_list.each do |ingredient_amount| %>
+<% @bakery.each do |ingredient_amount| %>
 	<tr>
 		<td><%=h ingredient_amount.ingredient.name%></td>
 		<td><%=h ingredient_amount.number%></td>
 		<td><%=h ingredient_amount.unit%></td>
-		<td><%=h ingredient_amount.ingredient.section%></td>
 	</tr>
-
+<% end %>
+</table>
 <% end %>
 
+<%if not @produce.empty? %>
+<p>Produce</p>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Number</th>
+		<th>Unit</th>
+	</tr>
+	
+<% @produce.each do |ingredient_amount| %>
+	<tr>
+		<td><%=h ingredient_amount.ingredient.name%></td>
+		<td><%=h ingredient_amount.number%></td>
+		<td><%=h ingredient_amount.unit%></td>
+	</tr>
+<% end %>
 </table>
+<% end %>
+
+<%if not @meat_and_seafood.empty? %>
+<p>Meat and Seafood</p>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Number</th>
+		<th>Unit</th>
+	</tr>
+	
+<% @meat_and_seafood.each do |ingredient_amount| %>
+	<tr>
+		<td><%=h ingredient_amount.ingredient.name%></td>
+		<td><%=h ingredient_amount.number%></td>
+		<td><%=h ingredient_amount.unit%></td>
+	</tr>
+<% end %>
+</table>
+<% end %>
+
+<%if not @dairy.empty? %>
+<p>Dairy</p>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Number</th>
+		<th>Unit</th>
+	</tr>
+	
+<% @dairy.each do |ingredient_amount| %>
+	<tr>
+		<td><%=h ingredient_amount.ingredient.name%></td>
+		<td><%=h ingredient_amount.number%></td>
+		<td><%=h ingredient_amount.unit%></td>
+	</tr>
+<% end %>
+</table>
+<% end %>
+
+<%if not @ingredients.empty? %>
+<p>Ingredients</p>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Number</th>
+		<th>Unit</th>
+	</tr>
+	
+<% @ingredients.each do |ingredient_amount| %>
+	<tr>
+		<td><%=h ingredient_amount.ingredient.name%></td>
+		<td><%=h ingredient_amount.number%></td>
+		<td><%=h ingredient_amount.unit%></td>
+	</tr>
+<% end %>
+</table>
+<% end %>
+
+<%if not @international.empty? %>
+<p>International</p>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Number</th>
+		<th>Unit</th>
+	</tr>
+	
+<% @international.each do |ingredient_amount| %>
+	<tr>
+		<td><%=h ingredient_amount.ingredient.name%></td>
+		<td><%=h ingredient_amount.number%></td>
+		<td><%=h ingredient_amount.unit%></td>
+	</tr>
+<% end %>
+</table>
+<% end %>
+
+<%if not @misc.empty? %>
+<p>Miscellaneous</p>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Number</th>
+		<th>Unit</th>
+	</tr>
+	
+<% @misc.each do |ingredient_amount| %>
+	<tr>
+		<td><%=h ingredient_amount.ingredient.name%></td>
+		<td><%=h ingredient_amount.number%></td>
+		<td><%=h ingredient_amount.unit%></td>
+	</tr>
+<% end %>
+</table>
+<% end %>
+
 
 
 

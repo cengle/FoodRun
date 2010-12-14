@@ -28,12 +28,7 @@
 				<li><%= link_to 'Home', recipes_path %></li>
 				<li>
 				<% if current_user %>
-					<%= link_to 'Upload Recipe', new_recipe_path %>
-				<% end %>	
-				</li>
-				<li>
-				<% if current_user %>
-					<%= link_to 'Recipe list', :controller => 'calendar'%>
+					<%= link_to 'My recipe list', :controller => 'calendar'%>
 				<% else %>
 					<%= link_to 'Recipe list', login_path %>
 				<% end %>		
@@ -49,7 +44,11 @@
 					<%= link_to 'My meal plans', :controller => 'meal_plans' , :action => 'showMyMealPlans', :user => current_user, :id => '2' %>
 				<% end %>
 				</li>
-				
+				<li>
+				<% if current_user %>
+					<%= link_to 'Upload Recipe', new_recipe_path %>
+				<% end %>	
+				</li>
 				<li>
 					<% if current_user %>
 						<%= link_to "Edit Profile", edit_user_path(:current) %>
@@ -68,7 +67,7 @@
 		</div>
 		<!-- end #menu -->
 		<div id="search">
-			<% form_tag :controller=>'recipes', :action => 'search' do %>
+			<% form_tag :controller=>'recipes', :action => 'search', :id => 0 do %>
 				<fieldset>
 					<input type="text" name="input" id="search-text" size="15" />
 					<input type="submit" id="search-submit" value="GO" />

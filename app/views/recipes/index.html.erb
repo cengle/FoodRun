@@ -1,8 +1,6 @@
 <h1>Welcome 
 <% if(current_user) %> 
 <%= current_user.username %> 
-<% else %>
-New User
 <% end %>
 </h1>
 
@@ -25,7 +23,7 @@ New User
 		</div>
 		<div class="resize2">
 			<% if recipe.photo.url != "/photos/original/missing.png"%>
-					<%= image_tag recipe.photo.url %>
+					<%= link_to image_tag (recipe.photo.url), recipe %>
 			<%end%>
 		</div>
 	</div>

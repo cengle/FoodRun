@@ -1,5 +1,5 @@
 class Recipe < ActiveRecord::Base
-  has_many :reviews, :dependent => :destroy, :order => "created_at DESC", :limit => 5
+  has_many :reviews, :dependent => :destroy#, :order => "created_at DESC", :limit => 5
   has_many :ingredient_amounts, :dependent => :destroy
   has_many :ingredients, :through => :ingredient_amounts
   has_and_belongs_to_many :recipe_lists

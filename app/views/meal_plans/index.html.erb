@@ -1,21 +1,33 @@
 <h1 style="padding-bottom:10px"><%=current_user.username%>'s plans</h1>
 
 <% @meal_plans.each do |meal_plan| %>
+  <div class="post">
 
-	<div class="post">
-
-		<p class="meta"><span class="date"> <%= meal_plan.created_at.asctime %> 
+		<div class="meta"><span class="date"> <%= meal_plan.created_at.asctime %>  </div>
 		
 		<div class="mealplan_index_wrapper">				
 			<div class="mealplan_index_titledescript">
 				<h2 class="mealplan_index_title"><%= link_to meal_plan.name, meal_plan %> </h2>
+				<div class="mealplan_index_descrip"> <%= meal_plan.description %></div>
+			</div>
+			
+			<div class="mealplan_index_pictures">
+				<% random_recipes = meal_plan.recipes.sort_by{rand}%>
+				<% for index in 0...3%>
+					<% if random_recipes[index]%>
+						<%= link_to image_tag (random_recipes[index].photo.url), random_recipes[index] %>
+					<%end%>
+				<%end%>
 			</div>
 			
 			<div class="mealplan_index_options">
 				<%= link_to '<span> Destroy </span>', meal_plan, :confirm => 'Are you sure?', :method => :delete, :class=>'squarebutton' %>
 			</div>
 		</div>
-	</div>   
 	
+	
+
+</div>   
 <% end %>
+
 <%= link_to 'Home', recipes_path%>
