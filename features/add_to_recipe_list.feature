@@ -6,7 +6,7 @@ Feature: Add recipe to recipe list
 	Scenario: Add a recipe
 		Given I have logged in 
 		And I have added a recipe
-		And I am on the home page
-		When I follow "Chicken Burrito"
+		And I follow "foodrun"
+		When I follow "Test Recipe"
 		And I follow "Add to recipe list"
-		Then I should see "Chicken Burrito was added to the recipe list."
+		Then I should see "Test Recipe was added to the recipe list."
