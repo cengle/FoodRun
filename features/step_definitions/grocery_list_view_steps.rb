@@ -19,6 +19,3 @@ Given /^I have added two recipes that have (\d+) and (\d+) units of ingredient t
 	r2.ingredient_amounts.build(:unit => 'unit', :number => arg2, :ingredient_id => i1.id)
 	r2.save
 end
-
-
->>>>>>> 20ff8e86300f0cc0f10035c8afe95c22bea2f2d5

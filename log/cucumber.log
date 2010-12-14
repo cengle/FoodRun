@@ -29180,3 +29180,952 @@ Rendered shared/_week_recipe (0.0ms)
 Rendered shared/_featured_recipes (0.0ms)
 Rendered shared/_top_recipes (0.0ms)
 Completed in 47ms (View: 31, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET users/new with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-12-14 00:16:03) [GET]
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:03') [0m
+Rendering template within layouts/recipes
+Rendering users/new
+Rendered shared/_week_recipe (1.0ms)
+Rendered shared/_featured_recipes (1.0ms)
+Rendered shared/_top_recipes (1.0ms)
+Completed in 6913ms (View: 6906, DB: 1) | 200 OK [http://www.example.com/users/new]
+REQUESTING PAGE: POST /users with {"commit"=>"Create", "user"=>{"password_confirmation"=>"password", "username"=>"user", "password"=>"password", "email"=>"user@user.com"}} and HTTP headers {"HTTP_REFERER"=>"users/new"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-12-14 00:16:10) [POST]
+  Parameters: {"commit"=>"Create", "user"=>{"password_confirmation"=>"password", "username"=>"user", "password"=>"password", "email"=>"user@user.com"}}
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:10') [0m
+  [4;36;1mRecipeList Create (2.0ms)[0m   [0;1mINSERT INTO "recipe_lists" ("created_at", "updated_at", "user_id") VALUES('2010-12-14 08:16:10', '2010-12-14 08:16:10', NULL)[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'user@user.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'user') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '8f3fcc4bc04344e7722cae263e7cb7825458e252a82b2179887ea4c8911e357a4c8cda175f405206928bceefe88d67ef66000a58a84c7242784c09ff19fcdc47') LIMIT 1[0m
+  [4;36;1mUser Create (0.0ms)[0m   [0;1mINSERT INTO "users" ("created_at", "crypted_password", "updated_at", "username", "password_salt", "persistence_token", "email") VALUES('2010-12-14 08:16:10', 'a5169ffc3210cb7b5001057c74a9fc550cc6d42b1e577c9b102dac2d27a875ac9f929707f071a8c200fa78aabd84ccd8dcac737575046fb033723379dca74c2d', '2010-12-14 08:16:10', 'user', 'bZHfxUW4QTcg0C5k6hf8', '8f3fcc4bc04344e7722cae263e7cb7825458e252a82b2179887ea4c8911e357a4c8cda175f405206928bceefe88d67ef66000a58a84c7242784c09ff19fcdc47', 'user@user.com')[0m
+  [4;35;1mRecipeList Update (0.0ms)[0m   [0mUPDATE "recipe_lists" SET "updated_at" = '2010-12-14 08:16:11', "user_id" = 1 WHERE "id" = 1[0m
+Redirected to http://www.example.com/
+Completed in 375ms (DB: 2) | 302 Found [http://www.example.com/users]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-12-14 00:16:11) [GET]
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:11') [0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '8f3fcc4bc04344e7722cae263e7cb7825458e252a82b2179887ea4c8911e357a4c8cda175f405206928bceefe88d67ef66000a58a84c7242784c09ff19fcdc47') LIMIT 1[0m
+Rendered shared/_week_recipe (0.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+Rendered shared/_top_recipes (0.0ms)
+Completed in 25ms (View: 18, DB: 1) | 200 OK [http://www.example.com/]
+  [4;35;1mRecipe Create (0.0ms)[0m   [0mINSERT INTO "recipes" ("directions", "created_at", "photo_file_size", "title", "updated_at", "photo_file_name", "photo_content_type", "recipelist_id", "photo_updated_at", "user_id", "completion_time", "description") VALUES(NULL, '2010-12-14 08:16:14', NULL, 'Test Recipe', '2010-12-14 08:16:14', NULL, NULL, NULL, NULL, NULL, NULL, 'This is a test recipe description')[0m
+[paperclip] Saving attachments.
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-12-14 00:16:14) [GET]
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:14') [0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '8f3fcc4bc04344e7722cae263e7cb7825458e252a82b2179887ea4c8911e357a4c8cda175f405206928bceefe88d67ef66000a58a84c7242784c09ff19fcdc47') LIMIT 1[0m
+Rendered shared/_week_recipe (21.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+Rendered shared/_top_recipes (2.0ms)
+Completed in 95ms (View: 90, DB: 4) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /recipes/new with {} and HTTP headers {}
+
+
+Processing RecipesController#new (for 127.0.0.1 at 2010-12-14 00:16:14) [GET]
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:14') [0m
+Rendering template within layouts/recipes
+Rendering recipes/new
+Rendered shared/_week_recipe (0.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+Rendered shared/_top_recipes (0.0ms)
+Completed in 206ms (View: 198, DB: 0) | 200 OK [http://www.example.com/recipes/new]
+  [4;35;1mRecipe Create (2.0ms)[0m   [0mINSERT INTO "recipes" ("directions", "created_at", "photo_file_size", "title", "updated_at", "photo_file_name", "photo_content_type", "recipelist_id", "photo_updated_at", "user_id", "completion_time", "description") VALUES(NULL, '2010-12-14 08:16:14', NULL, 'Test Recipe', '2010-12-14 08:16:14', NULL, NULL, NULL, NULL, NULL, NULL, 'This is a test recipe description')[0m
+[paperclip] Saving attachments.
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-12-14 00:16:14) [GET]
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:14') [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+Rendered shared/_week_recipe (23.0ms)
+Rendered shared/_featured_recipes (1.0ms)
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+Rendered shared/_top_recipes (2.0ms)
+Completed in 61ms (View: 56, DB: 2) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET users/new with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-12-14 00:16:14) [GET]
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:14') [0m
+Rendering template within layouts/recipes
+Rendering users/new
+Rendered shared/_week_recipe (0.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+Rendered shared/_top_recipes (0.0ms)
+Completed in 16ms (View: 13, DB: 0) | 200 OK [http://www.example.com/users/new]
+REQUESTING PAGE: POST /users with {"commit"=>"Create", "user"=>{"password_confirmation"=>"password", "username"=>"user", "password"=>"password", "email"=>"user@user.com"}} and HTTP headers {"HTTP_REFERER"=>"users/new"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-12-14 00:16:14) [POST]
+  Parameters: {"commit"=>"Create", "user"=>{"password_confirmation"=>"password", "username"=>"user", "password"=>"password", "email"=>"user@user.com"}}
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:14') [0m
+  [4;35;1mRecipeList Create (2.0ms)[0m   [0mINSERT INTO "recipe_lists" ("created_at", "updated_at", "user_id") VALUES('2010-12-14 08:16:14', '2010-12-14 08:16:14', NULL)[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'user@user.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'user') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '98f39f96e60afd656d1a6fc5fda475a1ec6adf18631fcdafe5194d830ce8a637bfe4d8a5421f36dfa8a6b7111975e589884a7458ae0c188843068ddcd8d2c083') LIMIT 1[0m
+  [4;35;1mUser Create (0.0ms)[0m   [0mINSERT INTO "users" ("created_at", "crypted_password", "updated_at", "username", "password_salt", "persistence_token", "email") VALUES('2010-12-14 08:16:14', '6593bff44f63262a9ee9888b5759823b8ea6231c0331cfc7040df93cfd81c547efbcd7352ca07c2b7349a68b980743e72e33592257ffc15461efd0740970f481', '2010-12-14 08:16:14', 'user', 'VmQ9S4wRH9DfKGMCmVXm', '98f39f96e60afd656d1a6fc5fda475a1ec6adf18631fcdafe5194d830ce8a637bfe4d8a5421f36dfa8a6b7111975e589884a7458ae0c188843068ddcd8d2c083', 'user@user.com')[0m
+  [4;36;1mRecipeList Update (0.0ms)[0m   [0;1mUPDATE "recipe_lists" SET "updated_at" = '2010-12-14 08:16:14', "user_id" = 1 WHERE "id" = 1[0m
+Redirected to http://www.example.com/
+Completed in 23ms (DB: 4) | 302 Found [http://www.example.com/users]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-12-14 00:16:14) [GET]
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:14') [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '98f39f96e60afd656d1a6fc5fda475a1ec6adf18631fcdafe5194d830ce8a637bfe4d8a5421f36dfa8a6b7111975e589884a7458ae0c188843068ddcd8d2c083') LIMIT 1[0m
+Rendered shared/_week_recipe (0.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+Rendered shared/_top_recipes (0.0ms)
+Completed in 17ms (View: 13, DB: 1) | 200 OK [http://www.example.com/]
+  [4;36;1mIngredient Create (0.0ms)[0m   [0;1mINSERT INTO "ingredients" ("name", "section", "created_at", "recipe_id", "updated_at") VALUES('test', 'Miscellaneous', '2010-12-14 08:16:14', NULL, '2010-12-14 08:16:14')[0m
+  [4;35;1mRecipe Create (0.0ms)[0m   [0mINSERT INTO "recipes" ("directions", "created_at", "photo_file_size", "title", "updated_at", "photo_file_name", "photo_content_type", "recipelist_id", "photo_updated_at", "user_id", "completion_time", "description") VALUES(NULL, '2010-12-14 08:16:14', NULL, 'Test Recipe 1', '2010-12-14 08:16:14', NULL, NULL, NULL, NULL, NULL, NULL, 'This is a test recipe description')[0m
+  [4;36;1mIngredientAmount Create (0.0ms)[0m   [0;1mINSERT INTO "ingredient_amounts" ("number", "created_at", "ingredient_id", "recipe_id", "updated_at", "unit") VALUES(1.0, '2010-12-14 08:16:14', 1, 1, '2010-12-14 08:16:14', 'unit')[0m
+[paperclip] Saving attachments.
+  [4;35;1mRecipe Create (0.0ms)[0m   [0mINSERT INTO "recipes" ("directions", "created_at", "photo_file_size", "title", "updated_at", "photo_file_name", "photo_content_type", "recipelist_id", "photo_updated_at", "user_id", "completion_time", "description") VALUES(NULL, '2010-12-14 08:16:14', NULL, 'Test Recipe 2', '2010-12-14 08:16:14', NULL, NULL, NULL, NULL, NULL, NULL, 'This is another test recipe description')[0m
+  [4;36;1mIngredientAmount Create (0.0ms)[0m   [0;1mINSERT INTO "ingredient_amounts" ("number", "created_at", "ingredient_id", "recipe_id", "updated_at", "unit") VALUES(2.0, '2010-12-14 08:16:14', 1, 2, '2010-12-14 08:16:14', 'unit')[0m
+[paperclip] Saving attachments.
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-12-14 00:16:14) [GET]
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 2) [0m
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:14') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '98f39f96e60afd656d1a6fc5fda475a1ec6adf18631fcdafe5194d830ce8a637bfe4d8a5421f36dfa8a6b7111975e589884a7458ae0c188843068ddcd8d2c083') LIMIT 1[0m
+Rendered shared/_week_recipe (22.0ms)
+Rendered shared/_featured_recipes (1.0ms)
+Rendered shared/_top_recipes (1.0ms)
+Completed in 90ms (View: 81, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /recipes/1 with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing RecipesController#show (for 127.0.0.1 at 2010-12-14 00:16:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 2) [0m
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:15') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews"."recipe_id" = 1) ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '98f39f96e60afd656d1a6fc5fda475a1ec6adf18631fcdafe5194d830ce8a637bfe4d8a5421f36dfa8a6b7111975e589884a7458ae0c188843068ddcd8d2c083') LIMIT 1[0m
+  [4;35;1mIngredientAmount Load (0.0ms)[0m   [0mSELECT * FROM "ingredient_amounts" WHERE ("ingredient_amounts".recipe_id = 1) [0m
+  [4;36;1mIngredient Load (0.0ms)[0m   [0;1mSELECT * FROM "ingredients" WHERE ("ingredients"."id" = 1) [0m
+Rendered shared/_week_recipe (21.0ms)
+Rendered shared/_featured_recipes (1.0ms)
+Rendered shared/_top_recipes (1.0ms)
+Completed in 82ms (View: 71, DB: 3) | 200 OK [http://www.example.com/recipes/1]
+REQUESTING PAGE: GET /recipe_lists/update2/1?user=1 with {} and HTTP headers {"HTTP_REFERER"=>"/recipes/1"}
+
+
+Processing RecipeListsController#update2 (for 127.0.0.1 at 2010-12-14 00:16:15) [GET]
+  Parameters: {"id"=>"1", "user"=>"1"}
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 2) [0m
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:15') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mRecipeList Load (0.0ms)[0m   [0mSELECT * FROM "recipe_lists" WHERE ("recipe_lists".user_id = 1) LIMIT 1[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE ("recipes"."id" = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO "recipe_lists_recipes" ("recipe_list_id", "recipe_id") VALUES (1, 1)[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE ("recipes"."id" = '1') LIMIT 1[0m
+Redirected to http://www.example.com/recipes/1
+Completed in 20ms (DB: 0) | 302 Found [http://www.example.com/recipe_lists/update2/1?user=1]
+REQUESTING PAGE: GET http://www.example.com/recipes/1 with {} and HTTP headers {"HTTP_REFERER"=>"/recipe_lists/update2/1?user=1"}
+
+
+Processing RecipesController#show (for 127.0.0.1 at 2010-12-14 00:16:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 2) [0m
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:15') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews"."recipe_id" = 1) ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/show
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '98f39f96e60afd656d1a6fc5fda475a1ec6adf18631fcdafe5194d830ce8a637bfe4d8a5421f36dfa8a6b7111975e589884a7458ae0c188843068ddcd8d2c083') LIMIT 1[0m
+  [4;36;1mIngredientAmount Load (0.0ms)[0m   [0;1mSELECT * FROM "ingredient_amounts" WHERE ("ingredient_amounts".recipe_id = 1) [0m
+  [4;35;1mIngredient Load (0.0ms)[0m   [0mSELECT * FROM "ingredients" WHERE ("ingredients"."id" = 1) [0m
+Rendered shared/_week_recipe (21.0ms)
+Rendered shared/_featured_recipes (1.0ms)
+Rendered shared/_top_recipes (2.0ms)
+Completed in 157ms (View: 65, DB: 0) | 200 OK [http://www.example.com/recipes/1]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/recipes/1"}
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-12-14 00:16:15) [GET]
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 2) [0m
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:15') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '98f39f96e60afd656d1a6fc5fda475a1ec6adf18631fcdafe5194d830ce8a637bfe4d8a5421f36dfa8a6b7111975e589884a7458ae0c188843068ddcd8d2c083') LIMIT 1[0m
+Rendered shared/_week_recipe (20.0ms)
+Rendered shared/_featured_recipes (1.0ms)
+Rendered shared/_top_recipes (1.0ms)
+Completed in 86ms (View: 76, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /recipes/2 with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing RecipesController#show (for 127.0.0.1 at 2010-12-14 00:16:15) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 2) [0m
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:15') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE ("recipes"."id" = 2) [0m
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews"."recipe_id" = 2) ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/show
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 2) [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '98f39f96e60afd656d1a6fc5fda475a1ec6adf18631fcdafe5194d830ce8a637bfe4d8a5421f36dfa8a6b7111975e589884a7458ae0c188843068ddcd8d2c083') LIMIT 1[0m
+  [4;36;1mIngredientAmount Load (0.0ms)[0m   [0;1mSELECT * FROM "ingredient_amounts" WHERE ("ingredient_amounts".recipe_id = 2) [0m
+  [4;35;1mIngredient Load (1.0ms)[0m   [0mSELECT * FROM "ingredients" WHERE ("ingredients"."id" = 1) [0m
+Rendered shared/_week_recipe (20.0ms)
+Rendered shared/_featured_recipes (1.0ms)
+Rendered shared/_top_recipes (1.0ms)
+Completed in 75ms (View: 65, DB: 3) | 200 OK [http://www.example.com/recipes/2]
+REQUESTING PAGE: GET /recipe_lists/update2/2?user=1 with {} and HTTP headers {"HTTP_REFERER"=>"/recipes/2"}
+
+
+Processing RecipeListsController#update2 (for 127.0.0.1 at 2010-12-14 00:16:15) [GET]
+  Parameters: {"id"=>"2", "user"=>"1"}
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 2) [0m
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:15') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mRecipeList Load (0.0ms)[0m   [0;1mSELECT * FROM "recipe_lists" WHERE ("recipe_lists".user_id = 1) LIMIT 1[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = '2') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO "recipe_lists_recipes" ("recipe_list_id", "recipe_id") VALUES (1, 2)[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = '2') LIMIT 1[0m
+Redirected to http://www.example.com/recipes/2
+Completed in 14ms (DB: 2) | 302 Found [http://www.example.com/recipe_lists/update2/2?user=1]
+REQUESTING PAGE: GET http://www.example.com/recipes/2 with {} and HTTP headers {"HTTP_REFERER"=>"/recipe_lists/update2/2?user=1"}
+
+
+Processing RecipesController#show (for 127.0.0.1 at 2010-12-14 00:16:15) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 2) [0m
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:15') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = 2) [0m
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews"."recipe_id" = 2) ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 2) [0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '98f39f96e60afd656d1a6fc5fda475a1ec6adf18631fcdafe5194d830ce8a637bfe4d8a5421f36dfa8a6b7111975e589884a7458ae0c188843068ddcd8d2c083') LIMIT 1[0m
+  [4;35;1mIngredientAmount Load (0.0ms)[0m   [0mSELECT * FROM "ingredient_amounts" WHERE ("ingredient_amounts".recipe_id = 2) [0m
+  [4;36;1mIngredient Load (0.0ms)[0m   [0;1mSELECT * FROM "ingredients" WHERE ("ingredients"."id" = 1) [0m
+Rendered shared/_week_recipe (104.0ms)
+Rendered shared/_featured_recipes (1.0ms)
+Rendered shared/_top_recipes (1.0ms)
+Completed in 157ms (View: 146, DB: 3) | 200 OK [http://www.example.com/recipes/2]
+REQUESTING PAGE: GET /calendar with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/recipes/2"}
+
+
+Processing CalendarController#index (for 127.0.0.1 at 2010-12-14 00:16:15) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '98f39f96e60afd656d1a6fc5fda475a1ec6adf18631fcdafe5194d830ce8a637bfe4d8a5421f36dfa8a6b7111975e589884a7458ae0c188843068ddcd8d2c083') LIMIT 1[0m
+  [4;36;1mRecipeList Load (0.0ms)[0m   [0;1mSELECT * FROM "recipe_lists" WHERE ("recipe_lists".user_id = 1) LIMIT 1[0m
+  [4;35;1mCalendar_recipe Load (0.0ms)[0m   [0mSELECT * FROM "calendar_recipes" WHERE ("calendar_recipes"."user_id" = 1) [0m
+Rendering template within layouts/calendar
+Rendering calendar/index
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" INNER JOIN "recipe_lists_recipes" ON "recipes".id = "recipe_lists_recipes".recipe_id WHERE ("recipe_lists_recipes".recipe_list_id = 1 ) [0m
+Rendered shared/_calendar_recipe_list (19.0ms)
+Completed in 59ms (View: 48, DB: 1) | 200 OK [http://www.example.com/calendar]
+REQUESTING PAGE: GET /recipe_lists/1/groceryList?user=1 with {} and HTTP headers {"HTTP_REFERER"=>"/calendar"}
+
+
+Processing RecipeListsController#groceryList (for 127.0.0.1 at 2010-12-14 00:16:15) [GET]
+  Parameters: {"id"=>"1", "user"=>"1"}
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 2) [0m
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:15') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;36;1mRecipeList Load (0.0ms)[0m   [0;1mSELECT * FROM "recipe_lists" WHERE ("recipe_lists"."id" = 1) [0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" INNER JOIN "recipe_lists_recipes" ON "recipes".id = "recipe_lists_recipes".recipe_id WHERE ("recipe_lists_recipes".recipe_list_id = 1 ) [0m
+  [4;36;1mIngredientAmount Load (0.0ms)[0m   [0;1mSELECT * FROM "ingredient_amounts" WHERE ("ingredient_amounts".recipe_id = 1) [0m
+  [4;35;1mIngredient Load (0.0ms)[0m   [0mSELECT * FROM "ingredients" WHERE ("ingredients"."id" = 1) [0m
+  [4;36;1mIngredientAmount Load (0.0ms)[0m   [0;1mSELECT * FROM "ingredient_amounts" WHERE ("ingredient_amounts".recipe_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "ingredients" WHERE ("ingredients"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "ingredients" WHERE ("ingredients"."id" = 1) [0m
+Rendering template within layouts/recipes
+Rendering recipe_lists/groceryList
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '98f39f96e60afd656d1a6fc5fda475a1ec6adf18631fcdafe5194d830ce8a637bfe4d8a5421f36dfa8a6b7111975e589884a7458ae0c188843068ddcd8d2c083') LIMIT 1[0m
+Rendered shared/_week_recipe (21.0ms)
+Rendered shared/_featured_recipes (1.0ms)
+Rendered shared/_top_recipes (1.0ms)
+Completed in 56ms (View: 38, DB: 2) | 200 OK [http://www.example.com/recipe_lists/1/groceryList?user=1]
+REQUESTING PAGE: GET users/new with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-12-14 00:16:15) [GET]
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:15') [0m
+Rendering template within layouts/recipes
+Rendering users/new
+Rendered shared/_week_recipe (1.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+Rendered shared/_top_recipes (0.0ms)
+Completed in 14ms (View: 11, DB: 1) | 200 OK [http://www.example.com/users/new]
+REQUESTING PAGE: POST /users with {"commit"=>"Create", "user"=>{"password_confirmation"=>"password", "username"=>"user", "password"=>"password", "email"=>"user@user.com"}} and HTTP headers {"HTTP_REFERER"=>"users/new"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-12-14 00:16:15) [POST]
+  Parameters: {"commit"=>"Create", "user"=>{"password_confirmation"=>"password", "username"=>"user", "password"=>"password", "email"=>"user@user.com"}}
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:15') [0m
+  [4;36;1mRecipeList Create (2.0ms)[0m   [0;1mINSERT INTO "recipe_lists" ("created_at", "updated_at", "user_id") VALUES('2010-12-14 08:16:15', '2010-12-14 08:16:15', NULL)[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'user@user.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'user') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'd73e58b3714bc09c026de4d5087beb0ddd6757c41f0bf32ca57deeef0f065336c15cc433e719ba51e969c23c49a634b5b6c5fa23f72197941cb75a8fbd653e33') LIMIT 1[0m
+  [4;36;1mUser Create (0.0ms)[0m   [0;1mINSERT INTO "users" ("created_at", "crypted_password", "updated_at", "username", "password_salt", "persistence_token", "email") VALUES('2010-12-14 08:16:15', 'b11c4f5f2bc0396503db58125b542a8cfa6144adfe1bc23da3a73645def6c97e6d69ddbd263c3cf9c85cd9ed629434c04d162761f4059ae4aa9f30b184915219', '2010-12-14 08:16:15', 'user', 'rW2RL5SSHr2BnRzl', 'd73e58b3714bc09c026de4d5087beb0ddd6757c41f0bf32ca57deeef0f065336c15cc433e719ba51e969c23c49a634b5b6c5fa23f72197941cb75a8fbd653e33', 'user@user.com')[0m
+  [4;35;1mRecipeList Update (0.0ms)[0m   [0mUPDATE "recipe_lists" SET "updated_at" = '2010-12-14 08:16:15', "user_id" = 1 WHERE "id" = 1[0m
+Redirected to http://www.example.com/
+Completed in 102ms (DB: 3) | 302 Found [http://www.example.com/users]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-12-14 00:16:15) [GET]
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:15') [0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'd73e58b3714bc09c026de4d5087beb0ddd6757c41f0bf32ca57deeef0f065336c15cc433e719ba51e969c23c49a634b5b6c5fa23f72197941cb75a8fbd653e33') LIMIT 1[0m
+Rendered shared/_week_recipe (0.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+Rendered shared/_top_recipes (0.0ms)
+Completed in 16ms (View: 12, DB: 1) | 200 OK [http://www.example.com/]
+  [4;35;1mRecipe Create (1.0ms)[0m   [0mINSERT INTO "recipes" ("directions", "created_at", "photo_file_size", "title", "updated_at", "photo_file_name", "photo_content_type", "recipelist_id", "photo_updated_at", "user_id", "completion_time", "description") VALUES(NULL, '2010-12-14 08:16:16', NULL, 'Test Recipe', '2010-12-14 08:16:16', NULL, NULL, NULL, NULL, NULL, NULL, 'This is a test recipe description')[0m
+[paperclip] Saving attachments.
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-12-14 00:16:16) [GET]
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:16') [0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'd73e58b3714bc09c026de4d5087beb0ddd6757c41f0bf32ca57deeef0f065336c15cc433e719ba51e969c23c49a634b5b6c5fa23f72197941cb75a8fbd653e33') LIMIT 1[0m
+Rendered shared/_week_recipe (22.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+Rendered shared/_top_recipes (2.0ms)
+Completed in 64ms (View: 57, DB: 3) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: POST /recipes/search/0 with {"input"=>"chicken burrito"} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing RecipesController#search (for 127.0.0.1 at 2010-12-14 00:16:16) [POST]
+  Parameters: {"id"=>"0", "input"=>"chicken burrito"}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:16') [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (lower(title) LIKE '%chicken burrito%') [0m
+Rendering template within layouts/recipes
+Rendering recipes/search
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'd73e58b3714bc09c026de4d5087beb0ddd6757c41f0bf32ca57deeef0f065336c15cc433e719ba51e969c23c49a634b5b6c5fa23f72197941cb75a8fbd653e33') LIMIT 1[0m
+Rendered shared/_week_recipe (22.0ms)
+Rendered shared/_featured_recipes (1.0ms)
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+Rendered shared/_top_recipes (2.0ms)
+Completed in 46ms (View: 40, DB: 2) | 200 OK [http://www.example.com/recipes/search/0]
+REQUESTING PAGE: GET users/new with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-12-14 00:16:16) [GET]
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:16') [0m
+Rendering template within layouts/recipes
+Rendering users/new
+Rendered shared/_week_recipe (1.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+Rendered shared/_top_recipes (0.0ms)
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://www.example.com/users/new]
+REQUESTING PAGE: POST /users with {"commit"=>"Create", "user"=>{"password_confirmation"=>"password", "username"=>"user", "password"=>"password", "email"=>"user@user.com"}} and HTTP headers {"HTTP_REFERER"=>"users/new"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-12-14 00:16:16) [POST]
+  Parameters: {"commit"=>"Create", "user"=>{"password_confirmation"=>"password", "username"=>"user", "password"=>"password", "email"=>"user@user.com"}}
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:16') [0m
+  [4;36;1mRecipeList Create (2.0ms)[0m   [0;1mINSERT INTO "recipe_lists" ("created_at", "updated_at", "user_id") VALUES('2010-12-14 08:16:16', '2010-12-14 08:16:16', NULL)[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'user@user.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'user') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '38d283bfffe96f8406b9c2a495308dce1b89b37f03134d240993a015530694aa068781504b78f2d0db61d1cbd5bc35d120a4b2aa9fbde5fe7b0ca23664fadeb1') LIMIT 1[0m
+  [4;36;1mUser Create (0.0ms)[0m   [0;1mINSERT INTO "users" ("created_at", "crypted_password", "updated_at", "username", "password_salt", "persistence_token", "email") VALUES('2010-12-14 08:16:16', '526c4e2b18413bc81668f5a71b4fb3c8299c1ab7d50546107833e9ea781342409001248aeaad9e28a7795d76838b0c31512c7566ff2ac35acf011a19bfbe4c1a', '2010-12-14 08:16:16', 'user', 'H1wLDtHG4az4nK0NAP8f', '38d283bfffe96f8406b9c2a495308dce1b89b37f03134d240993a015530694aa068781504b78f2d0db61d1cbd5bc35d120a4b2aa9fbde5fe7b0ca23664fadeb1', 'user@user.com')[0m
+  [4;35;1mRecipeList Update (0.0ms)[0m   [0mUPDATE "recipe_lists" SET "updated_at" = '2010-12-14 08:16:16', "user_id" = 1 WHERE "id" = 1[0m
+Redirected to http://www.example.com/
+Completed in 20ms (DB: 2) | 302 Found [http://www.example.com/users]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-12-14 00:16:16) [GET]
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:16') [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '38d283bfffe96f8406b9c2a495308dce1b89b37f03134d240993a015530694aa068781504b78f2d0db61d1cbd5bc35d120a4b2aa9fbde5fe7b0ca23664fadeb1') LIMIT 1[0m
+Rendered shared/_week_recipe (0.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+Rendered shared/_top_recipes (0.0ms)
+Completed in 100ms (View: 95, DB: 0) | 200 OK [http://www.example.com/]
+  [4;35;1mRecipe Create (0.0ms)[0m   [0mINSERT INTO "recipes" ("directions", "created_at", "photo_file_size", "title", "updated_at", "photo_file_name", "photo_content_type", "recipelist_id", "photo_updated_at", "user_id", "completion_time", "description") VALUES(NULL, '2010-12-14 08:16:16', NULL, 'Test Recipe', '2010-12-14 08:16:16', NULL, NULL, NULL, NULL, NULL, NULL, 'This is a test recipe description')[0m
+[paperclip] Saving attachments.
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-12-14 00:16:16) [GET]
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:16') [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '38d283bfffe96f8406b9c2a495308dce1b89b37f03134d240993a015530694aa068781504b78f2d0db61d1cbd5bc35d120a4b2aa9fbde5fe7b0ca23664fadeb1') LIMIT 1[0m
+Rendered shared/_week_recipe (20.0ms)
+Rendered shared/_featured_recipes (1.0ms)
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+Rendered shared/_top_recipes (2.0ms)
+Completed in 60ms (View: 56, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: POST /recipes/search/0 with {"input"=>"chicken"} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing RecipesController#search (for 127.0.0.1 at 2010-12-14 00:16:16) [POST]
+  Parameters: {"id"=>"0", "input"=>"chicken"}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:16') [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (lower(title) LIKE '%chicken%') [0m
+Rendering template within layouts/recipes
+Rendering recipes/search
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '38d283bfffe96f8406b9c2a495308dce1b89b37f03134d240993a015530694aa068781504b78f2d0db61d1cbd5bc35d120a4b2aa9fbde5fe7b0ca23664fadeb1') LIMIT 1[0m
+Rendered shared/_week_recipe (22.0ms)
+Rendered shared/_featured_recipes (1.0ms)
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+Rendered shared/_top_recipes (2.0ms)
+Completed in 41ms (View: 36, DB: 2) | 200 OK [http://www.example.com/recipes/search/0]
+REQUESTING PAGE: GET users/new with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-12-14 00:16:16) [GET]
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:16') [0m
+Rendering template within layouts/recipes
+Rendering users/new
+Rendered shared/_week_recipe (0.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+Rendered shared/_top_recipes (0.0ms)
+Completed in 14ms (View: 11, DB: 1) | 200 OK [http://www.example.com/users/new]
+REQUESTING PAGE: POST /users with {"commit"=>"Create", "user"=>{"password_confirmation"=>"password", "username"=>"user", "password"=>"password", "email"=>"user@user.com"}} and HTTP headers {"HTTP_REFERER"=>"users/new"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-12-14 00:16:16) [POST]
+  Parameters: {"commit"=>"Create", "user"=>{"password_confirmation"=>"password", "username"=>"user", "password"=>"password", "email"=>"user@user.com"}}
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:16') [0m
+  [4;36;1mRecipeList Create (2.0ms)[0m   [0;1mINSERT INTO "recipe_lists" ("created_at", "updated_at", "user_id") VALUES('2010-12-14 08:16:16', '2010-12-14 08:16:16', NULL)[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'user@user.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'user') LIMIT 1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '3b8f89e89f095464e1677312cc0ae1d6903020775584a674159d1f62e9fbe03d22c2cd5be5a6d784f1b4ae87b8ee65fdc92911605dee42dfab7d6ddf5a572573') LIMIT 1[0m
+  [4;36;1mUser Create (0.0ms)[0m   [0;1mINSERT INTO "users" ("created_at", "crypted_password", "updated_at", "username", "password_salt", "persistence_token", "email") VALUES('2010-12-14 08:16:16', '6236c7f029647be6c2be607d28e08c31f1f7a962a2d4d2318502f2ff34b0ea85895c5e43d4ca2a85799bd78b868968d182fcf3d38c096b432bbc9ad55a407052', '2010-12-14 08:16:16', 'user', 'pNlircrKfO5M1Lfskz', '3b8f89e89f095464e1677312cc0ae1d6903020775584a674159d1f62e9fbe03d22c2cd5be5a6d784f1b4ae87b8ee65fdc92911605dee42dfab7d6ddf5a572573', 'user@user.com')[0m
+  [4;35;1mRecipeList Update (0.0ms)[0m   [0mUPDATE "recipe_lists" SET "updated_at" = '2010-12-14 08:16:16', "user_id" = 1 WHERE "id" = 1[0m
+Redirected to http://www.example.com/
+Completed in 20ms (DB: 3) | 302 Found [http://www.example.com/users]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-12-14 00:16:16) [GET]
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:16') [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '3b8f89e89f095464e1677312cc0ae1d6903020775584a674159d1f62e9fbe03d22c2cd5be5a6d784f1b4ae87b8ee65fdc92911605dee42dfab7d6ddf5a572573') LIMIT 1[0m
+Rendered shared/_week_recipe (0.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+Rendered shared/_top_recipes (0.0ms)
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://www.example.com/]
+  [4;35;1mRecipe Create (0.0ms)[0m   [0mINSERT INTO "recipes" ("directions", "created_at", "photo_file_size", "title", "updated_at", "photo_file_name", "photo_content_type", "recipelist_id", "photo_updated_at", "user_id", "completion_time", "description") VALUES(NULL, '2010-12-14 08:16:16', NULL, 'Test Recipe', '2010-12-14 08:16:16', NULL, NULL, NULL, NULL, NULL, NULL, 'This is a test recipe description')[0m
+[paperclip] Saving attachments.
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-12-14 00:16:16) [GET]
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:16') [0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '3b8f89e89f095464e1677312cc0ae1d6903020775584a674159d1f62e9fbe03d22c2cd5be5a6d784f1b4ae87b8ee65fdc92911605dee42dfab7d6ddf5a572573') LIMIT 1[0m
+Rendered shared/_week_recipe (22.0ms)
+Rendered shared/_featured_recipes (1.0ms)
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+Rendered shared/_top_recipes (2.0ms)
+Completed in 146ms (View: 58, DB: 2) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: POST /recipes/search/0 with {"input"=>"cKen"} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing RecipesController#search (for 127.0.0.1 at 2010-12-14 00:16:16) [POST]
+  Parameters: {"id"=>"0", "input"=>"cKen"}
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:16') [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (lower(title) LIKE '%cken%') [0m
+Rendering template within layouts/recipes
+Rendering recipes/search
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '3b8f89e89f095464e1677312cc0ae1d6903020775584a674159d1f62e9fbe03d22c2cd5be5a6d784f1b4ae87b8ee65fdc92911605dee42dfab7d6ddf5a572573') LIMIT 1[0m
+Rendered shared/_week_recipe (25.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+Rendered shared/_top_recipes (2.0ms)
+Completed in 44ms (View: 39, DB: 0) | 200 OK [http://www.example.com/recipes/search/0]
+  [4;36;1mRecipe Create (2.0ms)[0m   [0;1mINSERT INTO "recipes" ("directions", "created_at", "photo_file_size", "title", "updated_at", "photo_file_name", "photo_content_type", "recipelist_id", "photo_updated_at", "user_id", "completion_time", "description") VALUES(NULL, '2010-12-14 08:16:16', NULL, 'Test Recipe', '2010-12-14 08:16:16', NULL, NULL, NULL, NULL, NULL, NULL, 'This is a test recipe description')[0m
+[paperclip] Saving attachments.
+REQUESTING PAGE: GET /recipes with {} and HTTP headers {}
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-12-14 00:16:16) [GET]
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:16') [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+Rendered shared/_week_recipe (22.0ms)
+Rendered shared/_featured_recipes (1.0ms)
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+Rendered shared/_top_recipes (2.0ms)
+Completed in 60ms (View: 55, DB: 2) | 200 OK [http://www.example.com/recipes]
+  [4;36;1mRecipe Create (2.0ms)[0m   [0;1mINSERT INTO "recipes" ("directions", "created_at", "photo_file_size", "title", "updated_at", "photo_file_name", "photo_content_type", "recipelist_id", "photo_updated_at", "user_id", "completion_time", "description") VALUES(NULL, '2010-12-14 08:16:16', NULL, 'Test Recipe', '2010-12-14 08:16:16', NULL, NULL, NULL, NULL, NULL, NULL, 'This is a test recipe description')[0m
+[paperclip] Saving attachments.
+REQUESTING PAGE: GET /recipes with {} and HTTP headers {}
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-12-14 00:16:16) [GET]
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:16') [0m
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+Rendered shared/_week_recipe (22.0ms)
+Rendered shared/_featured_recipes (1.0ms)
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+Rendered shared/_top_recipes (2.0ms)
+Completed in 61ms (View: 56, DB: 4) | 200 OK [http://www.example.com/recipes]
+REQUESTING PAGE: GET users/new with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-12-14 00:16:17) [GET]
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:17') [0m
+Rendering template within layouts/recipes
+Rendering users/new
+Rendered shared/_week_recipe (0.0ms)
+Rendered shared/_featured_recipes (1.0ms)
+Rendered shared/_top_recipes (0.0ms)
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://www.example.com/users/new]
+REQUESTING PAGE: POST /users with {"commit"=>"Create", "user"=>{"password_confirmation"=>"password", "username"=>"user", "password"=>"password", "email"=>"user@user.com"}} and HTTP headers {"HTTP_REFERER"=>"users/new"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-12-14 00:16:17) [POST]
+  Parameters: {"commit"=>"Create", "user"=>{"password_confirmation"=>"password", "username"=>"user", "password"=>"password", "email"=>"user@user.com"}}
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:17') [0m
+  [4;36;1mRecipeList Create (2.0ms)[0m   [0;1mINSERT INTO "recipe_lists" ("created_at", "updated_at", "user_id") VALUES('2010-12-14 08:16:17', '2010-12-14 08:16:17', NULL)[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'user@user.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'user') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'b89ebf1b254745db8dbc25382bb5028d8b0170c8f77e0b04424a8582e3c53468b88451c9e24adfa876dd0a1de8db745d3fb530ce1fdda68242d50cd2f72777ea') LIMIT 1[0m
+  [4;36;1mUser Create (0.0ms)[0m   [0;1mINSERT INTO "users" ("created_at", "crypted_password", "updated_at", "username", "password_salt", "persistence_token", "email") VALUES('2010-12-14 08:16:17', 'cf3ffc72d3b1580b727b4d3a45b905d5dfcc59a729b4811a74f8273dde1a0697f62d38ed76a0cbc16fff071231e3c5ce9535d708556a7782a8034aa9b84ed076', '2010-12-14 08:16:17', 'user', 'AqMak4sFw0CgUDn54NMU', 'b89ebf1b254745db8dbc25382bb5028d8b0170c8f77e0b04424a8582e3c53468b88451c9e24adfa876dd0a1de8db745d3fb530ce1fdda68242d50cd2f72777ea', 'user@user.com')[0m
+  [4;35;1mRecipeList Update (0.0ms)[0m   [0mUPDATE "recipe_lists" SET "updated_at" = '2010-12-14 08:16:17', "user_id" = 1 WHERE "id" = 1[0m
+Redirected to http://www.example.com/
+Completed in 21ms (DB: 3) | 302 Found [http://www.example.com/users]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-12-14 00:16:17) [GET]
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:17') [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'b89ebf1b254745db8dbc25382bb5028d8b0170c8f77e0b04424a8582e3c53468b88451c9e24adfa876dd0a1de8db745d3fb530ce1fdda68242d50cd2f72777ea') LIMIT 1[0m
+Rendered shared/_week_recipe (0.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+Rendered shared/_top_recipes (0.0ms)
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://www.example.com/]
+  [4;35;1mRecipe Create (1.0ms)[0m   [0mINSERT INTO "recipes" ("directions", "created_at", "photo_file_size", "title", "updated_at", "photo_file_name", "photo_content_type", "recipelist_id", "photo_updated_at", "user_id", "completion_time", "description") VALUES(NULL, '2010-12-14 08:16:17', NULL, 'Test Recipe', '2010-12-14 08:16:17', NULL, NULL, NULL, NULL, NULL, NULL, 'This is a test recipe description')[0m
+[paperclip] Saving attachments.
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-12-14 00:16:17) [GET]
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:17') [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'b89ebf1b254745db8dbc25382bb5028d8b0170c8f77e0b04424a8582e3c53468b88451c9e24adfa876dd0a1de8db745d3fb530ce1fdda68242d50cd2f72777ea') LIMIT 1[0m
+Rendered shared/_week_recipe (22.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+Rendered shared/_top_recipes (2.0ms)
+Completed in 63ms (View: 59, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /recipes/1 with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing RecipesController#show (for 127.0.0.1 at 2010-12-14 00:16:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:17') [0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews"."recipe_id" = 1) ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/show
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'b89ebf1b254745db8dbc25382bb5028d8b0170c8f77e0b04424a8582e3c53468b88451c9e24adfa876dd0a1de8db745d3fb530ce1fdda68242d50cd2f72777ea') LIMIT 1[0m
+  [4;35;1mIngredientAmount Load (0.0ms)[0m   [0mSELECT * FROM "ingredient_amounts" WHERE ("ingredient_amounts".recipe_id = 1) [0m
+Rendered shared/_week_recipe (22.0ms)
+Rendered shared/_featured_recipes (1.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+Rendered shared/_top_recipes (2.0ms)
+Completed in 71ms (View: 64, DB: 5) | 200 OK [http://www.example.com/recipes/1]
+REQUESTING PAGE: POST /reviews with {"commit"=>"Save Review", "review"=>{"rating"=>"4", "title"=>"", "recipe_id"=>"1", "review"=>"this is a test review"}} and HTTP headers {"HTTP_REFERER"=>"/recipes/1"}
+
+
+Processing ReviewsController#create (for 127.0.0.1 at 2010-12-14 00:16:17) [POST]
+  Parameters: {"commit"=>"Save Review", "review"=>{"rating"=>"4", "title"=>"", "recipe_id"=>"1", "review"=>"this is a test review"}}
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:17') [0m
+  [4;36;1mReview Create (0.0ms)[0m   [0;1mINSERT INTO "reviews" ("rating", "created_at", "title", "recipe_id", "updated_at", "review") VALUES(4, '2010-12-14 08:16:17', '', 1, '2010-12-14 08:16:17', 'this is a test review')[0m
+Rendered reviews/_review (2.0ms)
+Completed in 14ms (View: 3, DB: 1) | 200 OK [http://www.example.com/reviews]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"/reviews"}
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-12-14 00:16:17) [GET]
+  [4;35;1mRecipe Load (4.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:17') [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'b89ebf1b254745db8dbc25382bb5028d8b0170c8f77e0b04424a8582e3c53468b88451c9e24adfa876dd0a1de8db745d3fb530ce1fdda68242d50cd2f72777ea') LIMIT 1[0m
+Rendered shared/_week_recipe (21.0ms)
+Rendered shared/_featured_recipes (1.0ms)
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+Rendered shared/_top_recipes (2.0ms)
+Completed in 148ms (View: 140, DB: 4) | 200 OK [http://www.example.com/]
+  [4;35;1mRecipe Create (2.0ms)[0m   [0mINSERT INTO "recipes" ("directions", "created_at", "photo_file_size", "title", "updated_at", "photo_file_name", "photo_content_type", "recipelist_id", "photo_updated_at", "user_id", "completion_time", "description") VALUES(NULL, '2010-12-14 08:16:17', NULL, 'Test Recipe', '2010-12-14 08:16:17', NULL, NULL, NULL, NULL, NULL, NULL, 'This is a test recipe description')[0m
+[paperclip] Saving attachments.
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-12-14 00:16:17) [GET]
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:17') [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+Rendered shared/_week_recipe (22.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+Rendered shared/_top_recipes (2.0ms)
+Completed in 58ms (View: 53, DB: 3) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: POST /recipes/search/0 with {"input"=>"Chicken Burrito"} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing RecipesController#search (for 127.0.0.1 at 2010-12-14 00:16:17) [POST]
+  Parameters: {"id"=>"0", "input"=>"Chicken Burrito"}
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:17') [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (lower(title) LIKE '%chicken burrito%') [0m
+Rendering template within layouts/recipes
+Rendering recipes/search
+Rendered shared/_week_recipe (22.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+Rendered shared/_top_recipes (2.0ms)
+Completed in 38ms (View: 33, DB: 0) | 200 OK [http://www.example.com/recipes/search/0]
+REQUESTING PAGE: GET users/new with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-12-14 00:16:17) [GET]
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:17') [0m
+Rendering template within layouts/recipes
+Rendering users/new
+Rendered shared/_week_recipe (0.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+Rendered shared/_top_recipes (0.0ms)
+Completed in 14ms (View: 11, DB: 1) | 200 OK [http://www.example.com/users/new]
+REQUESTING PAGE: POST /users with {"commit"=>"Create", "user"=>{"password_confirmation"=>"password", "username"=>"user", "password"=>"password", "email"=>"user@user.com"}} and HTTP headers {"HTTP_REFERER"=>"users/new"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-12-14 00:16:17) [POST]
+  Parameters: {"commit"=>"Create", "user"=>{"password_confirmation"=>"password", "username"=>"user", "password"=>"password", "email"=>"user@user.com"}}
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:17') [0m
+  [4;36;1mRecipeList Create (2.0ms)[0m   [0;1mINSERT INTO "recipe_lists" ("created_at", "updated_at", "user_id") VALUES('2010-12-14 08:16:17', '2010-12-14 08:16:17', NULL)[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'user@user.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'user') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '2b296c5f27be55af5775132f585a5622d2fa0fd56d52757fca4c6c382140951a8ff07a780d1867db14ae757fb302fe91064042c87838b43ec90819f5df9b8eb3') LIMIT 1[0m
+  [4;36;1mUser Create (0.0ms)[0m   [0;1mINSERT INTO "users" ("created_at", "crypted_password", "updated_at", "username", "password_salt", "persistence_token", "email") VALUES('2010-12-14 08:16:17', '94a54221e841fbea86a204e4994d686531cabd60f6520d626a3895d20852763ccda85a26ce81bda49ad84d4297f881cd76d5fea35c7401cec671b9e9d539ff8a', '2010-12-14 08:16:17', 'user', 'qXMANTCYiWos1UcuHuDR', '2b296c5f27be55af5775132f585a5622d2fa0fd56d52757fca4c6c382140951a8ff07a780d1867db14ae757fb302fe91064042c87838b43ec90819f5df9b8eb3', 'user@user.com')[0m
+  [4;35;1mRecipeList Update (0.0ms)[0m   [0mUPDATE "recipe_lists" SET "updated_at" = '2010-12-14 08:16:17', "user_id" = 1 WHERE "id" = 1[0m
+Redirected to http://www.example.com/
+Completed in 20ms (DB: 3) | 302 Found [http://www.example.com/users]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-12-14 00:16:17) [GET]
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:17') [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '2b296c5f27be55af5775132f585a5622d2fa0fd56d52757fca4c6c382140951a8ff07a780d1867db14ae757fb302fe91064042c87838b43ec90819f5df9b8eb3') LIMIT 1[0m
+Rendered shared/_week_recipe (0.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+Rendered shared/_top_recipes (0.0ms)
+Completed in 16ms (View: 12, DB: 1) | 200 OK [http://www.example.com/]
+  [4;35;1mRecipe Create (1.0ms)[0m   [0mINSERT INTO "recipes" ("directions", "created_at", "photo_file_size", "title", "updated_at", "photo_file_name", "photo_content_type", "recipelist_id", "photo_updated_at", "user_id", "completion_time", "description") VALUES(NULL, '2010-12-14 08:16:17', NULL, 'Chicken Burrito', '2010-12-14 08:16:17', NULL, NULL, NULL, NULL, NULL, NULL, 'blah blah blah')[0m
+[paperclip] Saving attachments.
+  [4;36;1mRecipe Create (0.0ms)[0m   [0;1mINSERT INTO "recipes" ("directions", "created_at", "photo_file_size", "title", "updated_at", "photo_file_name", "photo_content_type", "recipelist_id", "photo_updated_at", "user_id", "completion_time", "description") VALUES(NULL, '2010-12-14 08:16:17', NULL, 'Chicken Burrito', '2010-12-14 08:16:17', NULL, NULL, NULL, NULL, NULL, NULL, 'blah blah blah')[0m
+[paperclip] Saving attachments.
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-12-14 00:16:17) [GET]
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 2) [0m
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:17') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".recipe_id = 1) [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '2b296c5f27be55af5775132f585a5622d2fa0fd56d52757fca4c6c382140951a8ff07a780d1867db14ae757fb302fe91064042c87838b43ec90819f5df9b8eb3') LIMIT 1[0m
+Rendered shared/_week_recipe (21.0ms)
+Rendered shared/_featured_recipes (1.0ms)
+Rendered shared/_top_recipes (1.0ms)
+Completed in 88ms (View: 79, DB: 2) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /calendar with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing CalendarController#index (for 127.0.0.1 at 2010-12-14 00:16:17) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '2b296c5f27be55af5775132f585a5622d2fa0fd56d52757fca4c6c382140951a8ff07a780d1867db14ae757fb302fe91064042c87838b43ec90819f5df9b8eb3') LIMIT 1[0m
+  [4;35;1mRecipeList Load (0.0ms)[0m   [0mSELECT * FROM "recipe_lists" WHERE ("recipe_lists".user_id = 1) LIMIT 1[0m
+  [4;36;1mCalendar_recipe Load (0.0ms)[0m   [0;1mSELECT * FROM "calendar_recipes" WHERE ("calendar_recipes"."user_id" = 1) [0m
+Rendering template within layouts/calendar
+Rendering calendar/index
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" INNER JOIN "recipe_lists_recipes" ON "recipes".id = "recipe_lists_recipes".recipe_id WHERE ("recipe_lists_recipes".recipe_list_id = 1 ) [0m
+Rendered shared/_calendar_recipe_list (1.0ms)
+Completed in 31ms (View: 23, DB: 1) | 200 OK [http://www.example.com/calendar]
+REQUESTING PAGE: GET users/new with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-12-14 00:16:18) [GET]
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:18') [0m
+Rendering template within layouts/recipes
+Rendering users/new
+Rendered shared/_week_recipe (0.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+Rendered shared/_top_recipes (1.0ms)
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://www.example.com/users/new]
+REQUESTING PAGE: POST /users with {"commit"=>"Create", "user"=>{"password_confirmation"=>"password", "username"=>"user", "password"=>"password", "email"=>"user@user.com"}} and HTTP headers {"HTTP_REFERER"=>"users/new"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-12-14 00:16:18) [POST]
+  Parameters: {"commit"=>"Create", "user"=>{"password_confirmation"=>"password", "username"=>"user", "password"=>"password", "email"=>"user@user.com"}}
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:18') [0m
+  [4;36;1mRecipeList Create (2.0ms)[0m   [0;1mINSERT INTO "recipe_lists" ("created_at", "updated_at", "user_id") VALUES('2010-12-14 08:16:18', '2010-12-14 08:16:18', NULL)[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'user@user.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'user') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '89962bd83e75fa369104e4ad38fc1fcd08ed325eed4ee89fe2ca85ee5fa4e2f4cf2b91f466971a357c5e075d7269af8079cd2bac185574436776993a22db8f79') LIMIT 1[0m
+  [4;36;1mUser Create (1.0ms)[0m   [0;1mINSERT INTO "users" ("created_at", "crypted_password", "updated_at", "username", "password_salt", "persistence_token", "email") VALUES('2010-12-14 08:16:18', '4fab61d77e7e40f6e2eac90f8df4a0b835a5c4d30633546ed0cbfc0c9950835249d194d8659a2185578730987348306ed877c052e893ed6379b0dca52057c7ab', '2010-12-14 08:16:18', 'user', 'DtyT6RBvZ8cA4xPamxa', '89962bd83e75fa369104e4ad38fc1fcd08ed325eed4ee89fe2ca85ee5fa4e2f4cf2b91f466971a357c5e075d7269af8079cd2bac185574436776993a22db8f79', 'user@user.com')[0m
+  [4;35;1mRecipeList Update (0.0ms)[0m   [0mUPDATE "recipe_lists" SET "updated_at" = '2010-12-14 08:16:18', "user_id" = 1 WHERE "id" = 1[0m
+Redirected to http://www.example.com/
+Completed in 20ms (DB: 4) | 302 Found [http://www.example.com/users]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-12-14 00:16:18) [GET]
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:18') [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '89962bd83e75fa369104e4ad38fc1fcd08ed325eed4ee89fe2ca85ee5fa4e2f4cf2b91f466971a357c5e075d7269af8079cd2bac185574436776993a22db8f79') LIMIT 1[0m
+Rendered shared/_week_recipe (0.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+Rendered shared/_top_recipes (0.0ms)
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /recipes/new with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing RecipesController#new (for 127.0.0.1 at 2010-12-14 00:16:18) [GET]
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:18') [0m
+Rendering template within layouts/recipes
+Rendering recipes/new
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '89962bd83e75fa369104e4ad38fc1fcd08ed325eed4ee89fe2ca85ee5fa4e2f4cf2b91f466971a357c5e075d7269af8079cd2bac185574436776993a22db8f79') LIMIT 1[0m
+Rendered shared/_week_recipe (0.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+Rendered shared/_top_recipes (0.0ms)
+Completed in 205ms (View: 199, DB: 0) | 200 OK [http://www.example.com/recipes/new]
+REQUESTING PAGE: GET /recipes/new with {} and HTTP headers {"HTTP_REFERER"=>"/recipes/new"}
+
+
+Processing RecipesController#new (for 127.0.0.1 at 2010-12-14 00:16:18) [GET]
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:18') [0m
+Rendering template within layouts/recipes
+Rendering recipes/new
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '89962bd83e75fa369104e4ad38fc1fcd08ed325eed4ee89fe2ca85ee5fa4e2f4cf2b91f466971a357c5e075d7269af8079cd2bac185574436776993a22db8f79') LIMIT 1[0m
+Rendered shared/_week_recipe (0.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+Rendered shared/_top_recipes (0.0ms)
+Completed in 214ms (View: 208, DB: 0) | 200 OK [http://www.example.com/recipes/new]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"/recipes/new"}
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-12-14 00:16:18) [GET]
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:18') [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '89962bd83e75fa369104e4ad38fc1fcd08ed325eed4ee89fe2ca85ee5fa4e2f4cf2b91f466971a357c5e075d7269af8079cd2bac185574436776993a22db8f79') LIMIT 1[0m
+Rendered shared/_week_recipe (0.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+Rendered shared/_top_recipes (0.0ms)
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /recipes/2/showMyRecipes?user=1 with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing RecipesController#showMyRecipes (for 127.0.0.1 at 2010-12-14 00:16:18) [GET]
+  Parameters: {"id"=>"2", "user"=>"1"}
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" ORDER BY RANDOM() LIMIT 8[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM "recipes" WHERE (created_at > '2010-12-07 00:16:18') [0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '89962bd83e75fa369104e4ad38fc1fcd08ed325eed4ee89fe2ca85ee5fa4e2f4cf2b91f466971a357c5e075d7269af8079cd2bac185574436776993a22db8f79') LIMIT 1[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."user_id" = 1) ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/recipes
+Rendering recipes/showMyRecipes
+Rendered shared/_week_recipe (0.0ms)
+Rendered shared/_featured_recipes (0.0ms)
+Rendered shared/_top_recipes (0.0ms)
+Completed in 19ms (View: 10, DB: 2) | 200 OK [http://www.example.com/recipes/2/showMyRecipes?user=1]
