@@ -1,136 +1,122 @@
 <h1>Grocery list</h1>
 
 <%if not @bakery.empty? %>
-<p>Bakery, Grains, and Pastas</p>
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Number</th>
-		<th>Unit</th>
-	</tr>
-	
-<% @bakery.each do |ingredient_amount| %>
-	<tr>
-		<td><%=h ingredient_amount.ingredient.name%></td>
-		<td><%=h ingredient_amount.number%></td>
-		<td><%=h ingredient_amount.unit%></td>
-	</tr>
-<% end %>
-</table>
+<h2 class="grocery_list_label">Bakery, Grains, and Pastas</h2>
+<div class="grocery_list_wrapper">
+	<div class="grocery_list_ingredient">
+		<% @bakery.each do |ingredient_amount| %>
+			<b> <%=h ingredient_amount.ingredient.name%> </b>
+			<%=h ingredient_amount.number%>
+			<%=h ingredient_amount.unit%>
+			<br>
+		<% end %>
+	</div>
+	<div class="grocery_list_picture">
+		<%= image_tag ("../images/bakery.jpg") %>
+	</div>
+</div>
 <% end %>
 
 <%if not @produce.empty? %>
-<p>Produce</p>
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Number</th>
-		<th>Unit</th>
-	</tr>
-	
-<% @produce.each do |ingredient_amount| %>
-	<tr>
-		<td><%=h ingredient_amount.ingredient.name%></td>
-		<td><%=h ingredient_amount.number%></td>
-		<td><%=h ingredient_amount.unit%></td>
-	</tr>
-<% end %>
-</table>
+<h2 class="grocery_list_label">Produce</h2>
+<div class="grocery_list_wrapper">
+	<div class="grocery_list_ingredient">
+		<% @produce.each do |ingredient_amount| %>
+			<b> <%=h ingredient_amount.ingredient.name%> </b>
+			<%=h ingredient_amount.number%>
+			<%=h ingredient_amount.unit%>
+			<br>
+		<% end %>
+	</div>
+	<div class="grocery_list_picture">
+		<%= image_tag ("../images/cornucopia.jpg") %>
+	</div>
+</div>
 <% end %>
 
 <%if not @meat_and_seafood.empty? %>
-<p>Meat and Seafood</p>
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Number</th>
-		<th>Unit</th>
-	</tr>
-	
-<% @meat_and_seafood.each do |ingredient_amount| %>
-	<tr>
-		<td><%=h ingredient_amount.ingredient.name%></td>
-		<td><%=h ingredient_amount.number%></td>
-		<td><%=h ingredient_amount.unit%></td>
-	</tr>
-<% end %>
-</table>
+<h2 class="grocery_list_label">Meat and Seafood</h2>
+<div class="grocery_list_wrapper">
+	<div class="grocery_list_ingredient">
+		<% @meat_and_seafood.each do |ingredient_amount| %>
+			<b> <%=h ingredient_amount.ingredient.name%> </b>
+			<%=h ingredient_amount.number%>
+			<%=h ingredient_amount.unit%>
+			<br>
+		<% end %>
+	</div>
+	<div class="grocery_list_picture">
+		<%= image_tag ("../images/meat_and_seafood.jpg") %>
+	</div>
+</div>
 <% end %>
 
 <%if not @dairy.empty? %>
-<p>Dairy</p>
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Number</th>
-		<th>Unit</th>
-	</tr>
-	
-<% @dairy.each do |ingredient_amount| %>
-	<tr>
-		<td><%=h ingredient_amount.ingredient.name%></td>
-		<td><%=h ingredient_amount.number%></td>
-		<td><%=h ingredient_amount.unit%></td>
-	</tr>
+<h2 class="grocery_list_label">Dairy</h2>
+<div class="grocery_list_wrapper">
+	<div class="grocery_list_ingredient">
+		<% @dairy.each do |ingredient_amount| %>
+			<b> <%=h ingredient_amount.ingredient.name%> </b>
+			<%=h ingredient_amount.number%>
+			<%=h ingredient_amount.unit%>
+			<br>
+		<% end %>
+	</div>
+	<div class="grocery_list_picture">
+		<%= image_tag ("../images/dairy.jpg") %>
+	</div>
+</div>
 <% end %>
-</table>
-<% end %>
-
 <%if not @ingredients.empty? %>
-<p>Ingredients</p>
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Number</th>
-		<th>Unit</th>
-	</tr>
-	
-<% @ingredients.each do |ingredient_amount| %>
-	<tr>
-		<td><%=h ingredient_amount.ingredient.name%></td>
-		<td><%=h ingredient_amount.number%></td>
-		<td><%=h ingredient_amount.unit%></td>
-	</tr>
-<% end %>
-</table>
+<h2 class="grocery_list_label">Ingredients</h2>
+<div class="grocery_list_wrapper">
+	<div class="grocery_list_ingredient">
+		<% @ingredients.each do |ingredient_amount| %>
+			<b> <%=h ingredient_amount.ingredient.name%> </b>
+			<%=h ingredient_amount.number%>
+			<%=h ingredient_amount.unit%>
+			<br>
+		<% end %>
+	</div>
+	<div class="grocery_list_picture">
+		<%= image_tag ("../images/Ingredients.jpg") %>
+	</div>
+</div>
 <% end %>
 
 <%if not @international.empty? %>
-<p>International</p>
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Number</th>
-		<th>Unit</th>
-	</tr>
-	
-<% @international.each do |ingredient_amount| %>
-	<tr>
-		<td><%=h ingredient_amount.ingredient.name%></td>
-		<td><%=h ingredient_amount.number%></td>
-		<td><%=h ingredient_amount.unit%></td>
-	</tr>
-<% end %>
-</table>
+<h2 class="grocery_list_label">International</h2>
+<div class="grocery_list_wrapper">
+	<div class="grocery_list_ingredient">
+		<% @international.each do |ingredient_amount| %>
+			<b> <%=h ingredient_amount.ingredient.name%> </b>
+			<%=h ingredient_amount.number%>
+			<%=h ingredient_amount.unit%>
+			<br>
+		<% end %>
+	</div>
+	<div class="grocery_list_picture">
+		<%= image_tag ("../images/international.jpg") %>
+	</div>
+</div>
 <% end %>
 
 <%if not @misc.empty? %>
-<p>Miscellaneous</p>
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Number</th>
-		<th>Unit</th>
-	</tr>
-	
-<% @misc.each do |ingredient_amount| %>
-	<tr>
-		<td><%=h ingredient_amount.ingredient.name%></td>
-		<td><%=h ingredient_amount.number%></td>
-		<td><%=h ingredient_amount.unit%></td>
-	</tr>
-<% end %>
-</table>
+<h2 class="grocery_list_label">Miscellaneous</h2>
+
+<div class="grocery_list_wrapper">
+	<div class="grocery_list_ingredient">
+		<% @misc.each do |ingredient_amount| %>
+			<b> <%=h ingredient_amount.ingredient.name%> </b>
+			<%=h ingredient_amount.number%>
+			<%=h ingredient_amount.unit%>
+			<br>
+		<% end %>
+	</div>
+	<div class="grocery_list_picture">
+		<%= image_tag ("../images/foodpyramid.jpg") %>
+	</div>
+</div>
 <% end %>
 
 
