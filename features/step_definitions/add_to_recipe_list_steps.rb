@@ -4,11 +4,7 @@ Given /^I have created a recipe list$/ do
 end
 
 Given /^I have added a recipe to the recipe list named (.+)$/ do |recipe_name|
-  visit '/recipes/new'
-  fill_in(:title, :with => recipe_name)
-  click_button('Create')
-  click_link('Add to recipe list')
-  click_link('Back')
+  Recipe.create(:title => 'Chicken Burrito', :description=> 'blah blah blah')
 end
 
 Given /^I have logged in$/ do
