@@ -1,21 +1,29 @@
 <h1> Meal Plan Search Results for "<%=@input%>"</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Number</th>
-  </tr>
 
 <% @results.each do |meal_plan| %>
-  <tr>
-    <td><%=h meal_plan.name %></td>
-    <td><%=h meal_plan.number %></td>
-    <td><%= link_to 'Show', meal_plan %></td>
-    <td><%= link_to 'Edit', edit_meal_plan_path(meal_plan) %></td>
-    <td><%= link_to 'Destroy', meal_plan, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <div class="post">
+
+		<div class="meta"><span class="date"> <%= meal_plan.created_at.asctime %>  </div>
+		
+		<div class="mealplan_index_wrapper">				
+			<div class="mealplan_index_titledescript">
+				<h2 class="mealplan_index_title"><%= link_to meal_plan.name, meal_plan %> </h2>
+				<div class="mealplan_index_descrip"> <%= meal_plan.description %></div>
+			</div>
+			
+			<div class="mealplan_index_pictures">
+				<% random_recipes = meal_plan.recipes.sort_by{rand}%>
+				<% for index in 0...5%>
+					<% if random_recipes[index]%>
+						<%= link_to image_tag (random_recipes[index].photo.url), random_recipes[index] %>
+					<%end%>
+				<%end%>
+			</div>
+		</div>
+	</div>   
+	
 <% end %>
-</table>
 
 <%= link_to 'Back', meal_plans_path%>
 

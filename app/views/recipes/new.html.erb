@@ -66,9 +66,11 @@
   <%= link_to_function "<span> Add Ingredient </span>", "$$('.hidden')[0].removeClassName('hidden').show();",:class=>'squarebutton' %>
   <p>
   	<div class="upload_recipe">
-    <%= f.submit 'Upload Recipe' %>
+    <%= link_to_function "<span> Upload Recipe </span>", "$('new_recipe').submit();", :class=>'upload_recipe_button'%>
 	</div>
   </p>
 <% end %>
 
+<div style="overflow:hidden;"> 
 <%= link_to 'Back', recipes_path %>
+</div>

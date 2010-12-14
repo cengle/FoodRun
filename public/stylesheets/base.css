@@ -20,7 +20,7 @@ h1, h2, h3 {
 	color: #549900;
 }
 
-h1 { font-size: 44px; }
+h1 { font-size: 44px; padding-bottom:5px; line-height:50px;}
 
 h2 { font-size: 18px; }
 
@@ -908,15 +908,22 @@ padding-bottom:10px;
 
 .mealplan_index_wrapper {
 	width:600px;
+	padding-bottom:15px;
 }
 
-.mealplan_index_titledescrip{
+.mealplan_index_titledescript{
 	width:300px;
 	float:left;
+	padding-top:5px;
+}
+
+.mealplan_index_descript{
+	padding-top:5px;
+	font-size:1.25em;
 }
 
 .mealplan_index_options{
-	width:200px;
+	padding-top:20px;
 	float:right;
 }
 
@@ -943,7 +950,53 @@ padding-bottom:10px;
 	overflow:hidden;
 }
 
+/* Special upload recipe button */
+
 .upload_recipe{
 	padding-top:30px; 
-	text-align:center;
+	padding-left:150px;
+	overflow:hidden;
+}
+
+a.upload_recipe_button {
+    background: transparent url('../images/bg_button_a.gif') no-repeat scroll top right;
+    color: #444;
+    display: block;
+    float: left;
+    font: normal 12px arial, sans-serif;
+    height: 24px;
+    margin-right: 6px;
+    padding-right: 18px; /* sliding doors padding */
+    text-decoration: none;
+}
+
+a.upload_recipe_button  span {
+    background: transparent url('../images/bg_button_span.gif') no-repeat;
+    display: block;
+    line-height: 14px;
+    padding: 5px 0 5px 18px;
+}
+
+a.upload_recipe_button :active {
+    background-position: bottom right;
+    color: #000;
+    outline: none; /* hide dotted outline in Firefox */
+}
+
+a.upload_recipe_button :active span {
+    background-position: bottom left;
+    padding: 6px 0 4px 18px; /* push text down 1px */
+}
+
+/* Search Results */
+.mealplan_index_pictures{
+	width:200px;
+	float:left;
+}
+
+.mealplan_index_pictures img{
+	float:left;
+	height:5em;
+	width:5em;
+	padding-right:2px;
 }
