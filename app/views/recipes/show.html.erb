@@ -63,9 +63,11 @@
 			<%=h @recipe.average_rating %> stars
 		</p>
 		<span id="reviews_list">
-		<% @recipe.reviews.each do |review| %>
+		<% @reviews.each do |review| %>
 			<%= render :partial => 'reviews/review', :object => review %>
 		<% end %>
+		<%= will_paginate @reviews %>
+		
 		</span>
 		<% if current_user.id == @recipe.user_id%>
 			<%= link_to 'Edit Recipe', edit_recipe_path(@recipe) %> |
@@ -76,5 +78,7 @@
 		<% else %>
 			<%= link_to 'Add to recipe list', login_path %>
 		<% end %>
+		
+		
 	</div>
 </div>

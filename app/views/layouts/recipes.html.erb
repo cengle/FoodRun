@@ -60,7 +60,7 @@
 		</div>
 		<!-- end #menu -->
 		<div id="search">
-			<% form_tag :controller=>'recipes', :action => 'search' do %>
+			<% form_tag :controller=>'recipes', :action => 'search', :id => 0 do %>
 				<fieldset>
 					<input type="text" name="input" id="search-text" size="15" />
 					<input type="submit" id="search-submit" value="GO" />
