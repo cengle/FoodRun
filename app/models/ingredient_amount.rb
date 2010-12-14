@@ -8,6 +8,7 @@ class IngredientAmount < ActiveRecord::Base
 	else
 		i = Ingredient.create
 		i.name = name.downcase().titleize()
+		i.section = "Miscellaneous"
 		i.save
 		self.ingredient_id = i.id
 	end

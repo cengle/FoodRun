@@ -94,6 +94,63 @@ class RecipeListsController < ApplicationController
     end
   end
   
+  def groceryList
+  	@recipe_list = RecipeList.find(params[:id])
+  	@grocery_list = Array.new
+  	
+  	@recipe_list.recipes.each do |recipe| # for each recipe
+  		recipe_ingredient_amounts = recipe.ingredient_amounts
+  		
+  		recipe_ingredient_amounts.each do |recipe_ingredient_amount| # for each ingredient in that recipe
+                        recipe_ingredient = recipe_ingredient_amount.ingredient
+  			ingredientExist = false
+  			@grocery_list.each do |list_ingredient_amount| 	# for each ingredient in the grocery list 
+                                list_ingredient = list_ingredient_amount.ingredient
+                                if recipe_ingredient.name == list_ingredient.name and recipe_ingredient_amount.unit == list_ingredient_amount.unit
+  					ingredientExist = true
+  					list_ingredient_amount.number += recipe_ingredient_amount.number # no need to create new ingredient, just aggregate
+  				end
+  			end
+  			
+  			if not ingredientExist # current recipe_ingredient has not been added to grocery list
+                                ingredient_amount = recipe_ingredient.ingredient_amounts.build
+                                ingredient_amount.number = recipe_ingredient_amount.number
+                                ingredient_amount.unit = recipe_ingredient_amount.unit
+  				
+  				@grocery_list << ingredient_amount
+  			end
+  		end
+  	end
+  
+  	# now sort by section
+  	# initialize section arrays
+  	@bakery = Array.new
+  	@produce = Array.new
+  	@meat_and_seafood = Array.new
+  	@dairy = Array.new
+  	@ingredients = Array.new
+  	@international = Array.new  	
+  	@misc = Array.new
+  	
+  	@grocery_list.each do |list_ingredient_amount|
+  		section = list_ingredient_amount.ingredient.section
+  		case section
+  			when "Bakery, Grains, and Pastas" then @bakery << list_ingredient_amount
+  			when "Produce" then @produce << list_ingredient_amount
+  			when "Meat and Seafood" then @meat_and_seafood << list_ingredient_amount
+  			when "Dairy" then @dairy << list_ingredient_amount
+  			when "Ingredients" then @ingredients << list_ingredient_amount
+  			when "International" then @international << list_ingredient_amount
+  			when "Miscellaneous" then @misc << list_ingredient_amount
+  		end
+  	end
+  	
+  	respond_to do |format|
+  		format.html # groceryList.html.erb
+	end	
+  end
+
+=begin
   # returns a list of (super-)ingredients
   def groceryList
 	user = User.find_by_id(params[:user])
@@ -133,6 +190,7 @@ class RecipeListsController < ApplicationController
       #format.xml  { render :layout => @recipes }
     end
   end
+=end
 
   # DELETE /recipe_lists/1
   # DELETE /recipe_lists/1.xml
