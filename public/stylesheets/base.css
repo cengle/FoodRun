@@ -869,12 +869,12 @@ padding-bottom:10px;
 /* Show Recipe */
 #show_meal_plan_header{
 	width:600px;
+	min-height:120px;
 }
 
 #show_meal_plan_left_header{
 	width:450px;
 	float:left;
-
 }
 
 #show_meal_plan_right_header{
@@ -886,7 +886,7 @@ padding-bottom:10px;
 
 #show_meal_plan_divider{
     width:600px;
-    height:100px;
+    min-height:50px;
 
 }
 .new_mealplan_title {
