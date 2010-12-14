@@ -3,6 +3,11 @@ Given /^I have added a recipe$/ do
 		:description => 'This is a test recipe description')
 end
 
+Given /^I have added a recipe2$/ do
+	r = Recipe.create(:title => 'Test Recipe2', 
+		:description => 'This is a test recipe description')
+end
+
 When /^I click Show$/ do
 	click_link('Show')
 end
@@ -12,7 +17,7 @@ When /^I fill in review with this is a test review$/ do
 end
 
 When /^I select (\d+) stars$/ do |arg1|
-	choose 'review_rating_4'
+	choose 'review_rating_5'
 end
 
 When /^I press Save Review$/ do
