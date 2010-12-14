@@ -30,15 +30,15 @@
             <td class="left_align"><a href="app-controllers-calendar_controller_rb.html">app/controllers/calendar_controller.rb</a></td>
             <td class='right_align'><tt>56</tt></td>
             <td class='right_align'><tt>41</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>19.64%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>58.93%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:20px"></div>
-            <div class="uncovered" style="width:80px"></div>
+            <div class="covered" style="width:59px"></div>
+            <div class="uncovered" style="width:41px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>17.07%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>48.78%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:17px"></div>
-            <div class="uncovered" style="width:83px"></div>
+            <div class="covered" style="width:49px"></div>
+            <div class="uncovered" style="width:51px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -74,19 +74,19 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line4">4</a>     @recipes = current_user.recipe_list.recipes</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line5">5</a>     @recipe_list = current_user.recipe_list</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line6">6</a>   end</pre></td>
           </tr>
         
@@ -116,85 +116,85 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line11">11</a>     @month = (params[:month] || (Time.zone || Time).now.month).to_i</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line12">12</a>     @year = (params[:year] || (Time.zone || Time).now.year).to_i</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line13">13</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line14">14</a>     @shown_month = Date.civil(@year, @month)</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line15">15</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line16">16</a>     #@event_strips = Event.event_strips_for_month(@shown_month)</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line17">17</a> 	#@event_strips = Event.event_strips_for_month(@shown_month, :conditions =&gt; 'name = &quot;first_event&quot;')</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line18">18</a> 	  start_d, end_d = Event.get_start_and_end_dates(@shown_month) # optionally pass in @first_day_of_week</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line19">19</a>   </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line20">20</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line21">21</a>   @recipes_for_user = Calendar_recipe.find_all_by_user_id(current_user.id)</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line22">22</a>   @events = Array.new</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line23">23</a>   event_id_counter = 0</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line24">24</a>   @recipes_for_user.each do |calendar_recipe|</pre></td>
           </tr>
         
@@ -254,31 +254,31 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line34">34</a>   #@events = Event.events_for_date_range(start_d, end_d)</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line35">35</a>   #@events &lt;&lt; Event.new({:name =&gt; &quot;third event&quot;, :start_at =&gt; Time.now, :end_at =&gt; Time.now})</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line36">36</a>   @event_strips = Event.create_event_strips(start_d, end_d, @events)</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line37">37</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line38">38</a>   end</pre></td>
           </tr>
         
@@ -393,7 +393,7 @@
       </tbody>
     </table>
 
-    <p>Generated on Mon Dec 13 18:06:11 -0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Tue Dec 14 13:40:21 -0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

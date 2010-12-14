@@ -30,15 +30,15 @@
             <td class="left_align"><a href="app-controllers-meal_plans_controller_rb.html">app/controllers/meal_plans_controller.rb</a></td>
             <td class='right_align'><tt>142</tt></td>
             <td class='right_align'><tt>104</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>29.58%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>60.56%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:30px"></div>
-            <div class="uncovered" style="width:70px"></div>
+            <div class="covered" style="width:61px"></div>
+            <div class="uncovered" style="width:39px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>13.46%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>51.92%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:13px"></div>
-            <div class="uncovered" style="width:87px"></div>
+            <div class="covered" style="width:52px"></div>
+            <div class="uncovered" style="width:48px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -164,43 +164,43 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line19">19</a>     @meal_plan = MealPlan.find(params[:id])</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line20">20</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line21">21</a>     respond_to do |format|</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line22">22</a>       format.html # show.html.erb</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line23">23</a>       format.xml  { render :xml =&gt; @meal_plan }</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line24">24</a>     end</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line25">25</a>   end</pre></td>
           </tr>
         
@@ -290,37 +290,37 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line40">40</a>     @meal_plan = MealPlan.find(params[:id])</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line41">41</a>     respond_to do |format|</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line42">42</a>       format.html # new.html.erb</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line43">43</a>       format.xml  { render :xml =&gt; @meal_plan }</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line44">44</a>     end</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line45">45</a>   end </pre></td>
           </tr>
         
@@ -338,55 +338,55 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line48">48</a>   	@meal_plan = MealPlan.new(:user_id =&gt; current_user.id, :name =&gt; &quot;Default Meal Plan Name&quot;, </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line49">49</a>   					:description =&gt; &quot;Enter Meal Plan Description&quot;)</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line50">50</a>   	@meal_plan.user_id = current_user.id</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line51">51</a>   	for recipe in @meal_plan.user.recipe_list.recipes</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line52">52</a>     		@meal_plan.recipes &lt;&lt; recipe</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line53">53</a>     	end</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line54">54</a>     	@meal_plan.number = @meal_plan.recipes.size</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line55">55</a>     	if @meal_plan.save</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line56">56</a>     		redirect_to :action =&gt; 'new', :id =&gt; @meal_plan.id</pre></td>
           </tr>
         
@@ -566,37 +566,37 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line86">86</a>     @meal_plan = MealPlan.find(params[:id])</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line87">87</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line88">88</a>     respond_to do |format|</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line89">89</a>       if @meal_plan.update_attributes(params[:meal_plan])</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line90">90</a>         format.html { redirect_to(@meal_plan, :notice =&gt; 'MealPlan was successfully updated.') }</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line91">91</a>         format.xml  { head :ok }</pre></td>
           </tr>
         
@@ -794,37 +794,37 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line124">124</a>   	@meal_plan = MealPlan.find(params[:id])</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line125">125</a>   	recipe_id = params[:recipe_id]</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line126">126</a>   	@meal_plan.removeRecipe(recipe_id)</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line127">127</a>   	@meal_plan.update_attributes(:number =&gt; @meal_plan.recipes.size)</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line128">128</a> 	redirect_to :action =&gt; 'new', :id =&gt; @meal_plan.id</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line129">129</a>   end</pre></td>
           </tr>
         
@@ -848,68 +848,68 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line133">133</a>   	meal_plan_id = params[:id]</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line134">134</a>  	recipe_id = params[:recipe_id]</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line135">135</a>   	@meal_plan = MealPlan.find(params[:id])</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line136">136</a>   	@meal_plan.removeRecipe(recipe_id)  		</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line137">137</a>   	@meal_plan.update_attributes(:number =&gt; @meal_plan.recipes.size)</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line138">138</a>   	redirect_to :action =&gt; 'show', :id =&gt; meal_plan_id</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line139">139</a>   end</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line140">140</a>     </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line141">141</a>   </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line142">142</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Mon Dec 13 18:06:11 -0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Tue Dec 14 13:40:22 -0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

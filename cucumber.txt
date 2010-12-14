@@ -1,0 +1,244 @@
+Using the default profile...
+Feature: Add recipe to recipe list
+  In order to aggregate recipes into a list
+  As a user
+  I want to be able to add recipes to a global recipe list
+
+Code:
+  * features/support/env.rb
+  * features/support/paths.rb
+  * features/step_definitions/add_to_recipe_list_steps.rb
+  * features/step_definitions/calendar_steps.rb
+  * features/step_definitions/dynamic_sidebar_steps.rb
+  * features/step_definitions/grocery_list_view_steps.rb
+  * features/step_definitions/improve_recipe_search_steps.rb
+  * features/step_definitions/meal_plan_steps.rb
+  * features/step_definitions/recipe_average_review_steps.rb
+  * features/step_definitions/review_recipe_steps.rb
+  * features/step_definitions/search_recipe_steps.rb
+  * features/step_definitions/user_recipes_steps.rb
+  * features/step_definitions/web_steps.rb
+  * vendor/plugins/paperclip/cucumber/paperclip_steps.rb
+
+Features:
+  * features/add_to_recipe_list.feature
+  * features/dynamic_sidebar.feature
+  * features/grocery_list_view.feature
+  * features/improve_recipe_search.feature
+  * features/meal_plan.feature
+  * features/recipe_average_review.feature
+  * features/review_recipe.feature
+  * features/search_recipe.feature
+  * features/see_recipes_in_recipe_list.feature
+  * features/user_recipes.feature
+Parsing feature files took 0m1.117s
+
+  Scenario: Add a recipe                                          # features\add_to_recipe_list.feature:6
+    Given I have logged in                                        # features/step_definitions/add_to_recipe_list_steps.rb:10
+    And I have added a recipe                                     # features/step_definitions/review_recipe_steps.rb:1
+    And I follow "foodrun"                                        # features/step_definitions/web_steps.rb:27
+    When I follow "Test Recipe"                                   # features/step_definitions/web_steps.rb:27
+    And I follow "Add to recipe list"                             # features/step_definitions/web_steps.rb:27
+    Then I should see "Test Recipe was added to the recipe list." # features/step_definitions/web_steps.rb:143
+
+Feature: Dynamic sidebar of top recipes
+  In order for users to more easily view the highest rated recipes,
+  a dynamic sidebar should display the current top recipes based on
+  their reviews.
+
+  Scenario: High scoring recipe appears in sidebar   # features\dynamic_sidebar.feature:6
+    Given I have logged in                           # features/step_definitions/add_to_recipe_list_steps.rb:10
+    And I have added a recipe                        # features/step_definitions/review_recipe_steps.rb:1
+    And I am on the home page                        # features/step_definitions/web_steps.rb:15
+    And I follow "Test Recipe"                       # features/step_definitions/web_steps.rb:27
+    When I fill in review with this is a test review # features/step_definitions/review_recipe_steps.rb:15
+    And I select the rating 5 stars                  # features/step_definitions/dynamic_sidebar_steps.rb:11
+    And I press Save Review                          # features/step_definitions/review_recipe_steps.rb:23
+    When I go to the home page                       # features/step_definitions/web_steps.rb:19
+    Then I should see "Top Recipes"                  # features/step_definitions/web_steps.rb:143
+    And I should see "Test Recipe"                   # features/step_definitions/web_steps.rb:143
+    And I should see "Rating: 5.0"                   # features/step_definitions/web_steps.rb:143
+
+Feature: View recipe list as a list of ingredients
+  In order to know what ingredients to buy
+  As a user
+  I want to be able to see my list of recipes as a list of ingredients
+
+  Scenario: Add two recipes and view the grocery list                       # features\grocery_list_view.feature:6
+    Given I have logged in                                                  # features/step_definitions/add_to_recipe_list_steps.rb:10
+    And I have added two recipes that have 1 and 2 units of ingredient test # features/step_definitions/grocery_list_view_steps.rb:10
+    And I am on the home page                                               # features/step_definitions/web_steps.rb:15
+    When I follow "Test Recipe 1"                                           # features/step_definitions/web_steps.rb:27
+    And I follow "Add to recipe list"                                       # features/step_definitions/web_steps.rb:27
+    And I am on the home page                                               # features/step_definitions/web_steps.rb:15
+    And I follow "Test Recipe 2"                                            # features/step_definitions/web_steps.rb:27
+    And I follow "Add to recipe list"                                       # features/step_definitions/web_steps.rb:27
+    And I follow "My recipe list"                                           # features/step_definitions/web_steps.rb:27
+    And I follow "Show Grocery List"                                        # features/step_definitions/web_steps.rb:27
+    Then I should see "Grocery list"                                        # features/step_definitions/web_steps.rb:143
+    And I should see "test"                                                 # features/step_definitions/web_steps.rb:143
+    And I should see "3.0"                                                  # features/step_definitions/web_steps.rb:143
+
+Feature: Improve recipe search
+  As a user
+  I want to be able to easily find recipes with the search feature
+  By searching for part of recipe names and ignoring case
+
+  Scenario: Search for a recipe with different case             # features\improve_recipe_search.feature:6
+    Given I have logged in                                      # features/step_definitions/add_to_recipe_list_steps.rb:10
+    And I have added a recipe                                   # features/step_definitions/review_recipe_steps.rb:1
+    And I am on the home page                                   # features/step_definitions/web_steps.rb:15
+    When I fill in 'Search for recipe' field with "test recipe" # features/step_definitions/improve_recipe_search_steps.rb:15
+    And I click Search                                          # features/step_definitions/search_recipe_steps.rb:1
+    Then I should see the search results list                   # features/step_definitions/search_recipe_steps.rb:9
+    And I should see "Test Recipe"                              # features/step_definitions/web_steps.rb:143
+
+  Scenario: Search for a recipe with part of a recipe name # features\improve_recipe_search.feature:15
+    Given I have logged in                                 # features/step_definitions/add_to_recipe_list_steps.rb:10
+    And I have added a recipe                              # features/step_definitions/review_recipe_steps.rb:1
+    And I am on the home page                              # features/step_definitions/web_steps.rb:15
+    When I fill in 'Search for recipe' field with "test"   # features/step_definitions/improve_recipe_search_steps.rb:15
+    And I click Search                                     # features/step_definitions/search_recipe_steps.rb:1
+    Then I should see the search results list              # features/step_definitions/search_recipe_steps.rb:9
+    And I should see "Test Recipe"                         # features/step_definitions/web_steps.rb:143
+
+  Scenario: Search for a recipe with part of a word from a recipe name # features\improve_recipe_search.feature:24
+    Given I have logged in                                             # features/step_definitions/add_to_recipe_list_steps.rb:10
+    And I have added a recipe                                          # features/step_definitions/review_recipe_steps.rb:1
+    And I am on the home page                                          # features/step_definitions/web_steps.rb:15
+    When I fill in 'Search for recipe' field with "cipe"               # features/step_definitions/improve_recipe_search_steps.rb:15
+    And I click Search                                                 # features/step_definitions/search_recipe_steps.rb:1
+    Then I should see the search results list                          # features/step_definitions/search_recipe_steps.rb:9
+    And I should see "Test Recipe"                                     # features/step_definitions/web_steps.rb:143
+
+Feature: Turn a recipe list into a meal plan
+  As a user
+  I want to be able to generate a searchable meal plan out of my current recipe list
+  And allow the user to edit the name, description, and recipes in the meal plan
+
+  Scenario: Generate meal plan from recipe list                             # features\meal_plan.feature:6
+    Given I have logged in                                                  # features/step_definitions/add_to_recipe_list_steps.rb:10
+    And there are two recipes in the database                               # features/step_definitions/meal_plan_steps.rb:1
+    And I have added those two recipes to my recipe list                    # features/step_definitions/meal_plan_steps.rb:8
+    When I follow "My recipe list"                                          # features/step_definitions/web_steps.rb:27
+    And I follow "Make Meal Plan!"                                          # features/step_definitions/web_steps.rb:27
+    And I fill in "meal_plan_name" with "Test Meal Plan"                    # features/step_definitions/web_steps.rb:35
+    And I fill in "meal_plan_description" with "Test meal plan description" # features/step_definitions/web_steps.rb:35
+    And I press "Create"                                                    # features/step_definitions/web_steps.rb:23
+    Then I should see "Test Meal Plan"                                      # features/step_definitions/web_steps.rb:143
+    And I should see "Number of recipes: 2"                                 # features/step_definitions/web_steps.rb:143
+
+  Scenario: Delete recipe from meal plan on create meal plan page        # features\meal_plan.feature:18
+    Given I have logged in                                               # features/step_definitions/add_to_recipe_list_steps.rb:10
+    And there are two recipes in the database                            # features/step_definitions/meal_plan_steps.rb:1
+    And I have added those two recipes to my recipe list                 # features/step_definitions/meal_plan_steps.rb:8
+    When I follow "My recipe list"                                       # features/step_definitions/web_steps.rb:27
+    And I follow "Make Meal Plan!"                                       # features/step_definitions/web_steps.rb:27
+    And I delete the first recipes                                       # features/step_definitions/meal_plan_steps.rb:17
+    Then I should not see "Test Recipe 1" within ".new_mealplan_recipes" # features/step_definitions/web_steps.rb:190
+    And I should see "Test Recipe 2"                                     # features/step_definitions/web_steps.rb:143
+
+  Scenario: Delete recipe from an existing meal plan                # features\meal_plan.feature:28
+    Given I have logged in                                          # features/step_definitions/add_to_recipe_list_steps.rb:10
+    And I have made a test meal plan                                # features/step_definitions/meal_plan_steps.rb:21
+    When I view the meal plan                                       # features/step_definitions/meal_plan_steps.rb:40
+    And I delete the second recipe                                  # features/step_definitions/meal_plan_steps.rb:44
+    Then I should not see "Test Recipe 2" within ".uploaded_recipe" # features/step_definitions/web_steps.rb:190
+    And I should see "Test Recipe 1"                                # features/step_definitions/web_steps.rb:143
+
+Feature: See the average review
+  In order to see what people think of the recipe
+  As a user
+  I want to be able to see the average recipe rating
+
+  Scenario: Add one review                  # features\recipe_average_review.feature:6
+    Given I have logged in                  # features/step_definitions/add_to_recipe_list_steps.rb:10
+    And I have added a recipe2              # features/step_definitions/review_recipe_steps.rb:6
+    And I am on the home page               # features/step_definitions/web_steps.rb:15
+    When I follow "Test Recipe2"            # features/step_definitions/web_steps.rb:27
+    And I select 5 stars                    # features/step_definitions/review_recipe_steps.rb:19
+    And I press "Save review"               # features/step_definitions/web_steps.rb:23
+    When I go to the home page              # features/step_definitions/web_steps.rb:19
+    And I follow "Test Recipe2"             # features/step_definitions/web_steps.rb:27
+    Then I should see "Average Review: 5.0" # features/step_definitions/web_steps.rb:143
+
+  Scenario: Add multiple reviews            # features\recipe_average_review.feature:17
+    Given I have logged in                  # features/step_definitions/add_to_recipe_list_steps.rb:10
+    And I have added a recipe               # features/step_definitions/review_recipe_steps.rb:1
+    And I am on the home page               # features/step_definitions/web_steps.rb:15
+    When I follow "Test Recipe"             # features/step_definitions/web_steps.rb:27
+    And I select 5 stars                    # features/step_definitions/review_recipe_steps.rb:19
+    And I press "Save review"               # features/step_definitions/web_steps.rb:23
+    And I go to the home page               # features/step_definitions/web_steps.rb:19
+    And I follow "Test Recipe"              # features/step_definitions/web_steps.rb:27
+    And I select 5 stars                    # features/step_definitions/review_recipe_steps.rb:19
+    And I press "Save review"               # features/step_definitions/web_steps.rb:23
+    And I go to the home page               # features/step_definitions/web_steps.rb:19
+    And I follow "Test Recipe"              # features/step_definitions/web_steps.rb:27
+    And I select 5 stars                    # features/step_definitions/review_recipe_steps.rb:19
+    And I press "Save review"               # features/step_definitions/web_steps.rb:23
+    And I go to the home page               # features/step_definitions/web_steps.rb:19
+    And I follow "Test Recipe"              # features/step_definitions/web_steps.rb:27
+    Then I should see "Average Review: 5.0" # features/step_definitions/web_steps.rb:143
+
+Feature: Review a recipe
+  In order for users to let others know what
+  they thought of a recipe, users should be
+  able to add their own rating and review to
+  a given recipe
+
+  Scenario: Review a recipe                         # features\review_recipe.feature:7
+    Given I have logged in                          # features/step_definitions/add_to_recipe_list_steps.rb:10
+    And I have added a recipe                       # features/step_definitions/review_recipe_steps.rb:1
+    And I am on the home page                       # features/step_definitions/web_steps.rb:15
+    When I follow "Test Recipe"                     # features/step_definitions/web_steps.rb:27
+    And I fill in review with this is a test review # features/step_definitions/review_recipe_steps.rb:15
+    And I select 4 stars                            # features/step_definitions/review_recipe_steps.rb:19
+    And I press Save Review                         # features/step_definitions/review_recipe_steps.rb:23
+    And I am on the home page                       # features/step_definitions/web_steps.rb:15
+    Then I should see "Rating: 5.0"                 # features/step_definitions/web_steps.rb:143
+
+Feature: Search for recipe by title
+  In order to find existing recipes on the database
+  As a user, I should be able to enter all or part
+  of a recipe's name, and find the recipe along
+  with all its information
+
+  Scenario: find a recipe                     # features\search_recipe.feature:7
+    Given I have logged in                    # features/step_definitions/add_to_recipe_list_steps.rb:10
+    And I have added a recipe                 # features/step_definitions/review_recipe_steps.rb:1
+    And I am on the home page                 # features/step_definitions/web_steps.rb:15
+    When I search with "Test Recipe"          # features/step_definitions/search_recipe_steps.rb:5
+    And I click Search                        # features/step_definitions/search_recipe_steps.rb:1
+    Then I should see the search results list # features/step_definitions/search_recipe_steps.rb:9
+    And I should see "Test Recipe"            # features/step_definitions/web_steps.rb:143
+
+Feature: See recipes in recipe list
+  In order to see all the recipes I added
+  As a user
+  I want to be able to see all the recipes I added to the list on one page
+
+  Scenario: See recipe in recipe list                # features\see_recipes_in_recipe_list.feature:6
+    Given I have logged in                           # features/step_definitions/add_to_recipe_list_steps.rb:10
+    And I have added a recipe                        # features/step_definitions/review_recipe_steps.rb:1
+    And I am on the home page                        # features/step_definitions/web_steps.rb:15
+    When I follow "Test Recipe"                      # features/step_definitions/web_steps.rb:27
+    And I follow "<span> Add to recipe list </span>" # features/step_definitions/web_steps.rb:27
+    And I follow "my recipe list"                    # features/step_definitions/web_steps.rb:27
+    Then I should see "Test Recipe"                  # features/step_definitions/web_steps.rb:143
+
+Feature: View recipes that a user uploaded
+  In order to see all the recipes I uploaded
+  As a user
+  I want to be able to see all the recipes I uploaded on one page
+
+  Scenario: See recipes I uploaded      # features\user_recipes.feature:6
+    Given I have logged in              # features/step_definitions/add_to_recipe_list_steps.rb:10
+    And I have added a recipe           # features/step_definitions/review_recipe_steps.rb:1
+    And I am on the home page           # features/step_definitions/web_steps.rb:15
+    When I follow "my uploaded recipes" # features/step_definitions/web_steps.rb:27
+    Then I should see "Test Recipe"     # features/step_definitions/web_steps.rb:143
+
+15 scenarios (15 passed)
+129 steps (129 passed)
+1m53.942s
