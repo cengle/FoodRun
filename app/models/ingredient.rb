@@ -31,12 +31,13 @@ class Ingredient < ActiveRecord::Base
       section = "Meat and Seafood"
     elsif (l[1] =~ /^08[0-9]*$/ or
            l[1] =~ /^18[0-9]*$/ or
-           l[1] =~ /^19[0-9]*$/ or
            l[1] =~ /^20[0-9]*$/ or
            l[1] =~ /^23[0-9]*$/)
       section = "Bakery, Grains, and Pastas"
     elsif (l[1] =~ /^35[0-9]*$/)
       section = "International"
+    elsif (l[1] =~ /^19[0-9]*$/)
+      section = "Miscellaneous"
     end
       if (section != nil)
         i = Ingredient.new(:name => name, :section => section)

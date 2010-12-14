@@ -15,7 +15,9 @@
 				<% random_recipes = meal_plan.recipes.sort_by{rand}%>
 				<% for index in 0...3%>
 					<% if random_recipes[index]%>
-						<%= link_to image_tag (random_recipes[index].photo.url), random_recipes[index] %>
+						<% if random_recipes[index].photo.url != "/photos/original/missing.png"%>
+							<%= link_to image_tag (random_recipes[index].photo.url), random_recipes[index] %>
+						<%end%>
 					<%end%>
 				<%end%>
 			</div>
