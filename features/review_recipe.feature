@@ -4,20 +4,13 @@ Feature: Review a recipe
 	able to add their own rating and review to 
 	a given recipe
 	
-	Scenario: Go to review page
-		Given I have added a recipe
+	Scenario: Review a recipe
+		Given I have logged in
+		And I have added a recipe
 		And I am on the home page
-		When I follow "Chicken Burrito"
-		And I follow "Add Review"
-		Then I should see the new review form
-		
-	Scenario: Add a review
-		Given I am entering a recipe review
-		When I fill in Title with Best recipe evar
-		And I fill in Review with title says it all
-		And I fill in rating with 5
-		And press "Create"
-		Then I should see Review successfully created	
-	
-
-		
+		When I follow "Test Recipe"
+		And I fill in review with this is a test review
+		And I select 4 stars
+		And I press Save Review
+		And I am on the home page
+		Then I should see "Rating: 4.0"		
