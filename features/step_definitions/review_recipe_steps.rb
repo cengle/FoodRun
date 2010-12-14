@@ -1,5 +1,4 @@
 Given /^I have added a recipe$/ do
-	visit '/recipes/new'
 	r = Recipe.create(:title => 'Test Recipe', 
 		:description => 'This is a test recipe description')
 end
