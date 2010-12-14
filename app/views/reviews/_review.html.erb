@@ -1,7 +1,10 @@
 <div class="post">
-	<div class="reviewtitle"> <%= review.rating %> stars.</div>
-	<p class="meta"><span class="date"> <%= review.created_at.asctime %></p>
+        <% review.rating.times do %>
+	  <%= label(:review, "stars", content_tag(:span, ''),:class => "rating bright") %>
+	<%end%>
+	<br>
 	<div class="entry">
 		<%=review.review%>
 	</div>
+	<p class="meta"><span class="date"> <%= review.created_at.asctime %></p></span>
 </div>

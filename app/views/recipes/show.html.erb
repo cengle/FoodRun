@@ -5,6 +5,10 @@
 		<p class="meta"><span class="date"> <%= @recipe.created_at.asctime %> 
 		<% if @recipe.user%>
 			Posted by <%= link_to @recipe.user.username, :controller => 'recipes' , :action => 'showMyRecipes', :user => @recipe.user, :id => '2' %></p>
+		<p>
+		  <b> Average Review:</b>
+		  <%=h @recipe.average_rating %> stars
+		</p>
 		<%end%>
 		<p>
 			<div class="resize"> <%= image_tag @recipe.photo.url%> </div>
@@ -31,10 +35,9 @@
 			</div>
 		<% end %>
 	</div>
-	
 	<div id="show_recipe_footer">
 		<h2>Reviews</h2>
-		<% form_remote_tag(:url => {:controller => '/reviews', :action => 'create'}, :update => 'reviews_list', :position => :top) do %>
+		<% form_remote_tag(:html => {:class =>'rating_ballot'}, :url => {:controller => '/reviews', :action => 'create'}, :update => 'reviews_list', :position => :top) do %>
 		  <p>
 			<%= hidden_field :review, :title, :value => "" %>
 		  </p>
@@ -44,24 +47,23 @@
 		  </p>
 		  <p>
 			<%= label_tag :rating %><br />
-			<%= radio_button :review, :rating, 1, :checked => true %>
-			<%= radio_button :review, :rating, 2 %>
-			<%= radio_button :review, :rating, 3 %>
-			<%= radio_button :review, :rating, 4 %>
-			<%= radio_button :review, :rating, 5 %>
+			<%= label(:review, "rating_1", content_tag(:span, '1'), {:class => "rating", :id =>"1"}) %>
+			<%= radio_button :review, :rating, 1, :checked => true, :class => 'rating_button' %>
+			<%= label(:review, "rating_2", content_tag(:span, '2'), {:class => "rating", :id =>"2"}) %>
+			<%= radio_button :review, :rating, 2, :class => 'rating_button' %>
+			<%= label(:review, "rating_3", content_tag(:span, '3'), {:class => "rating", :id =>"3"}) %>
+			<%= radio_button :review, :rating, 3, :class => 'rating_button' %>
+			<%= label(:review, "rating_4", content_tag(:span, '4'), {:class => "rating", :id =>"4"}) %>
+			<%= radio_button :review, :rating, 4, :class => 'rating_button' %>
+			<%= label(:review, "rating_5", content_tag(:span, '5'), {:class => "rating", :id =>"5"}) %>
+			<%= radio_button :review, :rating, 5, :class => 'rating_button' %>
 		  </p>
-		  <p>
 			<%= hidden_field :review, :recipe_id, :value => @recipe.id %>
-		  </p>
-		  
+		 <br> 
 		  <p>
 			<%= submit_tag 'Save Review' %>
 		  </p>
 		<% end %>
-		<p>
-			<b> Average Review:</b>
-			<%=h @recipe.average_rating %> stars
-		</p>
 		<span id="reviews_list">
 		<% @recipe.reviews.each do |review| %>
 			<%= render :partial => 'reviews/review', :object => review %>

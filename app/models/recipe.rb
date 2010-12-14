@@ -28,6 +28,6 @@ class Recipe < ActiveRecord::Base
     revs.each do |rev|
       sum += rev.rating
     end
-    return sum/[revs.size,1].max
+    return (sum/[revs.size,1].max).round(1)
   end
 end

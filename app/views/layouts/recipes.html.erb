@@ -6,7 +6,15 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Recipes: <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'scaffold' %>
-   <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag 'jquery' %>
+  <script>
+    // this allows jquery to be called along with scriptaculous and YUI without any conflicts
+    // the only difference is all jquery functions should be called with $j instead of $
+    // e.g. $j('#div_id').stuff instead of $('#div_id').stuff
+    jQuery.noConflict();
+  </script>
+  <%= javascript_include_tag 'review_ballot' %>
 </head>
 
 <%= stylesheet_link_tag "base" %>
