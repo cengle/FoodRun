@@ -14,8 +14,7 @@ class RecipesController < ApplicationController
 
   def showMyRecipes
 	user = User.find_by_id(params[:user])
-	@recipes = user.recipes
-	
+	@recipes = Recipe.paginate :page =>params[:page], :per_page => 5, :order => 'created_at DESC', :conditions => {:user_id => current_user.id}
 	respond_to do |format|
 		format.html
 		format.xml {render :xml => @recipes }
@@ -27,7 +26,11 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
 	
-    respond_to do |format|
+	current_page = params[:page]
+	per_page = params[:per_page]
+    reviews = @recipe.reviews
+	@reviews = Review.paginate :page =>params[:page], :per_page => 5, :order => 'created_at DESC', :conditions => {:recipe_id => @recipe.id}
+	respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @recipe }
     end
@@ -92,6 +95,8 @@ class RecipesController < ApplicationController
   # DELETE /recipes/1.xml
   def destroy
     @recipe = Recipe.find(params[:id])
+	recipe_id = @recipe.id
+	Calendar_recipe.delete_all(:recipe_id => recipe_id)
     @recipe.destroy
 
     respond_to do |format|
@@ -106,8 +111,8 @@ class RecipesController < ApplicationController
   
   def search
   	flash.discard(:notice)
-	#@results = Recipe.find(:all, :conditions => ['title LIKE ?', "%#{params[:input]}%"])
-	@results = Recipe.find(:all, :conditions => ['lower(title) LIKE ?', "%#{params[:input].downcase()}%"])
+	@results = Recipe.find(:all, :conditions => ['title LIKE ?', "%#{params[:input]}%"])
+	
 	@input = params[:input]
 	if (@results.empty?)
 	  flash.now[:notice] = 'No results found.'

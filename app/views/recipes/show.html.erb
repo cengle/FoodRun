@@ -1,17 +1,26 @@
 <div id="show_recipe_wrap">
 	
 	<div id="show_recipe_header">
-		<h1 class="title"> <%=h @recipe.title %> </h1>
-		<p class="meta"><span class="date"> <%= @recipe.created_at.asctime %> 
-		<% if @recipe.user%>
-			Posted by <%= link_to @recipe.user.username, :controller => 'recipes' , :action => 'showMyRecipes', :user => @recipe.user, :id => '2' %></p>
-		<%end%>
-		<p>
-			<div class="resize"> <%= image_tag @recipe.photo.url%> </div>
-		</p>
-		<p>
-			<%= @recipe.description %>
-		</p>
+		<div class="show_recipe_left_header">
+			<h1 class="title"> <%=h @recipe.title %> </h1>
+			<p class="meta"><span class="date"> <%= @recipe.created_at.asctime %> 
+			<% if @recipe.user%>
+				Posted by <%= link_to @recipe.user.username, :controller => 'recipes' , :action => 'showMyRecipes', :user => @recipe.user, :id => '2' %></p>
+			<%end%>
+			<p>
+				<div class="resize"> <%= image_tag @recipe.photo.url%> </div>
+			</p>
+			<p>
+				<%= @recipe.description %>
+			</p>
+		</div>
+		<div class="show_recipe_right_header">
+			<% if current_user %>
+				<%= link_to '<span> Add to recipe list </span>', {:controller => "recipe_lists", :action => "update2", :id => @recipe.id, :user => current_user}, :class=>'squarebutton' %>
+			<% else %>
+				<%= link_to '<span> Add to recipe list </span>', login_path, :class=>'squarebutton' %>
+			<% end %>
+		</div>
 	</div>
 	
 	<div id="directions_column">
@@ -63,18 +72,16 @@
 			<%=h @recipe.average_rating %> stars
 		</p>
 		<span id="reviews_list">
-		<% @recipe.reviews.each do |review| %>
+		<% @reviews.each do |review| %>
 			<%= render :partial => 'reviews/review', :object => review %>
 		<% end %>
+		<%= will_paginate @reviews %>
+		
 		</span>
 		<% if current_user.id == @recipe.user_id%>
 			<%= link_to 'Edit Recipe', edit_recipe_path(@recipe) %> |
 		<% end %>
-		<%= link_to 'Back to Recipes', recipes_path %> |
-		<% if current_user %>
-			<%= link_to 'Add to recipe list', :controller => "recipe_lists", :action => "update2", :id => @recipe.id, :user => current_user %>
-		<% else %>
-			<%= link_to 'Add to recipe list', login_path %>
-		<% end %>
+		<%= link_to 'Back to Recipes', recipes_path %>
+		
 	</div>
 </div>
