@@ -914,6 +914,10 @@ padding-bottom:10px;
 	width:0.75em;
 }
 
+.mealplan_index_title{
+	line-height:30px;
+}
+
 .mealplan_index_title a{
 	text-decoration: none;
 	text-transform: capitalize;
@@ -924,6 +928,7 @@ padding-bottom:10px;
 .mealplan_index_wrapper {
 	width:600px;
 	padding-bottom:15px;
+	min-height:30px;
 }
 
 .mealplan_index_titledescript{
