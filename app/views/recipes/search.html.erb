@@ -1,9 +1,19 @@
 <h1> Recipe Search Results for "<%=@input%>"</h1>
-<div class="search_options">
-<%= link_to "<span> Search Meal Plans </span>", :controller => 'meal_plans', :id => 0, :action => 'search', :input => @input, :class=>'squarebutton'%>
-</div>
 
-<% @results.each do |recipe| %>
+<div class="ubercolortabs">
+<ul>
+<%if @recipe_results%>
+<li><%= link_to "<span> Search Recipes </span>", {:controller=>'recipes', :action=>'search', :input=>@input}, :class=>"selected"%></li>
+<%else%>
+<li><%= link_to "<span> Search Recipes </span>", {:controller=>'recipes', :action=>'search', :input=>@input}%></li>
+<%end%>
+<li><%= link_to "<span> Search Meal Plans </span>", :controller => 'meal_plans', :id => 0, :action => 'search', :input => @input, :class=>'squarebutton'%></li>
+</ul>
+</div>
+	
+<div class="ubercolordivider"> </div>
+
+<% @recipe_results.each do |recipe| %>
 <div class="post">
 
 	<p class="meta"><span class="date"> <%= recipe.created_at.asctime %> 
@@ -28,8 +38,5 @@
 	</div>
 </div>
 <% end %>
-
-</table>
-<%= link_to 'Back', recipes_path %>
 
 

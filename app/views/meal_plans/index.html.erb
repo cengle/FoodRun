@@ -1,4 +1,21 @@
-<h1 style="padding-bottom:10px"><%=current_user.username%>'s plans</h1>
+<h1 class="welcome_title">Welcome 
+<% if(current_user) %> 
+<%= current_user.username %> 
+<% end %>
+</h1>
+
+<div class="ubercolortabs">
+<ul>
+<li><%= link_to "<span> Browse Recipes </span>", :controller=>'recipes', :action=>'index'%></li>
+<% if @meal_plans%>
+<li><%= link_to "<span> Browse Meal Plans </span>", {:controller=>'meal_plans', :action=>'index'}, :class=>'selected'%></li>
+<%else%>
+<li><%= link_to "<span> Browse Meal Plans </span>", :controller=>'meal_plans', :action=>'index'%></li>
+<%end%>
+</ul>
+</div>
+
+<div class="ubercolordivider"> </div>
 
 <% @meal_plans.each do |meal_plan| %>
   <div class="post">
@@ -13,21 +30,12 @@
 			
 			<div class="mealplan_index_pictures">
 				<% random_recipes = meal_plan.recipes.sort_by{rand}%>
-				<% for index in 0...3%>
+				<% for index in 0...5%>
 					<% if random_recipes[index]%>
 						<%= link_to image_tag (random_recipes[index].photo.url), random_recipes[index] %>
 					<%end%>
 				<%end%>
 			</div>
-			
-			<div class="mealplan_index_options">
-				<%= link_to '<span> Destroy </span>', meal_plan, :confirm => 'Are you sure?', :method => :delete, :class=>'squarebutton' %>
-			</div>
 		</div>
-	
-	
-
 </div>   
 <% end %>
-
-<%= link_to 'Home', recipes_path%>
