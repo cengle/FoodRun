@@ -142,6 +142,7 @@ class RecipeListsController < ApplicationController
   			when "Ingredients" then @ingredients << list_ingredient_amount
   			when "International" then @international << list_ingredient_amount
   			when "Miscellaneous" then @misc << list_ingredient_amount
+                        else @misc << list_ingredient_amount
   		end
   	end
   	
