@@ -5,11 +5,8 @@ Feature: View recipes that a user uploaded
 	
 	Scenario: See recipes I uploaded
 		Given I have logged in
-		And I have uploaded a recipe named "Pad thai"
-		And I have uploaded a recipe named "Spaghetti"
+		And I have added a recipe
 		And I am on the home page
 		When I follow "my uploaded recipes"
-		Then I should see "Pad thai"
-		Then I should see "Spaghetti"
-		
+		Then I should see "Test Recipe"
 		
