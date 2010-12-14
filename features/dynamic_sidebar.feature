@@ -4,10 +4,14 @@ Feature: Dynamic sidebar of top recipes
 	 their reviews.
 
 	 Scenario: High scoring recipe appears in sidebar
-	           Given I have added a recipe
-		   And I have entered a recipe review with rating 10
-		   And I have entered a recipe review with rating 8 
+	       Given I have logged in
+	       And I have added a recipe
+		   And I am on the home page
+		   And I follow "Test Recipe"
+		   When I fill in review with this is a test review
+		   And I select the rating 5 stars
+		   And I press Save Review
 		   When I go to the home page
 		   Then I should see "Top Recipes"
-		   And I should see "Chicken Burrito"
-		   And I should see "Rating: 9.0"
+		   And I should see "Test Recipe"
+		   And I should see "Rating: 5.0"
