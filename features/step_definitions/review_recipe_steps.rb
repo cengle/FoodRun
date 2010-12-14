@@ -1,61 +1,25 @@
 Given /^I have added a recipe$/ do
 	visit '/recipes/new'
-	fill_in(:title, :with => 'Chicken Burrito')
-	fill_in(:description, :with => 'yummy chicken')
-	click_button('Upload Recipe')
-	click_link('Back')
+	r = Recipe.create(:title => 'Test Recipe', 
+		:description => 'This is a test recipe description')
 end
 
 When /^I click Show$/ do
 	click_link('Show')
 end
 
-When /^I click Add Review$/ do
-	click_link('Add Review')
+When /^I fill in review with this is a test review$/ do
+	fill_in('review_review', :with => 'this is a test review')
 end
 
-Then /^I should see the new review form$/ do
-	if response.respond_to? :should
-		response.should contain('New review')
-	else
-		assert_contain 'New review'
-	end
+When /^I select (\d+) stars$/ do |arg1|
+	choose 'review_rating_4'
 end
 
-
-Given /^I am entering a recipe review$/ do
-	visit '/recipes/new'
-	fill_in(:title, :with => 'Chicken Burrito')
-	click_button('Create')
-	click_link('Back')
-	visit path_to('the home page')
-	click_link('Chicken Burrito')
-	click_link('Add Review')
+When /^I press Save Review$/ do
+	click_button('Save Review')
 end
 
-
-When /^I fill in Title with Best recipe evar$/ do
-	fill_in(:title, :with => 'Best recipe evar')
+Then /^I should see Rating (\d+)$/ do |arg1|
+	response.should contain 'Rating: 4.0'
 end
-
-When /^I fill in Review with title says it all$/ do
-	fill_in(:review, :with => 'Best recipe evar')
-end
-
-When /^I fill in rating with (\d+)$/ do |arg1|
-  	fill_in(:rating, :with => arg1)
-end
-
-When /^click Create$/ do
-	click_button('Create')
-end
-
-Then /^I should see Review successfully created$/ do
-	if response.respond_to? :should
-		response.should contain('Review was successfully created.')
-	else
-		assert_contain 'Review was successfully created.'
-	end
-end
-
-
