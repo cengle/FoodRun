@@ -1,18 +1,18 @@
 <div id="show_meal_plan_header">
-<div id="show_meal_plan_left_header">
-<h1> <%=h @meal_plan.name %> </h1>
-</div>
-<div id="show_meal_plan_right_header">
-<% if current_user %>
-    <%= link_to '<span> Add to recipe list </span>', {:controller => "recipe_lists", :action => "addMealPlan", :id => @meal_plan.id, :user => current_user}, :class=>'squarebutton' %>
-<% else %>
-    <%= link_to '<span> Add to recipe list </span>', login_path, :class=>'squarebutton' %>
-<% end %>
-</div>
+	<div id="show_meal_plan_left_header">
+		<h1> <%=h @meal_plan.name %> </h1>
+	</div>
+	<div id="show_meal_plan_right_header">
+		<% if current_user %>
+		    <%= link_to '<span> Add to recipe list </span>', {:controller => "recipe_lists", :action => "addMealPlan", :id => @meal_plan.id, :user => current_user}, :class=>'squarebutton' %>
+		<% else %>
+		    <%= link_to '<span> Add to recipe list </span>', login_path, :class=>'squarebutton' %>
+		<% end %>
+	</div>
 </div>
 <div id="show_meal_plan_divider">
-<h3><%=h @meal_plan.description %></h3>  
-<h3> Number of recipes: <%=h @meal_plan.number %> </h3>
+	<h3><%=h @meal_plan.description %></h3>  
+	<h3> Number of recipes: <%=h @meal_plan.number %> </h3>
 </div>
 
 <% @meal_plan.recipes.each do |recipe| %>
