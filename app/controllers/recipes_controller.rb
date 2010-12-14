@@ -110,8 +110,8 @@ class RecipesController < ApplicationController
   end
   
   def search
-  	flash.discard(:notice)
-	@recipe_results = Recipe.find(:all, :conditions => ['title LIKE ?', "%#{params[:input]}%"])
+    flash.discard(:notice)	
+	@results = Recipe.find(:all, :conditions => ['lower(title) LIKE ?', "%#{params[:input].downcase()}%"])
 	
 	@input = params[:input]
 	if (@recipe_results.empty?)
